@@ -1,2 +1,274 @@
-.book-head .listen{margin:10px 0 18px}.book-progress{display:block}.book-section-links{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 35px}.book-section-links button{background:#174c5bcc;border:1px solid #a5e3d340;color:#e1f5e9;border-radius:22px;padding:14px 22px;font-size:15px;box-shadow:inset 0 1px #dff7e71f}.book-search{display:flex;align-items:center;gap:18px;color:#c7e8e2;max-width:620px;font-size:14px}.book-search input{flex:1;min-width:0;background:#082b3ed9;color:#effaf4;border:1px solid #aad6d342;border-radius:18px;padding:15px 18px;font:inherit}.book-search input::placeholder{color:#9fbfc7}.book-filters{flex-wrap:wrap}.species-card:focus-visible,.topic-card:focus-visible,.book-section-links button:focus-visible{outline:3px solid #ffe5a1;outline-offset:5px}.book-section-links button:hover,.word-chest button:hover{background:#236675}.school-icon{display:block;width:120px;height:90px;color:#c4ebd4;filter:drop-shadow(0 8px 15px #001a2e66)}.school-icon svg{width:100%;height:100%}.illustrated-topic{position:relative;overflow:hidden;min-height:260px;background:radial-gradient(ellipse at 90% 5%,#7ddfc52b,transparent 70%),linear-gradient(145deg,#195667cc,#112d40eb);transition:transform .25s,box-shadow .25s}.illustrated-topic:nth-child(3n+2){background:radial-gradient(ellipse at 90% 5%,#c6adff33,transparent 70%),linear-gradient(145deg,#344260dd,#112d40eb)}.illustrated-topic:nth-child(3n){background:radial-gradient(ellipse at 90% 5%,#ffe5a133,transparent 70%),linear-gradient(145deg,#375955dd,#112d40eb)}.illustrated-topic:hover{transform:translateY(-6px);box-shadow:0 16px 30px #00162466}.illustrated-topic .school-icon{margin-bottom:12px}.illustrated-topic strong{line-height:1.2}.word-chest{border:1px solid #dfc99255;background:linear-gradient(145deg,#243e46dc,#102c40e6);border-radius:28px;padding:34px;margin:45px 0}.word-chest h2{font-size:36px;margin:12px 0}.word-chest>div{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}.word-chest button{border:1px solid #c9dcbb44;background:#1c5260;color:#edf6df;border-radius:18px;padding:13px 18px;font-size:16px}.word-chest button span{margin-left:10px;color:#e6cc9b}.word-chest p{color:#c1dbd8;line-height:1.6}.word-chest #wordMeaning{min-height:55px;color:#ffedc3}.science-sources{margin:28px 0;padding:22px 26px;background:#0e3041d9;border:1px solid #b9dbcf2c;border-radius:20px;color:#afcbd1;font-size:13px;line-height:1.7}.science-sources summary{cursor:pointer;min-height:28px;color:#d1e7de}.science-sources a{color:#bde8e0;text-decoration:underline}.school-heading{margin:30px 0}.school-heading .school-icon{width:170px;height:110px;margin-bottom:12px}.school-heading h1{font-size:clamp(38px,5vw,66px);line-height:1.08;margin:20px 0}.school-heading .topic-text{max-width:800px;font-size:22px;color:#d5e7e6}.deep-science summary{cursor:pointer;font-size:22px;color:#e5f5e5;line-height:1.4;padding:12px 0}.school-activity{padding:30px;border-left:3px solid #e1c68e;background:#c9b77b0d;border-radius:4px 24px 24px 4px;margin:30px 0}.school-activity h2{font-size:27px}.school-activity p{font-size:19px;color:#d3e4dd;line-height:1.7}.shark-id{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;color:#a4c8cb;font-size:12px;margin:15px 0}.shark-id .pronunciation{margin:12px 0}#sharkCollection,#sharkSchool,#wordChest{scroll-margin-top:28px}.school-page .shark-question .quiet,.shark-question #hearQuestion{background:transparent;color:#c4e3df;border:1px solid #b3d4c944}.encyclopedia-bibliography{margin-bottom:60px}@media(max-width:700px){.book-section-links{gap:8px}.book-section-links button{font-size:12px;padding:12px 14px}.book-search{display:block}.book-search input{display:block;width:100%;margin-top:10px}.illustrated-topic{min-height:235px;padding:20px 16px}.illustrated-topic .school-icon{width:95px;height:70px}.word-chest{padding:24px 20px}.word-chest h2{font-size:29px}.word-chest button{font-size:14px;padding:12px 14px}.school-heading .topic-text{font-size:20px}.school-activity{padding:24px}.science-sources{padding:20px}.shark-id{display:block}}
-@media(prefers-reduced-motion:reduce){.illustrated-topic{transition:none}.illustrated-topic:hover{transform:none}}
+.book-head .listen {
+  margin: 10px 0 18px;
+}
+.book-progress {
+  display: block;
+}
+.book-section-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0 35px;
+}
+.book-section-links button {
+  background: #174c5bcc;
+  border: 1px solid #a5e3d340;
+  color: #e1f5e9;
+  border-radius: 22px;
+  padding: 14px 22px;
+  font-size: 15px;
+  box-shadow: inset 0 1px #dff7e71f;
+}
+.book-search {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #c7e8e2;
+  max-width: 620px;
+  font-size: 14px;
+}
+.book-search input {
+  flex: 1;
+  min-width: 0;
+  background: #082b3ed9;
+  color: #effaf4;
+  border: 1px solid #aad6d342;
+  border-radius: 18px;
+  padding: 15px 18px;
+  font: inherit;
+}
+.book-search input::placeholder {
+  color: #9fbfc7;
+}
+.book-filters {
+  flex-wrap: wrap;
+}
+.species-card:focus-visible,
+.topic-card:focus-visible,
+.book-section-links button:focus-visible {
+  outline: 3px solid #ffe5a1;
+  outline-offset: 5px;
+}
+.book-section-links button:hover,
+.word-chest button:hover {
+  background: #236675;
+}
+.school-icon {
+  display: block;
+  width: 120px;
+  height: 90px;
+  color: #c4ebd4;
+  filter: drop-shadow(0 8px 15px #001a2e66);
+}
+.school-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.illustrated-topic {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  background:
+    radial-gradient(ellipse at 90% 5%, #7ddfc52b, transparent 70%),
+    linear-gradient(145deg, #195667cc, #112d40eb);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.illustrated-topic:nth-child(3n + 2) {
+  background:
+    radial-gradient(ellipse at 90% 5%, #c6adff33, transparent 70%),
+    linear-gradient(145deg, #344260dd, #112d40eb);
+}
+.illustrated-topic:nth-child(3n) {
+  background:
+    radial-gradient(ellipse at 90% 5%, #ffe5a133, transparent 70%),
+    linear-gradient(145deg, #375955dd, #112d40eb);
+}
+.illustrated-topic:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px #00162466;
+}
+.illustrated-topic .school-icon {
+  margin-bottom: 12px;
+}
+.illustrated-topic strong {
+  line-height: 1.2;
+}
+.word-chest {
+  border: 1px solid #dfc99255;
+  background: linear-gradient(145deg, #243e46dc, #102c40e6);
+  border-radius: 28px;
+  padding: 34px;
+  margin: 45px 0;
+}
+.word-chest h2 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+.word-chest > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+.word-chest button {
+  border: 1px solid #c9dcbb44;
+  background: #1c5260;
+  color: #edf6df;
+  border-radius: 18px;
+  padding: 13px 18px;
+  font-size: 16px;
+}
+.word-chest button span {
+  margin-left: 10px;
+  color: #e6cc9b;
+}
+.word-chest p {
+  color: #c1dbd8;
+  line-height: 1.6;
+}
+.word-chest #wordMeaning {
+  min-height: 55px;
+  color: #ffedc3;
+}
+.science-sources {
+  margin: 28px 0;
+  padding: 22px 26px;
+  background: #0e3041d9;
+  border: 1px solid #b9dbcf2c;
+  border-radius: 20px;
+  color: #afcbd1;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.science-sources summary {
+  cursor: pointer;
+  min-height: 28px;
+  color: #d1e7de;
+}
+.science-sources a {
+  color: #bde8e0;
+  text-decoration: underline;
+}
+.school-heading {
+  margin: 30px 0;
+}
+.school-heading .school-icon {
+  width: 170px;
+  height: 110px;
+  margin-bottom: 12px;
+}
+.school-heading h1 {
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.08;
+  margin: 20px 0;
+}
+.school-heading .topic-text {
+  max-width: 800px;
+  font-size: 22px;
+  color: #d5e7e6;
+}
+.deep-science summary {
+  cursor: pointer;
+  font-size: 22px;
+  color: #e5f5e5;
+  line-height: 1.4;
+  padding: 12px 0;
+}
+.school-activity {
+  padding: 30px;
+  border-left: 3px solid #e1c68e;
+  background: #c9b77b0d;
+  border-radius: 4px 24px 24px 4px;
+  margin: 30px 0;
+}
+.school-activity h2 {
+  font-size: 27px;
+}
+.school-activity p {
+  font-size: 19px;
+  color: #d3e4dd;
+  line-height: 1.7;
+}
+.shark-id {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #a4c8cb;
+  font-size: 12px;
+  margin: 15px 0;
+}
+.shark-id .pronunciation {
+  margin: 12px 0;
+}
+#sharkCollection,
+#sharkSchool,
+#wordChest {
+  scroll-margin-top: 28px;
+}
+.school-page .shark-question .quiet,
+.shark-question #hearQuestion {
+  background: transparent;
+  color: #c4e3df;
+  border: 1px solid #b3d4c944;
+}
+.encyclopedia-bibliography {
+  margin-bottom: 60px;
+}
+@media (max-width: 700px) {
+  .book-section-links {
+    gap: 8px;
+  }
+  .book-section-links button {
+    font-size: 12px;
+    padding: 12px 14px;
+  }
+  .book-search {
+    display: block;
+  }
+  .book-search input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .illustrated-topic {
+    min-height: 235px;
+    padding: 20px 16px;
+  }
+  .illustrated-topic .school-icon {
+    width: 95px;
+    height: 70px;
+  }
+  .word-chest {
+    padding: 24px 20px;
+  }
+  .word-chest h2 {
+    font-size: 29px;
+  }
+  .word-chest button {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .school-heading .topic-text {
+    font-size: 20px;
+  }
+  .school-activity {
+    padding: 24px;
+  }
+  .science-sources {
+    padding: 20px;
+  }
+  .shark-id {
+    display: block;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .illustrated-topic {
+    transition: none;
+  }
+  .illustrated-topic:hover {
+    transform: none;
+  }
+}

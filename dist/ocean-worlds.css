@@ -1,10 +1,981 @@
 /* One continuous ocean, with a distinct setting for every area. */
-body{isolation:isolate;background:#032033;padding-bottom:130px}body:before{display:none!important}#oceanWorld{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#032033;pointer-events:none}.world-backdrop{position:absolute;inset:-2%;background-position:center;background-size:cover;opacity:0;transition:opacity 1.4s ease;transform:scale(1.025);animation:ocean-breath 24s ease-in-out infinite}.world-backdrop:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#00172e45,#001e3440 40%,#0016298a)}#livingOcean{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 0,#9bfff01c,transparent 65%)}.ocean-drift{position:absolute;width:3px;height:3px;background:#c6fbef;border-radius:50%;left:calc(var(--n)*7.5%);top:105%;opacity:.4;box-shadow:0 0 7px #c9ffee55;animation:ocean-sparkle calc(16s + var(--n)*1.5s) linear infinite;animation-delay:calc(var(--n)*-3s)}.far-fish{position:absolute;color:#b3e0ec;opacity:.09;width:170px;animation:distant-patrol 60s linear infinite}.far-fish svg{width:100%}.fish-drift-one{top:24%;animation-delay:-20s}.fish-drift-two{top:58%;width:110px;animation-duration:77s;animation-direction:reverse;animation-delay:-5s}body[data-world=stories] #livingOcean{background:radial-gradient(ellipse at 70% 40%,#d3aaf014,transparent 65%)}body[data-world=learning] #livingOcean{background:radial-gradient(ellipse at 20% 80%,#ffbd6614,transparent 60%)}body[data-world=sharks] .world-backdrop:after{background:linear-gradient(#00132b55,#001c3477)}header{max-width:1320px;padding:22px 35px;background:linear-gradient(#041d303b,transparent)}.brand-milo{width:65px;height:44px;display:block;flex-shrink:0}.brand-milo .milo-actor{width:100%;height:100%;animation:none!important;overflow:visible}.brand-milo .milo-tail{animation:none!important}.brand-milo .milo-mouth,.brand-milo .milo-teeth{display:none!important}.brand{gap:9px}.brand small{font-size:11px}.header-right{gap:9px}.header-right .quiet{border:1px solid #c1e3e633;background:#0c304e80;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#d6ecec;min-height:40px;font-size:11px}.header-right #music{min-width:48px;font-size:14px;border-color:#d3eeb94d;background:#143f4f99}#music[aria-pressed=false]{opacity:.7}.status{font-size:8px;letter-spacing:.4px}.ocean-welcome{padding:12px 0 0;text-align:left;max-width:1100px;margin:auto}.ocean-welcome h1{font-size:clamp(38px,5.5vw,66px);letter-spacing:-2px;margin:0;line-height:1.05;font-weight:550}.ocean-welcome h1 br{display:none}.reef-scene{height:335px;margin:0 0 10px}.milo-swim{width:51%;left:27%;top:-8px;max-width:550px}.reef-discovery:empty{display:none}.scene-controls{bottom:8px;right:0}.scene-controls .quiet{font-size:9px;min-height:34px;padding:8px 12px;background:#123b4c77}.milo-greeting{display:none!important}.picture-ocean-paths{gap:15px}.picture-destination{border:1px solid #bce5e92f;box-shadow:none;background:#10344ba1;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:24px}.picture-destination img{height:170px}.picture-title{padding:17px 17px 20px;align-items:center}.picture-title h2{font-size:21px;min-height:0}.ocean-progress{margin-top:25px;max-width:560px}.ocean-progress strong{font-size:11px}.ocean-progress .track{height:3px}.ocean-progress .progress-star{font-size:28px}.book-head{padding:22px 0 20px;text-align:left}.book-head h1{font-size:clamp(40px,5vw,62px);margin:13px 0}.book-head h1 br{display:none}.book-head p{font-size:14px;max-width:470px}.book-progress{background:#103f5e88;border:1px solid #d2ece22b;font-size:10px;color:#d6eee8}.milo-introduction{margin:5px 0 25px;max-width:820px;background:none;border:0;padding:0 10px 0 0;gap:20px}.milo-introduction>div:first-child{width:175px}.milo-introduction h2{font-size:25px}.milo-introduction p{font-size:13px}.book-filters{justify-content:flex-start;margin-top:5px}.species-grid{gap:20px}.species-card{background:#0b2d43b5;border-color:#c4e5f225;border-radius:22px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.species-copy{padding:22px}.species-copy h2{font-size:25px}.species-copy p{color:#c2dce2}.species-copy .tag{color:#a7cbd8}.shark-article{max-width:1040px}.article-top{margin:5px 0 16px}.article-hero{border-radius:22px}.fact-grid{gap:15px 35px;margin-top:35px}.fact-grid section{background:none;border:0;border-radius:0;padding:15px 5px 24px;border-top:1px solid #c3e9e033}.fact-grid h2{font-size:26px}.fact-grid p{font-size:19px;line-height:1.75;color:#d0e3e8}.fact-grid .quiet{border-color:#d0e6e432;background:#15384966}.shark-question,.deep-science{background:#103e5266;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-color:#b0e3dc33;border-radius:23px}.topic-section{margin:45px 0 20px}.topic-grid{gap:17px}.topic-card{border:0;background:#143c5366;border-radius:18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.topic-card strong{font-size:21px}.kraken-discover-card{border-color:#cbb1ef33;background:#24284b88}.kraken-ocean-page,.ocean-lesson{max-width:900px;margin:10px auto 35px}.kraken-ocean-page>.tag,.ocean-lesson>.tag{display:block;margin-top:15px}.kraken-ocean-page h1,.ocean-lesson h1{font-size:clamp(36px,5vw,58px);margin:18px 0 25px}.kraken-ocean-page>p{font-size:19px;color:#d5e0ec;line-height:1.8}.kraken-ocean-page .kraken-picture{border:1px solid #b7acec22}.kraken-ocean-page .kraken-picture img{max-height:490px}.kraken-ocean-page .listen,.ocean-lesson .listen{border-radius:30px}.kraken-ocean-page #krakenReaction{color:#c4d6e6}.ocean-lesson .topic-text{font-size:26px;line-height:1.9;color:#d6e8ee}.ocean-lesson .credits{margin-top:30px}.expedition-page>h1{font-size:clamp(40px,5vw,62px)}.picture-game{background:#342f26a1;border-color:#e5c28b38;box-shadow:none;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.picture-game h2{color:#fff0d3}.picture-game p{color:#e1ceb2}.picture-game .game-play-symbol{background:#f5d49d;color:#57462b;box-shadow:0 0 0 8px #e6c78c22}.game-panel{background:#f2f3e7ed;box-shadow:0 20px 70px #001b3344;border:1px solid #ffe1ae44}.game .scene{background:linear-gradient(120deg,#dce8df,#ede8cf)}.game-top button{background:#493f3260;border-color:#eed4a544}.writing-page>.tag{color:#baeed4}.writing-page .writing-board{background:#faf9ecd9;border:1px solid #e6ffe488;box-shadow:0 18px 45px #0a4b4e40;border-radius:25px}.writing-page .writing-controls select{background:#174f57bb}.writing-page .segmented{background:#235b5d7a;border-color:#c4ead24d}.writing-page .writing-feedback{background:#14575d70}.writing-page>.muted{background:none;text-shadow:0 2px 4px #003c45}.story-library{margin-top:25px}.story-library h1{font-size:clamp(40px,5vw,62px)}.story-reader .story-stage{background:radial-gradient(ellipse at 75% 45%,#deba7d1f,transparent 70%);border:0;overflow:visible}.story-reader .story-text{background:#15244083;border:1px solid #d6bad42a;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:34px}.story-reader .story-word.spoken-word{background:#edd8c1;color:#3a3650}.story-reader>.tag{color:#e3d2dc}.story-actions .primary{background:#ead6b7;color:#443c4f}.story-card{background:#252944aa;border-color:#d2bddb2b}.story-ending{background:#f3ede0ef}.collect{background:#423a25a8;border-color:#eed5a733}.collect.locked{opacity:.6}.collection~.muted{color:#deceb1}.milo-companion{bottom:91px}.companion-copy{box-shadow:0 4px 25px #001b332b}.milo-monocle{pointer-events:none}.milo-touch-hint{display:none}nav{background:#0c2a40d9;border:1px solid #b5e5de38;box-shadow:0 10px 40px #00132455}nav a.active{color:var(--world-accent,#c7eee6)}nav a.active:after{background:var(--world-accent,#c7eee6)}body.has-companion{padding-bottom:255px}body.has-companion main{max-height:none!important;height:auto!important;overflow:visible!important;overscroll-behavior:auto!important;padding-bottom:30px}.scene-enter main{animation:world-arrival .4s ease-out}.milo-companion.dock-above-writing{bottom:auto;top:100px;right:12px}.milo-companion.dock-above-writing .companion-copy{display:none}.milo-companion.dock-above-writing .companion-actor{width:135px;right:0;animation:none}.milo-companion.dock-above-writing #miloHelp{bottom:20px}.milo-companion.dock-above-writing .fin-five-target{left:10px}.ocean-world-name{font-size:9px;letter-spacing:2px;color:var(--world-accent)}@keyframes world-arrival{from{opacity:.4;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes ocean-breath{50%{transform:scale(1.055) translate(-.4%,.25%)}}@keyframes ocean-sparkle{to{transform:translate(35px,-115vh);opacity:0}}@keyframes distant-patrol{from{left:110%;transform:translateY(0)}to{left:-30%;transform:translateY(-30px)}}@media(max-width:1100px){.picture-ocean-paths{grid-template-columns:1fr 1fr}.picture-destination img{height:195px}.ocean-welcome h1{font-size:53px}.reef-scene{height:320px}.milo-swim{left:25%;width:65%;top:-25px}.milo-introduction>div:first-child{width:155px}}@media(max-width:700px){header{padding:17px 20px;gap:8px;align-items:flex-start}.brand-milo{width:46px;height:33px}.brand{gap:4px}.brand small{font-size:9px;letter-spacing:1px}.brand{font-size:7px}.header-right{max-width:230px;gap:5px;justify-content:flex-end}.header-right .quiet{min-height:34px;padding:8px 10px;font-size:9px}.header-right #music{min-width:36px;font-size:12px;padding:7px 9px}.status{font-size:7px!important;order:4;margin-top:2px}.ocean-welcome{padding:15px 0 0;text-align:left}.ocean-welcome h1{font-size:43px;letter-spacing:-1.8px;max-width:380px}.ocean-welcome h1 br{display:inline}.reef-scene{height:280px;margin-top:0;margin-bottom:0}.milo-swim{width:88%;left:9%;top:-25px}.sub-hotspot{top:0;width:80px;height:60px}.turtle-hotspot{top:108px;width:67px;height:67px}.chest-hotspot{left:7%;bottom:18px;width:60px;height:60px}.kraken-hotspot{right:27%;bottom:0;width:48px;height:58px}.scene-controls{bottom:16px;right:14px}.scene-controls .quiet{font-size:8px;min-height:30px;padding:7px 10px}.reef-discovery{bottom:-4px;font-size:8px;left:18%;right:18%;min-height:20px}.picture-ocean-paths{margin-top:24px;gap:12px}.picture-destination img{height:150px}.picture-title{padding:15px 13px 18px}.picture-title h2{font-size:20px;min-height:46px}.picture-go{width:25px;height:25px;margin:0}.ocean-progress{margin:23px auto 0}.book-head{padding-top:20px;text-align:left}.book-head h1{font-size:44px;letter-spacing:-1.9px}.book-head p{font-size:12px}.milo-introduction{padding:0;gap:12px;margin:5px 0 20px}.milo-introduction>div:first-child{width:110px}.milo-introduction h2{font-size:21px}.milo-introduction p{font-size:11px}.milo-introduction .tag{font-size:6px}.book-filters{gap:6px;justify-content:flex-start}.species-grid{gap:13px}.species-copy{padding:17px 14px}.species-copy h2{font-size:20px}.species-copy p{font-size:10px}.fact-grid{grid-template-columns:1fr;margin-top:25px;gap:0}.fact-grid section{padding:22px 0}.fact-grid h2{font-size:26px}.fact-grid p{font-size:19px}.article-title h1{font-size:38px}.shark-question{padding:28px 19px}.topic-grid{gap:12px}.topic-card{padding:20px}.topic-card strong{font-size:18px}.kraken-ocean-page h1,.ocean-lesson h1{font-size:38px;letter-spacing:-1.5px}.ocean-lesson .topic-text{font-size:23px}.kraken-ocean-page>p{font-size:18px}.expedition-page>h1,.story-library h1{font-size:43px}.writing-page h1{font-size:43px}.story-reader .story-text{font-size:28px;padding:20px 10px}.story-reader .story-stage{height:180px}.story-stage .story-milo{top:-7px}.milo-companion{bottom:95px}.milo-companion.dock-above-writing{top:96px;right:0;width:140px;height:100px}.milo-companion.dock-above-writing .companion-actor{width:135px}.milo-companion.dock-above-writing #miloHelp{bottom:3px;right:0}body.has-companion{padding-bottom:235px}body.has-companion main{max-height:none!important;overflow:visible!important;padding-bottom:20px}nav{bottom:12px}}@media(max-width:390px){header{padding:15px}.header-right{max-width:180px}.header-right .quiet{padding:7px 8px;font-size:8px}.brand small{font-size:8px}.brand-milo{width:38px}.ocean-welcome h1{font-size:39px}.picture-destination img{height:128px}.picture-title h2{font-size:18px}.picture-go{display:none}}@media(prefers-reduced-motion:reduce){.world-backdrop,.ocean-drift,.far-fish,.scene-enter main{animation:none!important}.world-backdrop{transition:none;transform:none}.ocean-drift{top:calc(var(--n)*7%)}.fish-drift-one{left:15%}.fish-drift-two{left:60%}}
-.launch-screen{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 35%,#155d70,#021a30 70%);color:#d8f4ef;transition:opacity .4s ease,visibility .4s ease}.launch-screen[hidden]{display:none}.launch-screen>div{width:min(390px,70vw);filter:drop-shadow(0 0 30px #8ad9d51a)}.launch-screen p{font-size:18px;letter-spacing:1px;margin:5px 0}.launch-dots{animation:launch-pulse 1.2s ease-in-out infinite}.launch-done{opacity:0;visibility:hidden;pointer-events:none}[data-milo-mood=peek] .companion-actor{animation:milo-thoughtful 1.8s ease-in-out}@keyframes launch-pulse{50%{opacity:.25}}@media(prefers-reduced-motion:reduce){.launch-screen{transition:none}.launch-dots{animation:none!important}}
+body {
+  isolation: isolate;
+  background: #032033;
+  padding-bottom: 130px;
+}
+body:before {
+  display: none !important;
+}
+#oceanWorld {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #032033;
+  pointer-events: none;
+}
+.world-backdrop {
+  position: absolute;
+  inset: -2%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  transform: scale(1.025);
+  animation: ocean-breath 24s ease-in-out infinite;
+}
+.world-backdrop:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #00172e45, #001e3440 40%, #0016298a);
+}
+#livingOcean {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 0, #9bfff01c, transparent 65%);
+}
+.ocean-drift {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #c6fbef;
+  border-radius: 50%;
+  left: calc(var(--n) * 7.5%);
+  top: 105%;
+  opacity: 0.4;
+  box-shadow: 0 0 7px #c9ffee55;
+  animation: ocean-sparkle calc(16s + var(--n) * 1.5s) linear infinite;
+  animation-delay: calc(var(--n) * -3s);
+}
+.far-fish {
+  position: absolute;
+  color: #b3e0ec;
+  opacity: 0.09;
+  width: 170px;
+  animation: distant-patrol 60s linear infinite;
+}
+.far-fish svg {
+  width: 100%;
+}
+.fish-drift-one {
+  top: 24%;
+  animation-delay: -20s;
+}
+.fish-drift-two {
+  top: 58%;
+  width: 110px;
+  animation-duration: 77s;
+  animation-direction: reverse;
+  animation-delay: -5s;
+}
+body[data-world='stories'] #livingOcean {
+  background: radial-gradient(ellipse at 70% 40%, #d3aaf014, transparent 65%);
+}
+body[data-world='learning'] #livingOcean {
+  background: radial-gradient(ellipse at 20% 80%, #ffbd6614, transparent 60%);
+}
+body[data-world='sharks'] .world-backdrop:after {
+  background: linear-gradient(#00132b55, #001c3477);
+}
+header {
+  max-width: 1320px;
+  padding: 22px 35px;
+  background: linear-gradient(#041d303b, transparent);
+}
+.brand-milo {
+  width: 65px;
+  height: 44px;
+  display: block;
+  flex-shrink: 0;
+}
+.brand-milo .milo-actor {
+  width: 100%;
+  height: 100%;
+  animation: none !important;
+  overflow: visible;
+}
+.brand-milo .milo-tail {
+  animation: none !important;
+}
+.brand-milo .milo-mouth,
+.brand-milo .milo-teeth {
+  display: none !important;
+}
+.brand {
+  gap: 9px;
+}
+.brand small {
+  font-size: 11px;
+}
+.header-right {
+  gap: 9px;
+}
+.header-right .quiet {
+  border: 1px solid #c1e3e633;
+  background: #0c304e80;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #d6ecec;
+  min-height: 40px;
+  font-size: 11px;
+}
+.header-right #music {
+  min-width: 48px;
+  font-size: 14px;
+  border-color: #d3eeb94d;
+  background: #143f4f99;
+}
+#music[aria-pressed='false'] {
+  opacity: 0.7;
+}
+.status {
+  font-size: 8px;
+  letter-spacing: 0.4px;
+}
+.ocean-welcome {
+  padding: 12px 0 0;
+  text-align: left;
+  max-width: 1100px;
+  margin: auto;
+}
+.ocean-welcome h1 {
+  font-size: clamp(38px, 5.5vw, 66px);
+  letter-spacing: -2px;
+  margin: 0;
+  line-height: 1.05;
+  font-weight: 550;
+}
+.ocean-welcome h1 br {
+  display: none;
+}
+.reef-scene {
+  height: 335px;
+  margin: 0 0 10px;
+}
+.milo-swim {
+  width: 51%;
+  left: 27%;
+  top: -8px;
+  max-width: 550px;
+}
+.reef-discovery:empty {
+  display: none;
+}
+.scene-controls {
+  bottom: 8px;
+  right: 0;
+}
+.scene-controls .quiet {
+  font-size: 9px;
+  min-height: 34px;
+  padding: 8px 12px;
+  background: #123b4c77;
+}
+.milo-greeting {
+  display: none !important;
+}
+.picture-ocean-paths {
+  gap: 15px;
+}
+.picture-destination {
+  border: 1px solid #bce5e92f;
+  box-shadow: none;
+  background: #10344ba1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+}
+.picture-destination img {
+  height: 170px;
+}
+.picture-title {
+  padding: 17px 17px 20px;
+  align-items: center;
+}
+.picture-title h2 {
+  font-size: 21px;
+  min-height: 0;
+}
+.ocean-progress {
+  margin-top: 25px;
+  max-width: 560px;
+}
+.ocean-progress strong {
+  font-size: 11px;
+}
+.ocean-progress .track {
+  height: 3px;
+}
+.ocean-progress .progress-star {
+  font-size: 28px;
+}
+.book-head {
+  padding: 22px 0 20px;
+  text-align: left;
+}
+.book-head h1 {
+  font-size: clamp(40px, 5vw, 62px);
+  margin: 13px 0;
+}
+.book-head h1 br {
+  display: none;
+}
+.book-head p {
+  font-size: 14px;
+  max-width: 470px;
+}
+.book-progress {
+  background: #103f5e88;
+  border: 1px solid #d2ece22b;
+  font-size: 10px;
+  color: #d6eee8;
+}
+.milo-introduction {
+  margin: 5px 0 25px;
+  max-width: 820px;
+  background: none;
+  border: 0;
+  padding: 0 10px 0 0;
+  gap: 20px;
+}
+.milo-introduction > div:first-child {
+  width: 175px;
+}
+.milo-introduction h2 {
+  font-size: 25px;
+}
+.milo-introduction p {
+  font-size: 13px;
+}
+.book-filters {
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+.species-grid {
+  gap: 20px;
+}
+.species-card {
+  background: #0b2d43b5;
+  border-color: #c4e5f225;
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.species-copy {
+  padding: 22px;
+}
+.species-copy h2 {
+  font-size: 25px;
+}
+.species-copy p {
+  color: #c2dce2;
+}
+.species-copy .tag {
+  color: #a7cbd8;
+}
+.shark-article {
+  max-width: 1040px;
+}
+.article-top {
+  margin: 5px 0 16px;
+}
+.article-hero {
+  border-radius: 22px;
+}
+.fact-grid {
+  gap: 15px 35px;
+  margin-top: 35px;
+}
+.fact-grid section {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 15px 5px 24px;
+  border-top: 1px solid #c3e9e033;
+}
+.fact-grid h2 {
+  font-size: 26px;
+}
+.fact-grid p {
+  font-size: 19px;
+  line-height: 1.75;
+  color: #d0e3e8;
+}
+.fact-grid .quiet {
+  border-color: #d0e6e432;
+  background: #15384966;
+}
+.shark-question,
+.deep-science {
+  background: #103e5266;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: #b0e3dc33;
+  border-radius: 23px;
+}
+.topic-section {
+  margin: 45px 0 20px;
+}
+.topic-grid {
+  gap: 17px;
+}
+.topic-card {
+  border: 0;
+  background: #143c5366;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.topic-card strong {
+  font-size: 21px;
+}
+.kraken-discover-card {
+  border-color: #cbb1ef33;
+  background: #24284b88;
+}
+.kraken-ocean-page,
+.ocean-lesson {
+  max-width: 900px;
+  margin: 10px auto 35px;
+}
+.kraken-ocean-page > .tag,
+.ocean-lesson > .tag {
+  display: block;
+  margin-top: 15px;
+}
+.kraken-ocean-page h1,
+.ocean-lesson h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  margin: 18px 0 25px;
+}
+.kraken-ocean-page > p {
+  font-size: 19px;
+  color: #d5e0ec;
+  line-height: 1.8;
+}
+.kraken-ocean-page .kraken-picture {
+  border: 1px solid #b7acec22;
+}
+.kraken-ocean-page .kraken-picture img {
+  max-height: 490px;
+}
+.kraken-ocean-page .listen,
+.ocean-lesson .listen {
+  border-radius: 30px;
+}
+.kraken-ocean-page #krakenReaction {
+  color: #c4d6e6;
+}
+.ocean-lesson .topic-text {
+  font-size: 26px;
+  line-height: 1.9;
+  color: #d6e8ee;
+}
+.ocean-lesson .credits {
+  margin-top: 30px;
+}
+.expedition-page > h1 {
+  font-size: clamp(40px, 5vw, 62px);
+}
+.picture-game {
+  background: #342f26a1;
+  border-color: #e5c28b38;
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.picture-game h2 {
+  color: #fff0d3;
+}
+.picture-game p {
+  color: #e1ceb2;
+}
+.picture-game .game-play-symbol {
+  background: #f5d49d;
+  color: #57462b;
+  box-shadow: 0 0 0 8px #e6c78c22;
+}
+.game-panel {
+  background: #f2f3e7ed;
+  box-shadow: 0 20px 70px #001b3344;
+  border: 1px solid #ffe1ae44;
+}
+.game .scene {
+  background: linear-gradient(120deg, #dce8df, #ede8cf);
+}
+.game-top button {
+  background: #493f3260;
+  border-color: #eed4a544;
+}
+.writing-page > .tag {
+  color: #baeed4;
+}
+.writing-page .writing-board {
+  background: #faf9ecd9;
+  border: 1px solid #e6ffe488;
+  box-shadow: 0 18px 45px #0a4b4e40;
+  border-radius: 25px;
+}
+.writing-page .writing-controls select {
+  background: #174f57bb;
+}
+.writing-page .segmented {
+  background: #235b5d7a;
+  border-color: #c4ead24d;
+}
+.writing-page .writing-feedback {
+  background: #14575d70;
+}
+.writing-page > .muted {
+  background: none;
+  text-shadow: 0 2px 4px #003c45;
+}
+.story-library {
+  margin-top: 25px;
+}
+.story-library h1 {
+  font-size: clamp(40px, 5vw, 62px);
+}
+.story-reader .story-stage {
+  background: radial-gradient(ellipse at 75% 45%, #deba7d1f, transparent 70%);
+  border: 0;
+  overflow: visible;
+}
+.story-reader .story-text {
+  background: #15244083;
+  border: 1px solid #d6bad42a;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 34px;
+}
+.story-reader .story-word.spoken-word {
+  background: #edd8c1;
+  color: #3a3650;
+}
+.story-reader > .tag {
+  color: #e3d2dc;
+}
+.story-actions .primary {
+  background: #ead6b7;
+  color: #443c4f;
+}
+.story-card {
+  background: #252944aa;
+  border-color: #d2bddb2b;
+}
+.story-ending {
+  background: #f3ede0ef;
+}
+.collect {
+  background: #423a25a8;
+  border-color: #eed5a733;
+}
+.collect.locked {
+  opacity: 0.6;
+}
+.collection ~ .muted {
+  color: #deceb1;
+}
+.milo-companion {
+  bottom: 91px;
+}
+.companion-copy {
+  box-shadow: 0 4px 25px #001b332b;
+}
+.milo-monocle {
+  pointer-events: none;
+}
+.milo-touch-hint {
+  display: none;
+}
+nav {
+  background: #0c2a40d9;
+  border: 1px solid #b5e5de38;
+  box-shadow: 0 10px 40px #00132455;
+}
+nav a.active {
+  color: var(--world-accent, #c7eee6);
+}
+nav a.active:after {
+  background: var(--world-accent, #c7eee6);
+}
+body.has-companion {
+  padding-bottom: 255px;
+}
+body.has-companion main {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  overscroll-behavior: auto !important;
+  padding-bottom: 30px;
+}
+.scene-enter main {
+  animation: world-arrival 0.4s ease-out;
+}
+.milo-companion.dock-above-writing {
+  bottom: auto;
+  top: 100px;
+  right: 12px;
+}
+.milo-companion.dock-above-writing .companion-copy {
+  display: none;
+}
+.milo-companion.dock-above-writing .companion-actor {
+  width: 135px;
+  right: 0;
+  animation: none;
+}
+.milo-companion.dock-above-writing #miloHelp {
+  bottom: 20px;
+}
+.milo-companion.dock-above-writing .fin-five-target {
+  left: 10px;
+}
+.ocean-world-name {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--world-accent);
+}
+@keyframes world-arrival {
+  from {
+    opacity: 0.4;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes ocean-breath {
+  50% {
+    transform: scale(1.055) translate(-0.4%, 0.25%);
+  }
+}
+@keyframes ocean-sparkle {
+  to {
+    transform: translate(35px, -115vh);
+    opacity: 0;
+  }
+}
+@keyframes distant-patrol {
+  from {
+    left: 110%;
+    transform: translateY(0);
+  }
+  to {
+    left: -30%;
+    transform: translateY(-30px);
+  }
+}
+@media (max-width: 1100px) {
+  .picture-ocean-paths {
+    grid-template-columns: 1fr 1fr;
+  }
+  .picture-destination img {
+    height: 195px;
+  }
+  .ocean-welcome h1 {
+    font-size: 53px;
+  }
+  .reef-scene {
+    height: 320px;
+  }
+  .milo-swim {
+    left: 25%;
+    width: 65%;
+    top: -25px;
+  }
+  .milo-introduction > div:first-child {
+    width: 155px;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    padding: 17px 20px;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .brand-milo {
+    width: 46px;
+    height: 33px;
+  }
+  .brand {
+    gap: 4px;
+  }
+  .brand small {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .brand {
+    font-size: 7px;
+  }
+  .header-right {
+    max-width: 230px;
+    gap: 5px;
+    justify-content: flex-end;
+  }
+  .header-right .quiet {
+    min-height: 34px;
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+  .header-right #music {
+    min-width: 36px;
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+  .status {
+    font-size: 7px !important;
+    order: 4;
+    margin-top: 2px;
+  }
+  .ocean-welcome {
+    padding: 15px 0 0;
+    text-align: left;
+  }
+  .ocean-welcome h1 {
+    font-size: 43px;
+    letter-spacing: -1.8px;
+    max-width: 380px;
+  }
+  .ocean-welcome h1 br {
+    display: inline;
+  }
+  .reef-scene {
+    height: 280px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .milo-swim {
+    width: 88%;
+    left: 9%;
+    top: -25px;
+  }
+  .sub-hotspot {
+    top: 0;
+    width: 80px;
+    height: 60px;
+  }
+  .turtle-hotspot {
+    top: 108px;
+    width: 67px;
+    height: 67px;
+  }
+  .chest-hotspot {
+    left: 7%;
+    bottom: 18px;
+    width: 60px;
+    height: 60px;
+  }
+  .kraken-hotspot {
+    right: 27%;
+    bottom: 0;
+    width: 48px;
+    height: 58px;
+  }
+  .scene-controls {
+    bottom: 16px;
+    right: 14px;
+  }
+  .scene-controls .quiet {
+    font-size: 8px;
+    min-height: 30px;
+    padding: 7px 10px;
+  }
+  .reef-discovery {
+    bottom: -4px;
+    font-size: 8px;
+    left: 18%;
+    right: 18%;
+    min-height: 20px;
+  }
+  .picture-ocean-paths {
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .picture-destination img {
+    height: 150px;
+  }
+  .picture-title {
+    padding: 15px 13px 18px;
+  }
+  .picture-title h2 {
+    font-size: 20px;
+    min-height: 46px;
+  }
+  .picture-go {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+  }
+  .ocean-progress {
+    margin: 23px auto 0;
+  }
+  .book-head {
+    padding-top: 20px;
+    text-align: left;
+  }
+  .book-head h1 {
+    font-size: 44px;
+    letter-spacing: -1.9px;
+  }
+  .book-head p {
+    font-size: 12px;
+  }
+  .milo-introduction {
+    padding: 0;
+    gap: 12px;
+    margin: 5px 0 20px;
+  }
+  .milo-introduction > div:first-child {
+    width: 110px;
+  }
+  .milo-introduction h2 {
+    font-size: 21px;
+  }
+  .milo-introduction p {
+    font-size: 11px;
+  }
+  .milo-introduction .tag {
+    font-size: 6px;
+  }
+  .book-filters {
+    gap: 6px;
+    justify-content: flex-start;
+  }
+  .species-grid {
+    gap: 13px;
+  }
+  .species-copy {
+    padding: 17px 14px;
+  }
+  .species-copy h2 {
+    font-size: 20px;
+  }
+  .species-copy p {
+    font-size: 10px;
+  }
+  .fact-grid {
+    grid-template-columns: 1fr;
+    margin-top: 25px;
+    gap: 0;
+  }
+  .fact-grid section {
+    padding: 22px 0;
+  }
+  .fact-grid h2 {
+    font-size: 26px;
+  }
+  .fact-grid p {
+    font-size: 19px;
+  }
+  .article-title h1 {
+    font-size: 38px;
+  }
+  .shark-question {
+    padding: 28px 19px;
+  }
+  .topic-grid {
+    gap: 12px;
+  }
+  .topic-card {
+    padding: 20px;
+  }
+  .topic-card strong {
+    font-size: 18px;
+  }
+  .kraken-ocean-page h1,
+  .ocean-lesson h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+  .ocean-lesson .topic-text {
+    font-size: 23px;
+  }
+  .kraken-ocean-page > p {
+    font-size: 18px;
+  }
+  .expedition-page > h1,
+  .story-library h1 {
+    font-size: 43px;
+  }
+  .writing-page h1 {
+    font-size: 43px;
+  }
+  .story-reader .story-text {
+    font-size: 28px;
+    padding: 20px 10px;
+  }
+  .story-reader .story-stage {
+    height: 180px;
+  }
+  .story-stage .story-milo {
+    top: -7px;
+  }
+  .milo-companion {
+    bottom: 95px;
+  }
+  .milo-companion.dock-above-writing {
+    top: 96px;
+    right: 0;
+    width: 140px;
+    height: 100px;
+  }
+  .milo-companion.dock-above-writing .companion-actor {
+    width: 135px;
+  }
+  .milo-companion.dock-above-writing #miloHelp {
+    bottom: 3px;
+    right: 0;
+  }
+  body.has-companion {
+    padding-bottom: 235px;
+  }
+  body.has-companion main {
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 20px;
+  }
+  nav {
+    bottom: 12px;
+  }
+}
+@media (max-width: 390px) {
+  header {
+    padding: 15px;
+  }
+  .header-right {
+    max-width: 180px;
+  }
+  .header-right .quiet {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+  .brand small {
+    font-size: 8px;
+  }
+  .brand-milo {
+    width: 38px;
+  }
+  .ocean-welcome h1 {
+    font-size: 39px;
+  }
+  .picture-destination img {
+    height: 128px;
+  }
+  .picture-title h2 {
+    font-size: 18px;
+  }
+  .picture-go {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .world-backdrop,
+  .ocean-drift,
+  .far-fish,
+  .scene-enter main {
+    animation: none !important;
+  }
+  .world-backdrop {
+    transition: none;
+    transform: none;
+  }
+  .ocean-drift {
+    top: calc(var(--n) * 7%);
+  }
+  .fish-drift-one {
+    left: 15%;
+  }
+  .fish-drift-two {
+    left: 60%;
+  }
+}
+.launch-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 35%, #155d70, #021a30 70%);
+  color: #d8f4ef;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+.launch-screen[hidden] {
+  display: none;
+}
+.launch-screen > div {
+  width: min(390px, 70vw);
+  filter: drop-shadow(0 0 30px #8ad9d51a);
+}
+.launch-screen p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+.launch-dots {
+  animation: launch-pulse 1.2s ease-in-out infinite;
+}
+.launch-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+[data-milo-mood='peek'] .companion-actor {
+  animation: milo-thoughtful 1.8s ease-in-out;
+}
+@keyframes launch-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .launch-screen {
+    transition: none;
+  }
+  .launch-dots {
+    animation: none !important;
+  }
+}
 
 /* Keep Milo between the writing toolbar controls, clear of the canvas. */
-.milo-companion.dock-above-writing{top:84px;right:calc(50% - 55px);left:auto;transform:none;width:110px;height:80px;min-height:0;padding:0}.milo-companion.dock-above-writing .companion-actor{width:110px;right:0;bottom:0}.milo-companion.dock-above-writing #miloHelp{display:none}
+.milo-companion.dock-above-writing {
+  top: 84px;
+  right: calc(50% - 55px);
+  left: auto;
+  transform: none;
+  width: 110px;
+  height: 80px;
+  min-height: 0;
+  padding: 0;
+}
+.milo-companion.dock-above-writing .companion-actor {
+  width: 110px;
+  right: 0;
+  bottom: 0;
+}
+.milo-companion.dock-above-writing #miloHelp {
+  display: none;
+}
 
-body:after{display:none!important}
+body:after {
+  display: none !important;
+}
 
-@media(max-width:700px){body[data-world=home] .world-backdrop{background-position:24% center}body[data-world=learning] .world-backdrop{background-position:15% center}body[data-world=stories] .world-backdrop{background-position:84% center}}
+@media (max-width: 700px) {
+  body[data-world='home'] .world-backdrop {
+    background-position: 24% center;
+  }
+  body[data-world='learning'] .world-backdrop {
+    background-position: 15% center;
+  }
+  body[data-world='stories'] .world-backdrop {
+    background-position: 84% center;
+  }
+}

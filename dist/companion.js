@@ -1,14 +1,157 @@
-let miloMoodTimer=null,miloBubbleTimer=null,miloTouches=0;
-let miloActorCount=0,miloMessage='I’m right here with you, Haytham.';
-function miloActor(){const id='milo-'+(++miloActorCount);return `<svg class="milo-actor" viewBox="0 0 1536 1024" aria-hidden="true"><defs><clipPath id="${id}-body"><path d="M0 0H1180V1024H0Z"/></clipPath><clipPath id="${id}-tail"><path d="M1178 0H1536V1024H1178Z"/></clipPath><clipPath id="${id}-pectoral"><path d="M690 607Q760 595 872 705L1168 953Q940 924 763 745Z"/></clipPath><mask id="${id}-body-fin"><rect width="1536" height="1024" fill="white"/><path d="M690 607Q760 595 872 705L1168 953Q940 924 763 745Z" fill="black"/></mask><clipPath id="${id}-jaw"><path d="M130 550Q280 600 432 491L460 575Q350 710 175 637Z"/></clipPath></defs><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-body)" mask="url(#${id}-body-fin)"/><g class="milo-original-fin"><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-pectoral)"/></g><g class="milo-tail"><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-tail)"/></g><g class="milo-jaw"><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-jaw)"/></g><g class="milo-monocle"><circle cx="350" cy="407" r="47" fill="#8ad7e8" fill-opacity=".08" stroke="#d8af55" stroke-width="9"/><circle cx="350" cy="407" r="39" fill="none" stroke="#fff0ad" stroke-width="2"/><path d="M318 394Q324 374 344 370" fill="none" stroke="white" stroke-opacity=".75" stroke-width="5" stroke-linecap="round"/><path d="M392 427Q470 455 431 526Q409 572 479 611" fill="none" stroke="#d0a04d" stroke-width="6" stroke-linecap="round"/></g><g class="milo-high-fin"><path d="M675 630Q690 440 878 289Q940 422 828 615L730 701Z" fill="#6b8795" stroke="#aac2c8" stroke-width="5"/><path d="M713 615Q765 459 867 328" fill="none" stroke="#c8dbdf" stroke-opacity=".35" stroke-width="8"/></g><g class="milo-sparkles" fill="#c9fff0"><path d="M1000 190l14 35 35 14-35 14-14 35-14-35-35-14 35-14Z"/><path d="M1130 290l8 20 20 8-20 8-8 20-8-20-20-8 20-8Z"/></g><path class="milo-mouth" d="M143 550Q280 591 425 500Q315 610 165 574Z" fill="#23383c"/><path class="milo-teeth" d="M155 552l12 10 6-5 15 9 7-5 15 9 8-6 15 7 9-8 16 6 8-8 15 3 8-9 14 1 7-10 15-2 5-10 14-4 5-10 13-6" fill="#f3ecdb"/></svg>`}
-function updateMilo(message){const host=$('#miloCompanion');if(!host)return;const route=(location.hash.slice(1)||'home').split('/')[0];host.hidden=route==='home';document.body.classList.toggle('has-companion',route!=='home');const messages={home:'My reef friends are here to help, Haytham. I’m staying right here with you!',cinema:'I’ve saved you a seat, Haytham. Let’s watch together when the films are ready.',museum:'I’m a megalodon too! I’m your make-believe friend. Let’s meet real sharks and learn about my prehistoric family.',expeditions:'Let’s take a Learning Adventure. I’ll be here to help, one little discovery at a time.',writing:'I’m right here, Haytham. Start at the dot, take your time, and have a go.',stories:'Let’s read together! Tap a word for help, or listen while you follow along.',collection:'Look at everything you’ve discovered! I’m proud of your practising.',play:'Take your time, Haytham. We can work it out together.'};miloMessage=message||messages[route]||'I’m right here with you, Haytham.';if(!host.querySelector('.companion-actor')){host.innerHTML=`<button class="companion-actor" aria-label="Play with Milo">${miloActor()}</button><div class="companion-copy"><span>MILO SAYS</span><p id="miloMessage"></p></div><button id="miloHelp" class="quiet" aria-label="Ask Milo for help">♫</button><button class="fin-five-target" id="finFive" aria-label="Give Milo a fin high five">✋</button><span class="milo-touch-hint">Tap Milo</span>`;host.querySelector('.companion-actor').onclick=()=>touchMilo();$('#miloHelp').onclick=()=>miloHelp();$('#finFive').onclick=()=>giveMiloFive()}$('#miloMessage').textContent=miloMessage;showMiloMessage();host.setAttribute('aria-label','Milo, your learning companion');updateMiloDock();syncCrew()}
-function miloHelp(){if(game?.mission&&location.hash==="#play"){readingMissionHelp();return}if(storyPlaying)stopStory();if(game&&location.hash==='#play'&&!game.answered){game.assisted=true;const hint=game.items[game.index].hint;updateMilo('Let’s try together. '+hint.replaceAll('🐟','fish'));speak(miloMessage)}else speak(miloMessage)}
-function encourage(text,mood){updateMilo(text);reactCrew(/good try|try again|try together|another go|look at the facts/i.test(text)?'thinking':'happy');setMiloMood(mood||(/good try|try again|try together|another go|look at the facts/i.test(text)?'retry':'celebrate'));speak(text)}
-let speechSequence=0;
-function stopSpeech(){speechSequence++;stopRecordedVoice();document.body.classList.remove('milo-speaking','helper-speaking');fadeMusic(musicCurrent,musicTarget(),350);if('speechSynthesis'in window)speechSynthesis.cancel()}
-function speak(t,options={}){stopSpeech();if(!state.voice||!('speechSynthesis'in window)){options.unavailable?.();return}const token=speechSequence,u=new SpeechSynthesisUtterance(t);u.voice=chosenVoice();u.lang=u.voice?.lang||'en-AU';u.rate=.94;u.pitch=1;u.onstart=()=>{if(token!==speechSequence)return;document.body.dataset.speaker=options.speaker||'milo';document.body.classList.add(options.speaker&&options.speaker!=='milo'?'helper-speaking':'milo-speaking');options.start?.()};u.onboundary=e=>{if(token===speechSequence)options.boundary?.(e.charIndex,e.charLength)};u.onend=()=>{if(token!==speechSequence)return;document.body.classList.remove('milo-speaking','helper-speaking');options.end?.()};u.onerror=()=>{if(token!==speechSequence)return;document.body.classList.remove('milo-speaking','helper-speaking');options.unavailable?.()};speechSynthesis.speak(u)}
+let miloMoodTimer = null,
+  miloBubbleTimer = null,
+  miloTouches = 0;
+let miloActorCount = 0,
+  miloMessage = 'I’m right here with you, Haytham.';
+function miloActor() {
+  const id = 'milo-' + ++miloActorCount;
+  return `<svg class="milo-actor" viewBox="0 0 1536 1024" aria-hidden="true"><defs><clipPath id="${id}-body"><path d="M0 0H1180V1024H0Z"/></clipPath><clipPath id="${id}-tail"><path d="M1178 0H1536V1024H1178Z"/></clipPath><clipPath id="${id}-pectoral"><path d="M690 607Q760 595 872 705L1168 953Q940 924 763 745Z"/></clipPath><mask id="${id}-body-fin"><rect width="1536" height="1024" fill="white"/><path d="M690 607Q760 595 872 705L1168 953Q940 924 763 745Z" fill="black"/></mask><clipPath id="${id}-jaw"><path d="M130 550Q280 600 432 491L460 575Q350 710 175 637Z"/></clipPath></defs><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-body)" mask="url(#${id}-body-fin)"/><g class="milo-original-fin"><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-pectoral)"/></g><g class="milo-tail"><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-tail)"/></g><g class="milo-jaw"><image href="assets/milo-3d.png" width="1536" height="1024" clip-path="url(#${id}-jaw)"/></g><g class="milo-monocle"><circle cx="350" cy="407" r="47" fill="#8ad7e8" fill-opacity=".08" stroke="#d8af55" stroke-width="9"/><circle cx="350" cy="407" r="39" fill="none" stroke="#fff0ad" stroke-width="2"/><path d="M318 394Q324 374 344 370" fill="none" stroke="white" stroke-opacity=".75" stroke-width="5" stroke-linecap="round"/><path d="M392 427Q470 455 431 526Q409 572 479 611" fill="none" stroke="#d0a04d" stroke-width="6" stroke-linecap="round"/></g><g class="milo-high-fin"><path d="M675 630Q690 440 878 289Q940 422 828 615L730 701Z" fill="#6b8795" stroke="#aac2c8" stroke-width="5"/><path d="M713 615Q765 459 867 328" fill="none" stroke="#c8dbdf" stroke-opacity=".35" stroke-width="8"/></g><g class="milo-sparkles" fill="#c9fff0"><path d="M1000 190l14 35 35 14-35 14-14 35-14-35-35-14 35-14Z"/><path d="M1130 290l8 20 20 8-20 8-8 20-8-20-20-8 20-8Z"/></g><path class="milo-mouth" d="M143 550Q280 591 425 500Q315 610 165 574Z" fill="#23383c"/><path class="milo-teeth" d="M155 552l12 10 6-5 15 9 7-5 15 9 8-6 15 7 9-8 16 6 8-8 15 3 8-9 14 1 7-10 15-2 5-10 14-4 5-10 13-6" fill="#f3ecdb"/></svg>`;
+}
+function updateMilo(message) {
+  const host = $('#miloCompanion');
+  if (!host) return;
+  const route = (location.hash.slice(1) || 'home').split('/')[0];
+  host.hidden = route === 'home';
+  document.body.classList.toggle('has-companion', route !== 'home');
+  const messages = {
+    home: 'My reef friends are here to help, Haytham. I’m staying right here with you!',
+    cinema: 'I’ve saved you a seat, Haytham. Let’s watch together when the films are ready.',
+    museum:
+      'I’m a megalodon too! I’m your make-believe friend. Let’s meet real sharks and learn about my prehistoric family.',
+    expeditions:
+      'Let’s take a Learning Adventure. I’ll be here to help, one little discovery at a time.',
+    writing: 'I’m right here, Haytham. Start at the dot, take your time, and have a go.',
+    stories: 'Let’s read together! Tap a word for help, or listen while you follow along.',
+    collection: 'Look at everything you’ve discovered! I’m proud of your practising.',
+    play: 'Take your time, Haytham. We can work it out together.'
+  };
+  miloMessage = message || messages[route] || 'I’m right here with you, Haytham.';
+  if (!host.querySelector('.companion-actor')) {
+    host.innerHTML = `<button class="companion-actor" aria-label="Play with Milo">${miloActor()}</button><div class="companion-copy"><span>MILO SAYS</span><p id="miloMessage"></p></div><button id="miloHelp" class="quiet" aria-label="Ask Milo for help">♫</button><button class="fin-five-target" id="finFive" aria-label="Give Milo a fin high five">✋</button><span class="milo-touch-hint">Tap Milo</span>`;
+    host.querySelector('.companion-actor').onclick = () => touchMilo();
+    $('#miloHelp').onclick = () => miloHelp();
+    $('#finFive').onclick = () => giveMiloFive();
+  }
+  $('#miloMessage').textContent = miloMessage;
+  showMiloMessage();
+  host.setAttribute('aria-label', 'Milo, your learning companion');
+  updateMiloDock();
+  syncCrew();
+}
+function miloHelp() {
+  if (game?.mission && location.hash === '#play') {
+    readingMissionHelp();
+    return;
+  }
+  if (storyPlaying) stopStory();
+  if (game && location.hash === '#play' && !game.answered) {
+    game.assisted = true;
+    const hint = game.items[game.index].hint;
+    updateMilo('Let’s try together. ' + hint.replaceAll('🐟', 'fish'));
+    speak(miloMessage);
+  } else speak(miloMessage);
+}
+function encourage(text, mood) {
+  updateMilo(text);
+  reactCrew(
+    /good try|try again|try together|another go|look at the facts/i.test(text)
+      ? 'thinking'
+      : 'happy'
+  );
+  setMiloMood(
+    mood ||
+      (/good try|try again|try together|another go|look at the facts/i.test(text)
+        ? 'retry'
+        : 'celebrate')
+  );
+  speak(text);
+}
+let speechSequence = 0;
+function stopSpeech() {
+  speechSequence++;
+  stopRecordedVoice();
+  document.body.classList.remove('milo-speaking', 'helper-speaking');
+  fadeMusic(musicCurrent, musicTarget(), 350);
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+}
+function speak(t, options = {}) {
+  stopSpeech();
+  if (!state.voice || !('speechSynthesis' in window)) {
+    options.unavailable?.();
+    return;
+  }
+  const token = speechSequence,
+    u = new SpeechSynthesisUtterance(t);
+  u.voice = chosenVoice();
+  u.lang = u.voice?.lang || 'en-AU';
+  u.rate = 0.94;
+  u.pitch = 1;
+  u.onstart = () => {
+    if (token !== speechSequence) return;
+    document.body.dataset.speaker = options.speaker || 'milo';
+    document.body.classList.add(
+      options.speaker && options.speaker !== 'milo' ? 'helper-speaking' : 'milo-speaking'
+    );
+    options.start?.();
+  };
+  u.onboundary = e => {
+    if (token === speechSequence) options.boundary?.(e.charIndex, e.charLength);
+  };
+  u.onend = () => {
+    if (token !== speechSequence) return;
+    document.body.classList.remove('milo-speaking', 'helper-speaking');
+    options.end?.();
+  };
+  u.onerror = () => {
+    if (token !== speechSequence) return;
+    document.body.classList.remove('milo-speaking', 'helper-speaking');
+    options.unavailable?.();
+  };
+  speechSynthesis.speak(u);
+}
 
-function showMiloMessage(){const host=$('#miloCompanion');if(!host)return;host.classList.add('show-message');clearTimeout(miloBubbleTimer);miloBubbleTimer=setTimeout(()=>{if(!document.body.classList.contains('milo-speaking'))host.classList.remove('show-message')},9000)}
-function setMiloMood(mood='idle',duration=12000){clearTimeout(miloMoodTimer);document.body.dataset.miloMood=mood;if(mood!=='idle')miloMoodTimer=setTimeout(()=>{document.body.dataset.miloMood='idle'},duration)}
-function giveMiloFive(){stopStory();setMiloMood('highfive',10000);updateMilo('Fin five, Haytham! We make a great team.');speak(miloMessage);const button=$('#finFive');if(button){button.classList.remove('five-pop');void button.offsetWidth;button.classList.add('five-pop')}}
-function touchMilo(){stopStory();miloTouches++;if(['celebrate','highfive'].includes(document.body.dataset.miloMood)||miloTouches%3===1){giveMiloFive();return}if(miloTouches%3===2){setMiloMood('spin',2300);updateMilo('Whoosh! A little ocean twirl, just for you!')}else{setMiloMood('peek',2600);updateMilo('Hello, Haytham! I’m happy to be here with you.')}speak(miloMessage)}
+function showMiloMessage() {
+  const host = $('#miloCompanion');
+  if (!host) return;
+  host.classList.add('show-message');
+  clearTimeout(miloBubbleTimer);
+  miloBubbleTimer = setTimeout(() => {
+    if (!document.body.classList.contains('milo-speaking')) host.classList.remove('show-message');
+  }, 9000);
+}
+function setMiloMood(mood = 'idle', duration = 12000) {
+  clearTimeout(miloMoodTimer);
+  document.body.dataset.miloMood = mood;
+  if (mood !== 'idle')
+    miloMoodTimer = setTimeout(() => {
+      document.body.dataset.miloMood = 'idle';
+    }, duration);
+}
+function giveMiloFive() {
+  stopStory();
+  setMiloMood('highfive', 10000);
+  updateMilo('Fin five, Haytham! We make a great team.');
+  speak(miloMessage);
+  const button = $('#finFive');
+  if (button) {
+    button.classList.remove('five-pop');
+    void button.offsetWidth;
+    button.classList.add('five-pop');
+  }
+}
+function touchMilo() {
+  stopStory();
+  miloTouches++;
+  if (['celebrate', 'highfive'].includes(document.body.dataset.miloMood) || miloTouches % 3 === 1) {
+    giveMiloFive();
+    return;
+  }
+  if (miloTouches % 3 === 2) {
+    setMiloMood('spin', 2300);
+    updateMilo('Whoosh! A little ocean twirl, just for you!');
+  } else {
+    setMiloMood('peek', 2600);
+    updateMilo('Hello, Haytham! I’m happy to be here with you.');
+  }
+  speak(miloMessage);
+}

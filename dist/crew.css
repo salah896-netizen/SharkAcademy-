@@ -1,21 +1,743 @@
 /* Milo’s subject specialists share his ocean, without replacing his companion dock. */
-.reef-crew{margin:16px 0 32px;position:relative}.reef-crew>h2{font-size:22px;font-weight:500;margin:0 0 2px;color:#d9f1ea}.crew-swim-lane{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.crew-friend{background:none;border:0;padding:0 4px 12px;min-width:0;color:#e5f5f1;border-radius:25px;transition:background .3s}.crew-friend:hover{background:#aee9e20c}.crew-swimmer{display:block;animation:crew-arrival 1.8s cubic-bezier(.2,.7,.3,1) both;animation-delay:var(--crew-delay);pointer-events:none}.crew-actor{display:block;width:100%;overflow:visible;animation:crew-cruise 4s ease-in-out infinite}.crew-tail{transform-origin:1200px 520px;animation:crew-tail-swish 1.25s ease-in-out infinite}.crew-willa .crew-tail{animation-duration:1.7s}.crew-dash .crew-tail{animation-duration:.8s}.crew-gizmo .crew-tail{animation-duration:1.5s}.crew-name{font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--crew-colour)}.crew-subject-icon{display:inline-flex;width:23px;height:23px}.crew-subject-icon svg{width:100%;height:100%}.crew-friend>small{display:block;font-size:10px;letter-spacing:.5px;color:#b8d9df;font-weight:400;margin-top:5px}.crew-greeting{font-size:13px;color:#d2e7e9;line-height:1.65;margin:12px 0 0;min-height:24px;max-width:680px}.crew-chat-line{opacity:0;transform-origin:220px 555px}.helper-speaking[data-speaker=willa] [data-actor=willa] .crew-chat-line,.helper-speaking[data-speaker=tiggy] [data-actor=tiggy] .crew-chat-line,.helper-speaking[data-speaker=gizmo] [data-actor=gizmo] .crew-chat-line,.helper-speaking[data-speaker=dash] [data-actor=dash] .crew-chat-line{opacity:.8;animation:crew-chat .28s ease-in-out infinite alternate}.subject-helper{display:flex;align-items:center;gap:18px;max-width:950px;margin:8px 0 25px;padding:2px 0 12px;border-bottom:1px solid #bcddd624;position:relative;animation:world-arrival .45s ease-out}.helper-character{width:165px;flex:0 0 165px;background:none;padding:0;min-height:90px}.helper-intro{flex:1;min-width:0}.helper-eyebrow{display:flex;gap:8px;align-items:center;color:var(--crew-colour);font-size:10px;letter-spacing:1px}.helper-eyebrow svg{width:21px;height:21px}.helper-intro h2{font-size:26px;margin:8px 0 4px;color:var(--crew-colour)}.helper-intro h2 small{font-size:12px;letter-spacing:0;font-weight:400;color:#bad8df;white-space:nowrap}.helper-intro p{font-size:12px;color:#d2e6e8;margin:3px 0;max-width:520px}.helper-help{flex-shrink:0;border:1px solid #c3e4df40;border-radius:35px;background:#15384c99;color:#e0f3ed;font-size:17px;min-height:48px;padding:12px 18px}.helper-help span{font-size:11px}.game~.subject-helper{margin:auto}.game .helper-help{color:#15444d}.crew-game-badge{position:absolute;bottom:15px;left:15px;background:#062438ce;border:1px solid #bde7df33;border-radius:30px;padding:5px 13px 5px 5px;display:flex;align-items:center;gap:5px;color:#e0eee6;font-size:12px}.crew-game-badge img{width:70px;height:45px;object-fit:contain}.portal-cinema .picture-cinema-art{height:170px;background:radial-gradient(ellipse at 50% 20%,#b3d6e225,#111b38 80%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.picture-cinema-art>svg{width:76px;color:#d9e9da;filter:drop-shadow(0 0 14px #b2ecf72a)}.picture-cinema-art .portal-milo{position:absolute;width:55%;bottom:-13%;right:-3%}.cinema-page{max-width:1000px;margin:auto}.cinema-page>h1{font-size:clamp(40px,5vw,62px)}.cinema-page>p{color:#c6dce6}.reef-cinema{position:relative;margin:30px 0 10px;padding:45px 65px 0;min-height:470px;border-radius:40px;background:radial-gradient(ellipse at 50% 0,#24517677,#101b38b0 70%);border:1px solid #a7c6e32a;overflow:hidden;isolation:isolate}.cinema-screen{position:relative;z-index:2;aspect-ratio:16/9;background:radial-gradient(ellipse,#1b5368,#0a2844);border:8px solid #608286;border-radius:24px;box-shadow:0 0 50px #9ecdd82c;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}.cinema-screen h2{font-size:30px;margin:10px 0}.cinema-screen p{font-size:14px;margin:0;color:#c9e4df}.cinema-film-icon svg{width:54px;height:54px;color:#e0dac0}.cinema-beam{position:absolute;left:15%;right:15%;top:55px;height:320px;background:linear-gradient(#b8eced0d,#ddffef03);clip-path:polygon(0 0,100% 0,60% 100%,40% 100%);animation:launch-pulse 4s ease-in-out infinite;z-index:1}.cinema-lantern{position:absolute;top:65px;width:17px;height:35px;background:#e6c077;border:3px solid #846a42;border-radius:6px;box-shadow:0 0 40px #ffce7840}.lantern-left{left:22px}.lantern-right{right:22px}.cinema-audience{position:relative;height:170px;display:flex;align-items:flex-end;justify-content:center;gap:20px;padding-bottom:0}.cinema-seat{width:120px;height:75px;border-radius:30px 30px 0 0;background:linear-gradient(#336d77,#153846);border:1px solid #80bbc34d;box-shadow:inset 0 4px 10px #a3d4cf18}.haytham-seat{display:flex;align-items:center;justify-content:center}.haytham-seat span{font-size:11px;color:#c8e5e4;letter-spacing:1px}.cinema-milo{position:absolute;width:255px;bottom:12px;left:calc(50% - 215px);z-index:3}.cinema-note{font-size:12px;text-align:center}.cinema-screen video{display:block;width:100%;height:100%;max-height:440px}.cinema-screen:has(video){padding:0}.cinema-choices{display:flex;gap:10px;flex-wrap:wrap}.cinema-choices button{background:#1b4260;color:#e4f3ed;border:1px solid #bad8d433}.cinema-page .back-link{margin-top:5px}.cinema-playing .cinema-beam{opacity:.4}body[data-route=cinema] .companion-actor{opacity:.85}
-[data-crew-reaction=happy][data-reacting-crew=willa] [data-actor=willa],[data-crew-reaction=happy][data-reacting-crew=tiggy] [data-actor=tiggy],[data-crew-reaction=happy][data-reacting-crew=gizmo] [data-actor=gizmo],[data-crew-reaction=happy][data-reacting-crew=dash] [data-actor=dash]{animation:crew-happy 1.2s ease-in-out 2}
-[data-crew-reaction=thinking] .subject-helper .crew-actor{animation:crew-think 1.5s ease-in-out}
-.reef-scene.paused~.reef-crew .crew-actor,.reef-scene.paused~.reef-crew .crew-tail,.reef-scene.paused~.reef-crew .crew-swimmer{animation-play-state:paused!important}
-@keyframes crew-arrival{from{transform:translateX(85vw) rotate(-4deg);opacity:0}to{transform:translateX(0) rotate(0);opacity:1}}@keyframes crew-cruise{50%{transform:translate(-7px,-5px) rotate(-1deg)}}@keyframes crew-tail-swish{0%,100%{transform:rotate(-5deg) skewY(-2deg) scaleX(.96)}50%{transform:rotate(5deg) skewY(2deg) scaleX(1.02)}}@keyframes crew-chat{to{transform:scaleY(.35) translateY(5px)}}@keyframes crew-happy{40%{transform:translateY(-14px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(2deg)}}@keyframes crew-think{40%{transform:rotate(-5deg) translateX(-5px)}}
-@media(max-width:1100px){.crew-swim-lane{gap:5px}.crew-name{font-size:21px}.picture-ocean-paths .portal-cinema{grid-column:1/-1}.portal-cinema>a{display:grid;grid-template-columns:1fr 1fr;align-items:center}.portal-cinema .picture-title{display:flex;justify-content:space-between}.portal-cinema .picture-cinema-art{height:150px}.crew-friend>small{font-size:9px}}
-@media(max-width:700px){.reef-crew{margin-top:28px;margin-bottom:25px}.reef-crew>h2{font-size:20px}.crew-swim-lane{grid-template-columns:1fr 1fr;gap:2px 12px}.crew-swimmer{max-width:210px;margin:auto}.crew-friend{padding-bottom:12px}.crew-name{font-size:23px;margin-top:-12px}.crew-greeting{font-size:11px;margin-top:5px}.subject-helper{gap:9px;margin:5px 0 18px;padding:0 0 12px;align-items:center}.helper-character{width:100px;flex-basis:100px;min-height:65px;margin-left:-5px}.helper-intro h2{font-size:23px;margin:5px 0}.helper-intro h2 small{display:block;font-size:10px;line-height:1.5}.helper-eyebrow{font-size:8px;letter-spacing:.2px;gap:4px}.helper-eyebrow svg{width:16px;height:16px}.helper-intro p{font-size:10px;line-height:1.5}.helper-help{padding:10px;width:40px;height:40px;min-height:40px;font-size:20px}.helper-help span{display:none}.crew-game-badge{bottom:12px;left:12px;font-size:12px}.crew-game-badge img{width:65px}.portal-cinema .picture-title h2{min-height:0}.reef-cinema{padding:35px 25px 0;border-radius:28px;min-height:310px}.cinema-screen{padding:14px 8px;border:5px solid #608286;border-radius:15px}.cinema-screen h2{font-size:23px;margin:5px 0}.cinema-screen p{font-size:11px}.cinema-film-icon svg{width:35px;height:35px}.cinema-audience{height:145px}.cinema-milo{width:215px;left:calc(50% - 190px);bottom:13px}.cinema-seat{width:100px;height:65px}.cinema-lantern{top:43px;width:10px;height:24px;border-width:2px}.lantern-left{left:8px}.lantern-right{right:8px}.cinema-page>h1{font-size:42px}.cinema-page>p{font-size:13px}nav{gap:0;padding-left:6px;padding-right:6px}nav a{min-width:40px}nav a>span{font-size:8px}}
-@media(prefers-reduced-motion:reduce){.crew-swimmer,.crew-actor,.crew-tail,.crew-chat-line,.cinema-beam{animation:none!important;transform:none!important;opacity:1}.crew-chat-line{opacity:0}.subject-helper{animation:none}}
+.reef-crew {
+  margin: 16px 0 32px;
+  position: relative;
+}
+.reef-crew > h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 2px;
+  color: #d9f1ea;
+}
+.crew-swim-lane {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.crew-friend {
+  background: none;
+  border: 0;
+  padding: 0 4px 12px;
+  min-width: 0;
+  color: #e5f5f1;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+.crew-friend:hover {
+  background: #aee9e20c;
+}
+.crew-swimmer {
+  display: block;
+  animation: crew-arrival 1.8s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation-delay: var(--crew-delay);
+  pointer-events: none;
+}
+.crew-actor {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  animation: crew-cruise 4s ease-in-out infinite;
+}
+.crew-tail {
+  transform-origin: 1200px 520px;
+  animation: crew-tail-swish 1.25s ease-in-out infinite;
+}
+.crew-willa .crew-tail {
+  animation-duration: 1.7s;
+}
+.crew-dash .crew-tail {
+  animation-duration: 0.8s;
+}
+.crew-gizmo .crew-tail {
+  animation-duration: 1.5s;
+}
+.crew-name {
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--crew-colour);
+}
+.crew-subject-icon {
+  display: inline-flex;
+  width: 23px;
+  height: 23px;
+}
+.crew-subject-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.crew-friend > small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #b8d9df;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.crew-greeting {
+  font-size: 13px;
+  color: #d2e7e9;
+  line-height: 1.65;
+  margin: 12px 0 0;
+  min-height: 24px;
+  max-width: 680px;
+}
+.crew-chat-line {
+  opacity: 0;
+  transform-origin: 220px 555px;
+}
+.helper-speaking[data-speaker='willa'] [data-actor='willa'] .crew-chat-line,
+.helper-speaking[data-speaker='tiggy'] [data-actor='tiggy'] .crew-chat-line,
+.helper-speaking[data-speaker='gizmo'] [data-actor='gizmo'] .crew-chat-line,
+.helper-speaking[data-speaker='dash'] [data-actor='dash'] .crew-chat-line {
+  opacity: 0.8;
+  animation: crew-chat 0.28s ease-in-out infinite alternate;
+}
+.subject-helper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 950px;
+  margin: 8px 0 25px;
+  padding: 2px 0 12px;
+  border-bottom: 1px solid #bcddd624;
+  position: relative;
+  animation: world-arrival 0.45s ease-out;
+}
+.helper-character {
+  width: 165px;
+  flex: 0 0 165px;
+  background: none;
+  padding: 0;
+  min-height: 90px;
+}
+.helper-intro {
+  flex: 1;
+  min-width: 0;
+}
+.helper-eyebrow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--crew-colour);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.helper-eyebrow svg {
+  width: 21px;
+  height: 21px;
+}
+.helper-intro h2 {
+  font-size: 26px;
+  margin: 8px 0 4px;
+  color: var(--crew-colour);
+}
+.helper-intro h2 small {
+  font-size: 12px;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: #bad8df;
+  white-space: nowrap;
+}
+.helper-intro p {
+  font-size: 12px;
+  color: #d2e6e8;
+  margin: 3px 0;
+  max-width: 520px;
+}
+.helper-help {
+  flex-shrink: 0;
+  border: 1px solid #c3e4df40;
+  border-radius: 35px;
+  background: #15384c99;
+  color: #e0f3ed;
+  font-size: 17px;
+  min-height: 48px;
+  padding: 12px 18px;
+}
+.helper-help span {
+  font-size: 11px;
+}
+.game ~ .subject-helper {
+  margin: auto;
+}
+.game .helper-help {
+  color: #15444d;
+}
+.crew-game-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: #062438ce;
+  border: 1px solid #bde7df33;
+  border-radius: 30px;
+  padding: 5px 13px 5px 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #e0eee6;
+  font-size: 12px;
+}
+.crew-game-badge img {
+  width: 70px;
+  height: 45px;
+  object-fit: contain;
+}
+.portal-cinema .picture-cinema-art {
+  height: 170px;
+  background: radial-gradient(ellipse at 50% 20%, #b3d6e225, #111b38 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.picture-cinema-art > svg {
+  width: 76px;
+  color: #d9e9da;
+  filter: drop-shadow(0 0 14px #b2ecf72a);
+}
+.picture-cinema-art .portal-milo {
+  position: absolute;
+  width: 55%;
+  bottom: -13%;
+  right: -3%;
+}
+.cinema-page {
+  max-width: 1000px;
+  margin: auto;
+}
+.cinema-page > h1 {
+  font-size: clamp(40px, 5vw, 62px);
+}
+.cinema-page > p {
+  color: #c6dce6;
+}
+.reef-cinema {
+  position: relative;
+  margin: 30px 0 10px;
+  padding: 45px 65px 0;
+  min-height: 470px;
+  border-radius: 40px;
+  background: radial-gradient(ellipse at 50% 0, #24517677, #101b38b0 70%);
+  border: 1px solid #a7c6e32a;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cinema-screen {
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 16/9;
+  background: radial-gradient(ellipse, #1b5368, #0a2844);
+  border: 8px solid #608286;
+  border-radius: 24px;
+  box-shadow: 0 0 50px #9ecdd82c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.cinema-screen h2 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+.cinema-screen p {
+  font-size: 14px;
+  margin: 0;
+  color: #c9e4df;
+}
+.cinema-film-icon svg {
+  width: 54px;
+  height: 54px;
+  color: #e0dac0;
+}
+.cinema-beam {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 55px;
+  height: 320px;
+  background: linear-gradient(#b8eced0d, #ddffef03);
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 40% 100%);
+  animation: launch-pulse 4s ease-in-out infinite;
+  z-index: 1;
+}
+.cinema-lantern {
+  position: absolute;
+  top: 65px;
+  width: 17px;
+  height: 35px;
+  background: #e6c077;
+  border: 3px solid #846a42;
+  border-radius: 6px;
+  box-shadow: 0 0 40px #ffce7840;
+}
+.lantern-left {
+  left: 22px;
+}
+.lantern-right {
+  right: 22px;
+}
+.cinema-audience {
+  position: relative;
+  height: 170px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 0;
+}
+.cinema-seat {
+  width: 120px;
+  height: 75px;
+  border-radius: 30px 30px 0 0;
+  background: linear-gradient(#336d77, #153846);
+  border: 1px solid #80bbc34d;
+  box-shadow: inset 0 4px 10px #a3d4cf18;
+}
+.haytham-seat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.haytham-seat span {
+  font-size: 11px;
+  color: #c8e5e4;
+  letter-spacing: 1px;
+}
+.cinema-milo {
+  position: absolute;
+  width: 255px;
+  bottom: 12px;
+  left: calc(50% - 215px);
+  z-index: 3;
+}
+.cinema-note {
+  font-size: 12px;
+  text-align: center;
+}
+.cinema-screen video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+}
+.cinema-screen:has(video) {
+  padding: 0;
+}
+.cinema-choices {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cinema-choices button {
+  background: #1b4260;
+  color: #e4f3ed;
+  border: 1px solid #bad8d433;
+}
+.cinema-page .back-link {
+  margin-top: 5px;
+}
+.cinema-playing .cinema-beam {
+  opacity: 0.4;
+}
+body[data-route='cinema'] .companion-actor {
+  opacity: 0.85;
+}
+[data-crew-reaction='happy'][data-reacting-crew='willa'] [data-actor='willa'],
+[data-crew-reaction='happy'][data-reacting-crew='tiggy'] [data-actor='tiggy'],
+[data-crew-reaction='happy'][data-reacting-crew='gizmo'] [data-actor='gizmo'],
+[data-crew-reaction='happy'][data-reacting-crew='dash'] [data-actor='dash'] {
+  animation: crew-happy 1.2s ease-in-out 2;
+}
+[data-crew-reaction='thinking'] .subject-helper .crew-actor {
+  animation: crew-think 1.5s ease-in-out;
+}
+.reef-scene.paused ~ .reef-crew .crew-actor,
+.reef-scene.paused ~ .reef-crew .crew-tail,
+.reef-scene.paused ~ .reef-crew .crew-swimmer {
+  animation-play-state: paused !important;
+}
+@keyframes crew-arrival {
+  from {
+    transform: translateX(85vw) rotate(-4deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes crew-cruise {
+  50% {
+    transform: translate(-7px, -5px) rotate(-1deg);
+  }
+}
+@keyframes crew-tail-swish {
+  0%,
+  100% {
+    transform: rotate(-5deg) skewY(-2deg) scaleX(0.96);
+  }
+  50% {
+    transform: rotate(5deg) skewY(2deg) scaleX(1.02);
+  }
+}
+@keyframes crew-chat {
+  to {
+    transform: scaleY(0.35) translateY(5px);
+  }
+}
+@keyframes crew-happy {
+  40% {
+    transform: translateY(-14px) rotate(-4deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+}
+@keyframes crew-think {
+  40% {
+    transform: rotate(-5deg) translateX(-5px);
+  }
+}
+@media (max-width: 1100px) {
+  .crew-swim-lane {
+    gap: 5px;
+  }
+  .crew-name {
+    font-size: 21px;
+  }
+  .picture-ocean-paths .portal-cinema {
+    grid-column: 1/-1;
+  }
+  .portal-cinema > a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .portal-cinema .picture-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .portal-cinema .picture-cinema-art {
+    height: 150px;
+  }
+  .crew-friend > small {
+    font-size: 9px;
+  }
+}
+@media (max-width: 700px) {
+  .reef-crew {
+    margin-top: 28px;
+    margin-bottom: 25px;
+  }
+  .reef-crew > h2 {
+    font-size: 20px;
+  }
+  .crew-swim-lane {
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+  }
+  .crew-swimmer {
+    max-width: 210px;
+    margin: auto;
+  }
+  .crew-friend {
+    padding-bottom: 12px;
+  }
+  .crew-name {
+    font-size: 23px;
+    margin-top: -12px;
+  }
+  .crew-greeting {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .subject-helper {
+    gap: 9px;
+    margin: 5px 0 18px;
+    padding: 0 0 12px;
+    align-items: center;
+  }
+  .helper-character {
+    width: 100px;
+    flex-basis: 100px;
+    min-height: 65px;
+    margin-left: -5px;
+  }
+  .helper-intro h2 {
+    font-size: 23px;
+    margin: 5px 0;
+  }
+  .helper-intro h2 small {
+    display: block;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .helper-eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.2px;
+    gap: 4px;
+  }
+  .helper-eyebrow svg {
+    width: 16px;
+    height: 16px;
+  }
+  .helper-intro p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .helper-help {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    font-size: 20px;
+  }
+  .helper-help span {
+    display: none;
+  }
+  .crew-game-badge {
+    bottom: 12px;
+    left: 12px;
+    font-size: 12px;
+  }
+  .crew-game-badge img {
+    width: 65px;
+  }
+  .portal-cinema .picture-title h2 {
+    min-height: 0;
+  }
+  .reef-cinema {
+    padding: 35px 25px 0;
+    border-radius: 28px;
+    min-height: 310px;
+  }
+  .cinema-screen {
+    padding: 14px 8px;
+    border: 5px solid #608286;
+    border-radius: 15px;
+  }
+  .cinema-screen h2 {
+    font-size: 23px;
+    margin: 5px 0;
+  }
+  .cinema-screen p {
+    font-size: 11px;
+  }
+  .cinema-film-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+  .cinema-audience {
+    height: 145px;
+  }
+  .cinema-milo {
+    width: 215px;
+    left: calc(50% - 190px);
+    bottom: 13px;
+  }
+  .cinema-seat {
+    width: 100px;
+    height: 65px;
+  }
+  .cinema-lantern {
+    top: 43px;
+    width: 10px;
+    height: 24px;
+    border-width: 2px;
+  }
+  .lantern-left {
+    left: 8px;
+  }
+  .lantern-right {
+    right: 8px;
+  }
+  .cinema-page > h1 {
+    font-size: 42px;
+  }
+  .cinema-page > p {
+    font-size: 13px;
+  }
+  nav {
+    gap: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  nav a {
+    min-width: 40px;
+  }
+  nav a > span {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crew-swimmer,
+  .crew-actor,
+  .crew-tail,
+  .crew-chat-line,
+  .cinema-beam {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1;
+  }
+  .crew-chat-line {
+    opacity: 0;
+  }
+  .subject-helper {
+    animation: none;
+  }
+}
 
-.milo-companion.dock-above-writing{top:var(--writing-dock-top,84px)}.game-panel #hint{color:#1c5460;border-color:#5c929955;background:#cfe3d955}body[data-route=home]{padding-bottom:240px}
+.milo-companion.dock-above-writing {
+  top: var(--writing-dock-top, 84px);
+}
+.game-panel #hint {
+  color: #1c5460;
+  border-color: #5c929955;
+  background: #cfe3d955;
+}
+body[data-route='home'] {
+  padding-bottom: 240px;
+}
 
-.cinema-milo{background:none;padding:0;border:0;min-height:0;border-radius:0}
+.cinema-milo {
+  background: none;
+  padding: 0;
+  border: 0;
+  min-height: 0;
+  border-radius: 0;
+}
 
 /* Open pearl shells, viewed from the audience: Milo faces the screen. */
-.seashell-audience{height:310px;margin-top:-7px;padding:0}.cinema-seashells{position:relative;display:block;width:min(650px,100%);height:100%;padding:0;background:none;border:0;min-height:0;align-self:flex-end}.cinema-seashells img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}.shell-seat-label{position:absolute;right:13%;bottom:14%;padding:4px 7px;border-radius:15px;background:#edeee2b3;color:#354b59;font-size:11px;font-weight:500;letter-spacing:.1px}.cinema-seashells:active{filter:brightness(1.06)}.picture-cinema-art .portal-shell-seats{position:absolute;width:95%;height:95%;object-fit:contain;bottom:-10%;right:-10%}.picture-cinema-art>svg{position:absolute;left:14%;top:13%;width:36px;z-index:2}.cinema-playing .cinema-seashells{filter:brightness(.75)}
-@media(max-width:700px){.seashell-audience{height:250px;margin-left:-12px;margin-right:-12px;margin-top:-2px}.shell-seat-label{font-size:9px;bottom:14%;right:11%}}
+.seashell-audience {
+  height: 310px;
+  margin-top: -7px;
+  padding: 0;
+}
+.cinema-seashells {
+  position: relative;
+  display: block;
+  width: min(650px, 100%);
+  height: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  min-height: 0;
+  align-self: flex-end;
+}
+.cinema-seashells img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.shell-seat-label {
+  position: absolute;
+  right: 13%;
+  bottom: 14%;
+  padding: 4px 7px;
+  border-radius: 15px;
+  background: #edeee2b3;
+  color: #354b59;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+.cinema-seashells:active {
+  filter: brightness(1.06);
+}
+.picture-cinema-art .portal-shell-seats {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
+  bottom: -10%;
+  right: -10%;
+}
+.picture-cinema-art > svg {
+  position: absolute;
+  left: 14%;
+  top: 13%;
+  width: 36px;
+  z-index: 2;
+}
+.cinema-playing .cinema-seashells {
+  filter: brightness(0.75);
+}
+@media (max-width: 700px) {
+  .seashell-audience {
+    height: 250px;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-top: -2px;
+  }
+  .shell-seat-label {
+    font-size: 9px;
+    bottom: 14%;
+    right: 11%;
+  }
+}
 
-.cinema-seating-scene{display:block;width:100%;height:100%;overflow:visible}.cinema-seated-milo{transform-origin:390px 430px;transform:none}.cinema-seated-milo.arriving{animation:cinema-take-seat 3.6s cubic-bezier(.25,.55,.3,1) .5s both}.arriving .cinema-rear-tail{transform-origin:650px 700px;animation:cinema-tail-beat .8s ease-in-out 5}.cinema-seashells:hover{filter:brightness(1.04)}
-@keyframes cinema-take-seat{0%{transform:translate(-1500px,-150px) rotate(8deg)}38%{transform:translate(-300px,-165px) rotate(-4deg)}65%{transform:translate(15px,-95px) rotate(1deg)}82%{transform:translate(0,-5px) rotate(0)}91%{transform:translate(0,10px)}100%{transform:none}}@keyframes cinema-tail-beat{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
-@media(prefers-reduced-motion:reduce){.cinema-seated-milo.arriving,.cinema-rear-tail{animation:none!important;transform:none!important}}
+.cinema-seating-scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.cinema-seated-milo {
+  transform-origin: 390px 430px;
+  transform: none;
+}
+.cinema-seated-milo.arriving {
+  animation: cinema-take-seat 3.6s cubic-bezier(0.25, 0.55, 0.3, 1) 0.5s both;
+}
+.arriving .cinema-rear-tail {
+  transform-origin: 650px 700px;
+  animation: cinema-tail-beat 0.8s ease-in-out 5;
+}
+.cinema-seashells:hover {
+  filter: brightness(1.04);
+}
+@keyframes cinema-take-seat {
+  0% {
+    transform: translate(-1500px, -150px) rotate(8deg);
+  }
+  38% {
+    transform: translate(-300px, -165px) rotate(-4deg);
+  }
+  65% {
+    transform: translate(15px, -95px) rotate(1deg);
+  }
+  82% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  91% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes cinema-tail-beat {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinema-seated-milo.arriving,
+  .cinema-rear-tail {
+    animation: none !important;
+    transform: none !important;
+  }
+}

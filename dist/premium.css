@@ -1,7 +1,1458 @@
-:root{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;background:#041d30;color:#eef8fa;font-synthesis:none}body{background:radial-gradient(ellipse at 15% 0,#124b61 0,transparent 55%),#041d30;min-height:100vh;padding-bottom:120px}body:before{content:'';position:fixed;inset:0;background:linear-gradient(180deg,#03162718,#03192cc7 75%),url('assets/reef-background.jpg') center/cover;z-index:-1;opacity:.55}header{max-width:1380px;padding:24px 42px;position:relative;z-index:3}.brand>span{color:#9ed9de}.brand{color:#d9edef;font-size:10px;letter-spacing:2.5px}.brand small{font-size:13px;letter-spacing:1.7px}.header-right{gap:14px}.quiet{border:1px solid #b9d7e32b;background:#c0eaff09;color:inherit;border-radius:30px}.status{color:#b2d8d6;font-size:10px}.header-right .quiet{font-size:11px;min-height:40px}main{max-width:1280px;padding:10px 40px}h1{font-weight:600;letter-spacing:-2.5px;line-height:1.06}h2{font-weight:550;letter-spacing:-.8px}p{font-weight:400}.tag{color:#9ad4d9;font-size:10px;letter-spacing:2.3px}.ocean-home{position:relative}.ocean-welcome{position:relative;z-index:2;text-align:center;padding:24px 20px 0;pointer-events:none}.ocean-welcome h1{font-size:clamp(40px,5.1vw,66px);margin:16px 0}.ocean-welcome p{font-size:15px;color:#c2dbe1;margin:0}.reef-scene{position:relative;height:390px;margin-top:-20px;isolation:isolate;overflow:hidden;mask-image:linear-gradient(to bottom,transparent 0,#000 10%,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 10%,#000 88%,transparent 100%)}.sun-rays{position:absolute;inset:-100% -20%;background:conic-gradient(from 160deg at 25% 15%,transparent 0deg,#b8faff09 10deg,transparent 15deg,#b8faff0c 20deg,transparent 27deg,#b8faff08 34deg,transparent 45deg);animation:light-drift 16s ease-in-out infinite;pointer-events:none}.milo-swim{position:absolute;left:34%;top:38px;width:50%;max-width:580px;padding:0;min-height:0;background:none;border-radius:0;z-index:2;animation:emerge 5.2s cubic-bezier(.18,.65,.25,1) both;transform-origin:70% 40%;filter:drop-shadow(0 22px 28px #00102066)}.milo-swim svg{display:block;width:100%;animation:milo-hover 7s ease-in-out 5.2s infinite}.milo-swim svg>path:nth-last-of-type(2){transform-origin:50% 50%}.milo-swim:hover{filter:drop-shadow(0 12px 25px #6abdc025)}.milo-swim:focus-visible{outline-offset:-25px}.milo-greeting{position:absolute;z-index:3;top:170px;left:9%;animation:greeting-appear 1.2s ease 4.3s both}.milo-name{font-size:8px;letter-spacing:2px;color:#b2d6dc;font-weight:600}.milo-greeting p{font-size:27px;letter-spacing:-.8px;line-height:1.2;margin:10px 0 12px;font-weight:500}.greet-button{color:#ceeeee;border:1px solid #c4e9e64d;border-radius:30px;background:#143c4d88;font-size:11px;padding:9px 16px;min-height:42px}.scene-controls{position:absolute;bottom:13px;right:12px;display:flex;gap:8px;z-index:4}.scene-controls button{font-size:10px;min-height:36px;padding:8px 13px;background:#092638a0}.distant-shark{position:absolute;color:#72b8c8;opacity:.18;width:150px;z-index:0}.shark-one{top:25px;animation:shark-pass 40s linear infinite;animation-delay:-17s}.shark-two{top:140px;width:105px;opacity:.12;animation:shark-pass 54s linear infinite reverse;animation-delay:-11s}.shark-three{top:65px;width:90px;opacity:.1;animation:shark-pass 47s linear infinite;animation-delay:-29s}.distant-shark svg{width:100%;animation:tail-drift 3s ease-in-out infinite}.fish-school{position:absolute;left:10%;top:45%;width:190px;height:85px;animation:school-drift 32s linear infinite;opacity:.45}.fish-school i{position:absolute;left:calc(var(--i)*20px);top:calc(mod(var(--i),3)*17px);width:10px;height:4px;background:#c6ddbb;border-radius:50%;transform:translateY(calc(var(--i)*6px))}.fish-school i:after{content:'';position:absolute;right:-3px;top:0;border-right:4px solid #c6ddbb;border-top:2px solid transparent;border-bottom:2px solid transparent}.sea-particles{position:absolute;inset:0;pointer-events:none}.sea-particles i{position:absolute;left:calc(var(--i)*7%);top:100%;width:3px;height:3px;background:#b2e3e4;border-radius:50%;animation:particle-rise calc(9s + var(--i)*1s) linear infinite;animation-delay:calc(var(--i)*-2s);opacity:.3}.ocean-paths{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;position:relative;z-index:3}.ocean-destination{border:1px solid #d2f2f32a;border-radius:24px;background:linear-gradient(140deg,#96dce620,#1c486630);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);padding:23px;text-decoration:none;position:relative;transition:transform .3s,background .3s;min-height:183px}.ocean-destination:hover{transform:translateY(-4px);background:#76c2d92b}.ocean-destination.featured{background:linear-gradient(140deg,#8bdcd631,#285b6c50)}.destination-icon{display:block;color:#abe4de;margin-bottom:22px}.destination-icon svg{width:30px;height:30px}.ocean-destination h2{font-size:22px;margin:8px 0}.ocean-destination p{font-size:12px;margin:0;color:#b6d2d9}.ocean-destination .tag{font-size:8px;letter-spacing:1.5px}.destination-arrow{position:absolute;right:24px;top:25px;color:#b2d7dc}.ocean-progress{display:flex;gap:16px;align-items:center;max-width:600px;margin:30px auto 0}.ocean-progress>div{flex:1}.ocean-progress strong{font-size:12px;font-weight:500}.ocean-progress strong span{color:#8fbdc8}.ocean-progress .track{margin-top:9px;background:#bddfeb14;height:4px}.track>div{background:#9ad8cd}.ocean-progress>span:last-child{font-size:20px;font-weight:500}.ocean-progress small{display:block;font-size:7px;letter-spacing:2px;color:#8bbbc8}.progress-star{font-size:35px;color:#bad9c9}.ocean-footnote{text-align:center;color:#83acb9;font-size:10px;margin:20px 0 0}nav{left:50%;right:auto;transform:translateX(-50%);bottom:18px;width:auto;border-radius:28px;border:1px solid #d2eef329;background:#123246d9;box-shadow:0 15px 50px #00101e70;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:9px 24px;gap:30px}nav a{flex-direction:column;gap:4px;color:#94b7c4;min-width:65px;font-size:22px}nav span{font-size:10px;font-weight:500}nav .nav-symbol{font-size:23px;line-height:1}nav a.active{color:#edffff}nav a.active:after{content:'';width:3px;height:3px;border-radius:50%;background:#b0eadb;position:absolute;bottom:4px}.back-link{display:inline-block;text-decoration:none;font-size:12px;color:#b2d8df;min-height:44px;line-height:44px}.primary{background:#d6eee7;box-shadow:none;color:#103c48;border-radius:30px;font-size:14px;font-weight:600}.cards{gap:22px}.card{background:#16384b99;border:1px solid #b0e0e321;color:#edf8fa;padding:26px;backdrop-filter:blur(16px)}.card-icon{background:linear-gradient(145deg,#63b6b42b,#12354c)!important;color:#c8e7dd;height:150px;margin:-26px -26px 24px;font-size:55px;font-weight:300;letter-spacing:-3px}.card p{color:#aac8d3;font-size:14px}.card button{background:#cbe9e2}.expedition-page>.tag{display:block;margin-top:25px}.expedition-page>h1{font-size:50px}.expedition-page>p{color:#a9cbd4;margin-bottom:30px}.game-panel{background:#f4f7f1;color:#173f4b;border:0;box-shadow:0 25px 100px #00152050}.game-top .listen,.game-top .quiet{color:#d6e8ee}.game-top .listen{background:#ffffff14}.scene{background:#e2eeeb}.choice{background:#dcebe5;color:#1b4855}.game .track{background:#aacbd322;margin-bottom:15px}.game .tag{color:#367e7a}.collect{background:#193b4aab;border:1px solid #bed8e621;backdrop-filter:blur(10px)}.muted{color:#99bfca}.game-panel .muted{color:#57756d}.collection{margin:25px 0}.book-head{text-align:center;padding:40px 0 15px}.book-head h1{font-size:clamp(44px,6vw,72px);margin:18px 0}.book-head p{font-size:16px;color:#b6d1dc}.book-progress{display:inline-block;font-size:11px;color:#a9d6d2;background:#a2dbc111;padding:10px 16px;border:1px solid #b2e0d720;border-radius:30px}.book-filters{display:flex;justify-content:center;gap:10px;margin:22px 0 34px;flex-wrap:wrap}.book-filters button{border:1px solid #b9d8e329;background:#22465955;color:#aaccd7;border-radius:30px;font-size:12px;min-height:44px;padding:10px 19px;font-weight:500}.book-filters button[aria-pressed=true]{background:#d5eae5;color:#163e49}.species-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.species-card{display:block;overflow:hidden;text-decoration:none;border-radius:25px;background:#16384ccc;border:1px solid #d1eaf21c;transition:transform .3s}.species-card:hover{transform:translateY(-4px)}.species-card img{display:block;width:100%;height:210px;object-fit:cover}.species-copy{padding:23px}.species-copy h2{font-size:24px;margin:10px 0}.species-copy p{font-size:13px;color:#a6c9d4;margin:0 0 26px}.species-copy .tag{font-size:8px;letter-spacing:1.3px}.explore-link{display:flex;justify-content:space-between;border-top:1px solid #bfdce51c;padding-top:14px;font-size:11px;color:#c0e2e4}.prehistoric-art{height:210px;background:radial-gradient(ellipse,#28566b,#071f32);position:relative}.prehistoric-art svg{width:100%;height:190px}.prehistoric-art>span{display:block;text-align:center;font-size:7px;letter-spacing:1px;color:#6e9caf}.topic-section{margin-top:55px}.topic-section>h2{font-size:34px;margin:10px 0 24px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.topic-card{text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:15px;padding:24px;background:#203f516b;border:1px solid #c0dce325;border-radius:23px;color:#e1f0f3;font-weight:400}.topic-card strong{font-size:19px;font-weight:500}.topic-card>span:not(.topic-number){font-size:12px;color:#a9c8d0}.topic-number{font-size:10px;letter-spacing:2px;color:#83b5c2}.book-note{text-align:center;margin:35px 0}.shark-article{max-width:960px;margin:auto}.article-top{display:flex;align-items:center;justify-content:space-between;margin:10px 0 20px}.article-top .listen{background:#b1d6e619;color:#d2eeee;border-radius:30px;font-size:12px}.article-hero{border-radius:26px;overflow:hidden;background:#123547;position:relative}.article-hero>img{width:100%;height:460px;object-fit:cover;display:block}.article-hero:after{content:'';position:absolute;inset:30% 0 0;background:linear-gradient(transparent,#031b2be6);pointer-events:none}.article-title{position:absolute;bottom:28px;left:34px;right:24px;z-index:1}.article-title h1{font-size:clamp(34px,5vw,60px);margin:10px 0}.article-title p{font-size:16px;margin:0;color:#d7e9e9}.pronunciation{font-size:10px;letter-spacing:1.8px;color:#8ab6c3;margin:24px 0}.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.fact-grid section{border-radius:22px;border:1px solid #c9e9ed1e;background:#19405266;padding:27px}.fact-grid h2{font-size:23px;margin:14px 0}.fact-grid p{font-size:17px;color:#c1d9df;line-height:1.7}.fact-grid .quiet{font-size:11px;min-height:40px}.mega-illustration{height:460px;background:radial-gradient(ellipse at 60% 20%,#31536c,#071b2d);text-align:center}.mega-illustration svg{width:70%;height:300px}.mega-illustration>span{display:block;font-size:9px;letter-spacing:1px;color:#97bbc6}.shark-question{padding:35px;text-align:center;margin:30px 0;border:1px solid #9bcec52a;border-radius:25px;background:#245d5c38}.shark-question h2{font-size:27px;margin:15px 0}.shark-question button{font-size:15px;color:#173c48;background:#cbe6df}.shark-question p{font-size:13px;color:#a9d6d2}.credits{color:#87b1bf;font-size:10px!important;line-height:1.8}.credits a{color:inherit}.shark-article>.back-link{margin:25px 0}.topic-text{font-size:21px;line-height:1.8}.writing-page{max-width:880px;margin:auto}.writing-page h1{font-size:54px;margin:18px 0}.writing-intro{font-size:15px;color:#b2ced6}.writing-controls{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:26px 0 12px}.writing-controls label{font-size:12px;margin:0}.writing-controls select{background:#193d50;color:#e5f5f8;border-color:#accbd440;border-radius:14px;padding:10px}.segmented{display:flex;padding:4px;background:#123347;border:1px solid #c7dfe324;border-radius:18px;gap:4px}.segmented button{border-radius:14px;min-height:42px;padding:10px 18px;font-size:12px;font-weight:500;background:transparent;color:#a4c3cf}.segmented button[aria-pressed=true]{background:#d3e9e4;color:#234858}.writing-hint{display:flex;align-items:center;gap:15px;margin:12px 0}.writing-hint>span{font-size:25px;color:#acdcd0}.writing-hint p{font-size:14px;color:#bbd9dd}.writing-board{position:relative;background:#f4f8f1;border-radius:24px;overflow:hidden;height:360px;box-shadow:0 20px 60px #00132060;isolation:isolate}.writing-board svg,.writing-board canvas{position:absolute;inset:0;width:100%;height:100%}.writing-board canvas{touch-action:none;user-select:none;-webkit-user-select:none;cursor:crosshair}.writing-board svg{pointer-events:none}.writing-toolbar{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin:20px 0}.writing-toolbar button{font-size:12px}.writing-feedback{font-size:16px;color:#bbdfd9;min-height:45px}.writing-page>.muted{font-size:12px}dialog{background:#f2f6ef;color:#1f4751;box-shadow:0 30px 100px #00101e80}dialog .tag{color:#377d78}dialog .muted{color:#5c7b75}dialog .quiet{border-color:#55776a40}dialog .credits{color:#688984}dialog .listen{border-radius:30px}dialog input,dialog select{background:white;color:#214954}dialog::backdrop{backdrop-filter:blur(7px);background:#001525ad}#saveWarning{color:#284247}.paused *{animation-play-state:paused!important}.reef-scene.replay .milo-swim{animation-name:emerge-again}.reef-scene.replay .milo-greeting{animation-name:greeting-again}@keyframes emerge{0%{transform:translate(55%,-25%) scale(.25);filter:brightness(.12) blur(3px);opacity:.3}40%{filter:brightness(.4) blur(1px);opacity:.7}100%{transform:translate(0,0) scale(1);filter:brightness(1) drop-shadow(0 22px 28px #00102066);opacity:1}}@keyframes emerge-again{0%{transform:translate(55%,-25%) scale(.25);filter:brightness(.12) blur(3px);opacity:.3}100%{transform:translate(0,0) scale(1);filter:brightness(1);opacity:1}}@keyframes milo-hover{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-13px) rotate(1deg)}}@keyframes shark-pass{from{left:110%;transform:translateY(0)}to{left:-25%;transform:translateY(-25px)}}@keyframes school-drift{from{transform:translateX(-200px)}to{transform:translateX(1200px)}}@keyframes tail-drift{50%{transform:rotate(3deg) scaleX(.96)}}@keyframes particle-rise{to{transform:translate(25px,-430px);opacity:0}}@keyframes greeting-appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes greeting-again{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes light-drift{50%{transform:rotate(4deg);opacity:.5}}@media(min-width:1450px){.reef-scene{height:430px}.milo-swim{top:10px}}@media(max-width:1000px){.ocean-destination{padding:21px}.ocean-destination h2{font-size:20px}.species-grid{grid-template-columns:1fr 1fr}.topic-grid{grid-template-columns:1fr 1fr}.milo-greeting{left:5%}.ocean-welcome h1{font-size:53px}.reef-scene{height:340px}.milo-swim{top:60px;left:32%;width:63%}.milo-greeting{top:155px}.milo-greeting p{font-size:24px}.milo-name{font-size:7px}}
-@media(max-width:700px){header{padding:19px 22px;align-items:flex-start;gap:8px}.brand small{font-size:10px}.brand{font-size:8px;letter-spacing:1.4px}.brand>span{font-size:28px}.header-right{max-width:180px;justify-content:flex-end;gap:6px}.header-right .status{font-size:8px;order:3;text-align:right;margin-top:2px}.header-right .quiet{font-size:10px;padding:8px 10px;min-height:32px}main{padding:8px 20px}.ocean-welcome{padding:25px 0 0}.ocean-welcome h1{font-size:43px;letter-spacing:-2px}.ocean-welcome .tag{font-size:8px}.ocean-welcome p{font-size:11px}.reef-scene{height:330px;margin:0 -20px;margin-top:-5px}.milo-swim{width:90%;left:10%;top:18px}.milo-greeting{left:30px;top:194px}.milo-greeting p{font-size:23px;margin:7px 0}.milo-name{font-size:7px}.greet-button{padding:7px 12px;font-size:10px;min-height:38px}.scene-controls{bottom:12px;right:17px;flex-direction:column;gap:5px}.scene-controls .quiet{font-size:8px;padding:7px 10px;min-height:30px}.ocean-paths{grid-template-columns:1fr;gap:10px}.ocean-destination{display:flex;align-items:center;gap:20px;min-height:110px;padding:22px;border-radius:23px}.destination-icon{margin:0}.destination-icon svg{width:32px;height:32px}.ocean-destination h2{font-size:21px;margin:6px 0}.ocean-destination p{font-size:11px}.destination-arrow{right:20px;top:46px}.ocean-progress{margin-top:25px}.ocean-progress strong{font-size:11px}nav{width:calc(100% - 30px);bottom:12px;padding:12px 14px;gap:0;justify-content:space-between;max-width:520px;border-radius:26px}nav a{min-width:44px}nav span{font-size:9px}.nav-symbol{font-size:21px!important}.species-grid{grid-template-columns:1fr 1fr;gap:12px}.species-card{border-radius:20px}.species-card img,.prehistoric-art{height:145px}.prehistoric-art svg{height:125px}.prehistoric-art>span{font-size:5px}.species-copy{padding:17px 14px}.species-copy h2{font-size:20px;line-height:1.1}.species-copy .tag{font-size:6px;letter-spacing:.8px}.species-copy p{font-size:10px;margin-bottom:18px}.explore-link{font-size:9px}.book-head{padding-top:28px}.book-head h1{font-size:48px}.book-head p{font-size:13px}.book-filters{gap:6px;margin:20px 0}.book-filters button{font-size:10px;padding:9px 12px;min-height:40px}.topic-grid{gap:12px}.topic-card{padding:20px}.topic-card strong{font-size:17px}.article-hero>img,.mega-illustration{height:360px}.article-title{left:23px;bottom:24px}.article-title p{font-size:13px}.fact-grid{grid-template-columns:1fr}.fact-grid section{padding:24px}.fact-grid p{font-size:18px}.mega-illustration svg{width:100%;height:250px}.shark-question{padding:25px 18px}.shark-question h2{font-size:24px}.writing-page h1{font-size:43px}.writing-intro{font-size:13px}.writing-controls{align-items:stretch;flex-direction:column;gap:9px}.writing-controls label{display:flex;align-items:center;justify-content:space-between}.segmented button{flex:1}.writing-board{height:300px}.writing-toolbar{gap:8px}.writing-toolbar .quiet{padding:12px 15px}.writing-toolbar button{font-size:11px}.writing-hint p{font-size:13px}.expedition-page>h1{font-size:41px}.expedition-page>p{font-size:14px}.cards{grid-template-columns:1fr}.game-top{gap:8px}.game-top small{font-size:8px;letter-spacing:.7px}.game-top button{font-size:10px;padding:10px}.card-icon{height:120px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.milo-swim{opacity:1;transform:none;filter:none}.milo-greeting{opacity:1;transform:none}.shark-one{left:15%}.shark-two{left:65%}.shark-three{left:45%}.sea-particles i{top:calc(var(--i)*6%)}}
-body:before{z-index:0;opacity:1;pointer-events:none;background:linear-gradient(180deg,#02152588,#021a2c55 40%,#031b2aa0),url('assets/reef-background.jpg') center/cover}main{position:relative;z-index:1}.milo-swim img{display:block;width:100%;animation:milo-hover 7s ease-in-out 5.2s infinite}.milo-swim{filter:drop-shadow(0 22px 28px #00102066)}
-.stroke-demo{fill:none;stroke:#2ca99a;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:show-stroke 1.8s ease both}@keyframes show-stroke{to{stroke-dashoffset:0}}
-.writing-toolbar .quiet{background:#123347df}.writing-feedback{background:#0b2d42b8;padding:15px 18px;border-radius:17px}.writing-page>.muted{background:#0b2d4299;padding:10px 15px;border-radius:14px}.reef-scene.paused .milo-greeting{animation:none!important;opacity:1;transform:none}.reef-scene.paused .milo-swim{animation:none!important;opacity:1;transform:none;filter:drop-shadow(0 22px 28px #00102066)}
-@media(prefers-reduced-motion:reduce){.stroke-demo{stroke-dashoffset:0}}
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background: #041d30;
+  color: #eef8fa;
+  font-synthesis: none;
+}
+body {
+  background: radial-gradient(ellipse at 15% 0, #124b61 0, transparent 55%), #041d30;
+  min-height: 100vh;
+  padding-bottom: 120px;
+}
+body:before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #03162718, #03192cc7 75%),
+    url('assets/reef-background.jpg') center/cover;
+  z-index: -1;
+  opacity: 0.55;
+}
+header {
+  max-width: 1380px;
+  padding: 24px 42px;
+  position: relative;
+  z-index: 3;
+}
+.brand > span {
+  color: #9ed9de;
+}
+.brand {
+  color: #d9edef;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+.brand small {
+  font-size: 13px;
+  letter-spacing: 1.7px;
+}
+.header-right {
+  gap: 14px;
+}
+.quiet {
+  border: 1px solid #b9d7e32b;
+  background: #c0eaff09;
+  color: inherit;
+  border-radius: 30px;
+}
+.status {
+  color: #b2d8d6;
+  font-size: 10px;
+}
+.header-right .quiet {
+  font-size: 11px;
+  min-height: 40px;
+}
+main {
+  max-width: 1280px;
+  padding: 10px 40px;
+}
+h1 {
+  font-weight: 600;
+  letter-spacing: -2.5px;
+  line-height: 1.06;
+}
+h2 {
+  font-weight: 550;
+  letter-spacing: -0.8px;
+}
+p {
+  font-weight: 400;
+}
+.tag {
+  color: #9ad4d9;
+  font-size: 10px;
+  letter-spacing: 2.3px;
+}
+.ocean-home {
+  position: relative;
+}
+.ocean-welcome {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px 20px 0;
+  pointer-events: none;
+}
+.ocean-welcome h1 {
+  font-size: clamp(40px, 5.1vw, 66px);
+  margin: 16px 0;
+}
+.ocean-welcome p {
+  font-size: 15px;
+  color: #c2dbe1;
+  margin: 0;
+}
+.reef-scene {
+  position: relative;
+  height: 390px;
+  margin-top: -20px;
+  isolation: isolate;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 10%,
+    #000 88%,
+    transparent 100%
+  );
+}
+.sun-rays {
+  position: absolute;
+  inset: -100% -20%;
+  background: conic-gradient(
+    from 160deg at 25% 15%,
+    transparent 0deg,
+    #b8faff09 10deg,
+    transparent 15deg,
+    #b8faff0c 20deg,
+    transparent 27deg,
+    #b8faff08 34deg,
+    transparent 45deg
+  );
+  animation: light-drift 16s ease-in-out infinite;
+  pointer-events: none;
+}
+.milo-swim {
+  position: absolute;
+  left: 34%;
+  top: 38px;
+  width: 50%;
+  max-width: 580px;
+  padding: 0;
+  min-height: 0;
+  background: none;
+  border-radius: 0;
+  z-index: 2;
+  animation: emerge 5.2s cubic-bezier(0.18, 0.65, 0.25, 1) both;
+  transform-origin: 70% 40%;
+  filter: drop-shadow(0 22px 28px #00102066);
+}
+.milo-swim svg {
+  display: block;
+  width: 100%;
+  animation: milo-hover 7s ease-in-out 5.2s infinite;
+}
+.milo-swim svg > path:nth-last-of-type(2) {
+  transform-origin: 50% 50%;
+}
+.milo-swim:hover {
+  filter: drop-shadow(0 12px 25px #6abdc025);
+}
+.milo-swim:focus-visible {
+  outline-offset: -25px;
+}
+.milo-greeting {
+  position: absolute;
+  z-index: 3;
+  top: 170px;
+  left: 9%;
+  animation: greeting-appear 1.2s ease 4.3s both;
+}
+.milo-name {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #b2d6dc;
+  font-weight: 600;
+}
+.milo-greeting p {
+  font-size: 27px;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  margin: 10px 0 12px;
+  font-weight: 500;
+}
+.greet-button {
+  color: #ceeeee;
+  border: 1px solid #c4e9e64d;
+  border-radius: 30px;
+  background: #143c4d88;
+  font-size: 11px;
+  padding: 9px 16px;
+  min-height: 42px;
+}
+.scene-controls {
+  position: absolute;
+  bottom: 13px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+.scene-controls button {
+  font-size: 10px;
+  min-height: 36px;
+  padding: 8px 13px;
+  background: #092638a0;
+}
+.distant-shark {
+  position: absolute;
+  color: #72b8c8;
+  opacity: 0.18;
+  width: 150px;
+  z-index: 0;
+}
+.shark-one {
+  top: 25px;
+  animation: shark-pass 40s linear infinite;
+  animation-delay: -17s;
+}
+.shark-two {
+  top: 140px;
+  width: 105px;
+  opacity: 0.12;
+  animation: shark-pass 54s linear infinite reverse;
+  animation-delay: -11s;
+}
+.shark-three {
+  top: 65px;
+  width: 90px;
+  opacity: 0.1;
+  animation: shark-pass 47s linear infinite;
+  animation-delay: -29s;
+}
+.distant-shark svg {
+  width: 100%;
+  animation: tail-drift 3s ease-in-out infinite;
+}
+.fish-school {
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  width: 190px;
+  height: 85px;
+  animation: school-drift 32s linear infinite;
+  opacity: 0.45;
+}
+.fish-school i {
+  position: absolute;
+  left: calc(var(--i) * 20px);
+  top: calc(mod(var(--i), 3) * 17px);
+  width: 10px;
+  height: 4px;
+  background: #c6ddbb;
+  border-radius: 50%;
+  transform: translateY(calc(var(--i) * 6px));
+}
+.fish-school i:after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 0;
+  border-right: 4px solid #c6ddbb;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+.sea-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.sea-particles i {
+  position: absolute;
+  left: calc(var(--i) * 7%);
+  top: 100%;
+  width: 3px;
+  height: 3px;
+  background: #b2e3e4;
+  border-radius: 50%;
+  animation: particle-rise calc(9s + var(--i) * 1s) linear infinite;
+  animation-delay: calc(var(--i) * -2s);
+  opacity: 0.3;
+}
+.ocean-paths {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+.ocean-destination {
+  border: 1px solid #d2f2f32a;
+  border-radius: 24px;
+  background: linear-gradient(140deg, #96dce620, #1c486630);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  padding: 23px;
+  text-decoration: none;
+  position: relative;
+  transition:
+    transform 0.3s,
+    background 0.3s;
+  min-height: 183px;
+}
+.ocean-destination:hover {
+  transform: translateY(-4px);
+  background: #76c2d92b;
+}
+.ocean-destination.featured {
+  background: linear-gradient(140deg, #8bdcd631, #285b6c50);
+}
+.destination-icon {
+  display: block;
+  color: #abe4de;
+  margin-bottom: 22px;
+}
+.destination-icon svg {
+  width: 30px;
+  height: 30px;
+}
+.ocean-destination h2 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+.ocean-destination p {
+  font-size: 12px;
+  margin: 0;
+  color: #b6d2d9;
+}
+.ocean-destination .tag {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+.destination-arrow {
+  position: absolute;
+  right: 24px;
+  top: 25px;
+  color: #b2d7dc;
+}
+.ocean-progress {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  max-width: 600px;
+  margin: 30px auto 0;
+}
+.ocean-progress > div {
+  flex: 1;
+}
+.ocean-progress strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.ocean-progress strong span {
+  color: #8fbdc8;
+}
+.ocean-progress .track {
+  margin-top: 9px;
+  background: #bddfeb14;
+  height: 4px;
+}
+.track > div {
+  background: #9ad8cd;
+}
+.ocean-progress > span:last-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+.ocean-progress small {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: #8bbbc8;
+}
+.progress-star {
+  font-size: 35px;
+  color: #bad9c9;
+}
+.ocean-footnote {
+  text-align: center;
+  color: #83acb9;
+  font-size: 10px;
+  margin: 20px 0 0;
+}
+nav {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  bottom: 18px;
+  width: auto;
+  border-radius: 28px;
+  border: 1px solid #d2eef329;
+  background: #123246d9;
+  box-shadow: 0 15px 50px #00101e70;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 9px 24px;
+  gap: 30px;
+}
+nav a {
+  flex-direction: column;
+  gap: 4px;
+  color: #94b7c4;
+  min-width: 65px;
+  font-size: 22px;
+}
+nav span {
+  font-size: 10px;
+  font-weight: 500;
+}
+nav .nav-symbol {
+  font-size: 23px;
+  line-height: 1;
+}
+nav a.active {
+  color: #edffff;
+}
+nav a.active:after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #b0eadb;
+  position: absolute;
+  bottom: 4px;
+}
+.back-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 12px;
+  color: #b2d8df;
+  min-height: 44px;
+  line-height: 44px;
+}
+.primary {
+  background: #d6eee7;
+  box-shadow: none;
+  color: #103c48;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cards {
+  gap: 22px;
+}
+.card {
+  background: #16384b99;
+  border: 1px solid #b0e0e321;
+  color: #edf8fa;
+  padding: 26px;
+  backdrop-filter: blur(16px);
+}
+.card-icon {
+  background: linear-gradient(145deg, #63b6b42b, #12354c) !important;
+  color: #c8e7dd;
+  height: 150px;
+  margin: -26px -26px 24px;
+  font-size: 55px;
+  font-weight: 300;
+  letter-spacing: -3px;
+}
+.card p {
+  color: #aac8d3;
+  font-size: 14px;
+}
+.card button {
+  background: #cbe9e2;
+}
+.expedition-page > .tag {
+  display: block;
+  margin-top: 25px;
+}
+.expedition-page > h1 {
+  font-size: 50px;
+}
+.expedition-page > p {
+  color: #a9cbd4;
+  margin-bottom: 30px;
+}
+.game-panel {
+  background: #f4f7f1;
+  color: #173f4b;
+  border: 0;
+  box-shadow: 0 25px 100px #00152050;
+}
+.game-top .listen,
+.game-top .quiet {
+  color: #d6e8ee;
+}
+.game-top .listen {
+  background: #ffffff14;
+}
+.scene {
+  background: #e2eeeb;
+}
+.choice {
+  background: #dcebe5;
+  color: #1b4855;
+}
+.game .track {
+  background: #aacbd322;
+  margin-bottom: 15px;
+}
+.game .tag {
+  color: #367e7a;
+}
+.collect {
+  background: #193b4aab;
+  border: 1px solid #bed8e621;
+  backdrop-filter: blur(10px);
+}
+.muted {
+  color: #99bfca;
+}
+.game-panel .muted {
+  color: #57756d;
+}
+.collection {
+  margin: 25px 0;
+}
+.book-head {
+  text-align: center;
+  padding: 40px 0 15px;
+}
+.book-head h1 {
+  font-size: clamp(44px, 6vw, 72px);
+  margin: 18px 0;
+}
+.book-head p {
+  font-size: 16px;
+  color: #b6d1dc;
+}
+.book-progress {
+  display: inline-block;
+  font-size: 11px;
+  color: #a9d6d2;
+  background: #a2dbc111;
+  padding: 10px 16px;
+  border: 1px solid #b2e0d720;
+  border-radius: 30px;
+}
+.book-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px 0 34px;
+  flex-wrap: wrap;
+}
+.book-filters button {
+  border: 1px solid #b9d8e329;
+  background: #22465955;
+  color: #aaccd7;
+  border-radius: 30px;
+  font-size: 12px;
+  min-height: 44px;
+  padding: 10px 19px;
+  font-weight: 500;
+}
+.book-filters button[aria-pressed='true'] {
+  background: #d5eae5;
+  color: #163e49;
+}
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.species-card {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 25px;
+  background: #16384ccc;
+  border: 1px solid #d1eaf21c;
+  transition: transform 0.3s;
+}
+.species-card:hover {
+  transform: translateY(-4px);
+}
+.species-card img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+.species-copy {
+  padding: 23px;
+}
+.species-copy h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.species-copy p {
+  font-size: 13px;
+  color: #a6c9d4;
+  margin: 0 0 26px;
+}
+.species-copy .tag {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+}
+.explore-link {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #bfdce51c;
+  padding-top: 14px;
+  font-size: 11px;
+  color: #c0e2e4;
+}
+.prehistoric-art {
+  height: 210px;
+  background: radial-gradient(ellipse, #28566b, #071f32);
+  position: relative;
+}
+.prehistoric-art svg {
+  width: 100%;
+  height: 190px;
+}
+.prehistoric-art > span {
+  display: block;
+  text-align: center;
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: #6e9caf;
+}
+.topic-section {
+  margin-top: 55px;
+}
+.topic-section > h2 {
+  font-size: 34px;
+  margin: 10px 0 24px;
+}
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.topic-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 24px;
+  background: #203f516b;
+  border: 1px solid #c0dce325;
+  border-radius: 23px;
+  color: #e1f0f3;
+  font-weight: 400;
+}
+.topic-card strong {
+  font-size: 19px;
+  font-weight: 500;
+}
+.topic-card > span:not(.topic-number) {
+  font-size: 12px;
+  color: #a9c8d0;
+}
+.topic-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #83b5c2;
+}
+.book-note {
+  text-align: center;
+  margin: 35px 0;
+}
+.shark-article {
+  max-width: 960px;
+  margin: auto;
+}
+.article-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+}
+.article-top .listen {
+  background: #b1d6e619;
+  color: #d2eeee;
+  border-radius: 30px;
+  font-size: 12px;
+}
+.article-hero {
+  border-radius: 26px;
+  overflow: hidden;
+  background: #123547;
+  position: relative;
+}
+.article-hero > img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
+}
+.article-hero:after {
+  content: '';
+  position: absolute;
+  inset: 30% 0 0;
+  background: linear-gradient(transparent, #031b2be6);
+  pointer-events: none;
+}
+.article-title {
+  position: absolute;
+  bottom: 28px;
+  left: 34px;
+  right: 24px;
+  z-index: 1;
+}
+.article-title h1 {
+  font-size: clamp(34px, 5vw, 60px);
+  margin: 10px 0;
+}
+.article-title p {
+  font-size: 16px;
+  margin: 0;
+  color: #d7e9e9;
+}
+.pronunciation {
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  color: #8ab6c3;
+  margin: 24px 0;
+}
+.fact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.fact-grid section {
+  border-radius: 22px;
+  border: 1px solid #c9e9ed1e;
+  background: #19405266;
+  padding: 27px;
+}
+.fact-grid h2 {
+  font-size: 23px;
+  margin: 14px 0;
+}
+.fact-grid p {
+  font-size: 17px;
+  color: #c1d9df;
+  line-height: 1.7;
+}
+.fact-grid .quiet {
+  font-size: 11px;
+  min-height: 40px;
+}
+.mega-illustration {
+  height: 460px;
+  background: radial-gradient(ellipse at 60% 20%, #31536c, #071b2d);
+  text-align: center;
+}
+.mega-illustration svg {
+  width: 70%;
+  height: 300px;
+}
+.mega-illustration > span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #97bbc6;
+}
+.shark-question {
+  padding: 35px;
+  text-align: center;
+  margin: 30px 0;
+  border: 1px solid #9bcec52a;
+  border-radius: 25px;
+  background: #245d5c38;
+}
+.shark-question h2 {
+  font-size: 27px;
+  margin: 15px 0;
+}
+.shark-question button {
+  font-size: 15px;
+  color: #173c48;
+  background: #cbe6df;
+}
+.shark-question p {
+  font-size: 13px;
+  color: #a9d6d2;
+}
+.credits {
+  color: #87b1bf;
+  font-size: 10px !important;
+  line-height: 1.8;
+}
+.credits a {
+  color: inherit;
+}
+.shark-article > .back-link {
+  margin: 25px 0;
+}
+.topic-text {
+  font-size: 21px;
+  line-height: 1.8;
+}
+.writing-page {
+  max-width: 880px;
+  margin: auto;
+}
+.writing-page h1 {
+  font-size: 54px;
+  margin: 18px 0;
+}
+.writing-intro {
+  font-size: 15px;
+  color: #b2ced6;
+}
+.writing-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 26px 0 12px;
+}
+.writing-controls label {
+  font-size: 12px;
+  margin: 0;
+}
+.writing-controls select {
+  background: #193d50;
+  color: #e5f5f8;
+  border-color: #accbd440;
+  border-radius: 14px;
+  padding: 10px;
+}
+.segmented {
+  display: flex;
+  padding: 4px;
+  background: #123347;
+  border: 1px solid #c7dfe324;
+  border-radius: 18px;
+  gap: 4px;
+}
+.segmented button {
+  border-radius: 14px;
+  min-height: 42px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  background: transparent;
+  color: #a4c3cf;
+}
+.segmented button[aria-pressed='true'] {
+  background: #d3e9e4;
+  color: #234858;
+}
+.writing-hint {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 12px 0;
+}
+.writing-hint > span {
+  font-size: 25px;
+  color: #acdcd0;
+}
+.writing-hint p {
+  font-size: 14px;
+  color: #bbd9dd;
+}
+.writing-board {
+  position: relative;
+  background: #f4f8f1;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 360px;
+  box-shadow: 0 20px 60px #00132060;
+  isolation: isolate;
+}
+.writing-board svg,
+.writing-board canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.writing-board canvas {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: crosshair;
+}
+.writing-board svg {
+  pointer-events: none;
+}
+.writing-toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.writing-toolbar button {
+  font-size: 12px;
+}
+.writing-feedback {
+  font-size: 16px;
+  color: #bbdfd9;
+  min-height: 45px;
+}
+.writing-page > .muted {
+  font-size: 12px;
+}
+dialog {
+  background: #f2f6ef;
+  color: #1f4751;
+  box-shadow: 0 30px 100px #00101e80;
+}
+dialog .tag {
+  color: #377d78;
+}
+dialog .muted {
+  color: #5c7b75;
+}
+dialog .quiet {
+  border-color: #55776a40;
+}
+dialog .credits {
+  color: #688984;
+}
+dialog .listen {
+  border-radius: 30px;
+}
+dialog input,
+dialog select {
+  background: white;
+  color: #214954;
+}
+dialog::backdrop {
+  backdrop-filter: blur(7px);
+  background: #001525ad;
+}
+#saveWarning {
+  color: #284247;
+}
+.paused * {
+  animation-play-state: paused !important;
+}
+.reef-scene.replay .milo-swim {
+  animation-name: emerge-again;
+}
+.reef-scene.replay .milo-greeting {
+  animation-name: greeting-again;
+}
+@keyframes emerge {
+  0% {
+    transform: translate(55%, -25%) scale(0.25);
+    filter: brightness(0.12) blur(3px);
+    opacity: 0.3;
+  }
+  40% {
+    filter: brightness(0.4) blur(1px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1) drop-shadow(0 22px 28px #00102066);
+    opacity: 1;
+  }
+}
+@keyframes emerge-again {
+  0% {
+    transform: translate(55%, -25%) scale(0.25);
+    filter: brightness(0.12) blur(3px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1);
+    opacity: 1;
+  }
+}
+@keyframes milo-hover {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-13px) rotate(1deg);
+  }
+}
+@keyframes shark-pass {
+  from {
+    left: 110%;
+    transform: translateY(0);
+  }
+  to {
+    left: -25%;
+    transform: translateY(-25px);
+  }
+}
+@keyframes school-drift {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(1200px);
+  }
+}
+@keyframes tail-drift {
+  50% {
+    transform: rotate(3deg) scaleX(0.96);
+  }
+}
+@keyframes particle-rise {
+  to {
+    transform: translate(25px, -430px);
+    opacity: 0;
+  }
+}
+@keyframes greeting-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes greeting-again {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes light-drift {
+  50% {
+    transform: rotate(4deg);
+    opacity: 0.5;
+  }
+}
+@media (min-width: 1450px) {
+  .reef-scene {
+    height: 430px;
+  }
+  .milo-swim {
+    top: 10px;
+  }
+}
+@media (max-width: 1000px) {
+  .ocean-destination {
+    padding: 21px;
+  }
+  .ocean-destination h2 {
+    font-size: 20px;
+  }
+  .species-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .topic-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .milo-greeting {
+    left: 5%;
+  }
+  .ocean-welcome h1 {
+    font-size: 53px;
+  }
+  .reef-scene {
+    height: 340px;
+  }
+  .milo-swim {
+    top: 60px;
+    left: 32%;
+    width: 63%;
+  }
+  .milo-greeting {
+    top: 155px;
+  }
+  .milo-greeting p {
+    font-size: 24px;
+  }
+  .milo-name {
+    font-size: 7px;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    padding: 19px 22px;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .brand small {
+    font-size: 10px;
+  }
+  .brand {
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+  .brand > span {
+    font-size: 28px;
+  }
+  .header-right {
+    max-width: 180px;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .header-right .status {
+    font-size: 8px;
+    order: 3;
+    text-align: right;
+    margin-top: 2px;
+  }
+  .header-right .quiet {
+    font-size: 10px;
+    padding: 8px 10px;
+    min-height: 32px;
+  }
+  main {
+    padding: 8px 20px;
+  }
+  .ocean-welcome {
+    padding: 25px 0 0;
+  }
+  .ocean-welcome h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+  .ocean-welcome .tag {
+    font-size: 8px;
+  }
+  .ocean-welcome p {
+    font-size: 11px;
+  }
+  .reef-scene {
+    height: 330px;
+    margin: 0 -20px;
+    margin-top: -5px;
+  }
+  .milo-swim {
+    width: 90%;
+    left: 10%;
+    top: 18px;
+  }
+  .milo-greeting {
+    left: 30px;
+    top: 194px;
+  }
+  .milo-greeting p {
+    font-size: 23px;
+    margin: 7px 0;
+  }
+  .milo-name {
+    font-size: 7px;
+  }
+  .greet-button {
+    padding: 7px 12px;
+    font-size: 10px;
+    min-height: 38px;
+  }
+  .scene-controls {
+    bottom: 12px;
+    right: 17px;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .scene-controls .quiet {
+    font-size: 8px;
+    padding: 7px 10px;
+    min-height: 30px;
+  }
+  .ocean-paths {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .ocean-destination {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 110px;
+    padding: 22px;
+    border-radius: 23px;
+  }
+  .destination-icon {
+    margin: 0;
+  }
+  .destination-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+  .ocean-destination h2 {
+    font-size: 21px;
+    margin: 6px 0;
+  }
+  .ocean-destination p {
+    font-size: 11px;
+  }
+  .destination-arrow {
+    right: 20px;
+    top: 46px;
+  }
+  .ocean-progress {
+    margin-top: 25px;
+  }
+  .ocean-progress strong {
+    font-size: 11px;
+  }
+  nav {
+    width: calc(100% - 30px);
+    bottom: 12px;
+    padding: 12px 14px;
+    gap: 0;
+    justify-content: space-between;
+    max-width: 520px;
+    border-radius: 26px;
+  }
+  nav a {
+    min-width: 44px;
+  }
+  nav span {
+    font-size: 9px;
+  }
+  .nav-symbol {
+    font-size: 21px !important;
+  }
+  .species-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .species-card {
+    border-radius: 20px;
+  }
+  .species-card img,
+  .prehistoric-art {
+    height: 145px;
+  }
+  .prehistoric-art svg {
+    height: 125px;
+  }
+  .prehistoric-art > span {
+    font-size: 5px;
+  }
+  .species-copy {
+    padding: 17px 14px;
+  }
+  .species-copy h2 {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+  .species-copy .tag {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+  .species-copy p {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+  .explore-link {
+    font-size: 9px;
+  }
+  .book-head {
+    padding-top: 28px;
+  }
+  .book-head h1 {
+    font-size: 48px;
+  }
+  .book-head p {
+    font-size: 13px;
+  }
+  .book-filters {
+    gap: 6px;
+    margin: 20px 0;
+  }
+  .book-filters button {
+    font-size: 10px;
+    padding: 9px 12px;
+    min-height: 40px;
+  }
+  .topic-grid {
+    gap: 12px;
+  }
+  .topic-card {
+    padding: 20px;
+  }
+  .topic-card strong {
+    font-size: 17px;
+  }
+  .article-hero > img,
+  .mega-illustration {
+    height: 360px;
+  }
+  .article-title {
+    left: 23px;
+    bottom: 24px;
+  }
+  .article-title p {
+    font-size: 13px;
+  }
+  .fact-grid {
+    grid-template-columns: 1fr;
+  }
+  .fact-grid section {
+    padding: 24px;
+  }
+  .fact-grid p {
+    font-size: 18px;
+  }
+  .mega-illustration svg {
+    width: 100%;
+    height: 250px;
+  }
+  .shark-question {
+    padding: 25px 18px;
+  }
+  .shark-question h2 {
+    font-size: 24px;
+  }
+  .writing-page h1 {
+    font-size: 43px;
+  }
+  .writing-intro {
+    font-size: 13px;
+  }
+  .writing-controls {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .writing-controls label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .segmented button {
+    flex: 1;
+  }
+  .writing-board {
+    height: 300px;
+  }
+  .writing-toolbar {
+    gap: 8px;
+  }
+  .writing-toolbar .quiet {
+    padding: 12px 15px;
+  }
+  .writing-toolbar button {
+    font-size: 11px;
+  }
+  .writing-hint p {
+    font-size: 13px;
+  }
+  .expedition-page > h1 {
+    font-size: 41px;
+  }
+  .expedition-page > p {
+    font-size: 14px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .game-top {
+    gap: 8px;
+  }
+  .game-top small {
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+  .game-top button {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .card-icon {
+    height: 120px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .milo-swim {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .milo-greeting {
+    opacity: 1;
+    transform: none;
+  }
+  .shark-one {
+    left: 15%;
+  }
+  .shark-two {
+    left: 65%;
+  }
+  .shark-three {
+    left: 45%;
+  }
+  .sea-particles i {
+    top: calc(var(--i) * 6%);
+  }
+}
+body:before {
+  z-index: 0;
+  opacity: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, #02152588, #021a2c55 40%, #031b2aa0),
+    url('assets/reef-background.jpg') center/cover;
+}
+main {
+  position: relative;
+  z-index: 1;
+}
+.milo-swim img {
+  display: block;
+  width: 100%;
+  animation: milo-hover 7s ease-in-out 5.2s infinite;
+}
+.milo-swim {
+  filter: drop-shadow(0 22px 28px #00102066);
+}
+.stroke-demo {
+  fill: none;
+  stroke: #2ca99a;
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: show-stroke 1.8s ease both;
+}
+@keyframes show-stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.writing-toolbar .quiet {
+  background: #123347df;
+}
+.writing-feedback {
+  background: #0b2d42b8;
+  padding: 15px 18px;
+  border-radius: 17px;
+}
+.writing-page > .muted {
+  background: #0b2d4299;
+  padding: 10px 15px;
+  border-radius: 14px;
+}
+.reef-scene.paused .milo-greeting {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+}
+.reef-scene.paused .milo-swim {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+  filter: drop-shadow(0 22px 28px #00102066);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stroke-demo {
+    stroke-dashoffset: 0;
+  }
+}
