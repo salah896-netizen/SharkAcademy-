@@ -1,0 +1,50 @@
+{
+  "home": {
+    "title": "The Sunken City",
+    "step": 0.245,
+    "bars": 24,
+    "root": 50,
+    "lead": "flute",
+    "energy": 0.65
+  },
+  "learning": {
+    "title": "Coral Corsairs",
+    "step": 0.215,
+    "bars": 24,
+    "root": 50,
+    "lead": "pluck",
+    "energy": 0.9
+  },
+  "sharks": {
+    "title": "Beyond the Blue",
+    "step": 0.33,
+    "bars": 24,
+    "root": 43,
+    "lead": "flute",
+    "energy": 0.35
+  },
+  "writing": {
+    "title": "Pearl Lagoon",
+    "step": 0.34,
+    "bars": 16,
+    "root": 62,
+    "lead": "mallet",
+    "energy": 0.2
+  },
+  "stories": {
+    "title": "Lanterns in the Deep",
+    "step": 0.31,
+    "bars": 24,
+    "root": 50,
+    "lead": "mallet",
+    "energy": 0.35
+  },
+  "collection": {
+    "title": "The Captain\u2019s Pearls",
+    "step": 0.24,
+    "bars": 24,
+    "root": 55,
+    "lead": "pluck",
+    "energy": 0.6
+  }
+}

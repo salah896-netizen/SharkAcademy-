@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+node_modules/
+
+# Local curriculum review and voice production materials
+/output/
+/voice-production/
+/research/curriculum/

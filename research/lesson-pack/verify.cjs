@@ -1,0 +1,14 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const context={state:{history:[],completed:[],discoveries:[],readingAdventures:[],xp:0},location:{hash:'#play'},render(){},Date,stageFor:()=>1,makeQuestions:()=>['existing'],play(){},finish(){},writing(){},advanceLearning(){return true},libraryPage(){},crewForRoute(){return null},oceanSpecies:['salmon','tuna'],seaAnimal:k=>'<svg></svg>',shuffled:x=>x,sharkBook:[{id:'whale',image:'whale.jpg',name:'Whale shark',source:'source',facts:[['a','fact one'],['b','fact two']]}],save(){},learningState:()=>({maths:{baseline:0}})};
+vm.createContext(context);
+vm.runInContext(fs.readFileSync('dist/reading-adventure.js','utf8'),context);
+vm.runInContext(fs.readFileSync('dist/lesson-pack.js','utf8'),context);
+const lessons=vm.runInContext('readingMissionLibrary',context);assert.equal(lessons.length,6);
+for(let i=0;i<12;i++){context.startReadingMission();assert.equal(context.game.lesson,lessons[i%6].id);assert.equal(context.game.items.length,4);for(const q of context.game.items){assert(q.options.includes(q.answer));assert.equal(new Set(q.options).size,3);assert(q.codes.length)}context.state.readingAdventures.push({lesson:context.game.lesson});}
+context.startReadingMission('R-F-PILOT-04');assert.equal(context.game.lesson,'R-F-PILOT-04');assert.equal(context.game.items[0].word,'bag');
+for(let n=0;n<16;n++){context.state.completed=Array.from({length:n},()=>({type:'maths'}));for(const q of context.makeQuestions('maths')){assert.equal(new Set(q.choices).size,3);assert(q.choices.includes(q.answer));assert(Number(q.answer)>=1&&Number(q.answer)<=10);assert(q.codes.length);assert(q.scene.includes('lesson-animals')); assert.equal(q.lesson,['M-F-01','M-F-02','M-F-03','M-F-04'][n%4]);}}
+vm.runInContext("requestedMathsLesson='M-F-04'",context);context.stageFor=()=>2;assert(context.makeQuestions('maths').every(q=>q.lesson==='M-F-04'));assert.deepEqual(context.makeQuestions('maths'),['existing']);context.stageFor=()=>1;
+assert.equal(context.advanceLearning('maths'),false);context.state.history=['M-F-01','M-F-02','M-F-03','M-F-04'].flatMap((lesson,i)=>Array.from({length:5},()=>({type:'maths',lesson,stage:1,independent:true,session:'session-'+i})));context.game=null;assert.equal(context.advanceLearning('maths'),true);
+for(const expected of ['fact one','fact two','fact one','fact two'])assert.equal(context.nextLessonDiscovery('reading').text,'Whale shark. '+expected);
+context.state.writingHistory=[{character:'c',mode:'free',step:'copy',aspect:1.5,ink:[[{x:1,y:2},{x:3,y:4}]]}];const preview=context.writingPracticePreview();assert(preview.includes('viewBox="0 0 400 267"'));assert(preview.includes('c · copied'));assert(preview.includes('M1 2 L3 4'));
+console.log('Passed: reading rotation/replay; 80 varied maths questions; exact lesson selection; stage fallback; evidence gate; discovery rotation; reviewable writing vectors.');

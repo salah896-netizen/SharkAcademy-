@@ -1,0 +1,59 @@
+/* Calm canvases give the pictures, target words and friends room to lead. */
+body[data-calm-scene=reading]{--calm-background:#cce4ef;--calm-ink:#234a62;--calm-border:#91b6c6}
+body[data-calm-scene=maths]{--calm-background:#d0e9de;--calm-ink:#254e4a;--calm-border:#91bbaa}
+body[data-calm-scene=library]{--calm-background:#d8e7e1;--calm-ink:#284f54;--calm-border:#97b9b3}
+body[data-calm-scene=library-sand]{--calm-background:#eddfbd;--calm-ink:#654f32;--calm-border:#c1ab7d}
+body[data-calm-scene=stories]{--calm-background:#dedbed;--calm-ink:#494866;--calm-border:#b5afce}
+body[data-calm-scene=discovery]{--calm-background:#10324c;--calm-ink:#f4efdb;--calm-border:#6c9baa}
+body[data-calm-scene=cinema]{--calm-background:#101e34;--calm-ink:#f4efdb;--calm-border:#6c849f}
+body[data-calm-scene=sand]{--calm-background:#ead4a3;--calm-ink:#75512f;--calm-border:#baa274}
+body[data-calm-scene]:not([data-calm-scene=home]) #oceanWorld{background:var(--calm-background)!important;filter:none!important}
+body[data-calm-scene]:not([data-calm-scene=home]) .world-backdrop,body[data-calm-scene]:not([data-calm-scene=home]) #livingOcean{display:none!important}
+body[data-calm-tone=light] #app{color:var(--calm-ink)}
+body[data-calm-tone=light] #app h1,body[data-calm-tone=light] #app h2,body[data-calm-tone=light] #app p,body[data-calm-tone=light] .quest-word,body[data-calm-tone=light] .sound-letter{color:var(--calm-ink)!important;text-shadow:none!important}
+body[data-calm-tone=light] .quest-trail span:not(.found){background:#ffffff33;border-color:var(--calm-border)}
+body[data-calm-tone=light] .quest-trail i,body[data-calm-tone=light] .lesson-progress i,body[data-calm-tone=light] .quest-trail span{color:var(--calm-ink)}
+body[data-calm-tone=light] .quest-pictures button{background:#f4f8ed;border-color:var(--calm-border);box-shadow:0 4px 0 #31505c12}
+body[data-calm-tone=light] .quest-word.sound-support .sound-letter{border-color:#3a7e82}
+body[data-calm-tone=light] .quest-word.sound-support .sound-letter{animation-name:calm-sound-guide}
+body[data-calm-tone=light] .maths-model>b{color:var(--calm-ink)}
+body[data-calm-tone=light] .maths-group{background:#ffffff44;border-color:var(--calm-border)}
+body[data-calm-tone=light] .lesson-animals>span.counted{background:#fbf8d080;border-color:#548e7c}
+body[data-calm-tone=light] .lesson-shelf h1,body[data-calm-tone=light] .sub-library h1{color:var(--calm-ink)!important;text-shadow:none!important}
+body[data-calm-tone=light] .lesson-shelf-card,body[data-calm-tone=light] .library-choices button{background:#f4f7ed;color:var(--calm-ink)!important;border-color:var(--calm-border);box-shadow:0 4px 0 #244c5811}
+body[data-calm-tone=light] .lesson-card-art{background:#e9f0e3}
+body[data-calm-tone=light] .lesson-shelf-pages span{color:var(--calm-ink)}
+body[data-calm-tone=light] .lesson-shelf-card>strong,body[data-calm-tone=light] .library-choices button,body[data-calm-tone=light] .all-sharks-link{color:var(--calm-ink)!important}
+body[data-calm-tone=light] .submarine-library{color:var(--calm-ink);filter:drop-shadow(0 3px 4px #234c5222)}
+body[data-calm-tone=light] #oceanSettings,body[data-calm-tone=light] #oceanVoice{background:#ffffff88;color:var(--calm-ink)}
+body[data-calm-tone=light] #screenBack{background:#f4f8ed;border-color:var(--calm-border);color:var(--calm-ink)}
+body[data-calm-tone=light] #treasureChest{background:#365653e8;border-color:#edf6df88}
+body[data-calm-tone=light]:not(.voice-muted) .companion-copy,body[data-calm-tone=light]:not(.voice-muted) .helper-intro{display:none!important}
+body[data-calm-tone=light] .story-library h1,body[data-calm-tone=light] .story-reader{color:var(--calm-ink)}
+body[data-calm-tone=light] .story-card{background:#f3f0f7;border-color:var(--calm-border)}
+body[data-calm-tone=light] .story-text{color:var(--calm-ink)!important;background:#f6f3f9!important}
+body[data-calm-scene=discovery] .shark-article,body[data-calm-scene=discovery] .encyclopedia-shelf{color:var(--calm-ink)}
+@keyframes calm-sound-guide{0%,60%,100%{translate:0 0;background:transparent}20%,40%{translate:0 -5px;background:#fff4c9;border-radius:12px}}
+/* One brief swim. The lesson builds behind the final colour and speaks on arrival. */
+.lesson-journey{position:fixed;inset:0;z-index:80;overflow:hidden;isolation:isolate;pointer-events:auto}
+.journey-water{position:absolute;inset:0;background:var(--journey-colour);opacity:0;animation:journey-water 2.05s ease-in-out forwards}
+.journey-milo{position:absolute;left:50%;top:50%;width:clamp(250px,44vw,490px);animation:journey-swim 1.75s cubic-bezier(.3,.05,.3,1) both;filter:drop-shadow(0 10px 12px #244d5322)}
+.journey-milo>svg{width:100%;height:auto;display:block;transform:scaleX(-1)}
+.journey-bubbles{position:absolute;inset:0;pointer-events:none;opacity:.75}
+.journey-bubbles i{position:absolute;left:calc(12% + var(--bubble)*11%);top:110%;width:calc(9px + var(--bubble)*2px);height:calc(9px + var(--bubble)*2px);border:2px solid #f9ffffaa;border-radius:50%;background:#ffffff22;animation:journey-bubble 1.4s ease-out both;animation-delay:calc(var(--bubble)*.055s)}
+.lesson-journey.journey-arrived{opacity:0;transition:opacity .35s ease-out}
+.journey-starting .home-board button{box-shadow:0 0 35px 14px #abfff599!important}
+.journey-starting .home-board img{filter:brightness(1.08)}
+.reduced-journey .journey-milo,.reduced-journey .journey-bubbles{display:none}
+.reduced-journey .journey-water{animation-duration:.16s}
+.reduced-journey.journey-arrived{transition-duration:.12s}
+@keyframes journey-water{0%{opacity:0}35%{opacity:.8}55%,100%{opacity:1}}
+@keyframes journey-swim{0%{opacity:0;transform:translate(-50%,40vh) scale(.5)}18%{opacity:1}45%{opacity:1;transform:translate(-50%,-35%) scale(1)}75%{opacity:1;transform:translate(15vw,-15vh) scale(.9)}100%{opacity:0;transform:translate(75vw,-25vh) scale(.7)}}
+@keyframes journey-bubble{0%{opacity:0;translate:0 0}15%{opacity:.8}100%{opacity:0;translate:25px -130vh}}
+@media(prefers-reduced-motion:reduce){.journey-milo,.journey-bubbles{display:none}.journey-water{animation-duration:.16s}.lesson-journey.journey-arrived{transition-duration:.12s}}
+.journey-starting .home-friends button:nth-child(3){opacity:0!important}
+body[data-calm-tone=light] #app .tag,body[data-calm-tone=light] #app .muted,body[data-calm-tone=light] #app .book-progress,body[data-calm-tone=light] #app .explore-link,body[data-calm-tone=light] #app .story-word{color:var(--calm-ink)!important}
+body[data-calm-tone=light] .collect,body[data-calm-tone=light] .picture-game,body[data-calm-tone=light] .ocean-progress{background:#f3f7ed;border-color:var(--calm-border);color:var(--calm-ink)}
+body[data-calm-tone=light] .collect h3,body[data-calm-tone=light] .picture-game button{color:var(--calm-ink)}
+body[data-calm-tone=light] .book-progress{background:#f3f1f8;border:1px solid var(--calm-border)}
+body[data-calm-tone=light]:not(.voice-muted) .story-library>p,body[data-calm-tone=light]:not(.voice-muted) .story-library>.tag,body[data-calm-tone=light] .story-library>.book-progress,body[data-calm-tone=light]:not(.voice-muted) .story-card .tag,body[data-calm-tone=light]:not(.voice-muted) .story-card .species-copy>p,body[data-calm-tone=light] .story-card .explore-link{display:none!important}
