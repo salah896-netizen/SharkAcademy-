@@ -27,6 +27,7 @@ const context = {
   document: { createElement: () => ({ setAttribute: noop }), body: { append: noop } },
   app: { querySelector: () => null },
   PEARLS: { adventure: 13, extra: 3 },
+  window: { addEventListener: noop },
   Date
 };
 vm.createContext(context);
