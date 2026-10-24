@@ -552,7 +552,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v80');
+      const cache = await caches.open('haytham-sharks-v81');
       const files = [
         './assets/fossil-gateway-carved.png',
         './assets/writing-sand.svg',

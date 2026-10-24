@@ -346,3 +346,19 @@
     animation: none;
   }
 }
+
+/* Narrow screens (phones, iPad split view): keep the map clear of the top buttons. */
+@media (max-width: 700px) {
+  body[data-route='path'] #app {
+    inset: max(78px, calc(env(safe-area-inset-top) + 64px)) 8px 96px !important;
+  }
+  .path-map {
+    justify-content: flex-start;
+    padding-bottom: 20px;
+  }
+  .path-head {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
