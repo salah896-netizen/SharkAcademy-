@@ -258,7 +258,7 @@ function raceStart(track, racerId) {
   const others = Object.keys(racers).filter(k => k !== racerId),
     seed = (state.races || []).length;
   const rivals = [others[seed % others.length], others[(seed + 2) % others.length]];
-  app.innerHTML = `<section class="race-screen race-scene-${track.id}" aria-label="${track.name} race"><div class="race-floor" aria-hidden="true"></div><div class="race-progress" aria-hidden="true"><i class="race-finish-flag">🏁</i>${[racerId, ...rivals].map((k, i) => `<img class="race-marker ${i === 0 ? 'you' : ''}" data-marker="${i}" src="${racers[k].image}" alt="">`).join('')}</div><div class="race-pearls" aria-live="polite"><span>0</span>/${RACE.maxPearls}</div><div class="race-lanes">${[0, 1, 2].map(l => `<button class="race-lane" data-lane="${l}" aria-label="Swim to lane ${l + 1}"></button>`).join('')}<div class="race-world"></div><div class="race-cue" hidden></div><img class="race-shark" src="${racers[racerId].image}" alt="${racers[racerId].name}"></div><div class="race-start"><button id="raceGo" class="primary">Go! <span aria-hidden="true">🏁</span></button><p>Tap a lane to swim there. Swim through the right shell to go faster!</p></div></section>`;
+  app.innerHTML = `<section class="race-screen race-scene-${track.id}" aria-label="${track.name} race"><div class="race-floor" aria-hidden="true"></div><div class="race-progress" aria-hidden="true"><i class="race-finish-flag">🏁</i>${[racerId, ...rivals].map((k, i) => `<img class="race-marker ${i === 0 ? 'you' : ''}" data-marker="${i}" src="${racers[k].image}" alt="">`).join('')}</div><div class="race-pearls" aria-live="polite"><span>0</span>/${RACE.maxPearls}</div><div class="race-lanes">${[0, 1, 2].map(l => `<button class="race-lane" data-lane="${l}" aria-label="Swim to lane ${l + 1}"></button>`).join('')}<div class="race-world"></div><div class="race-cue" hidden></div><img class="race-shark" src="${racers[racerId].image}" alt="${racers[racerId].name}"></div><button id="racePause" class="race-pause" aria-label="Pause the race" hidden><span aria-hidden="true">❚❚</span> Pause</button><div class="race-start"><button id="raceGo" class="primary">Go! <span aria-hidden="true">🏁</span></button><p>Tap a lane to swim there. Swim through the right shell to go faster!</p></div></section>`;
   const run = {
     track,
     racerId,
@@ -328,11 +328,13 @@ function raceStart(track, racerId) {
     if (e.key === 'ArrowDown') moveTo(run.lane + 1);
   };
   window.addEventListener('keydown', run.onKey);
+  // Leaving the app pauses the race, so nothing is missed.
   run.onVisibility = () => {
-    if (document.hidden && raceRun === run) run.last = null;
+    if (document.hidden && raceRun === run) pauseRace(run);
   };
   document.addEventListener('visibilitychange', run.onVisibility);
   $('#raceGo').onclick = () => beginRace(run);
+  $('#racePause').onclick = () => pauseRace(run);
   helperSpeak(`${racers[racerId].name} is ready. Tap Go!`);
   renderRace(run);
 }
@@ -383,10 +385,58 @@ function beginRace(run) {
         if (word === 'Go!') {
           run.timers.push(setTimeout(() => banner.remove(), 700));
           run.last = null;
+          run.running = true;
+          const pause = $('#racePause');
+          if (pause) pause.hidden = false;
           run.frame = requestAnimationFrame(t => raceTick(run, t));
         }
       }, i * 800)
     )
+  );
+}
+// Pause: everything freezes, the clue stays up so Haytham can have a think.
+function pauseRace(run) {
+  if (!run || raceRun !== run || !run.running || run.finished || run.paused) return;
+  run.paused = true;
+  cancelAnimationFrame(run.frame);
+  stopSpeech();
+  const screen = app.querySelector('.race-screen');
+  screen?.classList.add('paused');
+  const pauseButton = $('#racePause');
+  if (pauseButton) pauseButton.hidden = true;
+  const card = document.createElement('div');
+  card.className = 'race-paused-card';
+  card.innerHTML =
+    '<div><strong>Paused</strong><p>Have a think. Take your time!</p><button id="raceResume" class="primary">▶ Keep swimming</button><button id="raceQuit">Race tracks</button></div>';
+  screen?.append(card);
+  $('#raceResume').onclick = () => resumeRace(run);
+  $('#raceQuit').onclick = () => (location.hash = 'race');
+  speak('Paused. Have a think, then tap Keep swimming!', { speaker: run.racerId });
+}
+function resumeRace(run) {
+  if (!run.paused || raceRun !== run) return;
+  stopSpeech();
+  app.querySelector('.race-paused-card')?.remove();
+  const banner = document.createElement('div');
+  banner.className = 'race-countdown pop';
+  banner.textContent = 'Ready…';
+  app.querySelector('.race-screen')?.append(banner);
+  run.timers.push(
+    setTimeout(() => {
+      if (raceRun !== run) return;
+      banner.textContent = 'Go!';
+      banner.classList.remove('pop');
+      void banner.offsetWidth;
+      banner.classList.add('pop');
+      speak('Go!', { speaker: run.racerId });
+      app.querySelector('.race-screen')?.classList.remove('paused');
+      run.paused = false;
+      run.last = null;
+      const pauseButton = $('#racePause');
+      if (pauseButton) pauseButton.hidden = false;
+      run.frame = requestAnimationFrame(t => raceTick(run, t));
+      run.timers.push(setTimeout(() => banner.remove(), 700));
+    }, 900)
   );
 }
 function currentSpeed(run) {
@@ -396,7 +446,7 @@ function currentSpeed(run) {
   return v;
 }
 function raceTick(run, now) {
-  if (raceRun !== run || run.finished) return;
+  if (raceRun !== run || run.finished || run.paused) return;
   const dt = run.last ? Math.min(0.05, (now - run.last) / 1000) : 0;
   run.last = now;
   stepRace(run, dt);
@@ -486,7 +536,11 @@ function renderRace(run) {
       cue.innerHTML = item.clue.cue;
       cue.hidden = false;
       speak(item.clue.say, { speaker: run.track.helper });
-      run.timers.push(setTimeout(() => (cue.hidden = true), 5200));
+      run.cueGate = item;
+    }
+    if (item === run.cueGate && item.done && x < 14) {
+      app.querySelector('.race-cue').hidden = true;
+      run.cueGate = null;
     }
   }
   const pct = d => Math.min(100, (d / RACE.length) * 100);
@@ -501,6 +555,8 @@ function racePlace(run) {
 function finishRace(run) {
   run.finished = true;
   cancelAnimationFrame(run.frame);
+  const pauseButton = $('#racePause');
+  if (pauseButton) pauseButton.hidden = true;
   document.body.classList.remove('race-running');
   const place = racePlace(run),
     right = run.shells.filter(s => s.right).length;

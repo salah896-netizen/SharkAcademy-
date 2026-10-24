@@ -1,0 +1,126 @@
+/* Shark tap tricks. Short, bouncy, and the same everywhere a friend can be tapped. */
+.trick-twirl,
+.trick-flip,
+.trick-spin,
+.trick-zoom,
+.trick-bubbles {
+  position: relative;
+}
+.trick-twirl {
+  animation: trick-twirl 1s cubic-bezier(0.3, 1.4, 0.5, 1) !important;
+}
+.trick-flip {
+  animation: trick-flip 1s ease-in-out !important;
+}
+.trick-spin {
+  animation: trick-spin 1s ease-in-out !important;
+}
+.trick-zoom {
+  animation: trick-zoom 1s ease-in-out !important;
+}
+.trick-bubbles {
+  animation: trick-wiggle 1s ease-in-out !important;
+}
+@keyframes trick-twirl {
+  40% {
+    transform: translateY(-14px) rotate(-20deg) scale(1.08);
+  }
+  70% {
+    transform: translateY(-6px) rotate(14deg);
+  }
+}
+@keyframes trick-flip {
+  30% {
+    transform: translateY(-26px);
+  }
+  60% {
+    transform: translateY(-26px) rotateX(180deg) rotateZ(-30deg);
+  }
+  85% {
+    transform: translateY(-6px) rotateZ(6deg);
+  }
+}
+@keyframes trick-spin {
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes trick-zoom {
+  30% {
+    transform: translateX(-40px) scaleX(1.12);
+  }
+  60% {
+    transform: translateX(40px) scaleX(0.92);
+  }
+}
+@keyframes trick-wiggle {
+  25% {
+    transform: rotate(-6deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(6deg) scale(1.05);
+  }
+}
+.trick-bubble-burst {
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  width: 60%;
+  height: 0;
+  pointer-events: none;
+}
+.trick-bubble-burst i {
+  position: absolute;
+  left: calc(var(--b) * 14%);
+  bottom: 0;
+  width: calc(10px + var(--b) * 2px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #ffffffcc;
+  background: #ffffff33;
+  animation: trick-bubble 1.3s calc(var(--b) * 0.06s) ease-out forwards;
+}
+@keyframes trick-bubble {
+  to {
+    transform: translateY(-110px) translateX(calc((var(--b) - 3) * 6px));
+    opacity: 0;
+  }
+}
+.lets-go-bubble {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  translate: -50% -100%;
+  z-index: 3;
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: #fffdf4;
+  color: #0d4a62;
+  font: 800 16px ui-rounded, system-ui, sans-serif;
+  font-style: normal;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px #00203544;
+  animation: lets-go-pop 0.35s ease-out;
+  pointer-events: none;
+}
+@keyframes lets-go-pop {
+  from {
+    scale: 0.6;
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trick-twirl,
+  .trick-flip,
+  .trick-spin,
+  .trick-zoom,
+  .trick-bubbles {
+    animation: none !important;
+  }
+}
+.home-friends button {
+  position: relative;
+}

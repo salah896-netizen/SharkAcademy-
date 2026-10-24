@@ -2959,5 +2959,1629 @@
   "group": "shark fact",
   "settings": "line",
   "file": "audio/voice/gizmo/ee45f8b6d9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound slowly, then slide the sounds together.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/34f2bb3e8a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We can read it again.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/259c4915b6.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Point to each fish once.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/52627e7ae6.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "When you add, start with the first number and count on.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/e9cf9b480d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Look closely at the picture.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/cbceafce39.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Read or listen to the facts again, then look for a clue.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/8bb8191042.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Start at the dot and follow the stroke slowly.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/4f67cf2e27.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Lift your finger between strokes.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/556c365d79.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Every try is practice.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/5f537d8399.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Fin five, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/75f8ce06b3.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "We make a great team.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/dd380b8fcc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "What\u2019s a shark\u2019s favourite story?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/7276443022.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Little Red Fishing Hood!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/39f4ccf52c.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Young tiger sharks have stripes, just like me!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/d2b328e9c5.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Let\u2019s discover something new!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f74e5a8a24.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Makos can leap right out of the water!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/87d0aac264.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "An ocean twirl, just for you!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/c69a480934.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Bubbles!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/6d3acf9ad4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Pop, pop, pop!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/5bdc92deb7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "One, two, three, flip!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/131edc5d87.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Hmm, curious!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/12a46a872d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Very curious!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/852e710d51.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "High fin, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/756f334acf.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "What do sharks put on toast?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/d753e15e6f.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Jellyfish!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/014cc74028.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Here\u2019s our path, Haytham.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/049de641cb.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Milo shows where we\u2019re up to.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/856e24bcb7.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Tap Next adventure!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/e1ed8444cd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Whale sharks are the biggest fish in the sea!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c61d9b22ed.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tiger sharks eat lots of different things, even turtles!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/b8ee732bf8.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "My long, flat snout helps me find food.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/942755b3d3.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "I\u2019m the speedy one!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/31576efd50.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Megalodon lived long, long ago.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/06303a1006.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Scientists learn about it from fossil teeth.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/6075bac71b.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s make a little c for our captain\u2019s log.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/482cbdb6f1.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "First, watch the strokes if you want, then trace the glowing trail in the sand.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/c0e06d5066.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Take your time.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/032f95400b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "I\u2019m right here.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/a1d6dbbc25.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Great trying!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4aaba1df36.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Let\u2019s look again.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/52b9a8ae6c.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Start at the dot.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/85fe5f90dd.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Curve around to make a c.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/3bb043719b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "You\u2019re a super reader, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/fa670acccd.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "What do sharks count with?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/5fefb26cc7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Their fin-gers!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/2639bc2e0f.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Just joking, mate!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/cc026a76d3.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Gizmo, reporting for science!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/46f1811aa6.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Choose a shark picture.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3848536097.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "We\u2019ll explore it together.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/8d7626a893.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Milo is right here.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a0d456f637.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Makos are some of the fastest sharks in the sea!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/6a7bbfb679.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "You\u2019re my best ocean buddy!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/f02d5a5a7f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Hello, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c536275cfd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Want to read with me?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/0f46f71480.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Choose a story picture.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/275654e436.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We can read it together, then you can have a go.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/84c8667515.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "You\u2019re a number champion!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/55725b662b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "My jaws can shoot forwards to catch food.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4a18da59ab.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Snap!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/46aef99597.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Watch me do a loop!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/b71ade4931.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Why did the shark cross the reef?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/722c98a53b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "To get to the other tide!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/2ecc592979.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Choose a science adventure, Haytham.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/b6715c7745.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo and Milo are ready to explore.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/8dd5cda5b1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I\u2019m a whale shark.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/0c5e31ea10.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I\u2019m a fish, not a whale!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/4305ee2012.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Righto, watch this flip!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/4faf9b4e16.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "I live deep, deep down, where it\u2019s very dark.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/7e3b5261f6.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Ready, steady, write!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/70363154a3.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Chomp, chomp!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/3770ed9413.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Just kidding.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/ffe72ad467.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I only eat pretend snacks.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/2a07ced084.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Hee hee, that tickles!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/7d638b969a.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "My real cousin megalodon has a name that means big tooth!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/c6db79fd93.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I eat tiny plankton.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/b473edd4eb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Slurp!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/4a94c5428b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at my spots!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c19fc550a4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Every whale shark has its own pattern.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/608a40e28b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "G\u2019day, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/86093961b8.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Let\u2019s count my stripes!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/ae8a6fce86.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tiger sharks live in warm seas, including near Australia.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/9bf2a93974.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "I look pink because you can see blood vessels through my skin!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4ad2c255b9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "What do you call a shark who loves science?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/90ce26f72f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A fin-tastic scientist!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/27a7239750.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "What\u2019s a shark\u2019s favourite letter?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/936df6e1b9.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sea!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/69223915ba.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "My pointed nose helps me slice through the water.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/80098bd5cb.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Paused.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/d74cb4f898.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Have a think, then tap Keep swimming!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/milo/2489eaab53.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Paused.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/d6a7367e69.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Have a think, then tap Keep swimming!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/58f43125cc.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Paused.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/bb310b47e0.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Have a think, then tap Keep swimming!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/097c12ccdc.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Paused.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f81f65e1e5.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Have a think, then tap Keep swimming!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/81819ee1f7.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Paused.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/808d4a1dc0.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Have a think, then tap Keep swimming!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/d63affdc3c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I\u2019m Willa the whale shark.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/a8f26c6a0b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I love words and stories.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/a535832488.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo and I will read with you, one little word at a time.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/bcb7663568.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Hi, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/03272a6701.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "I\u2019m Tiggy the tiger shark.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/c240f29d0c.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Let\u2019s count fish and solve number puzzles!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/1c0cb9823d.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Milo is on our team too.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/c1a3384a53.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Hello, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/d49fd0c56c.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "I\u2019m Gizmo the goblin shark.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/fccc7255fb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "I\u2019m a curious shark detective.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b3933010e2.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Let\u2019s explore amazing sharks with Milo!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/gizmo/1b99b1ad98.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Hey, Haytham!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/0cd3aa03da.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "I\u2019m Dash the mako shark.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/7d41ef697a.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s practise letters and numbers.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/03c08edb6d.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "I swim fast, but we can write slowly.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/fe5a395c06.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Milo will stay right here!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/dash/97259fe076.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the clue.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/25332e68fb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which picture matches?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/df877b6e7e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at each letter in map.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/7cee610f67.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say its sound, then blend the sounds together.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/5d20c97a8d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A map!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/10c7ba141c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Now we can find the secret reef.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/e493aa2521.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the next clue.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/b9071ceea2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at each letter in net.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/0793876fc6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A net!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/7f30fd7702.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We found an old net beside the reef.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/d29f4542ea.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "What can we see beyond the net?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/28982fd036.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at each letter in fin.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/a26eed4edc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A fin!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/bf71adf2a9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Our little shark friend is waiting nearby.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/4014d082e6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the message.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/352245cfe8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which fin does it describe?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/d489cd9771.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s read together: A red fin.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c3671c6b08.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The word red tells us which fin to choose.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/b2d239a727.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "You found our friend at the red-fin sign!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/fd318f8184.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s swim home together.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/153d921627.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Willa and Milo found a sunken picnic.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/74f2401b40.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at each letter in cup.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/6719ba525a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A cup!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/9419879d62.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s find a place for our picnic.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/0ba4465d0d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We have seen this word before.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/476e58b257.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the clue and choose its picture.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/8c63d0c1f3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It shows us a quiet spot beside the reef.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/3f711b544f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at each letter in sun.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/19b3f16fca.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The sun!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/36d465db77.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We can see its light dancing through the water.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/2b808199fb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which cup does it describe?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/293a9e982a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s read together: A red cup.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/4847dbcfd1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The word red tells us which cup to choose.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/b99d2cd253.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "You found the red cup!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/58334748e4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Our pretend picnic is ready.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/1268088ce5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Time for a shark discovery.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/82bf1e9f92.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in hat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/9a0b243a3c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A hat!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/5c2f4fda0f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Our pretend captain has lost a hat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/aa911565a2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in map.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/08f8273a8f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We know this word.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/d0b9eed12c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It shows the way to the boat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/f5b2db9fe5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in cat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/a05ea16c46.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A cat!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/d9c525f3d8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The captain\u2019s cat is beside the hat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/d2cb5ca7e4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s read together: A red hat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/98d9602926.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Look at every word before choosing.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/ea34bd9491.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red hat!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/2d3fcf3177.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The captain and cat are ready for their next pretend voyage.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/f92375eb72.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in bag.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/3d898c5308.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A bag!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/a1e2c80384.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We can put our pretend treasures inside.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/86011b334d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in net.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/97d7f8423f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s keep our treasure bag clear of the old net.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/cd131beaf3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in cup.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/0943773f4e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "There is a little cup beside the bag.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/6a6d32fa2a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s read together: A red bag.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/8d7e55bfbc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red bag!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/ee97af185a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We found our pretend treasure bag together.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/3f07763bd8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Our pretend ship\u2019s cat is ready for a voyage.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/9db6e75e3c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in fin.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c202d25582.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo is swimming beside the pretend boat.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/574edaa9f2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Point to each letter in sun.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/214e12e655.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Our pretend voyage is bright and sunny.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c104a90088.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red-fin sign!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/258ce2a89b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We found our way back to the reef.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/78700c8b3c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We can read a familiar clue in a new adventure.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/8e414eb355.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s collect our pretend picnic things.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/355ac9cfb2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It belongs with the captain\u2019s picnic things.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/9876789866.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red cup!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/3b5bbba12d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Our reef picnic is ready.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/8310863b8e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s discover a shark fact.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/willa/c60faa71ae.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many counters are in the ten-frame?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/b079d905f2.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Look at the top row.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/ae20071878.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Can you see how many without counting one by one?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/e1a0024fb4.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many shark teeth are in the ten-frame?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/a10d7a366b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "The top row is full.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/76c29ba107.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "That\u2019s five.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/accbc94176.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Count on from five: six, seven\u2026",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/8ce1328ad4.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Sharks grow new teeth all their lives!",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/e966392dc2.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many more teeth will fill the ten-frame?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/5d916216a0.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Count the empty spaces.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/a45f1c81cc.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Each empty space needs one more counter to make ten.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/730f72213e.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Which number is missing?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/817ae75f42.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Which group has more?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/506872cdf4.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tap the group.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/05eff103e7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Count each group.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/76d026b778.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "The bigger number has more.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/baf13ab662.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Which group has fewer?",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/faad5977bb.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "The smaller number has fewer.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/8b4dfe86b0.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Find the part that repeats.",
+  "group": "day2",
+  "settings": "line",
+  "file": "audio/voice/tiggy/fd82a1a3f5.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Hello Haytham! I\u2019m Milo. Let\u2019s explore the ocean and make some amazing discoveries together.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/milo/49fcf2601a.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Fin-tastic, Haytham! We finished an adventure together.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/milo/9d6566796a.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "You did your three adventures today! You can keep going, or have a race or a story.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/milo/aa8b832bc8.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Each star is a skill you know.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/milo/95429aafbc.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s keep going!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/milo/240aa446de.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "We did it, Haytham!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/willa/c4509f0b45.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Here\u2019s a real shark fact.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/65b3cb47be.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You made 5 predictions and 0 matched what happened.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0563d770dd.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You made 5 predictions and 1 matched what happened.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a5c0b75b50.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You made 5 predictions and 2 matched what happened.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c83517ed28.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You made 5 predictions and 3 matched what happened.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/90c6e2c4ff.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You made 5 predictions and 4 matched what happened.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/18e107b0a3.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You made 5 predictions and 5 matched what happened.",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/540fc306e0.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Milo came first!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/29070fc49d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Milo came second!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/5edc260c47.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Milo came third!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b3b2d52dc9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Willa came first!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/9a1cf45e87.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Willa came second!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0e9c1db791.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Willa came third!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/604db6dc33.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Tiggy came first!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2eec76fabd.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Tiggy came second!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/194afa7c6b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Tiggy came third!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/24cc15fc41.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Gizmo came first!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a4e9f21e7f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Gizmo came second!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/e357ad4172.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Gizmo came third!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/39d43377e3.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Dash came first!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6896b2c43d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Dash came second!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a737d55e8d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Dash came third!",
+  "group": "day2 extra",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f31a2ee7f2.mp3"
  }
 ]

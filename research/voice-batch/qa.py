@@ -24,6 +24,7 @@ def analyse(path):
                 tail_cut=bool(active[-2:].any()))
 
 
+SHORT_OK = {'Pop, pop, pop!'}  # quick sound effects, checked by length
 UNVOICED_STRETCH = {'s', 'f', 'sh'}
 STOP_STYLE = {'t', 'p', 'ck', 'h', 'ch'}
 manifest = {'lines': {}, 'sounds': {}}
@@ -48,7 +49,7 @@ for line in lines:
     else:
         words = len(re.findall(r"[\w']+", t))
         expected = max(0.5, words / 2.6)
-        if a['active'] < expected * 0.35 and words > 2:
+        if a['active'] < expected * 0.35 and words > 2 and t not in SHORT_OK:
             issue = f"too short for the text ({a['active']:.1f}s for {words} words)"
         if a['seconds'] > expected * 3.2 + 1.5:
             issue = f"much longer than expected ({a['seconds']:.1f}s for {words} words)"

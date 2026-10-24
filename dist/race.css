@@ -728,3 +728,71 @@ body.intro-running #raceBuoy {
     animation: none;
   }
 }
+
+/* Pause: a big, friendly button; everything freezes while paused. */
+.race-pause {
+  position: absolute;
+  left: 12px;
+  top: 42px;
+  z-index: 4;
+  min-height: 56px;
+  padding: 10px 20px;
+  border-radius: 99px;
+  border: 3px solid #ffffffcc;
+  background: #00223577;
+  color: #fff;
+  font: 800 20px ui-rounded, system-ui, sans-serif;
+  touch-action: manipulation;
+}
+.race-pause span {
+  letter-spacing: -2px;
+  margin-right: 4px;
+}
+.race-pause[hidden] {
+  display: none;
+}
+.race-screen.paused *,
+.race-screen.paused::before {
+  animation-play-state: paused !important;
+}
+.race-paused-card {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  padding-top: 22vh;
+  background: #00182a55;
+}
+.race-paused-card > div {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  padding: 24px 34px;
+  border-radius: 30px;
+  background: #fffdf4;
+  color: #23465a;
+  box-shadow: 0 16px 40px #0006;
+}
+.race-paused-card strong {
+  font: 900 40px ui-rounded, system-ui, sans-serif;
+}
+.race-paused-card p {
+  margin: 0;
+  font: 600 19px ui-rounded, system-ui, sans-serif;
+  color: #23465a !important;
+}
+.race-paused-card button {
+  min-height: 60px;
+  min-width: 240px;
+  border-radius: 99px;
+  font: 800 22px ui-rounded, system-ui, sans-serif;
+}
+.race-paused-card #raceQuit {
+  min-height: 46px;
+  font-size: 16px;
+}
+/* The clue card stays visible above the paused overlay so he can think about it. */
+.race-screen.paused .race-cue {
+  z-index: 6;
+}
