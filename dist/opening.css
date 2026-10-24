@@ -1,0 +1,405 @@
+/* Tap to dive: one continuous painted scene from the sunny surface down to the reef. */
+.tap-dive {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  overflow: hidden;
+  cursor: pointer;
+  background: #03263f;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.6s ease;
+}
+.tap-dive.td-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.td-camera {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 300vh;
+  transition: transform 2.3s cubic-bezier(0.55, 0, 0.25, 1);
+}
+.diving .td-camera {
+  transform: translateY(-200vh);
+}
+.td-sky {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 82vh;
+  background:
+    radial-gradient(circle at 74% 26%, #fff6d8 0 5%, #ffe7a8 6%, #ffd98a33 18%, transparent 34%),
+    linear-gradient(#7fc7e8 0%, #b5e1ef 55%, #e9f3e9 100%);
+}
+.td-sun {
+  position: absolute;
+  left: 74%;
+  top: 26%;
+  width: 9vmin;
+  height: 9vmin;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: #fff8e0;
+  box-shadow: 0 0 60px 30px #fff3c477;
+}
+.td-cloud {
+  position: absolute;
+  height: 5vmin;
+  border-radius: 99px;
+  background: #ffffffcc;
+  filter: blur(2px);
+  animation: td-cloud 40s linear infinite;
+}
+.td-cloud.c1 {
+  width: 22vw;
+  top: 16%;
+  left: 8%;
+}
+.td-cloud.c2 {
+  width: 15vw;
+  top: 34%;
+  left: 52%;
+  animation-duration: 55s;
+  opacity: 0.8;
+}
+@keyframes td-cloud {
+  to {
+    translate: 20vw 0;
+  }
+}
+.td-surface {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64vh;
+  height: 16vh;
+}
+.td-surface svg {
+  position: absolute;
+  inset: 0;
+  width: 125%;
+  height: 100%;
+}
+.td-surface .w1 {
+  fill: #3aa6c4;
+  animation: td-wave 7s linear infinite;
+}
+.td-surface .w2 {
+  fill: #1f88aa;
+  animation: td-wave 5s linear infinite reverse;
+}
+@keyframes td-wave {
+  to {
+    transform: translateX(-12.5%);
+  }
+}
+/* Milo's dorsal fin glides back and forth on the surface. */
+.td-fin {
+  position: absolute;
+  top: 4%;
+  left: 14%;
+  width: clamp(54px, 8vmin, 84px);
+  z-index: 2;
+  animation: td-fin 9s ease-in-out infinite;
+}
+.td-fin svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@keyframes td-fin {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  48% {
+    transform: translateX(60vw) scaleX(1);
+  }
+  50% {
+    transform: translateX(60vw) scaleX(-1);
+  }
+  98% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+.td-mid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 78vh;
+  height: 130vh;
+  background: linear-gradient(#1f88aa 0%, #1a7aa6 45%, #227eb2 100%);
+  overflow: hidden;
+}
+.td-mid .ray {
+  position: absolute;
+  top: -10%;
+  width: 14vw;
+  height: 120%;
+  background: linear-gradient(#ffffff38, transparent 75%);
+  transform: skewX(-14deg);
+}
+.td-mid .r1 {
+  left: 18%;
+}
+.td-mid .r2 {
+  left: 48%;
+  width: 8vw;
+}
+.td-mid .r3 {
+  left: 70%;
+  width: 11vw;
+}
+/* The last screen is the same painted reef as the home screen, so the fade is seamless. */
+.td-deep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 190vh;
+  height: 110vh;
+  background:
+    linear-gradient(#227eb2 0%, #227eb200 26%),
+    url('assets/world-home.jpg') center bottom / cover;
+}
+.td-bubble {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  translate: -50% -50%;
+  width: clamp(170px, 26vmin, 260px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid #ffffffcc;
+  background: radial-gradient(
+    circle at 34% 28%,
+    #ffffff 0 9%,
+    #e6fbffcc 10% 30%,
+    #9be3f0aa 60%,
+    #5cc6dc88 100%
+  );
+  box-shadow:
+    0 0 0 10px #ffffff22,
+    0 12px 40px #0b3b5a55,
+    inset 0 -14px 26px #2b9fbd55;
+  display: grid;
+  place-items: center;
+  color: #0d4a62;
+  font:
+    800 clamp(22px, 3.4vmin, 30px) / 1.1 ui-rounded,
+    'Trebuchet MS',
+    system-ui,
+    sans-serif;
+  text-align: center;
+  animation: td-bubble 2.4s ease-in-out infinite;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+@keyframes td-bubble {
+  50% {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow:
+      0 0 0 18px #ffffff18,
+      0 16px 44px #0b3b5a55,
+      inset 0 -14px 26px #2b9fbd55;
+  }
+}
+.td-finger {
+  position: absolute;
+  right: -6%;
+  bottom: -6%;
+  font-style: normal;
+  font-size: clamp(38px, 6vmin, 56px);
+  animation: td-tap 1.4s ease-in-out infinite;
+}
+@keyframes td-tap {
+  50% {
+    transform: translate(-8px, -10px) scale(0.92);
+  }
+}
+.diving .td-bubble {
+  opacity: 0;
+  transform: scale(1.6);
+  animation: none;
+}
+/* Bubbles rush past as we dive. */
+.td-rush i {
+  position: absolute;
+  left: var(--x);
+  bottom: -40px;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  border: 2px solid #ffffffaa;
+  background: #ffffff22;
+  opacity: 0;
+}
+.diving .td-rush i {
+  animation: td-rush 1.3s var(--d) ease-in forwards;
+}
+@keyframes td-rush {
+  10% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-115vh);
+  }
+}
+/* The friends swoop up to meet Haytham, then settle where the reef row sits. */
+.td-friends {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4vh;
+  height: 22vh;
+  pointer-events: none;
+}
+.td-friend {
+  position: absolute;
+  bottom: 0;
+  width: 18vw;
+  max-width: 230px;
+  opacity: 0;
+  transform: translateY(70vh) rotate(-25deg);
+}
+.td-friend svg {
+  width: 100%;
+  height: auto;
+}
+.td-friend.f0 {
+  left: 3%;
+}
+.td-friend.f1 {
+  left: 21%;
+}
+.td-friend.f2 {
+  left: 40%;
+  width: 22vw;
+  max-width: 280px;
+}
+.td-friend.f3 {
+  left: 61%;
+}
+.td-friend.f4 {
+  left: 79%;
+}
+.diving .td-friend {
+  animation: td-swoop 1.5s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+.diving .td-friend.f0 {
+  animation-delay: 0.7s;
+}
+.diving .td-friend.f1 {
+  animation-delay: 0.85s;
+}
+.diving .td-friend.f2 {
+  animation-delay: 0.6s;
+}
+.diving .td-friend.f3 {
+  animation-delay: 0.95s;
+}
+.diving .td-friend.f4 {
+  animation-delay: 1.05s;
+}
+@keyframes td-swoop {
+  60% {
+    opacity: 1;
+    transform: translateY(-6vh) rotate(6deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* The fossil tooth rises as the reef appears. */
+.reef-arrive .home-board {
+  animation: tooth-rise 1.2s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+@keyframes tooth-rise {
+  from {
+    opacity: 0;
+    translate: 0 9vh;
+    scale: 0.94;
+  }
+}
+/* Shark of the day card on the reef. */
+.shark-of-day {
+  position: fixed;
+  left: 50%;
+  top: max(84px, calc(env(safe-area-inset-top) + 70px));
+  translate: -50% 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 20px 8px 8px;
+  border-radius: 99px;
+  border: 2px solid #ffffffaa;
+  background: #fffdf4ee;
+  color: #23465a;
+  box-shadow: 0 10px 30px #00203555;
+  animation: sod-in 0.5s ease-out;
+  transition:
+    opacity 0.4s,
+    translate 0.4s;
+}
+.shark-of-day img {
+  width: 92px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 99px;
+}
+.shark-of-day span {
+  display: grid;
+  text-align: left;
+}
+.shark-of-day small {
+  font:
+    800 11px ui-rounded,
+    system-ui,
+    sans-serif;
+  letter-spacing: 1px;
+  color: #6a8a96;
+}
+.shark-of-day strong {
+  font:
+    800 20px ui-rounded,
+    system-ui,
+    sans-serif;
+}
+.shark-of-day.sod-out {
+  opacity: 0;
+  translate: -50% -20px;
+}
+@keyframes sod-in {
+  from {
+    opacity: 0;
+    translate: -50% -20px;
+  }
+}
+/* Reduced motion: no plunge, just a gentle fade. */
+.tap-dive.reduced .td-camera,
+.tap-dive.reduced .td-bubble,
+.tap-dive.reduced .td-fin,
+.tap-dive.reduced .td-cloud,
+.tap-dive.reduced .td-surface path {
+  animation: none !important;
+  transition: none !important;
+}
+.tap-dive.reduced.diving .td-camera {
+  transform: none;
+}
+.tap-dive.reduced .td-rush,
+.tap-dive.reduced .td-friends {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reef-arrive .home-board,
+  .shark-of-day {
+    animation: none;
+  }
+}

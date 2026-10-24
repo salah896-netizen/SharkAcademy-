@@ -31,7 +31,7 @@ const scienceArt = {
   epaulette: photo('epaulette-shark.jpg', 'Epaulette shark'),
   megalodon: photo('visual-megalodon.jpg', 'Megalodon'),
   kraken: photo('visual-kraken.jpg', 'The Kraken'),
-  milo: { art: '<img class="science-photo contain" src="assets/milo-3d.png" alt="">', name: 'Milo' }
+  milo: { art: '<img class="science-photo contain" src="assets/milo-3d.webp" alt="">', name: 'Milo' }
 };
 function sciencePicture(key) {
   if (scienceArt[key]) return scienceArt[key].art;

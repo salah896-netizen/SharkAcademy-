@@ -65,7 +65,7 @@ const raceTracks = [
   }
 ];
 const racers = {
-  milo: { name: 'Milo', book: 'megalodon', image: 'assets/milo-3d.png' },
+  milo: { name: 'Milo', book: 'megalodon', image: 'assets/milo-3d.webp' },
   willa: { name: 'Willa', book: 'whale', image: 'assets/crew-willa.webp' },
   tiggy: { name: 'Tiggy', book: 'tiger', image: 'assets/crew-tiggy.webp' },
   gizmo: { name: 'Gizmo', book: 'goblin', image: 'assets/crew-gizmo.webp' },

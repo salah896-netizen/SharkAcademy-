@@ -2574,5 +2574,390 @@
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/527cf6db77.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Good morning, Haytham!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/bdca7d2781.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Good afternoon, Haytham!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/b780b7a0c1.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Good evening, Haytham!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/c4369edb83.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "A new race track is open!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/6f09b59560.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Willa has a quick review for you.",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/9e79319e11.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Tiggy has a quick review for you.",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/ad4a21d1b0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo has a quick review for you.",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/58778d23bd.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Dash has a quick review for you.",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/e487fddfc7.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s dive into our first adventure!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/33377ccb29.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s do three adventures today!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/milo/49ecc854ee.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Here\u2019s today\u2019s shark!",
+  "group": "opening",
+  "settings": "line",
+  "file": "audio/voice/gizmo/92566a008a.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Millions of years ago, long before people. It disappeared about 3.6 million years ago. Extinct means none are alive today.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/d5e0095efb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It ate large sea animals, including whales. Fossil bones sometimes show tooth marks.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/9b7d021830.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Scientists study huge fossil teeth and other remains, including some backbone fossils. Its name means \u201cbig tooth\u201d.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6a9199cd6c.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Milo is our imaginary friend. Nobody has seen a living megalodon, so scientists use fossils to work out what it looked like.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2ff2572462.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Whale shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0c3ad80464.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "No! It is a fish. Like other sharks, it breathes through gills. Whales breathe air with lungs.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/54edcfd641.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Tiny animals called plankton, and small fish. It filters food from the water.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/54360e632d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In warm seas around the world. Sometimes it swims near the surface.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/e1dac26b87.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Its back has pale spots and stripes. Look closely at the photo to find them.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/1bbe0e6461.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Great white shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/de2ab0ecd1.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In many seas around the world, including around Australia.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/5c2b6721e3.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Fish and other sea animals. Larger great whites also eat seals.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a511791f4b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A dark back and light belly help it blend in when seen from above or below. This is called countershading.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/57a03467a8.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It moves its tail from side to side. Its fins help it balance and steer.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3402e9a62a.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Scalloped hammerhead.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/89b90c7797.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Its wide head has special sensors that help it find food. Its eyes sit near the ends.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/98dab507d0.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Fish, squid and rays. Young sharks often eat smaller food.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0bc089d19f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Sometimes. Scalloped hammerheads can also gather in big groups called schools.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/59aa683b00.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In warm seas. Adults often live offshore, while young sharks use shallower nursery areas.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0b42f77d36.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Tiger shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0f19a8d404.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Young tiger sharks have dark stripes on their sides. The stripes become less clear as they grow.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/9fbe6ef822.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Many kinds of sea animals, including fish, turtles and shellfish.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/10756c1d1d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In tropical and warm seas, near coasts and farther out at sea.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b23a6002e3.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Look for its broad head and striped sides in the real photo.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3abc64ea54.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Goblin shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/030b28eb20.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Mostly deep water near the edges of continents. People rarely see it.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4e884542eb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Its flattened snout carries sensors that help it search for food.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/114838679e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "They shoot forwards quickly to grab prey, including fish and squid.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/7e5604c756.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Blood vessels show through its skin. Gizmo is our imaginary helper, based on this real kind of shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c4f0ae09aa.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Shortfin mako.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/7342f7cfc9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A pointed nose, streamlined body and strong, crescent-shaped tail help it move through water.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c3a6af3165.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In warm and temperate seas around the world, often in open water.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b385f41bc8.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Fish and squid. Speed helps it catch moving prey.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/566c6868f3.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Dash is an imaginary mako friend. Real makos are wild animals, and they cannot write letters like Dash!",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b9a0f74d86.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Basking shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f5d844ae96.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It is the second-largest living fish, after the whale shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3ee09078fc.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Water flows into the mouth as it swims. Gill rakers help trap tiny drifting animals called zooplankton.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3ea63f44e0.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Yes, it has very small teeth. It filters food instead of using its teeth to catch big prey.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/206e1fa090.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In temperate seas, including around Britain. It can travel far and dive below the surface.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/9683a53a6c.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Epaulette shark.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6cdf031ff9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "In shallow coral-reef water, including Australia\u2019s Great Barrier Reef.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/977e471562.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It bends its body and moves its paired fins to clamber along the bottom. It can swim too!",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2e6888b264.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Small animals, including worms, crabs and shrimp. It often searches for food at night.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/63363cb272.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A large dark spot behind each side fin helps you recognise it. Look for the spot in the photo.",
+  "group": "shark fact",
+  "settings": "line",
+  "file": "audio/voice/gizmo/ee45f8b6d9.mp3"
  }
 ]

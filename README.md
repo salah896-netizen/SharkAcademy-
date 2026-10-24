@@ -43,6 +43,15 @@ This needs only Node.js 18 or newer. It checks syntax and runs the lesson, shari
 - Predictions are compared with what happened and never marked wrong.
 - `verify-science.cjs` checks them.
 
+## Opening
+
+`dist/opening.js` is the "Tap to dive" opening. On the first open of each day:
+- A calm painted sea surface, with Milo's fin and a glowing bubble.
+- Haytham's tap makes the splash and unlocks sound for the session. Then comes a continuous plunge as the friends swoop in and the tooth rises.
+- Milo gives a personal hello, then Gizmo shares the shark of the day with a photo and a sourced fact.
+
+Later opens that day go straight to the reef. Home-screen icons and iPad launch images are in `dist/assets/icons/`.
+
 ## Learning path
 
 `dist/path.js` groups the lessons into 14 skills on an island map (`#path`):

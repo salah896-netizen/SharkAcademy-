@@ -1,7 +1,7 @@
 importScripts('./voice-manifest.js');
-const CACHE = 'haytham-sharks-v85';
+const CACHE = 'haytham-sharks-v86';
 const FILES = [
-  './assets/fossil-gateway-carved.png',
+  './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
   './calm-scenes.js',
   './school-pack.js',
@@ -12,6 +12,12 @@ const FILES = [
   './path.css',
   './science.js',
   './science.css',
+  './opening.js',
+  './opening.css',
+  './manifest.webmanifest',
+  './assets/icons/apple-touch-icon.png',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png',
   './calm-scenes.css',
   './hands-on-sharing.js',
   './hands-on-sharing.css',
@@ -53,7 +59,7 @@ const FILES = [
   './assets/icon.svg',
   './assets/whale-shark.jpg',
   './assets/reef-background.jpg',
-  './assets/milo-3d.png',
+  './assets/milo-3d.webp',
   './assets/white-shark.jpg',
   './assets/hammerhead.jpg',
   './assets/tiger-shark.jpg',

@@ -552,9 +552,9 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v85');
+      const cache = await caches.open('haytham-sharks-v86');
       const files = [
-        './assets/fossil-gateway-carved.png',
+        './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',
         './calm-scenes.js',
         './calm-scenes.css',
@@ -620,7 +620,7 @@ if ('serviceWorker' in navigator) {
         './writing.js',
         './premium.css',
         './assets/reef-background.jpg',
-        './assets/milo-3d.png',
+        './assets/milo-3d.webp',
         './assets/whale-shark.jpg',
         './assets/hammerhead.jpg',
         './assets/tiger-shark.jpg',

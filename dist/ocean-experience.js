@@ -328,7 +328,7 @@ makeQuestions = function (type) {
   return items;
 };
 function shellBoard() {
-  return `<img class="fossil-tooth" src="assets/fossil-gateway-carved.png" alt="Haytham’s Shark Adventures chiseled into a fossil shark tooth" width="1254" height="1254">`;
+  return `<img class="fossil-tooth" src="assets/fossil-gateway-carved.webp" alt="Haytham’s Shark Adventures chiseled into a fossil shark tooth" width="1254" height="1254">`;
 }
 const sharkButtons = [
   ['willa', 'Reading', 'reading'],
@@ -969,4 +969,4 @@ window.removeEventListener('hashchange', oldRender);
 window.addEventListener('hashchange', render);
 window.addEventListener('resize', fitScreen);
 render();
-showDiveOpening();
+// The opening now lives in opening.js (Tap to dive), loaded last.
