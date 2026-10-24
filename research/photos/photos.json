@@ -1,0 +1,80 @@
+{
+ "portjackson": [
+  {
+   "index": 2,
+   "file": "portjackson-1.webp",
+   "credit": "Mark Norman, Museums Victoria",
+   "page": "https://commons.wikimedia.org/wiki/File:Port-jackson-shark-heterodontus-portusjacksoni-417888-large.jpg",
+   "license": "CC BY 4.0",
+   "title": "File:Port-jackson-shark-heterodontus-portusjacksoni-417888-large.jpg"
+  },
+  {
+   "index": 9,
+   "file": "portjackson-2.webp",
+   "credit": "Taso Viglas from Sydney, Australia",
+   "page": "https://commons.wikimedia.org/wiki/File:Heterodontus_portusjacksoni_bare_island.jpg",
+   "license": "CC BY 2.0",
+   "title": "File:Heterodontus portusjacksoni bare island.jpg"
+  },
+  {
+   "index": 3,
+   "file": "portjackson-3.webp",
+   "credit": "Mark Norman, Museums Victoria",
+   "page": "https://commons.wikimedia.org/wiki/File:Port-jackson-shark-heterodontus-portusjacksoni-egg-case-419435-large.jpg",
+   "license": "CC BY 4.0",
+   "title": "File:Port-jackson-shark-heterodontus-portusjacksoni-egg-case-419435-large.jpg"
+  }
+ ],
+ "wobbegong": [
+  {
+   "index": 0,
+   "file": "wobbegong-1.webp",
+   "credit": "Christopher Mark",
+   "page": "https://commons.wikimedia.org/wiki/File:Orectolobus_maculatus_12649700.jpg",
+   "license": "CC BY 4.0",
+   "title": "File:Orectolobus maculatus 12649700.jpg"
+  },
+  {
+   "index": 3,
+   "file": "wobbegong-2.webp",
+   "credit": "Taso Viglas from Sydney, Australia",
+   "page": "https://commons.wikimedia.org/wiki/File:Orectolobus_maculatus_sydney.jpg",
+   "license": "CC BY 2.0",
+   "title": "File:Orectolobus maculatus sydney.jpg"
+  },
+  {
+   "index": 9,
+   "file": "wobbegong-3.webp",
+   "credit": "Kazuhiro Tsugita",
+   "page": "https://commons.wikimedia.org/wiki/File:%E3%82%AF%E3%83%A2%E3%83%8F%E3%83%80%E3%82%AA%E3%82%AA%E3%82%BB_(174648195).jpeg",
+   "license": "CC BY 3.0",
+   "title": "File:\u30af\u30e2\u30cf\u30c0\u30aa\u30aa\u30bb (174648195).jpeg"
+  }
+ ],
+ "greynurse": [
+  {
+   "index": 4,
+   "file": "greynurse-1.webp",
+   "credit": "Christopher Mark",
+   "page": "https://commons.wikimedia.org/wiki/File:Carcharias_taurus_12616854.jpg",
+   "license": "CC BY 4.0",
+   "title": "File:Carcharias taurus 12616854.jpg"
+  },
+  {
+   "index": 3,
+   "file": "greynurse-2.webp",
+   "credit": "Bryce Watts-Parker",
+   "page": "https://commons.wikimedia.org/wiki/File:Sand_tiger_shark_(Carcharias_taurus).jpg",
+   "license": "CC BY 4.0",
+   "title": "File:Sand tiger shark (Carcharias taurus).jpg"
+  },
+  {
+   "index": 9,
+   "file": "greynurse-3.webp",
+   "credit": "Bernard DUPONT from FRANCE",
+   "page": "https://commons.wikimedia.org/wiki/File:Sand_Tiger_Shark_(Carcharias_taurus)_(52683842447).jpg",
+   "license": "CC BY-SA 2.0",
+   "title": "File:Sand Tiger Shark (Carcharias taurus) (52683842447).jpg"
+  }
+ ]
+}

@@ -73,7 +73,7 @@ function crewForRoute() {
       : game?.type === 'fossil' || game?.type === 'science'
         ? 'gizmo'
         : 'tiggy';
-  return { stories: 'willa', writing: 'dash', museum: 'gizmo', legend: 'gizmo' }[route] || null;
+  return { stories: 'willa', writing: 'dash', draw: 'dash', museum: 'gizmo', legend: 'gizmo' }[route] || null;
 }
 function helperSpeak(text, options = {}) {
   speak(text, { ...options, speaker: crewForRoute() || 'milo' });

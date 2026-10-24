@@ -1,5 +1,5 @@
-importScripts('./voice-manifest.js');
-const CACHE = 'haytham-sharks-v87';
+importScripts('./voice-manifest.js', './shark-photos.js');
+const CACHE = 'haytham-sharks-v88';
 const FILES = [
   './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
@@ -16,6 +16,10 @@ const FILES = [
   './opening.css',
   './shark-taps.js',
   './shark-taps.css',
+  './encyclopedia-more.js',
+  './encyclopedia-more.css',
+  './draw-shark.js',
+  './draw-shark.css',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',
   './assets/icons/icon-192.png',
@@ -104,6 +108,8 @@ self.addEventListener('install', e => {
             ...FILES,
             './voice-manifest.js',
             './voice-clips.js',
+            './shark-photos.js',
+            ...Object.values(sharkPhotoData).flat().map(p => './assets/' + p.file),
             ...Object.values(voiceManifest.lines).map(f => './' + f),
             ...Object.values(voiceManifest.sounds).map(f => './' + f)
           ]

@@ -1,0 +1,141 @@
+/* Encyclopedia, part 2: photo strips, tap-to-hear cards, photo viewer. */
+.article-hero.has-gallery .shark-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 6px;
+  height: 100%;
+  min-height: 0;
+  background: #062633;
+}
+.shark-gallery[data-count='2'],
+.shark-gallery[data-count='3'] {
+  grid-template-rows: 2.6fr 1fr;
+}
+.shark-gallery[data-count='2'] .gallery-photo:not(.main) {
+  grid-column: span 2;
+}
+.gallery-photo {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #0a3445;
+  cursor: zoom-in;
+}
+.gallery-photo.main {
+  grid-column: span 2;
+}
+.gallery-fill {
+  position: absolute;
+  inset: -20px;
+  background: center / cover;
+  filter: blur(18px) brightness(0.7);
+}
+.gallery-label {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: #062633cc;
+  color: #eff1d6;
+  font: 800 12px ui-rounded, system-ui, sans-serif;
+  font-style: normal;
+}
+/* The whole shark is always visible: no cropping, a soft blurred fill behind. */
+.gallery-photo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s;
+}
+.gallery-photo:active img {
+  transform: scale(1.04);
+}
+.gallery-photo:not(.main)::after {
+  content: '🔍';
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  font-size: 18px;
+  filter: drop-shadow(0 1px 3px #0008);
+}
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: 20px;
+  background: #021620f2;
+  animation: photo-in 0.25s ease-out;
+}
+.photo-viewer img {
+  max-width: min(1100px, 94vw);
+  max-height: 78vh;
+  border-radius: 20px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px #000a;
+}
+.photo-viewer p {
+  margin: 0;
+  color: #eff1d6;
+  font: 700 20px ui-rounded, system-ui, sans-serif;
+  text-align: center;
+}
+.photo-viewer-close {
+  position: absolute;
+  top: max(18px, env(safe-area-inset-top));
+  right: 18px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 0;
+  background: #eff1d6;
+  color: #0d4a62;
+  font-size: 22px;
+}
+@keyframes photo-in {
+  from {
+    opacity: 0;
+  }
+}
+.tap-to-hear {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.tap-to-hear:active {
+  filter: brightness(1.12);
+}
+.aussie-tag {
+  color: #ffd27a;
+  font-weight: 800;
+}
+@media (max-width: 700px) {
+  .article-hero.has-gallery {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1.5fr 1fr;
+  }
+}
+
+/* Shelf and welcome cards: show the whole photo, not a tight crop. */
+.shelf-card img,
+.meet-feature img {
+  object-fit: contain !important;
+  background: #0a3445;
+}
+/* No dark fade over the photos, and the pictures get most of the screen. */
+.article-hero.has-gallery::after {
+  display: none !important;
+}
+.shark-article .article-hero.has-gallery {
+  grid-template-columns: 1.7fr 1fr !important;
+}

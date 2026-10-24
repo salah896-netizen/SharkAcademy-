@@ -389,7 +389,7 @@ function renderSpecies() {
   const query = bookSearch.toLocaleLowerCase().trim();
   const sharks = sharkBook.filter(
     s =>
-      (bookFilter === 'all' || s.group === bookFilter) &&
+      (bookFilter === 'all' || s.group === bookFilter || (bookFilter === 'aussie' && s.aussie)) &&
       [s.name, s.subtitle, s.intro, ...s.facts.flat()].join(' ').toLocaleLowerCase().includes(query)
   );
   $('#bookResults').textContent =

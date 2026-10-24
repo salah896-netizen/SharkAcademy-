@@ -442,12 +442,19 @@ let shelfTab = 'sharks',
   shelfPage = 0;
 function encyclopediaShelf() {
   const records =
-    shelfTab === 'sharks' ? sharkBook : shelfTab === 'topics' ? oceanTopics : sharkWords;
+    shelfTab === 'sharks'
+      ? sharkBook
+      : shelfTab === 'aussie'
+        ? sharkBook.filter(s => s.aussie)
+        : shelfTab === 'topics'
+          ? oceanTopics
+          : sharkWords;
   const size = shelfTab === 'words' ? 6 : 3;
   const pageCount = Math.ceil(records.length / size);
   shelfPage = Math.min(shelfPage, pageCount - 1);
   app.innerHTML = `<section class="encyclopedia-shelf"><span class="tag">THE SHARK ENCYCLOPEDIA</span><h1>Explore with Gizmo</h1><div class="shelf-tabs" role="group" aria-label="Encyclopedia sections">${[
     ['sharks', '🦈 Sharks'],
+    ['aussie', '🦘 Australian sharks'],
     ['topics', '🔎 Shark school'],
     ['words', '💎 Word chest']
   ]
@@ -458,7 +465,7 @@ function encyclopediaShelf() {
     .join('')}</div><div class="shelf-cards ${shelfTab === 'words' ? 'word-shelf' : ''}">${records
     .slice(shelfPage * size, (shelfPage + 1) * size)
     .map((r, i) =>
-      shelfTab === 'sharks'
+      shelfTab === 'sharks' || shelfTab === 'aussie'
         ? `<a class="shelf-card" href="#museum/${r.id}"><img src="assets/${r.image || 'visual-megalodon.jpg'}" alt="${r.image ? 'Real' : 'Reconstruction of'} ${r.name}"><h2>${r.name}</h2><p>${r.subtitle}</p></a>`
         : shelfTab === 'topics'
           ? `<button class="shelf-card topic-card" data-topic="${r.id}"><span class="school-icon">${schoolIcon(r.icon)}</span><strong>${r.title}</strong><span>${r.desc}</span></button>`

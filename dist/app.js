@@ -522,7 +522,8 @@ function render() {
       cinema,
       // race.js loads last; until then (e.g. reopening on #race) show home, then race.js re-renders.
       race: () => (typeof raceGame === 'function' ? raceGame() : home()),
-      path: () => (typeof pathPage === 'function' ? pathPage() : home())
+      path: () => (typeof pathPage === 'function' ? pathPage() : home()),
+      draw: () => (typeof drawShark === 'function' ? drawShark() : home())
     })[route] || home
   )();
   if (!['play', 'writing'].includes(route)) updateMilo();
@@ -552,7 +553,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v87');
+      const cache = await caches.open('haytham-sharks-v88');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',
