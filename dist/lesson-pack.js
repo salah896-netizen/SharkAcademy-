@@ -687,7 +687,7 @@ libraryPage = function () {
 const packCrewForRoute = crewForRoute;
 crewForRoute = function () {
   if (location.hash === '#play' && !game && completedLessonType)
-    return completedLessonType === 'fossil'
+    return completedLessonType === 'fossil' || completedLessonType === 'science'
       ? 'gizmo'
       : completedLessonType === 'reading'
         ? 'willa'

@@ -29,6 +29,13 @@ const pathSkills = [
   },
   { id: 'count', subject: 'maths', name: 'Counting', glyph: '123', lessons: ['M-F-01', 'M-F-05'] },
   {
+    id: 'sci-look',
+    subject: 'science',
+    name: 'Looking closely',
+    glyph: 'eye',
+    lessons: ['S-F-01', 'S-F-02']
+  },
+  {
     id: 'listen',
     subject: 'reading',
     name: 'Listening ears',
@@ -57,6 +64,13 @@ const pathSkills = [
     lessons: ['R-F-JP-01', 'R-F-JP-02']
   },
   {
+    id: 'sci-move',
+    subject: 'science',
+    name: 'Sink, float, move',
+    glyph: 'wave',
+    lessons: ['S-F-03', 'S-F-04']
+  },
+  {
     id: 'tricky',
     subject: 'reading',
     name: 'Tricky words',
@@ -78,6 +92,13 @@ const pathSkills = [
     lessons: ['R-F-JP-03', 'R-F-JP-04', 'R-F-JP-05']
   },
   {
+    id: 'sci-real',
+    subject: 'science',
+    name: 'Real or pretend',
+    glyph: 'star',
+    lessons: ['S-F-05']
+  },
+  {
     id: 'takeshare',
     subject: 'maths',
     name: 'Take away and share',
@@ -94,7 +115,7 @@ const PATH = {
   dailyGoal: 3,
   reviewPass: 0.75
 };
-const pathHelper = { reading: 'willa', maths: 'tiggy', writing: 'dash' };
+const pathHelper = { reading: 'willa', maths: 'tiggy', writing: 'dash', science: 'gizmo' };
 
 // ---------------------------------------------------------------- dates
 function dayKey(when = new Date()) {
@@ -134,6 +155,15 @@ function skillEvidence(skill) {
           lesson: s.lesson
         }))
       );
+  if (skill.subject === 'science')
+    // Predictions are never right or wrong, so they don't count towards readiness.
+    return (state.scienceLessons || [])
+      .filter(s => skill.lessons.includes(s.lesson))
+      .flatMap(s =>
+        (s.attempts || [])
+          .filter(a => a.kind !== 'predict')
+          .map(a => ({ independent: !a.supported, day: dayKey(a.at || s.at), lesson: s.lesson }))
+      );
   if (skill.subject === 'maths')
     return (state.history || [])
       .filter(x => x.type === 'maths' && skill.lessons.includes(x.lesson))
@@ -169,6 +199,8 @@ function skillMeetsRule(skill) {
 function lessonPlays(skill, lesson) {
   if (skill.subject === 'reading')
     return (state.readingAdventures || []).filter(s => s.lesson === lesson);
+  if (skill.subject === 'science')
+    return (state.scienceLessons || []).filter(s => s.lesson === lesson);
   if (skill.subject === 'maths')
     return [
       ...new Set((state.history || []).filter(x => x.lesson === lesson).map(x => x.session))
@@ -243,8 +275,10 @@ function pathNextActivity(subjectWanted = null, today = dayKey()) {
         review: true
       };
   }
-  const rotation = ['reading', 'maths', 'writing'];
-  const order = subjectWanted ? [subjectWanted] : rotation.map((_, i) => rotation[(done + i) % 3]);
+  const rotation = ['reading', 'maths', 'science', 'writing'];
+  const order = subjectWanted
+    ? [subjectWanted]
+    : rotation.map((_, i) => rotation[(done + i) % rotation.length]);
   for (const subject of order) {
     const skill = pathSkills.find(s => s.subject === subject && !skillRecord(s.id).readyAt);
     if (skill) return { skill: skill.id, subject, lesson: nextLessonInSkill(skill), review: false };
@@ -272,6 +306,8 @@ function launchPathActivity(pick) {
   if (!pick) return;
   if (pick.subject === 'reading') {
     startReadingMission(pick.lesson);
+  } else if (pick.subject === 'science') {
+    startScienceMission(pick.lesson);
   } else if (pick.subject === 'maths') {
     requestedMathsLesson = pick.lesson;
     start('maths');
@@ -347,6 +383,7 @@ const prePathReadingFinish = finishReadingMission;
 finishReadingMission = function () {
   const finished = game;
   prePathReadingFinish();
+  pathFinishButtons();
   if (!finished?.pathSkill) return;
   const attempts = finished.attempts || [];
   finishPathActivity(
@@ -360,6 +397,7 @@ const prePathFinish = finish;
 finish = function () {
   const finished = game;
   prePathFinish();
+  if (finished?.type === 'maths') pathFinishButtons();
   if (finished?.type !== 'maths' || !finished.pathSkill) return;
   const answers = (state.history || []).filter(x => x.session === finished.session);
   finishPathActivity(
@@ -372,6 +410,7 @@ finish = function () {
 const prePathWritingFinish = finishWritingAdventure;
 finishWritingAdventure = function (active) {
   prePathWritingFinish(active);
+  pathFinishButtons();
   const skill = active.pathSkill || pathSkills.find(s => s.lessons.includes(active.lesson.id))?.id;
   const last = active.samples.at(-1);
   finishPathActivity(skill, active.pathReview, last && !last.supported ? 1 : 0);
@@ -521,6 +560,14 @@ function finishPathCheck(results) {
 
 // ---------------------------------------------------------------- island map
 function islandGlyph(skill) {
+  if (['eye', 'wave', 'star'].includes(skill.glyph)) {
+    const paths = {
+      eye: '<path d="M4 20Q20 4 36 20Q20 36 4 20Z"/><circle cx="20" cy="20" r="5"/>',
+      wave: '<path d="M4 16Q10 10 16 16T28 16T40 16M4 26Q10 20 16 26T28 26T40 26"/>',
+      star: '<path d="M20 4L24 15L36 15L26 22L30 34L20 27L10 34L14 22L4 15L16 15Z"/>'
+    };
+    return `<svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">${paths[skill.glyph]}</svg>`;
+  }
   if (skill.glyph === 'ear')
     return '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18H16L28 8V40L16 30H8Z" fill="currentColor"/><path d="M34 16Q40 24 34 32M38 10Q48 24 38 38" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>';
   return `<b>${skill.glyph}</b>`;

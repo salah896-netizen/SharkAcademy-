@@ -35,9 +35,17 @@ This needs only Node.js 18 or newer. It checks syntax and runs the lesson, shari
 - Reading lessons run in the order set by `readingOrder`, and maths by `mathsOrder`.
 - Pearls: every learning adventure is worth 13, handed out step by step. Extras (stories, shark profiles, secrets, free writing) are worth 3. Every 50 pearls banks a video. The rule lives in `PEARLS` in `dist/app.js`.
 
+## Science with Gizmo
+
+`dist/science.js` holds five Foundation science adventures built around real sharks:
+- Shark spotters, Fish or not a fish?, Sink or float? (predict, then test), How do they move? and Real or pretend?
+- They use real encyclopedia photos and sourced facts.
+- Predictions are compared with what happened and never marked wrong.
+- `verify-science.cjs` checks them.
+
 ## Learning path
 
-`dist/path.js` groups the lessons into 11 skills on an island map (`#path`):
+`dist/path.js` groups the lessons into 14 skills on an island map (`#path`):
 - Play, and tapping Willa, Tiggy or Dash, go to the next useful lesson: reviews that are due first, then the next skill that isn't ready yet.
 - A skill is ready when 8 of its last 10 answers were right without help, across two days. Reviews follow after about 3, 7 and 21 days.
 - A short starting check (`#path/check`) runs the first time Play is pressed.

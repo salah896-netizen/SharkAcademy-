@@ -1,0 +1,119 @@
+/* Science with Gizmo: real photos, big icon choices, a little test tank. */
+body[data-calm-scene='science'] {
+  --calm-background: #ece0ea;
+  --calm-ink: #4f3550;
+  --calm-border: #c8a8c6;
+}
+.science-quest .science-choices {
+  display: grid;
+  grid-template-columns: repeat(var(--choice-count, 3), minmax(0, 1fr));
+}
+.science-quest .icon-choices:has(> :nth-child(2):last-child) {
+  --choice-count: 2;
+  width: min(620px, 94%);
+}
+.science-quest .science-choices button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  color: var(--calm-ink);
+  overflow: hidden;
+}
+.science-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+.science-photo.contain {
+  object-fit: contain;
+}
+.science-label {
+  font:
+    800 clamp(16px, 2vw, 21px) / 1.15 ui-rounded,
+    'Trebuchet MS',
+    system-ui,
+    sans-serif !important;
+}
+.activity-screen .science-quest .quest-pictures .science-icon,
+.science-icon {
+  width: clamp(70px, 9vw, 104px);
+  height: auto;
+}
+.activity-screen .science-quest .photo-choices button {
+  min-height: 0;
+  border-radius: 26px;
+}
+.activity-screen .science-quest .photo-choices {
+  width: min(980px, 96%);
+}
+.science-subject {
+  position: relative;
+  width: min(380px, 60vw);
+  aspect-ratio: 3 / 2;
+  margin: 4px auto 24px;
+  display: grid;
+  place-items: center;
+}
+.science-subject .science-thing {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.science-subject img,
+.science-subject svg {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 22px;
+}
+.science-subject .science-photo {
+  box-shadow: 0 10px 26px #3a1d3a33;
+}
+/* Sink or float: a glass tank. The object drops or bobs when tested. */
+.science-tank {
+  border: 5px solid #ffffffcc;
+  border-top: 0;
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+  background: linear-gradient(#ffffff55 0 22%, transparent 22%);
+}
+.science-tank .tank-water {
+  position: absolute;
+  inset: 22% 0 0;
+  background: linear-gradient(#8fd2e6cc, #4fa4c2dd);
+  z-index: 1;
+}
+.science-tank .science-thing {
+  width: 42%;
+  transition: transform 1.4s cubic-bezier(0.5, 0, 0.3, 1);
+  transform: translateY(-60%);
+}
+.science-tank.test-sink .science-thing {
+  transform: translateY(68%);
+}
+.science-tank.test-float .science-thing {
+  transform: translateY(-18%);
+  animation: tank-bob 1.6s 1.4s ease-in-out infinite;
+}
+@keyframes tank-bob {
+  50% {
+    translate: 0 6px;
+  }
+}
+.science-finish .quest-actions {
+  flex-wrap: wrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .science-tank .science-thing {
+    transition: none;
+  }
+  .science-tank.test-float .science-thing {
+    animation: none;
+  }
+}

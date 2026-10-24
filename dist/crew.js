@@ -68,7 +68,11 @@ function homeCrew() {
 function crewForRoute() {
   const route = (location.hash.slice(1) || 'home').split('/')[0];
   if (route === 'play')
-    return game?.type === 'reading' ? 'willa' : game?.type === 'fossil' ? 'gizmo' : 'tiggy';
+    return game?.type === 'reading'
+      ? 'willa'
+      : game?.type === 'fossil' || game?.type === 'science'
+        ? 'gizmo'
+        : 'tiggy';
   return { stories: 'willa', writing: 'dash', museum: 'gizmo', legend: 'gizmo' }[route] || null;
 }
 function helperSpeak(text, options = {}) {

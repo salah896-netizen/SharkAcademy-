@@ -10,4 +10,5 @@ node research/lesson-pack/verify-calm-scenes.cjs
 node research/lesson-pack/verify-school-pack.cjs
 node research/lesson-pack/verify-race.cjs
 node research/lesson-pack/verify-path.cjs
+node research/lesson-pack/verify-science.cjs
 echo "All checks passed."

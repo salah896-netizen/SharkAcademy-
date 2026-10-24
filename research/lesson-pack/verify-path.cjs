@@ -41,6 +41,8 @@ assert.equal(new Set(lessonIds).size, lessonIds.length, 'no lesson in two skills
 assert.equal(lessonIds.filter(l => l.startsWith('R-F')).length, 16);
 assert.equal(lessonIds.filter(l => l.startsWith('M-F')).length, 9);
 assert.equal(lessonIds.filter(l => l.startsWith('W-F')).length, 4);
+assert.equal(lessonIds.filter(l => l.startsWith('S-F')).length, 5);
+assert.equal(skills.length, 14);
 
 const day = n => `2026-11-${String(n).padStart(2, '0')}T10:00:00`;
 const reset = () =>
@@ -127,6 +129,8 @@ assert.equal(run('pathNextActivity()').skill, 'cvc');
 context.state.completed.push({ type: 'reading-adventure', at: new Date().toISOString() });
 assert.equal(run('pathNextActivity()').subject, 'maths');
 context.state.completed.push({ type: 'maths', at: new Date().toISOString() });
+assert.equal(run('pathNextActivity()').subject, 'science');
+context.state.completed.push({ type: 'science-adventure', at: new Date().toISOString() });
 assert.equal(run('pathNextActivity()').subject, 'writing');
 run("skillRecord('cvc').override = 'ready'");
 assert.equal(run("pathNextActivity('reading')").skill, 'listen', 'next reading skill after a star');
@@ -156,5 +160,5 @@ context.state.history.push(...counting(5, true, 2), ...counting(5, true, 3));
 run("skillRecord('count').override = 'practise'");
 assert.equal(run("updatePathState('2026-11-03').length"), 0);
 console.log(
-  'Passed: every lesson in one skill; 8-of-10 over two days; reviews at 3/7/21 days; shaky reviews revisit; subject rotation; starting check stars; parent override.'
+  'Passed: every lesson in one skill; 8-of-10 over two days; reviews at 3/7/21 days; shaky reviews revisit; subject rotation incl. science; science evidence; starting check stars; parent override.'
 );

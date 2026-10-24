@@ -4,6 +4,7 @@ function calmSceneFor() {
     subject = location.hash.split('/')[1];
   if (route === 'home') return 'home';
   if (route === 'writing') return 'sand';
+  if (route === 'play' && game?.type === 'science') return 'science';
   if (route === 'play')
     return game?.type === 'reading'
       ? 'reading'
@@ -20,7 +21,7 @@ function calmSceneFor() {
 }
 function applyCalmScene() {
   const scene = calmSceneFor(),
-    tone = ['reading', 'maths', 'library', 'library-sand', 'stories'].includes(scene)
+    tone = ['reading', 'maths', 'library', 'library-sand', 'stories', 'science'].includes(scene)
       ? 'light'
       : 'dark';
   if (document.body.dataset.calmScene !== scene) document.body.dataset.calmScene = scene;
