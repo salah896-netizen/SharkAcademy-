@@ -357,3 +357,34 @@ body[data-calm-tone='light'] #screenHome {
     animation: none;
   }
 }
+
+/* Narrow screens (iPad split view, phones): let the three picture choices shrink to fit. */
+@media (max-width: 640px) {
+  .activity-screen .quest-pictures {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    width: 96%;
+  }
+  .activity-screen .quest-pictures button {
+    min-width: 0;
+    padding: 8px;
+  }
+  .activity-screen .quest-pictures svg,
+  .school-quest .quest-pictures.word-choices svg,
+  .activity-screen .school-quest .quest-pictures.word-choices svg {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+  }
+  .activity-screen .quest-word {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+  .thinking-choices button {
+    flex-basis: 100%;
+    min-height: 120px;
+    flex-direction: row;
+  }
+  .compare-model {
+    flex-direction: column;
+  }
+}
