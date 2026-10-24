@@ -1860,5 +1860,145 @@
   "settings": "sound",
   "sound": "ar",
   "file": "audio/voice/sounds/ar.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "You can do it, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/willa/8aeadfb833.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Take your time. I\u2019m right here.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/willa/c27a7868cf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Great trying! Let\u2019s look again.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/willa/8de251f4d6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I believe in you, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/willa/210ef3b8af.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "You can do it, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/tiggy/65fa8c433b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Take your time. I\u2019m right here.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/tiggy/475ae38be9.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Great trying! Let\u2019s look again.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/tiggy/11d791235e.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "I believe in you, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/tiggy/0ac24aa03f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You can do it, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/gizmo/79123df0a2.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Take your time. I\u2019m right here.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/gizmo/32406fac40.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Great trying! Let\u2019s look again.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/gizmo/87e6baa447.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "I believe in you, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2e420d2f6e.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You can do it, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/dash/43a46927b6.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Take your time. I\u2019m right here.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/dash/584db71452.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Great trying! Let\u2019s look again.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/dash/52fab5f0d5.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "I believe in you, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/dash/2bf88e2b80.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "You can do it, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/milo/2243a33800.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Take your time. I\u2019m right here.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/milo/d0ac88ace0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Great trying! Let\u2019s look again.",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/milo/692d647bc7.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I believe in you, Haytham!",
+  "group": "encouragement",
+  "settings": "line",
+  "file": "audio/voice/milo/80e62352c1.mp3"
  }
 ]

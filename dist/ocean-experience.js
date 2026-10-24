@@ -133,16 +133,29 @@ helperSpeak = function (text, options = {}) {
   screenNarration = text;
   previousHelperSpeak(text, options);
 };
+// Tapping a friend during an activity: a little encouragement, then the current question again.
+const friendEncouragement = [
+  'You can do it, Haytham!',
+  'Take your time. I’m right here.',
+  'Great trying! Let’s look again.',
+  'I believe in you, Haytham!'
+];
+let friendEncouragementIndex = 0;
+function encourageThenRepeat(speaker) {
+  const cheer = friendEncouragement[friendEncouragementIndex++ % friendEncouragement.length];
+  if (typeof reactCrew === 'function' && speaker !== 'milo') reactCrew('happy', speaker);
+  speak(cheer + ' ' + screenNarration, { speaker });
+}
 touchMilo = function () {
   if (document.body.dataset.route !== 'home' && screenNarration) {
-    speak(screenNarration);
+    encourageThenRepeat('milo');
     return;
   }
   previousTouchMilo();
 };
 greetCrew = function (key) {
   if (document.body.dataset.route !== 'home' && screenNarration) {
-    speak(screenNarration, { speaker: key });
+    encourageThenRepeat(key);
     return;
   }
   previousGreetCrew(key);

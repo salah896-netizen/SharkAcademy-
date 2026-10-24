@@ -71,10 +71,12 @@ function unlockVoiceLines() {
   document.addEventListener(type, unlockVoiceLines, { once: true, capture: true })
 );
 
-let voiceLineToken = null;
+let voiceLineToken = null,
+  voiceLineWatchdog = null;
 function stopVoiceLine() {
   voiceLineToken = null;
-  voiceLinePlayer.onended = voiceLinePlayer.onerror = null;
+  voiceLinePlayer.onended = voiceLinePlayer.onerror = voiceLinePlayer.onpause = null;
+  clearTimeout(voiceLineWatchdog);
   try {
     voiceLinePlayer.pause();
   } catch {}
@@ -122,6 +124,16 @@ function playVoiceClips(files, text, options = {}, fallback) {
   };
   voiceLinePlayer.onended = next;
   voiceLinePlayer.onerror = fail;
+  // If the device pauses us (e.g. another app takes the audio), treat the line as finished
+  // so lessons never wait forever.
+  voiceLinePlayer.onpause = () => {
+    if (active() && started && !voiceLinePlayer.ended) finish();
+  };
+  // Safety net: if a recording hasn't started within 2 seconds, say it with the device voice.
+  clearTimeout(voiceLineWatchdog);
+  voiceLineWatchdog = setTimeout(() => {
+    if (active() && !started) fail();
+  }, 2000);
   next();
 }
 // Tap a sound tile to hear Willa say that Jolly Phonics sound.
