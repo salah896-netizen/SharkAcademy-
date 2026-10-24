@@ -2,15 +2,15 @@
 .article-hero.has-gallery .shark-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: minmax(0, 1fr);
   gap: 6px;
   height: 100%;
   min-height: 0;
   background: #062633;
 }
-.shark-gallery[data-count='2'],
-.shark-gallery[data-count='3'] {
-  grid-template-rows: 2.6fr 1fr;
+.article-hero.has-gallery .shark-gallery[data-count='2'],
+.article-hero.has-gallery .shark-gallery[data-count='3'] {
+  grid-template-rows: minmax(0, 2.6fr) minmax(0, 1fr);
 }
 .shark-gallery[data-count='2'] .gallery-photo:not(.main) {
   grid-column: span 2;

@@ -40,5 +40,299 @@ const sharkPhotoData = {
    "page": "https://commons.wikimedia.org/wiki/File:%E3%82%AF%E3%83%A2%E3%83%8F%E3%83%80%E3%82%AA%E3%82%AA%E3%82%BB_(174648195).jpeg",
    "license": "CC BY 3.0"
   }
+ ],
+ "greynurse": [
+  {
+   "file": "sharks/greynurse-1.webp",
+   "credit": "Christopher Mark",
+   "page": "https://commons.wikimedia.org/wiki/File:Carcharias_taurus_12616854.jpg",
+   "license": "CC BY 4.0"
+  },
+  {
+   "file": "sharks/greynurse-2.webp",
+   "credit": "Bryce Watts-Parker",
+   "page": "https://commons.wikimedia.org/wiki/File:Sand_tiger_shark_(Carcharias_taurus).jpg",
+   "license": "CC BY 4.0"
+  },
+  {
+   "file": "sharks/greynurse-3.webp",
+   "credit": "Bernard DUPONT from FRANCE",
+   "page": "https://commons.wikimedia.org/wiki/File:Sand_Tiger_Shark_(Carcharias_taurus)_(52683842447).jpg",
+   "license": "CC BY-SA 2.0"
+  }
+ ],
+ "bull": [
+  {
+   "file": "sharks/bull-1.webp",
+   "credit": "Jerome Paillet (IFREMER, Laboratoire d'Océanographie Physique et Spatiale, Centre Bretagne - ZI de la Pointe du Diable -",
+   "page": "https://commons.wikimedia.org/wiki/File:Requin_bouledogue_(Carcharhinus_leucas)_(Ifremer_00813-92510_-_53590).jpg",
+   "license": "CC BY 4.0"
+  },
+  {
+   "file": "sharks/bull-2.webp",
+   "credit": "Albert Kok",
+   "page": "https://commons.wikimedia.org/wiki/File:Bull_shark_(2007).jpg",
+   "license": "CC BY-SA 3.0"
+  },
+  {
+   "file": "sharks/bull-3.webp",
+   "credit": "Jerome Paillet (IFREMER, Laboratoire d'Océanographie Physique et Spatiale, Centre Bretagne - ZI de la Pointe du Diable -",
+   "page": "https://commons.wikimedia.org/wiki/File:Requin_bouledogue_(Carcharhinus_leucas)_(Ifremer_00813-92510_-_53589).jpg",
+   "license": "CC BY 4.0"
+  }
+ ],
+ "blacktip": [
+  {
+   "file": "sharks/blacktip-1.webp",
+   "credit": "Darren Obbard",
+   "page": "https://commons.wikimedia.org/wiki/File:Carcharhinus_melanopterus_261420865.jpg",
+   "license": "CC BY 4.0"
+  },
+  {
+   "file": "sharks/blacktip-2.webp",
+   "credit": "Charles J. Sharp",
+   "page": "https://commons.wikimedia.org/wiki/File:Blacktip_reef_shark_(Carcharhinus_melanopterus)_Moorea_3.jpg",
+   "license": "CC BY-SA 4.0"
+  },
+  {
+   "file": "sharks/blacktip-3.webp",
+   "credit": "Charles J. Sharp",
+   "page": "https://commons.wikimedia.org/wiki/File:Blacktip_reef_sharks_(Carcharhinus_melanopterus)_Moorea.jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ ],
+ "greenland": [
+  {
+   "file": "sharks/greenland-1.webp",
+   "credit": "NOAA Okeanos Explorer Program",
+   "page": "https://commons.wikimedia.org/wiki/File:Somniosus_microcephalus_okeanos.jpg",
+   "license": "Public domain"
+  },
+  {
+   "file": "sharks/greenland-2.webp",
+   "credit": "Hemming1952",
+   "page": "https://commons.wikimedia.org/wiki/File:Greenland_shark_profile.jpg",
+   "license": "CC BY-SA 4.0"
+  },
+  {
+   "file": "sharks/greenland-3.webp",
+   "credit": "NOAA Photo Library",
+   "page": "https://commons.wikimedia.org/wiki/File:Expl9984_(14318817140).jpg",
+   "license": "Public domain"
+  }
+ ],
+ "zebra": [
+  {
+   "file": "sharks/zebra-1.webp",
+   "credit": "Sigmund from Norway",
+   "page": "https://commons.wikimedia.org/wiki/File:Stegostoma_fasciatum_thailand.jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/zebra-2.webp",
+   "credit": "NasserHalaweh",
+   "page": "https://commons.wikimedia.org/wiki/File:Stegostomatidae_Stegostoma_fasciatum_1.jpg",
+   "license": "CC BY-SA 4.0"
+  },
+  {
+   "file": "sharks/zebra-3.webp",
+   "credit": "(c) Geoff Shuetrim, some rights reserved (CC BY)",
+   "page": "https://commons.wikimedia.org/wiki/File:Zebra_Shark,_Gladstone,_QLD,_Australia_imported_from_iNaturalist_photo_5463249.jpg",
+   "license": "CC BY 4.0"
+  }
+ ],
+ "whale": [
+  {
+   "file": "sharks/whale-1.webp",
+   "credit": "FGBNMS/Eckert",
+   "page": "https://commons.wikimedia.org/wiki/File:Rhincodon_typus_fgbnms.jpg",
+   "license": "Public domain"
+  },
+  {
+   "file": "sharks/whale-2.webp",
+   "credit": "Derek Keats from Johannesburg, South Africa",
+   "page": "https://commons.wikimedia.org/wiki/File:Whale_shark,_Rhincodon_typus,_at_Daedalus_in_the_Egyptian_Red_Sea._(35827412321).jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/whale-3.webp",
+   "credit": "Matthew T Rader",
+   "page": "https://commons.wikimedia.org/wiki/File:Whale_Shark_(Rhincodon_typus)_with_open_mouth_in_La_Paz,_Mexico.jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ ],
+ "white": [
+  {
+   "file": "sharks/white-1.webp",
+   "credit": "Pterantula (Terry Goss) at en.wikipedia",
+   "page": "https://commons.wikimedia.org/wiki/File:White_shark.jpg",
+   "license": "CC BY 2.5"
+  },
+  {
+   "file": "sharks/white-2.webp",
+   "credit": "Elias Levy",
+   "page": "https://commons.wikimedia.org/wiki/File:Great_White_Shark_(14730796397).jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/white-3.webp",
+   "credit": "Wikimedia Commons contributor",
+   "page": "https://commons.wikimedia.org/wiki/File:Carcharodon_carcharias_(Linnaeus,_1758)_(AM_MA120955-1).jpg",
+   "license": "CC BY 4.0"
+  }
+ ],
+ "hammerhead": [
+  {
+   "file": "sharks/hammerhead-1.webp",
+   "credit": "Kris-Mikael Krister",
+   "page": "https://commons.wikimedia.org/wiki/File:Scalloped_hammerhead_shark_(Sphyrna_lewini)_Costa_Rica_(cropped).jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/hammerhead-2.webp",
+   "credit": "Kris-Mikael Krister",
+   "page": "https://commons.wikimedia.org/wiki/File:Scalloped_hammerhead_shark_(Sphyrna_lewini)_Costa_Rica.jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/hammerhead-3.webp",
+   "credit": "Barry Peters`",
+   "page": "https://commons.wikimedia.org/wiki/File:Scalloped_hammerhead_cocos.jpg",
+   "license": "CC BY 2.0"
+  }
+ ],
+ "tiger": [
+  {
+   "file": "sharks/tiger-1.webp",
+   "credit": "Albert kok",
+   "page": "https://commons.wikimedia.org/wiki/File:Tiger_shark.jpg",
+   "license": "CC BY-SA 3.0"
+  },
+  {
+   "file": "sharks/tiger-2.webp",
+   "credit": "Kris Mikael Krister",
+   "page": "https://commons.wikimedia.org/wiki/File:Tiger_Shark_Galeocerdo_Cuvier_(223179837).jpeg",
+   "license": "CC BY 3.0"
+  },
+  {
+   "file": "sharks/tiger-3.webp",
+   "credit": "Jessica Meeuwig",
+   "page": "https://commons.wikimedia.org/wiki/File:Tiger_shark_@_Geographe_Marine_Park.jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ ],
+ "goblin": [
+  {
+   "file": "sharks/goblin-1.webp",
+   "credit": "Michigan State University/USFWS",
+   "page": "https://commons.wikimedia.org/wiki/File:Goblin_shark_(Mitsukurina_owstoni).jpg",
+   "license": "Public domain"
+  },
+  {
+   "file": "sharks/goblin-2.webp",
+   "credit": "Wikimedia Commons contributor",
+   "page": "https://commons.wikimedia.org/wiki/File:Goblin_shark,_Pengo.jpg",
+   "license": "CC BY-SA 3.0"
+  },
+  {
+   "file": "sharks/goblin-3.webp",
+   "credit": "Wikimedia Commons contributor",
+   "page": "https://commons.wikimedia.org/wiki/File:Mitsukurina_owstoni,_Pengo.jpg",
+   "license": "CC BY-SA 3.0"
+  }
+ ],
+ "mako": [
+  {
+   "file": "sharks/mako-1.webp",
+   "credit": "Fábio Olmos",
+   "page": "https://commons.wikimedia.org/wiki/File:Shortfin_mako_(Isurus_oxyrinchus).jpg",
+   "license": "CC BY 4.0"
+  },
+  {
+   "file": "sharks/mako-2.webp",
+   "credit": "Patrick Doll",
+   "page": "https://commons.wikimedia.org/wiki/File:Kurzflossen-Mako.jpg",
+   "license": "CC BY-SA 3.0"
+  },
+  {
+   "file": "sharks/mako-3.webp",
+   "credit": "出羽雀台",
+   "page": "https://commons.wikimedia.org/wiki/File:A_shortfin_mako_shark_swimming_in_an_aquarium.(1).jpg",
+   "license": "CC BY-SA 4.0"
+  }
+ ],
+ "basking": [
+  {
+   "file": "sharks/basking-1.webp",
+   "credit": "Green Fire Productions",
+   "page": "https://commons.wikimedia.org/wiki/File:Cetorhinus_maximus_atlantic.jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/basking-2.webp",
+   "credit": "Wikimedia Commons contributor",
+   "page": "https://commons.wikimedia.org/wiki/File:Basking_Shark.jpg",
+   "license": "Public domain"
+  },
+  {
+   "file": "sharks/basking-3.webp",
+   "credit": "rossbeane",
+   "page": "https://commons.wikimedia.org/wiki/File:Cetorhinus_maximus_2.jpg",
+   "license": "CC BY-SA 2.0"
+  }
+ ],
+ "epaulette": [
+  {
+   "file": "sharks/epaulette-1.webp",
+   "credit": "Jim Capaldi from Springfield, USA",
+   "page": "https://commons.wikimedia.org/wiki/File:Epaulette_shark_camden.jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/epaulette-2.webp",
+   "credit": "bbcjk.king",
+   "page": "https://commons.wikimedia.org/wiki/File:Epaulette_shark_camden2.jpg",
+   "license": "CC BY 2.0"
+  },
+  {
+   "file": "sharks/epaulette-3.webp",
+   "credit": "This illustration was made by Citron\nYou must credit this : Citron / CC-BY-SA-3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Hemiscyllium_ocellatum_Oc%C3%A9anopolis.jpg",
+   "license": "CC BY-SA 3.0"
+  }
+ ],
+ "megalodon": [
+  {
+   "file": "sharks/megalodon-1.webp",
+   "credit": "Megalodon_tooth_with_great_white_sharks_teeth.jpg: Brocken Inaglory\n\nBlueRuler_36cm.png: User:Kalan\nderivative work: Par",
+   "page": "https://commons.wikimedia.org/wiki/File:Megalodon_tooth_with_great_white_sharks_teeth-3-2.jpg",
+   "license": "CC BY-SA 3.0"
+  },
+  {
+   "file": "sharks/megalodon-2.webp",
+   "credit": "First uploader (User:TomCatX) is the author by using an image from User:Lonfat",
+   "page": "https://commons.wikimedia.org/wiki/File:Megalodon_tooth_ruler.jpg",
+   "license": "Public domain"
+  }
+ ],
+ "thresher": [
+  {
+   "file": "sharks/thresher-1.webp",
+   "credit": "Pierre Pericard",
+   "page": "https://commons.wikimedia.org/wiki/File:Pelagic_thresher_shark_(Alopias_pelagicus)_(cropped).jpg",
+   "license": "CC BY 4.0"
+  },
+  {
+   "file": "sharks/thresher-2.webp",
+   "credit": "Thomas Alexander",
+   "page": "https://commons.wikimedia.org/wiki/File:Thresher.jpg",
+   "license": "CC BY-SA 4.0"
+  },
+  {
+   "file": "sharks/thresher-3.webp",
+   "credit": "Petter Lindgren",
+   "page": "https://commons.wikimedia.org/wiki/File:Threshershark.jpg",
+   "license": "CC BY-SA 3.0"
+  }
  ]
 };

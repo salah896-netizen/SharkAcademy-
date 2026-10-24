@@ -15,7 +15,7 @@ for key, idxs in picks.items():
         url = re.sub(r'/(\d+)px-', '/1280px-', c['thumb']) if c['w'] > 1280 else c['url']
         im = Image.open(io.BytesIO(get(url))).convert('RGB')
         im.thumbnail((1280, 1280))
-        im = ImageOps.autocontrast(im, cutoff=1)  # lift dim underwater shots so the shark is clear
+        im = ImageOps.autocontrast(im, cutoff=1, preserve_tone=True)  # lift dim underwater shots so the shark is clear
         name = f'{key}-{n + 1}.webp'
         im.save(D + name, 'WEBP', quality=80)
         out[key].append({'index': i, 'file': name, 'credit': c['artist'] or 'Wikimedia Commons contributor',
