@@ -16,8 +16,10 @@ function schoolColour(key, fallback) {
   return schoolColours[tint] || fallback;
 }
 function schoolPicture(key) {
-  const base = key.replace(/^(red|blue|yellow)-/, '');
-  const svg = body => `<svg viewBox="0 0 120 100" aria-hidden="true">${body}</svg>`;
+  const base = key.replace(/^(red|blue|yellow|big|small)-/, '');
+  const small = key.startsWith('small-');
+  const svg = body =>
+    `<svg viewBox="0 0 120 100" aria-hidden="true">${small ? `<g transform="translate(30 30) scale(.5)">${body}</g>` : body}</svg>`;
   const ink = '#4d6b75';
   switch (base) {
     case 'ship':
@@ -84,6 +86,18 @@ function schoolPicture(key) {
       return svg(
         `<path d="M12 84H96Q108 84 106 74L92 70H20Z" fill="#c9d78d" stroke="#7f8f4a" stroke-width="3"/><circle cx="58" cy="50" r="28" fill="${schoolColour(key, '#d99b6c')}" stroke="#8a5a3a" stroke-width="3"/><path d="M58 50m-6 0a6 6 0 1 1 12 0a12 12 0 1 1-24 0a18 18 0 1 1 36 0" fill="none" stroke="#8a5a3a" stroke-width="3"/><path d="M98 72L104 48M106 72L114 52" stroke="#7f8f4a" stroke-width="3"/><circle cx="104" cy="47" r="3" fill="#2f3a3f"/><circle cx="114" cy="51" r="3" fill="#2f3a3f"/>`
       );
+    case 'shark':
+      return svg(
+        `<path d="M6 54Q30 32 70 36L80 14L88 38Q102 40 110 30L106 52L112 72Q100 62 88 64Q60 76 30 70Q14 66 6 54Z" fill="#8fa6b4" stroke="#4f6573" stroke-width="3"/><path d="M8 56Q40 70 88 62Q58 80 26 70Z" fill="#e9eef0"/><path d="M50 66L58 80L64 66" fill="#8fa6b4" stroke="#4f6573" stroke-width="2"/><circle cx="22" cy="50" r="3" fill="#1f3640"/><path d="M36 48V58M41 47V58M46 47V58" stroke="#4f6573" stroke-width="2"/><path d="M8 57Q14 60 20 58" stroke="#4f6573" stroke-width="2" fill="none"/>`
+      );
+    case 'teeth':
+      return svg(
+        `<path d="M10 30Q60 8 110 30V44Q60 30 10 44Z" fill="#e88f95" stroke="#a9555b" stroke-width="3"/><path d="M10 70Q60 92 110 70V56Q60 70 10 56Z" fill="#e88f95" stroke="#a9555b" stroke-width="3"/><path d="M16 42L22 58L28 40L34 57L40 38L46 56L52 37L58 55L64 37L70 55L76 38L82 56L88 39L94 57L100 41L106 56" fill="#fffbef" stroke="#c9b99a" stroke-width="2" stroke-linejoin="round"/>`
+      );
+    case 'tail':
+      return svg(
+        `<path d="M8 60Q30 54 50 56L92 10Q86 50 70 60Q86 72 96 94Q66 76 50 66Q30 68 8 64Z" fill="#8fa6b4" stroke="#4f6573" stroke-width="3"/><path d="M8 90Q30 84 52 90T112 90" fill="none" stroke="#7fc4d4" stroke-width="4"/>`
+      );
     case 'sheep':
       return svg(
         `<path d="M30 60Q14 58 18 44Q16 30 32 30Q38 16 54 22Q66 12 78 24Q96 22 94 40Q106 50 94 62Q90 76 74 72Q62 82 48 72Q32 78 30 60Z" fill="#f5f3ec" stroke="#b9b3a3" stroke-width="3"/><path d="M40 72V90M54 74V92M72 74V90M84 70V88" stroke="#3e3a36" stroke-width="5" stroke-linecap="round"/><ellipse cx="96" cy="46" rx="12" ry="15" fill="#3e3a36"/><circle cx="100" cy="42" r="2.5" fill="#fff"/>`
@@ -101,7 +115,9 @@ readingArt = function (key) {
   return schoolPicture(key) || preSchoolReadingArt(key);
 };
 function pictureName(key) {
-  return key.startsWith('word:') ? key.slice(5) : key.replace(/^(red|blue|yellow)-/, '$1 ');
+  return key.startsWith('word:')
+    ? key.slice(5)
+    : key.replace(/^(red|blue|yellow|big|small)-/, '$1 ');
 }
 
 // ---------------------------------------------------------------- reading lessons
@@ -126,7 +142,7 @@ function readClue(word, sounds, options, answer, reveal, codes) {
     hint: `Say each sound: ${sounds.join(', ')}. Two letters can make one sound, like ${sounds.find(s => s.length > 1) || sounds[0]}. Now blend them together.`
   };
 }
-function messageClue(word, options, answer, reveal) {
+function messageClue(word, options, answer, reveal, hint) {
   return {
     kind: 'read',
     word,
@@ -135,7 +151,9 @@ function messageClue(word, options, answer, reveal) {
     reveal,
     codes: PHONICS_CODES.message,
     prompt: 'Read the little message. Which picture matches?',
-    hint: 'Let’s read together, one word at a time. The colour word tells us which one to choose.'
+    hint:
+      hint ||
+      'Let’s read together, one word at a time. The colour word tells us which one to choose.'
   };
 }
 function trickyClue(target, options, reveal) {
@@ -376,6 +394,74 @@ const schoolReadingLessons = [
         'The red snail! Slowly does it.'
       )
     ]
+  },
+  {
+    id: 'R-F-LS-03',
+    shelfName: 'Shark listening',
+    items: [
+      rhymeClue(
+        'tail',
+        ['snail', 'fin', 'bee'],
+        'snail',
+        'Tail, snail! A shark’s tail pushes it through the water.'
+      ),
+      firstSoundClue(
+        'shark',
+        ['chip', 'fish', 'ship'],
+        'ship',
+        'Shark and ship both start with shh.'
+      ),
+      firstSoundClue(
+        'teeth',
+        ['moon', 'tail', 'fish'],
+        'tail',
+        'Teeth and tail both start with t.'
+      ),
+      blendClue(
+        ['shh', 'ark'],
+        'shark',
+        ['ship', 'shark', 'shell'],
+        'Shh… ark. Shark! Our favourite word.'
+      )
+    ]
+  },
+  {
+    id: 'R-F-JP-05',
+    shelfName: 'Shark parts',
+    items: [
+      readClue(
+        'shark',
+        ['sh', 'ar', 'k'],
+        ['shell', 'shark', 'ship'],
+        'shark',
+        'A shark! Sharks are fish. They breathe with gills.',
+        PHONICS_CODES.digraph
+      ),
+      readClue(
+        'fin',
+        ['f', 'i', 'n'],
+        ['fish', 'net', 'fin'],
+        'fin',
+        'A fin! Fins help a shark balance and steer.',
+        PHONICS_CODES.cvc
+      ),
+      readClue(
+        'teeth',
+        ['t', 'ee', 'th'],
+        ['teeth', 'tree', 'bee'],
+        'teeth',
+        'Teeth! Sharks keep growing new teeth all their lives.',
+        PHONICS_CODES.longVowel
+      ),
+      readClue(
+        'tail',
+        ['t', 'ai', 'l'],
+        ['rain', 'tail', 'snail'],
+        'tail',
+        'A tail! A shark swings its tail from side to side to swim.',
+        PHONICS_CODES.longVowel
+      )
+    ]
   }
 ];
 schoolReadingLessons.forEach(lesson => (lesson.school = true));
@@ -388,12 +474,14 @@ const readingOrder = [
   'R-F-PILOT-02',
   'R-F-TW-01',
   'R-F-JP-02',
+  'R-F-LS-03',
   'R-F-PILOT-03',
   'R-F-LS-02',
   'R-F-JP-03',
   'R-F-PILOT-04',
   'R-F-TW-02',
   'R-F-JP-04',
+  'R-F-JP-05',
   'R-F-PILOT-05',
   'R-F-PILOT-06'
 ];
@@ -480,9 +568,12 @@ function patternKinds(seed) {
 const schoolMathsBuilders = {
   tenframe(i, cycle, lesson) {
     const n = [3, 5, 7, 9, 4, 6, 8, 10, 2][(i * 2 + cycle) % 9];
+    const teeth = i % 2 === 1;
     return {
-      scene: tenFrame(n),
-      prompt: 'How many counters are in the ten-frame?',
+      scene: tenFrame(n, teeth ? 'tooth' : 'counter'),
+      prompt: teeth
+        ? 'How many shark teeth are in the ten-frame?'
+        : 'How many counters are in the ten-frame?',
       answer: n,
       choices: numberChoices(n),
       hint:
@@ -494,8 +585,10 @@ const schoolMathsBuilders = {
   make10(i, cycle) {
     const n = [6, 8, 3, 7, 5, 9, 4, 2][(i + cycle * 3) % 8];
     return {
-      scene: tenFrame(n),
-      prompt: 'How many more counters will fill the ten-frame?',
+      scene: tenFrame(n, 'tooth'),
+      prompt:
+        (i === 0 ? 'Sharks grow new teeth all their lives! ' : '') +
+        'How many more teeth will fill the ten-frame?',
       answer: 10 - n,
       choices: numberChoices(10 - n, [n]),
       hint: 'Count the empty spaces. Each empty space needs one more counter to make ten.'

@@ -8,4 +8,5 @@ node research/lesson-pack/verify-sharing.cjs
 node research/lesson-pack/verify-pacing.cjs
 node research/lesson-pack/verify-calm-scenes.cjs
 node research/lesson-pack/verify-school-pack.cjs
+node research/lesson-pack/verify-race.cjs
 echo "All checks passed."

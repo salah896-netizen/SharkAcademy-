@@ -15,6 +15,7 @@ function calmSceneFor() {
   if (['museum', 'legend'].includes(route)) return 'discovery';
   if (route === 'stories') return 'stories';
   if (route === 'cinema') return 'cinema';
+  if (route === 'race') return 'discovery';
   return 'library';
 }
 function applyCalmScene() {

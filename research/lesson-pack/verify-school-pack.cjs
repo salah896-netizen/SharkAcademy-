@@ -78,7 +78,7 @@ assert.equal(vm.runInContext('PEARLS.extra', context), 3);
 
 // Reading library: 14 lessons in the agreed interleaved order, every clue well formed.
 const library = vm.runInContext('readingMissionLibrary', context);
-assert.equal(library.length, 14);
+assert.equal(library.length, 16);
 assert.deepEqual(
   library.map(l => l.id),
   vm.runInContext('readingOrder', context)
@@ -111,9 +111,9 @@ for (const key of pictureKeys) {
 }
 // Rotation continues through the full sequence and wraps.
 context.state.readingAdventures = [];
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 20; i++) {
   context.startReadingMission();
-  assert.equal(context.game.lesson, library[i % 14].id);
+  assert.equal(context.game.lesson, library[i % 16].id);
   context.state.readingAdventures.push({ lesson: context.game.lesson });
 }
 
@@ -168,5 +168,5 @@ for (const lesson of maths) {
   );
 }
 console.log(
-  'Passed: 13-pearl adventures; 14 reading lessons in Jolly Phonics order with artwork; 9 maths adventures over 45 cycles; visible-thinking choices.'
+  'Passed: 13-pearl adventures; 16 reading lessons in Jolly Phonics order with artwork; 9 maths adventures over 45 cycles; visible-thinking choices.'
 );

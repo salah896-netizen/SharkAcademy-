@@ -35,6 +35,15 @@ This needs only Node.js 18 or newer. It checks syntax and runs the lesson, shari
 - Reading lessons run in the order set by `readingOrder`, and maths by `mathsOrder`.
 - Pearls: every learning adventure is worth 13, handed out step by step. Extras (stories, shark profiles, secrets, free writing) are worth 3. Every 50 pearls banks a video. The rule lives in `PEARLS` in `dist/app.js`.
 
+## Shark Race
+
+`dist/race.js` holds the race:
+- Four tracks: Sunny Lagoon (open from the start), Coral Reef, Open Ocean and Deep Trench. The others open after 2, 5 and 9 finished learning adventures.
+- Any of the five friends can race. Tap a lane to swim there.
+- Speed shells use the lesson content: first sounds, numbers, digraphs and tricky words.
+- A race earns at most 3 pearls. Results facts come from the encyclopedia's sourced entries.
+- `verify-race.cjs` simulates whole races without a browser.
+
 ## Roles
 
 Milo is Haytham's companion on every screen. Willa leads reading and stories, Tiggy maths, Gizmo shark science, and Dash writing.
