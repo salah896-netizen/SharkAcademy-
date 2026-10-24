@@ -1,4 +1,5 @@
-const CACHE = 'haytham-sharks-v78';
+importScripts('./voice-manifest.js');
+const CACHE = 'haytham-sharks-v79';
 const FILES = [
   './assets/fossil-gateway-carved.png',
   './assets/writing-sand.svg',
@@ -85,7 +86,19 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches
       .open(CACHE)
-      .then(c => c.addAll(FILES.map(url => new Request(url, { cache: 'reload' }))))
+      .then(c =>
+        c.addAll(
+          [
+            ...FILES,
+            './voice-manifest.js',
+            './voice-clips.js',
+            ...Object.values(voiceManifest.lines).map(f => './' + f),
+            ...Object.values(voiceManifest.sounds).map(f => './' + f)
+          ]
+            .filter((url, i, all) => all.indexOf(url) === i)
+            .map(url => new Request(url, { cache: 'reload' }))
+        )
+      )
       .then(() => self.skipWaiting())
   );
 });

@@ -70,13 +70,28 @@ let speechSequence = 0;
 function stopSpeech() {
   speechSequence++;
   stopRecordedVoice();
+  if (typeof stopVoiceLine === 'function') stopVoiceLine();
   document.body.classList.remove('milo-speaking', 'helper-speaking');
   fadeMusic(musicCurrent, musicTarget(), 350);
   if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
 function speak(t, options = {}) {
   stopSpeech();
-  if (!state.voice || !('speechSynthesis' in window)) {
+  if (!state.voice) {
+    options.unavailable?.();
+    return;
+  }
+  // Prefer a recorded line in the character's own voice; the device voice is the fallback.
+  const clips =
+    typeof voiceClipsFor === 'function' ? voiceClipsFor(t, options.speaker || 'milo') : null;
+  if (clips) {
+    playVoiceClips(clips, t, options, () => speakWithDevice(t, options));
+    return;
+  }
+  speakWithDevice(t, options);
+}
+function speakWithDevice(t, options = {}) {
+  if (!('speechSynthesis' in window)) {
     options.unavailable?.();
     return;
   }

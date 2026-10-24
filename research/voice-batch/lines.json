@@ -1,0 +1,1864 @@
+[
+ {
+  "speaker": "willa",
+  "text": "Which one rhymes with cat? hat, sun, or cup?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/44f1414f7d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Cat, hat! They rhyme.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/f9213ec835.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rhyming words sound the same at the end. Say cat, then say each picture. Which one ends like cat?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/4e0917e008.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "hat",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/b61960db9e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sun",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/8549af6872.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "cup",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/4b69a4b066.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one rhymes with sock? fish, rock, or bee?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/588512f71d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Sock, rock! They end the same.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/34d2c9c698.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rhyming words sound the same at the end. Say sock, then say each picture. Which one ends like sock?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/68b00543b3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "fish",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/49e0bdd2ef.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "rock",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/46d452117e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "bee",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/aaabb45fb8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one starts with the same sound as sun? map, duck, or sock?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/320875a938.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Sun and sock both start with sss.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/45cbe2af36.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say sun slowly. Listen to the very first sound. Which picture starts the same way?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/970c211833.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "map",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/7438eb4f53.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "duck",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/2b63d85233.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sock",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/ba140c1891.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Listen. shh\u2026 ip. Blend the sounds. Which picture is it?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/d85d856e6f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Shh\u2026 ip. Ship! You blended it.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/9bddc9215c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say it faster: shh\u2026 ip. Push the sounds together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/e5e538e83e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ship",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/e8888a18bf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "shell",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/adb1826de9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the word. Which picture matches?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/77b894003b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A ship! Willa can see it on the waves.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/75c758d00c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: sh, i, p. Two letters can make one sound, like sh. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/75d6a198d2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A shell! Let\u2019s keep it for the treasure chest.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/576e32dbe8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: sh, e, ll. Two letters can make one sound, like sh. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/8b70d3c6ec.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A fish! It is swimming beside the ship.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/8f5f916b0a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: f, i, sh. Two letters can make one sound, like sh. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/25208a60d8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the little message. Which picture matches?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/5de78191a8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red ship! All aboard for a shark discovery.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/def4eded6d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s read together, one word at a time. The colour word tells us which one to choose.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/f54dcdcc84.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word she.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/861fecda75.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "She! You found the tricky word.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/75a9a47468.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "she is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for s, h, e.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/6b31bad932.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word the.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/3382e5a96f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The! We see that word in every book.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/e94a0ad4ed.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "the is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for t, h, e.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/68d6ce7e18.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word was.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/027b742288.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Was! That one is very tricky.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/75f4075a9d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "was is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for w, a, s.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/daa3e71956.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word he.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/63e3422ef5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "He! Two letters, one little word.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/44178bd54c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "he is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for h, e.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/944cc76360.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A duck! It is floating on the water.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/d563f51456.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: d, u, ck. Two letters can make one sound, like ck. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/578733f868.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A chip! The duck would like a chip.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/12b3e20f2a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: ch, i, p. Two letters can make one sound, like ch. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/d35abb4b19.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A sock! Someone left a sock on the beach.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/d73e7d730a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: s, o, ck. Two letters can make one sound, like ck. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/cf755d075b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red sock! Mystery solved.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/59a47ee4bf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one rhymes with tail? snail, fin, or bee?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/285fb3a0a6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Tail, snail! A shark\u2019s tail pushes it through the water.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/7e43b65938.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rhyming words sound the same at the end. Say tail, then say each picture. Which one ends like tail?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/6090dcdf7f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "snail",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/31d7f7ac52.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "fin",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/a2aac43212.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one starts with the same sound as shark? chip, fish, or ship?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/fd905ced1d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Shark and ship both start with shh.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/366f6357ec.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say shark slowly. Listen to the very first sound. Which picture starts the same way?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/51b6e88384.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "chip",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/f30a851808.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one starts with the same sound as teeth? moon, tail, or fish?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/37c7677c07.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Teeth and tail both start with t.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/5c1006085a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say teeth slowly. Listen to the very first sound. Which picture starts the same way?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/148ca2d68e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "moon",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/3a3b1341b0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "tail",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/c40a7c7d71.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Listen. shh\u2026 ark. Blend the sounds. Which picture is it?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/6b7e7b4ec9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Shh\u2026 ark. Shark! Our favourite word.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/e5e5cd974d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say it faster: shh\u2026 ark. Push the sounds together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/bb99e25429.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "shark",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/285cb708d0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one rhymes with moon? cat, spoon, or bee?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/09c95963a5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Moon, spoon! They rhyme.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/9de415d8d0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rhyming words sound the same at the end. Say moon, then say each picture. Which one ends like moon?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/b97129c072.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "cat",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/cb74b9f327.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "spoon",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/bb6cc66ba0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one rhymes with rain? train, tree, or ship?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/8999cb08e7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rain, train! Same ending sound.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/2d5d0659c8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rhyming words sound the same at the end. Say rain, then say each picture. Which one ends like rain?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/e371390fde.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "train",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/70ac05328c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "tree",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/c0719b36bf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which one starts with the same sound as fish? net, fin, or map?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/2761495b13.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Fish and fin both start with fff.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/5cfd805b2b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say fish slowly. Listen to the very first sound. Which picture starts the same way?",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/80729fbf13.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "net",
+  "group": "picture name",
+  "settings": "line",
+  "file": "audio/voice/willa/a2bd06e55f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Listen. mmm\u2026 oon. Blend the sounds. Which picture is it?",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/9a4ca0f569.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Mmm\u2026 oon. Moon! Great blending.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/dc7e4582ea.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say it faster: mmm\u2026 oon. Push the sounds together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/63762d0b16.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A bee! It is buzzing over the beach.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/2f05976315.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: b, ee. Two letters can make one sound, like ee. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/79ddf084a1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The moon! It shines on the sea at night.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/62fe1e2c05.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: m, oo, n. Two letters can make one sound, like oo. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/739f3b7acd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A sheep! Not a ship. You read every sound.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/820440880a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: sh, ee, p. Two letters can make one sound, like sh. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/6a296ecda7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red boot! Ready for a rock pool walk.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/542fe535a4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word I.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/b0a895bd4e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I! Always a big letter on its own.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/4976a717cc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for I.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/05ac6c1d84.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word to.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/6b73284ae3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "To! We swim to the reef.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/bd9146f791.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "to is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for t, o.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/f690eaa9e8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word said.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/cc008d5f2d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Said! A very tricky word.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/6f4004e909.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "said is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for s, a, i, d.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/5eaa59f937.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word you.",
+  "group": "prompt",
+  "settings": "line",
+  "file": "audio/voice/willa/777d7587b1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "You! Willa is talking to you, Haytham.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/1df12f0b6b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "you is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for y, o, u.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/e87c67655b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Rain! It is splashing on the sea.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/3a80abfbab.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: r, ai, n. Two letters can make one sound, like ai. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/b4ba5f947b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A train! It is going to the beach.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/2377aff8a9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: t, r, ai, n. Two letters can make one sound, like ai. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/80cda519d1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A snail! It carries its shell on its back.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/bcce32cb37.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: s, n, ai, l. Two letters can make one sound, like ai. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/37f3dfce02.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The red snail! Slowly does it.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/ce9552e489.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A shark! Sharks are fish. They breathe with gills.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/4e3a13e658.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: sh, ar, k. Two letters can make one sound, like sh. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/723e54c2d4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A fin! Fins help a shark balance and steer.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/6213ea6943.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: f, i, n. Two letters can make one sound, like f. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/9fe022705e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Teeth! Sharks keep growing new teeth all their lives.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/4710bf0cd4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: t, ee, th. Two letters can make one sound, like ee. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/ddee077059.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A tail! A shark swings its tail from side to side to swim.",
+  "group": "reveal",
+  "settings": "line",
+  "file": "audio/voice/willa/b4029b9862.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound: t, ai, l. Two letters can make one sound, like ai. Now blend them together.",
+  "group": "hint",
+  "settings": "line",
+  "file": "audio/voice/willa/bf9f546033.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Good try, Haytham. Look at the letters again. Tap the light if you want a little help.",
+  "group": "retry",
+  "settings": "line",
+  "file": "audio/voice/willa/521c5e7c4e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s go, Haytham! Let\u2019s read together!",
+  "group": "tap line",
+  "settings": "line",
+  "file": "audio/voice/willa/b6faab9356.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Let\u2019s go, Haytham! Let\u2019s go counting!",
+  "group": "tap line",
+  "settings": "line",
+  "file": "audio/voice/tiggy/0774faca97.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Let\u2019s go, Haytham! Let\u2019s discover sharks!",
+  "group": "tap line",
+  "settings": "line",
+  "file": "audio/voice/gizmo/974c8a914a.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s go, Haytham! Let\u2019s make sandy letters!",
+  "group": "tap line",
+  "settings": "line",
+  "file": "audio/voice/dash/e4c2156a1d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s go, Haytham!",
+  "group": "tap line",
+  "settings": "line",
+  "file": "audio/voice/milo/b11334eb17.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Chomp-tastic!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/willa/e893eb2ab7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Speedy selection!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/willa/04887c646d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Wonderful work!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/willa/8483b791e9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Great trick!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/willa/3ab045b0e1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Awesome work, dude!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/willa/126aacf414.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Chomp-tastic!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/milo/46019d2412.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Speedy selection!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/milo/0b442eff0c.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Wonderful work!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/milo/0bc7150d82.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Great trick!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/milo/4cb4b36fe6.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Awesome work, dude!",
+  "group": "celebration",
+  "settings": "line",
+  "file": "audio/voice/milo/62df03d850.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Shark race! Choose a race track, Haytham.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/ed7a2fac25.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Who will race in Sunny Lagoon?",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/f9bb14b312.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Who will race in Coral Reef?",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/4d5937e5d1.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Who will race in Open Ocean?",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/bfc0d28adc.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Who will race in Deep Trench?",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/7a28d07acf.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Milo is ready. Tap Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/c300cb2c55.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "3",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/5662b5acfc.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "2",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/6d8cfb6036.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "1",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/dd9d374801.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/46ef8b769d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Zoom!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/0f5475b443.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Super speed!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/9f03f28d85.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Whoosh!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/b09fff662b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Fin-tastic!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/875892b0ad.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Willa is ready. Tap Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/8cb3a3d497.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "3",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/e1af237d17.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "2",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/56873be7cd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "1",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/46636e2ef3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/c4b43ab154.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Zoom!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/5dd51c0567.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Super speed!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/d73e69eeac.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Whoosh!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/653396c78c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Fin-tastic!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/24f4bb2026.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Tiggy is ready. Tap Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/65847e2132.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "3",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/be472125c2.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "2",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/101c33044a.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "1",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/46ebc7f9be.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/b4a9e8deff.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Zoom!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/7921336e12.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Super speed!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/12524bdf36.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Whoosh!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/414aed4d71.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Fin-tastic!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/06761c8960.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo is ready. Tap Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/73e27fddf6.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "3",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/338e911c85.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "2",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3027a661a6.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "1",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f8addcdf02.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f1449ae50d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Zoom!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/91db51c726.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Super speed!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/29624da7aa.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Whoosh!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b02ae733c0.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Fin-tastic!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/gizmo/84a3c6a11b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Dash is ready. Tap Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/milo/41af50f4e2.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "3",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/6c18adf413.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "2",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/39843e4ca4.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "1",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/f29f9bf6ed.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Go!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/5e257bb82f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Zoom!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/f53917c167.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Super speed!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/3c8858e9c6.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Whoosh!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/fbfe9468d7.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Fin-tastic!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/dash/8d04a6e2a2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Nice try! Look for the next shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/68f36fa310.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Good try! Look for the next shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/5e0e5fad2e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Keep swimming! Look for the next shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/de08a7ec39.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Nice try! Look for the next shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/407c59ae7b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Good try! Look for the next shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/92ea1c3cd1.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Keep swimming! Look for the next shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/ac29147555.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many? Find the number!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/tiggy/5fcc4aa6f7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sun! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/aa1d6c9c83.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "map! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/8df272e010.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "fish! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/1f68feea4f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "net! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/b73520ff95.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "hat! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/2e0628b787.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "cup! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/36b3105172.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "bee! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/99e70222d6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "duck! Find the first sound.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/5337fc354c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ship! Find the sound in ship.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/92c3e9c2f1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "chip! Find the sound in chip.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/9152bcf9d3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sheep! Find the sound in sheep.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/8bda5ca74b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "moon! Find the sound in moon.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/470569aadd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "bee! Find the sound in bee.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/f325b88f3d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "rain! Find the sound in rain.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/1d2ba08e7e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "duck! Find the sound in duck.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/50e37e0237.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "shell! Find the sound in shell.",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/770c545b64.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word the!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/017ba69c43.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word she!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/38143708d5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word was!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/3a2a53215c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word said!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/f9a3b0fa8f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word you!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/5ad62c53a5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word to!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/80d5bab1a8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word I!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/edd1467e12.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Find the word he!",
+  "group": "race",
+  "settings": "line",
+  "file": "audio/voice/willa/cbbe4e86d7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sssss",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "s",
+  "file": "audio/voice/sounds/s.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "a, a, ant",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "a",
+  "file": "audio/voice/sounds/a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "t, t, t",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "t",
+  "file": "audio/voice/sounds/t.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "i, i, insect",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "i",
+  "file": "audio/voice/sounds/i.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "p, p, p",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "p",
+  "file": "audio/voice/sounds/p.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "nnnnn",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "n",
+  "file": "audio/voice/sounds/n.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "c, c, c",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ck",
+  "file": "audio/voice/sounds/ck.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "e, e, egg",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "e",
+  "file": "audio/voice/sounds/e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "h, h, h",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "h",
+  "file": "audio/voice/sounds/h.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "rrrrr",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "r",
+  "file": "audio/voice/sounds/r.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Mmmm!",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "m",
+  "file": "audio/voice/sounds/m.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "d, d, d",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "d",
+  "file": "audio/voice/sounds/d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "g, g, g",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "g",
+  "file": "audio/voice/sounds/g.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "o, o, on",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "o",
+  "file": "audio/voice/sounds/o.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "u, u, up",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "u",
+  "file": "audio/voice/sounds/u.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lllll",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "l",
+  "file": "audio/voice/sounds/l.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "fffff",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "f",
+  "file": "audio/voice/sounds/f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "b, b, b",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "b",
+  "file": "audio/voice/sounds/b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ay, ay, rain",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ai",
+  "file": "audio/voice/sounds/ai.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "j, j, jelly",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "j",
+  "file": "audio/voice/sounds/j.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "oh, oh, boat",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "oa",
+  "file": "audio/voice/sounds/oa.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "eye, eye, pie",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ie",
+  "file": "audio/voice/sounds/ie.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "eeeee",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ee",
+  "file": "audio/voice/sounds/ee.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "or, or, fork",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "or",
+  "file": "audio/voice/sounds/or.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "zzzzz",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "z",
+  "file": "audio/voice/sounds/z.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "w, w, wet",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "w",
+  "file": "audio/voice/sounds/w.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ng, ng, ring",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ng",
+  "file": "audio/voice/sounds/ng.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "vvvvv",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "v",
+  "file": "audio/voice/sounds/v.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "oo, oo, book",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "oo-short",
+  "file": "audio/voice/sounds/oo-short.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "oo, oo, moon",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "oo-long",
+  "file": "audio/voice/sounds/oo-long.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "y, y, yes",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "y",
+  "file": "audio/voice/sounds/y.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ks, ks, fox",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "x",
+  "file": "audio/voice/sounds/x.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ch, ch, ch",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ch",
+  "file": "audio/voice/sounds/ch.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "shhhhh",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "sh",
+  "file": "audio/voice/sounds/sh.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "th, th, this",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "th-voiced",
+  "file": "audio/voice/sounds/th-voiced.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "th, th, thumb",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "th",
+  "file": "audio/voice/sounds/th.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "kw, kw, queen",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "qu",
+  "file": "audio/voice/sounds/qu.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ow, ow, out",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ou",
+  "file": "audio/voice/sounds/ou.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "oy, oy, coin",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "oi",
+  "file": "audio/voice/sounds/oi.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "you, you, cue",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ue",
+  "file": "audio/voice/sounds/ue.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "er, er, her",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "er",
+  "file": "audio/voice/sounds/er.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ar, ar, shark",
+  "group": "jolly sound",
+  "settings": "sound",
+  "sound": "ar",
+  "file": "audio/voice/sounds/ar.mp3"
+ }
+]

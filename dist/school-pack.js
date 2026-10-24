@@ -496,6 +496,14 @@ const pilotShelfNames = {
 };
 readingMissionLibrary.forEach(l => (l.shelfName = l.shelfName || pilotShelfNames[l.id]));
 
+// Which recorded Jolly Phonics sound a letter tile makes in this word.
+function tileSoundId(tile, word) {
+  if (tile === 'll') return 'l';
+  if (['c', 'k', 'ck'].includes(tile)) return 'ck';
+  if (tile === 'oo') return /book|look|cook|foot/.test(word) ? 'oo-short' : 'oo-long';
+  if (tile === 'th') return /^(this|that|the|them|then)$/.test(word) ? 'th-voiced' : 'th';
+  return tile;
+}
 function schoolLessonFor(currentGame) {
   return currentGame?.mission
     ? readingMissionLibrary.find(l => l.id === currentGame.lesson && l.school)
@@ -505,7 +513,7 @@ function schoolCluePanel(q) {
   if (q.kind === 'read') {
     if (!q.sounds)
       return `<div class="quest-word school-message" aria-label="${q.word}">${q.word}</div>`;
-    return `<div class="quest-word school-sounds" aria-label="${q.word}">${q.sounds.map(s => `<span class="sound-letter ${s.length > 1 ? 'sound-digraph' : ''}" aria-hidden="true">${s}</span>`).join('')}</div>`;
+    return `<div class="quest-word school-sounds" aria-label="${q.word}">${q.sounds.map(s => `<button class="sound-letter ${s.length > 1 ? 'sound-digraph' : ''}" data-sound-tile="${tileSoundId(s, q.word)}" aria-label="Hear this sound">${s}</button>`).join('')}</div>`;
   }
   if (q.kind === 'tricky')
     return `<button class="school-listen" id="schoolListen" aria-label="Hear the word again"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18H16L28 8V40L16 30H8Z" fill="currentColor"/><path d="M34 16Q40 24 34 32M38 10Q48 24 38 38" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></button>`;
@@ -529,6 +537,17 @@ readingMission = function () {
   $('#questInstructions').onclick = say;
   $('#schoolListen')?.addEventListener('click', say);
   $('#questHint').onclick = readingMissionHelp;
+  // Tap a tile to hear Willa say its sound. Hearing the sounds is help, so it's recorded as supported.
+  document.querySelectorAll('[data-sound-tile]').forEach(tile => {
+    tile.onclick = () => {
+      if (typeof playPhonicsSound === 'function' && playPhonicsSound(tile.dataset.soundTile)) {
+        if (!game.answered) game.assisted = true;
+        tile.classList.remove('sound-tapped');
+        void tile.offsetWidth;
+        tile.classList.add('sound-tapped');
+      }
+    };
+  });
   $('#questNext').onclick = () => {
     game.index++;
     game.assisted = false;

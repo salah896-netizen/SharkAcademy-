@@ -702,10 +702,10 @@ updateMiloDock = function () {
   }
 };
 const friendLaunchLines = {
-  willa: 'Let’s read together!',
-  tiggy: 'Let’s go counting!',
-  gizmo: 'Let’s discover sharks!',
-  dash: 'Let’s make sandy letters!',
+  willa: 'Let’s go, Haytham! Let’s read together!',
+  tiggy: 'Let’s go, Haytham! Let’s go counting!',
+  gizmo: 'Let’s go, Haytham! Let’s discover sharks!',
+  dash: 'Let’s go, Haytham! Let’s make sandy letters!',
   milo: 'Let’s go, Haytham!'
 };
 let friendLaunchPending = false;
