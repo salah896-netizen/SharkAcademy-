@@ -2000,5 +2000,579 @@
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/milo/80e62352c1.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Scientists look very closely. Let\u2019s spot what makes each shark special!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/31deb9e637.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Which shark has a wide, hammer-shaped head?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/66e7d92c6e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "The hammerhead! Its wide head has special sensors that help it find food.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/1fd995b3ca.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Which shark has pale spots all over its back?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b116ba6fd4.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "The whale shark! It is the biggest fish in the sea.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2573433a9a.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Which shark has a long, flat snout?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/76c8547b52.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "The goblin shark! Its flat snout helps it search for food in the deep.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c268ff59e4.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Which shark has a big dark spot behind its fin?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/e2b35cd831.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "The epaulette shark! That dark spot helps us recognise it.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/509621654f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Which shark has a pointed nose and a strong tail for speed?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/53d9a0844d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "The mako! Its pointed nose and strong tail help it swim fast, like Dash.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b12cf5e74f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Fish have fins and breathe with gills. Let\u2019s sort the sea animals!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/bd0cc1a424.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A tuna. Is it a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/7c4e75909d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Yes! A tuna has fins and breathes with gills.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6074a94c47.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Fish, or Not a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/394a4200df.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A crab. Is it a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/21a553c30d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Not a fish! A crab has legs and a hard shell, and no fins.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/1f74889975.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A whale shark. Is it a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/60cc1c990a.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Yes! A whale shark is a fish, even with whale in its name. It breathes with gills.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f427513276.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A sea turtle. Is it a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c9a1a25b45.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Not a fish! Sea turtles breathe air with lungs. They are reptiles.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/391a4bc0a4.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A clownfish. Is it a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/711e7b0af1.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Yes! A clownfish has fins and gills.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/663fbc9248.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A dolphin. Is it a fish?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/58c82caa49.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Not a fish! Dolphins breathe air, like us. They are mammals.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f8be58470e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Scientists guess first, then test. Will it sink or float? Make your guess!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/77bb18075b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Sharks don\u2019t sink to the bottom when they swim. Most sharks have a big, oily liver that helps them stay up in the water.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/e19be7d9af.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A rock. Will it sink or float?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/357d924aa1.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It sank! A rock is heavy for its size.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/d771c85560.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Sink, or Float?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b307c62231.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A toy duck. Will it sink or float?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/921268a303.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It floats! The plastic duck is full of air.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/eead26ddb6.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A metal spoon. Will it sink or float?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/5339e97dc4.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It sank! This spoon is made of metal.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6b0c166e33.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A little wooden boat. Will it sink or float?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/28aac629e5.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It floats! Wood floats, and the boat\u2019s shape helps too.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/93b460128c.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A sea shell. Will it sink or float?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/01327a634e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It sank to the bottom, where shells are found on the sea floor.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/063e3d8f25.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Sea animals move in different ways. How does each one move?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/5519a2ac3d.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "How does a great white shark swim?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2513f55330.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It swishes its tail from side to side. Its fins help it steer.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/7922821e45.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Swishes its tail, or Walks, or Squirts water?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0db27f88b5.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "How does a crab move?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c16cec4d7f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A crab walks on its legs, often sideways!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/948a129f2b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Squirts water, or Walks, or Swishes its tail?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/aa4b03f332.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "How does a squid zoom away?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/fd005d7a4b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A squid squirts water out to shoot away, like a little rocket.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/27a2dbde21.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Walks, or Swishes its tail, or Squirts water?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/18c3f1dd5e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "An epaulette shark. How does it get around the reef floor?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c6e0f46c56.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It walks! It bends its body and uses its fins to clamber along the bottom.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6fa56ddd95.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Squirts water, or Walks, or Flaps flippers?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/59e0cb1b0a.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "How does a sea turtle swim?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/ba9ed25d94.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "It flaps its big flippers, like wings under the water.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/bbc8ee9584.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Flaps flippers, or Squirts water, or Walks?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/9d5dab29b9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Is it a real animal today, a real animal from long ago, or pretend?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0cf990fa42.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A whale shark.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3a6c7aa6ad.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Real today! Whale sharks swim in warm seas right now.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/bccda7a701.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Real today, or Real long ago, or Pretend?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c98c00e6a1.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Megalodon.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4824454d10.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Real, long ago! Megalodon is extinct. Scientists learn about it from huge fossil teeth.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a67afa52ae.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "The Kraken.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/362e96015f.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Pretend! The Kraken is a sea legend from old stories.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a2a8d8d397.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Milo, who talks and wears a monocle.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b810b17d0e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Pretend! Milo is our imaginary friend. Real megalodons lived long ago.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/47fab8e5fa.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "A great white shark.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/c527dc2ba5.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Real today! Great whites live in seas around Australia.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4aeea6fa37.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Look closely at each photo. Find the shark with that special feature.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/a81ce4189b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Does it have fins and breathe with gills under water? Then it is a fish.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f77d9fcb12.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Think about it: is it heavy for its size? Is it full of air? There\u2019s no wrong guess.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/8fbace7b2e.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Think about its body. Does it have a tail, legs, or big flippers?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/2cf46bab90.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Can we see it in the sea today? Did it live long ago? Or is it from a story?",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/5f24f03bd0.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Good try, Haytham. Let\u2019s look again.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/87973a8de6.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Your guess matched!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4afdc88684.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Let\u2019s see what happened.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/612569dda9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Choose a science adventure, Haytham. Gizmo and Milo are ready to explore.",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/0421a10edb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "You looked closely, like a real scientist!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/9888545fcc.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Testing ideas is what scientists do!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/3b331cd002.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Chomp-tastic!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/8eeccae081.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Speedy selection!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/fee4924bcb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Wonderful work!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/74beb49846.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Great trick!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/66f8902afb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Awesome work, dude!",
+  "group": "science",
+  "settings": "line",
+  "file": "audio/voice/gizmo/527cf6db77.mp3"
  }
 ]

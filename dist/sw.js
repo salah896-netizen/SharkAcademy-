@@ -1,5 +1,5 @@
 importScripts('./voice-manifest.js');
-const CACHE = 'haytham-sharks-v84';
+const CACHE = 'haytham-sharks-v85';
 const FILES = [
   './assets/fossil-gateway-carved.png',
   './assets/writing-sand.svg',
