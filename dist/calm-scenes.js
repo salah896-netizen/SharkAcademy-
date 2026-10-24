@@ -57,12 +57,19 @@ dailyAdventure = function () {
   }
   if (lessonJourney) return;
   stopSpeech();
+  if (typeof pathNeedsCheck === 'function' && pathNeedsCheck()) {
+    startPathCheck();
+    return;
+  }
+  if (typeof pathNextActivity === 'function') pendingPathPick = pathNextActivity();
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches,
     today = new Date().toDateString(),
     done =
       state.completed.filter(x => new Date(x.at).toDateString() === today).length +
       (state.writingHistory || []).filter(x => new Date(x.at).toDateString() === today).length,
-    subject = ['reading', 'maths', 'writing'][done % 3],
+    subject =
+      (typeof pendingPathPick !== 'undefined' && pendingPathPick?.subject) ||
+      ['reading', 'maths', 'writing'][done % 3],
     destination = subject === 'writing' ? '#writing' : '#play',
     overlay = document.createElement('div');
   overlay.className = 'lesson-journey' + (reduced ? ' reduced-journey' : '');

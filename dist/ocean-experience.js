@@ -340,6 +340,13 @@ home = function () {
   );
 };
 function dailyAdventure() {
+  // The learning path chooses the lesson (picked before the swim journey when there was one).
+  if (typeof pathNextActivity === 'function') {
+    const pick = (typeof pendingPathPick !== 'undefined' && pendingPathPick) || pathNextActivity();
+    pendingPathPick = null;
+    launchPathActivity(pick);
+    return;
+  }
   const subjects = ['reading', 'maths', 'writing'];
   const today = new Date().toDateString();
   const done =
@@ -718,7 +725,9 @@ function launchWithFriend(key) {
     friendLaunchPending = false;
     clearTimeout(fallback);
     if (!homePanel?.isConnected || !['#home', ''].includes(location.hash)) return;
-    if (key === 'willa') start('reading');
+    const subject = { willa: 'reading', tiggy: 'maths', dash: 'writing' }[key];
+    if (subject && typeof pathLaunchSubject === 'function') pathLaunchSubject(subject);
+    else if (key === 'willa') start('reading');
     else if (key === 'tiggy') start('maths');
     else if (key === 'gizmo') location.hash = 'museum';
     else if (key === 'dash') location.hash = 'writing';
@@ -848,7 +857,10 @@ render = function () {
   const route = (location.hash.slice(1) || 'home').split('/')[0];
   if (lastRoute && lastRoute !== location.hash) screenStack.push(lastRoute);
   lastRoute = location.hash;
-  document.body.classList.toggle('activity-screen', ['play', 'writing'].includes(route));
+  document.body.classList.toggle(
+    'activity-screen',
+    ['play', 'writing'].includes(route) || location.hash === '#path/check'
+  );
   document.body.dataset.route = route;
   if (route === 'library') {
     stopSpeech();

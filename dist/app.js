@@ -407,7 +407,7 @@ function parents() {
     return `${h.filter(x => x.independent).length + practice.filter(x => !x.supported).length} without help / ${h.length + practice.length} solved`;
   };
   $('#modalContent').innerHTML =
-    `<h2>Haytham’s progress</h2><p class="muted">Saved on this device. These are practice records, not a formal reading assessment.</p><div class="stats"><div class="stat"><strong>${state.completed.length}</strong>expeditions</div><div class="stat"><strong>${state.xp}</strong>pearls</div><div class="stat"><strong>${state.history.filter(x => x.independent).length + (state.readingAdventures || []).flatMap(s => s.attempts || []).filter(x => !x.supported).length}</strong>answers without help</div></div><p><strong>Reading:</strong> ${summary('reading')}<br><strong>Counting & addition:</strong> ${summary('maths')}<br><strong>Patterns:</strong> ${summary('fossil')}<br><strong>Writing:</strong> ${(state.writingHistory || []).length} practice pages; ${(state.writingLessons || []).length} three-step adventures (self-reported)<br><strong>Stories:</strong> ${(state.storyCompletions || []).length} story-stage completions</p><h3>Writing samples</h3>${writingPracticePreview()}<h3>Maths models</h3>${sharingPracticePreview()}<h3>Explaining thinking</h3>${typeof thinkingSummary === 'function' ? thinkingSummary() : ''}<h3>Shark race</h3>${typeof raceSummary === 'function' ? raceSummary() : ''}<h3>Number settings</h3><label>Counting and addition range <select id="range"><option value="10">Up to 10</option><option value="20">Up to 20</option><option value="50">Up to 50</option></select></label><p class="muted">Wrong answers and hints count as assisted practice. Difficulty changes apply to the next expedition.</p>${learningControls()}<h3>Reading adventure trial</h3><p>Foundation English: AC9EFLY12, AC9EFLY04, AC9EFLY05. ${readingPracticeSummary()} ${readingMissionLibrary.length} short Foundation adventures are available, following the school's Jolly Phonics sequence. Existing reading level unchanged.</p><h3>Adventure music</h3><label>Music volume <input id="musicVolumeControl" type="range" min="0" max="50" value="${Math.round(musicVolume * 100)}" aria-label="Adventure music volume"></label><p class="muted">Each area has its own original instrumental theme. Music softens while Milo speaks. Use the music button at the top to mute it.</p><h3>Character voices</h3><p class="muted">${Object.values(
+    `<h2>Haytham’s progress</h2><p class="muted">Saved on this device. These are practice records, not a formal reading assessment.</p><div class="stats"><div class="stat"><strong>${state.completed.length}</strong>expeditions</div><div class="stat"><strong>${state.xp}</strong>pearls</div><div class="stat"><strong>${state.history.filter(x => x.independent).length + (state.readingAdventures || []).flatMap(s => s.attempts || []).filter(x => !x.supported).length}</strong>answers without help</div></div><p><strong>Reading:</strong> ${summary('reading')}<br><strong>Counting & addition:</strong> ${summary('maths')}<br><strong>Patterns:</strong> ${summary('fossil')}<br><strong>Writing:</strong> ${(state.writingHistory || []).length} practice pages; ${(state.writingLessons || []).length} three-step adventures (self-reported)<br><strong>Stories:</strong> ${(state.storyCompletions || []).length} story-stage completions</p><h3>Writing samples</h3>${writingPracticePreview()}<h3>Maths models</h3>${sharingPracticePreview()}<h3>Explaining thinking</h3>${typeof thinkingSummary === 'function' ? thinkingSummary() : ''}<h3>Shark race</h3>${typeof raceSummary === 'function' ? raceSummary() : ''}<h3>Learning path</h3>${typeof pathParentSummary === 'function' ? pathParentSummary() : ''}<h3>Number settings</h3><label>Counting and addition range <select id="range"><option value="10">Up to 10</option><option value="20">Up to 20</option><option value="50">Up to 50</option></select></label><p class="muted">Wrong answers and hints count as assisted practice. Difficulty changes apply to the next expedition.</p>${learningControls()}<h3>Reading adventure trial</h3><p>Foundation English: AC9EFLY12, AC9EFLY04, AC9EFLY05. ${readingPracticeSummary()} ${readingMissionLibrary.length} short Foundation adventures are available, following the school's Jolly Phonics sequence. Existing reading level unchanged.</p><h3>Adventure music</h3><label>Music volume <input id="musicVolumeControl" type="range" min="0" max="50" value="${Math.round(musicVolume * 100)}" aria-label="Adventure music volume"></label><p class="muted">Each area has its own original instrumental theme. Music softens while Milo speaks. Use the music button at the top to mute it.</p><h3>Character voices</h3><p class="muted">${Object.values(
       characterGreetings
     )
       .map(c => c.name)
@@ -423,6 +423,7 @@ function parents() {
         ' '
       )}<p id="recordedVoiceStatus" aria-live="polite"></p><h3>Learning narrator voice</h3><label>Choose a voice <select id="narrator"></select></label><p id="voiceNote" class="muted"></p><button id="sampleVoice">♫ Hear a sample</button><p class="muted">For a more natural offline voice, download an Enhanced or Premium English voice in iPad Settings → Accessibility → Spoken Content (or Read & Speak) → Voices. Reopen this app afterwards. Only voices made available by your browser appear here.</p><button id="export">Export progress backup</button><p class="muted">For offline play: open in Safari, choose Share → Add to Home Screen, open the new icon while online, and wait for “Offline pack ready”. Then test in Airplane Mode. Device voices may need downloading in iPad settings for offline narration.</p><button class="quiet" id="reset">Reset progress…</button><p id="resetArea"></p>`;
   bindLearningControls();
+  if (typeof bindPathParent === 'function') bindPathParent();
   document
     .querySelectorAll('[data-preview-character]')
     .forEach(b => (b.onclick = () => playCharacterGreeting(b.dataset.previewCharacter)));
@@ -520,7 +521,8 @@ function render() {
       legend: openKraken,
       cinema,
       // race.js loads last; until then (e.g. reopening on #race) show home, then race.js re-renders.
-      race: () => (typeof raceGame === 'function' ? raceGame() : home())
+      race: () => (typeof raceGame === 'function' ? raceGame() : home()),
+      path: () => (typeof pathPage === 'function' ? pathPage() : home())
     })[route] || home
   )();
   if (!['play', 'writing'].includes(route)) updateMilo();
@@ -550,7 +552,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v79');
+      const cache = await caches.open('haytham-sharks-v80');
       const files = [
         './assets/fossil-gateway-carved.png',
         './assets/writing-sand.svg',

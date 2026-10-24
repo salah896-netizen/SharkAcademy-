@@ -9,4 +9,5 @@ node research/lesson-pack/verify-pacing.cjs
 node research/lesson-pack/verify-calm-scenes.cjs
 node research/lesson-pack/verify-school-pack.cjs
 node research/lesson-pack/verify-race.cjs
+node research/lesson-pack/verify-path.cjs
 echo "All checks passed."
