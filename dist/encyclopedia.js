@@ -452,19 +452,19 @@ function bindDiscovery(id, answers, type = 'book') {
               stage,
               at: new Date().toISOString()
             });
-            state.xp += 6;
+            state.xp += PEARLS.extra;
             advanceLearning('science');
           } else {
             state.topicDiscoveries = state.topicDiscoveries || [];
             if (!state.topicDiscoveries.includes(id)) state.topicDiscoveries.push(id);
-            state.xp += 3;
+            state.xp += PEARLS.extra;
           }
           save();
         }
         $('#bookFeedback').textContent = fresh
           ? type === 'book'
-            ? 'You discovered it! Six pearls for your collection.'
-            : 'Discovery made! Three pearls for your collection.'
+            ? 'You discovered it! Pearls for your collection.'
+            : 'Discovery made! Pearls for your collection.'
           : 'You remembered! This discovery is already in your log.';
         encourage('Wonderful exploring, Haytham! You found the clue.');
         document.querySelectorAll('[data-book-answer]').forEach(x => (x.disabled = true));

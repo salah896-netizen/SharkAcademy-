@@ -425,6 +425,8 @@ writing = function () {
       codes: ['AC9EFLY08', ...(active.lesson.target.length > 1 ? ['AC9EFLY12'] : [])]
     });
     active.samples.push({ ...sample });
+    // The base sample earns an extra's pearls; guided steps top up to the adventure rate.
+    state.xp += Math.max(0, pearlsPerStep(3) - PEARLS.extra);
     save();
     const started = Date.now();
     function next() {
@@ -453,6 +455,7 @@ function finishWritingAdventure(active) {
       samples: active.samples,
       at: new Date().toISOString()
     });
+    state.xp += pearlCompletionBonus(3);
     save();
   }
   guidedWriting = null;
@@ -613,11 +616,12 @@ libraryPage = function () {
   lessonShelfPage = Math.max(0, Math.min(lessonShelfPage, pages - 1));
   const friend = { reading: 'Willa', maths: 'Tiggy', writing: 'Dash' }[type];
   const name = (record, index) =>
-    type === 'reading'
+    record.shelfName ||
+    (type === 'reading'
       ? readingAdventureNames[index]
       : type === 'maths'
         ? mathsAdventureNames[index]
-        : ['Captain’s c', 'Adventure a', 'Treasure t', 'Ship’s cat'][index];
+        : ['Captain’s c', 'Adventure a', 'Treasure t', 'Ship’s cat'][index]);
   const practised = record =>
     type === 'reading'
       ? (state.readingAdventures || []).some(s => s.lesson === record.id)
@@ -629,13 +633,15 @@ libraryPage = function () {
       ? readingArt(record.items[0].answer)
       : type === 'writing'
         ? `<svg viewBox="0 0 180 120" aria-hidden="true"><path d="M12 99H168" stroke="#c0aa79" stroke-width="3" stroke-dasharray="5 7"/><text x="90" y="87" text-anchor="middle" fill="#765332" font-family="Trebuchet MS,system-ui,sans-serif" font-weight="700" font-size="${record.target.length > 1 ? 62 : 92}">${record.target}</text></svg>`
-        : index === 0
-          ? seaAnimal('tuna')
-          : index === 1
-            ? `<div class="lesson-mini-model">${seaAnimal('clownfish')}<b>+</b>${seaAnimal('clownfish')}</div>`
-            : index === 2
-              ? `<div class="lesson-mini-model">${seaAnimal('salmon')}<b>→</b></div>`
-              : `<div class="lesson-mini-model">${seaAnimal('turtle')}<b>=</b>${seaAnimal('turtle')}</div>`;
+        : typeof schoolMathsCardArt === 'function' && schoolMathsCardArt(record)
+          ? schoolMathsCardArt(record)
+          : record.kind === 'count'
+            ? seaAnimal('tuna')
+            : record.kind === 'join'
+              ? `<div class="lesson-mini-model">${seaAnimal('clownfish')}<b>+</b>${seaAnimal('clownfish')}</div>`
+              : record.kind === 'away'
+                ? `<div class="lesson-mini-model">${seaAnimal('salmon')}<b>→</b></div>`
+                : `<div class="lesson-mini-model">${seaAnimal('turtle')}<b>=</b>${seaAnimal('turtle')}</div>`;
   app.innerHTML = `<section class="lesson-shelf"><h1>Adventures with ${friend}</h1><div class="lesson-shelf-cards">${records
     .slice(lessonShelfPage * 3, lessonShelfPage * 3 + 3)
     .map((record, offset) => {

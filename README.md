@@ -26,6 +26,15 @@ This needs only Node.js 18 or newer. It checks syntax and runs the lesson, shari
 - **Formatting:** Prettier, using the settings in `.prettierrc.json`.
 - **Not in the repo** (see `.gitignore`): voice production tooling, audition recordings, the curriculum workbook and parent-review material. Those stay in the family's handover archive.
 
+## Lessons and rewards
+
+- `dist/school-pack.js` holds the lesson batch aligned to Haytham's school:
+  - Jolly Phonics digraph lessons and tricky-word lessons.
+  - Heggerty-style listening warm-ups.
+  - Five new maths adventures, each followed by a "How did you work it out?" step.
+- Reading lessons run in the order set by `readingOrder`, and maths by `mathsOrder`.
+- Pearls: every learning adventure is worth 13, handed out step by step. Extras (stories, shark profiles, secrets, free writing) are worth 3. Every 50 pearls banks a video. The rule lives in `PEARLS` in `dist/app.js`.
+
 ## Roles
 
 Milo is Haytham's companion on every screen. Willa leads reading and stories, Tiggy maths, Gizmo shark science, and Dash writing.

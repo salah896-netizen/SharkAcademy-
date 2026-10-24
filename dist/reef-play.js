@@ -33,7 +33,7 @@ function bindReefMysteries() {
           state.reefSecrets = state.reefSecrets || [];
           if (!state.reefSecrets.includes(type)) {
             state.reefSecrets.push(type);
-            state.xp += 6;
+            state.xp += PEARLS.extra;
             save();
             const pearls = document.querySelector('.ocean-progress>span:last-child');
             if (pearls) pearls.innerHTML = state.xp + ' <small>PEARLS</small>';

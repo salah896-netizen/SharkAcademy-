@@ -380,7 +380,7 @@ const treasureSVG =
 function installOceanChrome() {
   const chrome = document.createElement('div');
   chrome.id = 'oceanChrome';
-  chrome.innerHTML = `<a class="submarine-library" href="#library" aria-label="Open the submarine library">${subSVG}<span>Library</span></a><button id="screenBack" aria-label="Back to previous page">↩ <span>Back</span></button><button id="treasureChest" aria-label="Open treasure collection"><span aria-hidden="true">${treasureSVG}</span><i class="chest-pearl"></i><strong id="treasureCount">${state.xp}</strong><small>pearls</small></button><button id="oceanSettings" aria-label="Open parent settings">⚙</button><button id="oceanVoice" aria-label="Toggle character voices">♫</button>`;
+  chrome.innerHTML = `<a class="submarine-library" href="#library" aria-label="Open the submarine library">${subSVG}<span>Library</span></a><div id="screenNav"><button id="screenHome" aria-label="Home: back to the reef"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15L16 5L28 15M8 12V27H14V19H18V27H24V12"/></svg> <span>Home</span></button><button id="screenBack" aria-label="Back to previous page">↩ <span>Back</span></button></div><button id="treasureChest" aria-label="Open treasure collection"><span aria-hidden="true">${treasureSVG}</span><i class="chest-pearl"></i><strong id="treasureCount">${state.xp}</strong><small>pearls</small></button><button id="oceanSettings" aria-label="Open parent settings">⚙</button><button id="oceanVoice" aria-label="Toggle character voices">♫</button>`;
   document.body.append(chrome);
   $('#treasureChest').onclick = () => (location.hash = 'collection');
   $('#oceanSettings').onclick = () => $('#parent').click();
@@ -393,6 +393,21 @@ function installOceanChrome() {
     if (location.hash.startsWith('#museum/')) location.hash = 'museum';
     else location.hash = 'home';
   };
+  $('#screenHome').onclick = goHomeNow;
+}
+// Always-available way home: stops talking and any activity in progress, then returns to the reef.
+function goHomeNow() {
+  stopSpeech();
+  clearTimeout(autoAdvanceTimer);
+  if (typeof stopLessonJourney === 'function') stopLessonJourney();
+  if (typeof guidedWriting !== 'undefined') guidedWriting = null;
+  if (typeof freeWriting !== 'undefined') freeWriting = false;
+  game = null;
+  screenStack = [];
+  lastRoute = '';
+  if ($('#modal')?.open) $('#modal').close();
+  if (location.hash === '#home') render();
+  else location.hash = 'home';
 }
 
 function sharkWelcome() {
@@ -855,6 +870,7 @@ render = function () {
     syncCrew();
   } else oldRender();
   $('#screenBack').hidden = route === 'home';
+  $('#screenHome').hidden = route === 'home';
   $('#screenBack').onclick = () => {
     stopSpeech();
     let target = screenStack.pop();

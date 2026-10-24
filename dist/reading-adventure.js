@@ -178,6 +178,8 @@ function readingMissionAnswer(value) {
     return;
   }
   game.answered = true;
+  state.xp += pearlsPerStep(game.items.length);
+  save();
   game.attempts.push({
     clue: game.index,
     word: q.word,
@@ -205,7 +207,7 @@ function finishReadingMission() {
       attempts: finished.attempts,
       at: new Date().toISOString()
     });
-    state.xp += 24;
+    state.xp += pearlCompletionBonus(finished.items.length);
     state.completed.push({
       type: 'reading-adventure',
       session: finished.session,
@@ -219,7 +221,7 @@ function finishReadingMission() {
   game.answered = true;
   const discovery = nextLessonDiscovery('reading');
   const fact = discovery.text;
-  app.innerHTML = `<section class="reading-quest quest-finish"><span class="tag">A DISCOVERY WITH YOUR FRIENDS</span><h1>We did it, Haytham!</h1><p>You followed the clues and found our shark friend. Fin five!</p><img class="quest-fact-photo" src="${discovery.image}" alt="${discovery.name}"><div class="quest-fact"><h2>${discovery.name}</h2><p>${fact}</p><button id="questFactListen">♫ Hear our shark discovery</button></div><p>You earned 24 pearls. This discovery is saved on this device.</p><div class="quest-actions"><button class="primary" id="questAgain">Explore again</button><a class="primary" href="#home">Back to My Reef</a></div><p class="muted">Your documentary adventures are coming when your films are ready.</p></section>`;
+  app.innerHTML = `<section class="reading-quest quest-finish"><span class="tag">A DISCOVERY WITH YOUR FRIENDS</span><h1>We did it, Haytham!</h1><p>You followed the clues and found our shark friend. Fin five!</p><img class="quest-fact-photo" src="${discovery.image}" alt="${discovery.name}"><div class="quest-fact"><h2>${discovery.name}</h2><p>${fact}</p><button id="questFactListen">♫ Hear our shark discovery</button></div><p>You earned ${PEARLS.adventure} pearls. This discovery is saved on this device.</p><div class="quest-actions"><button class="primary" id="questAgain">Explore again</button><a class="primary" href="#home">Back to My Reef</a></div><p class="muted">Your documentary adventures are coming when your films are ready.</p></section>`;
   $('#questFactListen').onclick = () => speak(fact, { speaker: 'willa' });
   $('#questAgain').onclick = startReadingMission;
   updateMilo('Fin five! We followed the clues together. Now Willa has a shark discovery for us.');

@@ -1,8 +1,10 @@
-const CACHE = 'haytham-sharks-v74';
+const CACHE = 'haytham-sharks-v75';
 const FILES = [
   './assets/fossil-gateway-carved.png',
   './assets/writing-sand.svg',
   './calm-scenes.js',
+  './school-pack.js',
+  './school-pack.css',
   './calm-scenes.css',
   './hands-on-sharing.js',
   './hands-on-sharing.css',

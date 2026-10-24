@@ -1,0 +1,359 @@
+/* School-aligned lesson batch and the always-visible Home button. Loaded last. */
+
+/* ---------- Home + Back, top right ---------- */
+#screenNav {
+  position: fixed;
+  top: max(17px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  z-index: 18;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#screenNav #screenBack {
+  position: static;
+}
+#screenHome {
+  background: #dff0df;
+  color: #143c50;
+  border: 2px solid #b7d7ba;
+  border-radius: 30px;
+  min-height: 48px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px 8px 12px;
+  font-size: 14px;
+  touch-action: manipulation;
+}
+#screenHome svg {
+  width: 26px;
+  height: 26px;
+}
+#screenHome[hidden] {
+  display: none;
+}
+body[data-calm-tone='light'] #screenHome {
+  background: #f4f8ed;
+  border-color: var(--calm-border);
+  color: var(--calm-ink);
+}
+@media (max-width: 700px) {
+  #screenHome span {
+    display: none;
+  }
+  #screenHome {
+    padding: 8px 12px;
+    min-height: 44px;
+  }
+}
+
+/* ---------- Willa: sound tiles, word shells, listening ---------- */
+.school-quest .quest-word.school-sounds {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.school-quest .sound-letter {
+  display: inline-block;
+  min-width: 0.75em;
+  text-align: center;
+}
+.school-quest .sound-letter.sound-digraph {
+  position: relative;
+  padding: 0 0.06em;
+}
+/* Joined underline: two letters, one sound (as on Jolly Phonics cards). */
+.school-quest .sound-letter.sound-digraph::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0.04em;
+  height: 0.08em;
+  border-radius: 99px;
+  background: #e7a24b;
+}
+.school-quest .quest-word.school-message {
+  font-size: clamp(54px, 7vw, 84px);
+}
+.school-listen,
+.school-target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 8px auto 26px;
+  border: 3px solid var(--calm-border, #91b6c6);
+  background: #ffffffcc;
+  color: var(--calm-ink, #234a62);
+  border-radius: 999px;
+  min-width: 150px;
+  min-height: 120px;
+  padding: 10px 28px;
+  box-shadow: 0 8px 24px #002d4c22;
+  touch-action: manipulation;
+}
+.school-listen svg {
+  width: 74px;
+  height: 74px;
+}
+.school-target {
+  border-radius: 32px;
+  position: relative;
+}
+.school-target svg {
+  width: 150px;
+  height: 125px;
+}
+.school-ear {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e7a24b;
+  color: #fff;
+  font-size: 22px;
+}
+.school-blend b {
+  font-size: 34px;
+  opacity: 0.6;
+}
+.blend-bubble {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff 0 18%, #bfe3ee 19% 60%, #8cc7d8 61%);
+  box-shadow: inset 0 -6px 10px #5a9fb455;
+  animation: blend-pulse 1.6s ease-in-out infinite;
+}
+.blend-bubble:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+@keyframes blend-pulse {
+  50% {
+    transform: scale(1.12);
+  }
+}
+.school-quest .quest-pictures.word-choices svg,
+.activity-screen .school-quest .quest-pictures.word-choices svg {
+  width: 170px;
+  height: 140px;
+}
+
+/* ---------- Tiggy: ten-frames, number line, compare, patterns ---------- */
+.ten-frame {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  width: min(560px, 82vw);
+  aspect-ratio: 5 / 2;
+  margin: 0 auto;
+  border: 5px solid #2f6d70;
+  border-radius: 14px;
+  background: #fffdf4;
+  overflow: hidden;
+}
+.ten-frame > span {
+  border: 2.5px solid #2f6d70;
+  display: grid;
+  place-items: center;
+}
+.ten-frame i {
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffd8a8 0 15%, #f08a3c 16% 70%, #c9672a 71%);
+  box-shadow: 0 3px 6px #0003;
+}
+.lesson-card-art .ten-frame {
+  width: 150px;
+  border-width: 3px;
+}
+.lesson-card-art .ten-frame > span {
+  border-width: 1.5px;
+}
+.number-swim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto;
+}
+.number-swim span {
+  width: clamp(76px, 11vw, 112px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font:
+    800 clamp(38px, 5.5vw, 58px) / 1 ui-rounded,
+    'Trebuchet MS',
+    system-ui,
+    sans-serif;
+  color: #1f4a4a;
+  background: radial-gradient(circle at 35% 30%, #fff 0 14%, #e3f5f4 15% 62%, #b9e1df 63%);
+  border: 3px solid #6aa9a6;
+}
+.number-swim span.missing {
+  background: #fff6dc;
+  border: 4px dashed #e7a24b;
+  color: #c47a1e;
+}
+.number-swim i {
+  width: clamp(14px, 2.5vw, 30px);
+  height: 5px;
+  background: #6aa9a6;
+}
+.number-swim.mini span {
+  width: 46px;
+  font-size: 24px;
+}
+.number-swim.mini i {
+  width: 10px;
+}
+.compare-model {
+  display: flex;
+  gap: clamp(16px, 4vw, 48px);
+  justify-content: center;
+  align-items: stretch;
+  width: min(980px, 96%);
+  margin: 0 auto;
+}
+.compare-group {
+  flex: 1;
+  min-height: clamp(180px, 34vh, 300px);
+  border-radius: 34px;
+  border: 4px solid #91bbaa;
+  background: #ffffffb3;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px #0b3b3a1f;
+  touch-action: manipulation;
+}
+.compare-group .compare-animals {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+.compare-group .compare-animals svg {
+  height: clamp(36px, 6.5vh, 58px);
+}
+.compare-group.tried-choice {
+  opacity: 0.55;
+}
+.compare-group.chosen-correct {
+  border-color: #3fa06f;
+  box-shadow: 0 0 0 6px #3fa06f55;
+}
+.reef-pattern {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 10px;
+  width: min(1000px, 96%);
+  margin: 0 auto;
+}
+.reef-pattern > span {
+  width: clamp(78px, 10vw, 118px);
+}
+.reef-pattern > span svg {
+  width: 100%;
+  height: auto;
+}
+.reef-pattern .pattern-gap {
+  aspect-ratio: 200 / 112;
+  display: grid;
+  place-items: center;
+  border: 4px dashed #e7a24b;
+  border-radius: 22px;
+  color: #c47a1e;
+  font:
+    800 40px ui-rounded,
+    system-ui,
+    sans-serif;
+  background: #fff6dc;
+}
+.activity-screen .game .choice.picture-choice {
+  min-width: 170px;
+  padding: 18px 22px;
+  border-radius: 30px;
+  background: #ffffffd9;
+  border: 3px solid #91bbaa;
+}
+.activity-screen .game .choice.picture-choice svg {
+  width: 130px;
+  height: 74px;
+  position: static;
+}
+.game-panel.school-maths .scene {
+  margin: 6px 0 22px;
+}
+
+/* ---------- Visible thinking ---------- */
+.school-thinking .thinking-title {
+  font:
+    800 clamp(30px, 4.4vw, 46px) / 1.15 ui-rounded,
+    'Trebuchet MS',
+    system-ui,
+    sans-serif;
+  color: var(--calm-ink, #254e4a);
+  margin: 0 0 28px;
+  text-align: center;
+}
+.thinking-choices {
+  display: flex;
+  gap: clamp(14px, 3vw, 30px);
+  justify-content: center;
+  flex-wrap: wrap;
+  width: min(980px, 96%);
+}
+.thinking-choices button {
+  flex: 1 1 220px;
+  max-width: 300px;
+  min-height: 210px;
+  border-radius: 34px;
+  border: 4px solid var(--calm-border, #91bbaa);
+  background: #fffffff0;
+  color: var(--calm-ink, #254e4a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px;
+  font:
+    700 22px / 1.2 ui-rounded,
+    'Trebuchet MS',
+    system-ui,
+    sans-serif;
+  box-shadow: 0 8px 22px #0b3b3a1f;
+  touch-action: manipulation;
+}
+.thinking-choices svg {
+  width: 96px;
+  height: 96px;
+}
+.thinking-choices button.chosen-correct {
+  border-color: #3fa06f;
+  box-shadow: 0 0 0 6px #3fa06f55;
+}
+@media (orientation: portrait) {
+  .compare-model {
+    flex-direction: column;
+  }
+  .compare-group {
+    min-height: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blend-bubble {
+    animation: none;
+  }
+}

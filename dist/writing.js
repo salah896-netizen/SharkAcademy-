@@ -332,11 +332,11 @@ function writing() {
         ),
       at: new Date().toISOString()
     });
-    state.xp += 6;
+    state.xp += PEARLS.extra;
     const advanced = advanceLearning('writing');
     save();
     $('#writingFeedback').textContent =
-      'Lovely practising, Haytham! Six pearls earned. Choose another letter when you’re ready.';
+      'Lovely practising, Haytham! Pearls earned. Choose another letter when you’re ready.';
     $('#finishWriting').disabled = true;
     encourage(
       advanced

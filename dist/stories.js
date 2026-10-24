@@ -243,7 +243,7 @@ function storyEnding(s) {
         const fresh = !state.storyCompletions.includes(key);
         if (fresh) {
           state.storyCompletions.push(key);
-          state.xp += 6;
+          state.xp += PEARLS.extra;
           state.history.push({
             type: 'story',
             skill: 'Story comprehension',
@@ -254,7 +254,7 @@ function storyEnding(s) {
           save();
         }
         $('#storyFeedback').textContent = fresh
-          ? 'You remembered! Six pearls earned.'
+          ? 'You remembered! Pearls earned.'
           : 'You remembered the story. Lovely reading!';
         document.querySelectorAll('[data-story-answer]').forEach(b => (b.disabled = true));
         encourage('You remembered, Haytham! I loved reading this story with you.');

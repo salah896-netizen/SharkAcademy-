@@ -24,6 +24,16 @@ try {
 } catch {
   storageOK = false;
 }
+// Pearl economy (agreed with family 24 Oct 2026): every learning adventure is worth 13 pearls,
+// trickled out per step with the remainder on completion; extras (stories, profiles, secrets,
+// free practice) are worth 3. Help and retries earn the same. 50 pearls bank one video.
+const PEARLS = { adventure: 13, extra: 3 };
+function pearlsPerStep(steps) {
+  return Math.floor((PEARLS.adventure - 1) / Math.max(1, steps));
+}
+function pearlCompletionBonus(steps) {
+  return PEARLS.adventure - pearlsPerStep(steps) * Math.max(1, steps);
+}
 function save() {
   try {
     localStorage.setItem('haytham-v1', JSON.stringify(state));
@@ -330,7 +340,8 @@ function answer(value) {
   }
   game.answered = true;
   game.correct++;
-  state.xp += 6;
+  const stepPearls = pearlsPerStep(game.items.length);
+  state.xp += stepPearls;
   state.history.push({
     type: game.type,
     skill: q.skill || q.title,
@@ -344,8 +355,8 @@ function answer(value) {
   const advanced = game.type !== 'fossil' && advanceLearning(game.type);
   save();
   $('.feedback').textContent = game.assisted
-    ? 'You worked it out with help! +6 pearls ✦'
-    : 'You worked it out! +6 pearls ✦';
+    ? `You worked it out with help! +${stepPearls} pearls ✦`
+    : `You worked it out! +${stepPearls} pearls ✦`;
   document.querySelectorAll('[data-choice]').forEach(b => (b.disabled = true));
   $('#hint').hidden = true;
   $('#next').hidden = false;
@@ -364,8 +375,9 @@ function answer(value) {
 }
 function finish() {
   state.completed.push({ type: game.type, at: new Date().toISOString() });
+  state.xp += pearlCompletionBonus(game.items.length);
   save();
-  app.innerHTML = `<section class="game game-panel"><div class="reward">${game.type === 'fossil' ? '🦷' : '🌟'}</div><span class="tag">EXPEDITION COMPLETE</span><h1>Fin-tastic, Haytham!</h1><p>You made five discoveries and earned <strong>30 pearls</strong>.</p><p>New treasures appear in your collection as you explore.</p><div class="choices"><button class="primary" id="done">Back to ocean →</button><button id="viewCollection">My collection</button></div><p class="muted">That’s a great place to stop for a break, too.</p></section>`;
+  app.innerHTML = `<section class="game game-panel"><div class="reward">${game.type === 'fossil' ? '🦷' : '🌟'}</div><span class="tag">EXPEDITION COMPLETE</span><h1>Fin-tastic, Haytham!</h1><p>You made five discoveries and earned <strong>${PEARLS.adventure} pearls</strong>.</p><p>New treasures appear in your collection as you explore.</p><div class="choices"><button class="primary" id="done">Back to ocean →</button><button id="viewCollection">My collection</button></div><p class="muted">That’s a great place to stop for a break, too.</p></section>`;
   $('#done').onclick = () => (location.hash = 'home');
   $('#viewCollection').onclick = () => (location.hash = 'collection');
   game = null;
@@ -395,7 +407,7 @@ function parents() {
     return `${h.filter(x => x.independent).length + practice.filter(x => !x.supported).length} without help / ${h.length + practice.length} solved`;
   };
   $('#modalContent').innerHTML =
-    `<h2>Haytham’s progress</h2><p class="muted">Saved on this device. These are practice records, not a formal reading assessment.</p><div class="stats"><div class="stat"><strong>${state.completed.length}</strong>expeditions</div><div class="stat"><strong>${state.xp}</strong>pearls</div><div class="stat"><strong>${state.history.filter(x => x.independent).length + (state.readingAdventures || []).flatMap(s => s.attempts || []).filter(x => !x.supported).length}</strong>answers without help</div></div><p><strong>Reading:</strong> ${summary('reading')}<br><strong>Counting & addition:</strong> ${summary('maths')}<br><strong>Patterns:</strong> ${summary('fossil')}<br><strong>Writing:</strong> ${(state.writingHistory || []).length} practice pages; ${(state.writingLessons || []).length} three-step adventures (self-reported)<br><strong>Stories:</strong> ${(state.storyCompletions || []).length} story-stage completions</p><h3>Writing samples</h3>${writingPracticePreview()}<h3>Maths models</h3>${sharingPracticePreview()}<h3>Number settings</h3><label>Counting and addition range <select id="range"><option value="10">Up to 10</option><option value="20">Up to 20</option><option value="50">Up to 50</option></select></label><p class="muted">Wrong answers and hints count as assisted practice. Difficulty changes apply to the next expedition.</p>${learningControls()}<h3>Reading adventure trial</h3><p>Foundation English: AC9EFLY12, AC9EFLY04, AC9EFLY05. ${readingPracticeSummary()} Six short Foundation adventures are available. Existing reading level unchanged.</p><h3>Adventure music</h3><label>Music volume <input id="musicVolumeControl" type="range" min="0" max="50" value="${Math.round(musicVolume * 100)}" aria-label="Adventure music volume"></label><p class="muted">Each area has its own original instrumental theme. Music softens while Milo speaks. Use the music button at the top to mute it.</p><h3>Character voices</h3><p class="muted">${Object.values(
+    `<h2>Haytham’s progress</h2><p class="muted">Saved on this device. These are practice records, not a formal reading assessment.</p><div class="stats"><div class="stat"><strong>${state.completed.length}</strong>expeditions</div><div class="stat"><strong>${state.xp}</strong>pearls</div><div class="stat"><strong>${state.history.filter(x => x.independent).length + (state.readingAdventures || []).flatMap(s => s.attempts || []).filter(x => !x.supported).length}</strong>answers without help</div></div><p><strong>Reading:</strong> ${summary('reading')}<br><strong>Counting & addition:</strong> ${summary('maths')}<br><strong>Patterns:</strong> ${summary('fossil')}<br><strong>Writing:</strong> ${(state.writingHistory || []).length} practice pages; ${(state.writingLessons || []).length} three-step adventures (self-reported)<br><strong>Stories:</strong> ${(state.storyCompletions || []).length} story-stage completions</p><h3>Writing samples</h3>${writingPracticePreview()}<h3>Maths models</h3>${sharingPracticePreview()}<h3>Explaining thinking</h3>${typeof thinkingSummary === 'function' ? thinkingSummary() : ''}<h3>Number settings</h3><label>Counting and addition range <select id="range"><option value="10">Up to 10</option><option value="20">Up to 20</option><option value="50">Up to 50</option></select></label><p class="muted">Wrong answers and hints count as assisted practice. Difficulty changes apply to the next expedition.</p>${learningControls()}<h3>Reading adventure trial</h3><p>Foundation English: AC9EFLY12, AC9EFLY04, AC9EFLY05. ${readingPracticeSummary()} ${readingMissionLibrary.length} short Foundation adventures are available, following the school's Jolly Phonics sequence. Existing reading level unchanged.</p><h3>Adventure music</h3><label>Music volume <input id="musicVolumeControl" type="range" min="0" max="50" value="${Math.round(musicVolume * 100)}" aria-label="Adventure music volume"></label><p class="muted">Each area has its own original instrumental theme. Music softens while Milo speaks. Use the music button at the top to mute it.</p><h3>Character voices</h3><p class="muted">${Object.values(
       characterGreetings
     )
       .map(c => c.name)
@@ -536,7 +548,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v74');
+      const cache = await caches.open('haytham-sharks-v75');
       const files = [
         './assets/fossil-gateway-carved.png',
         './assets/writing-sand.svg',
