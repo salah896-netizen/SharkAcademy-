@@ -37,7 +37,18 @@ body.race-running .subject-helper {
   display: block;
   margin: 0 auto -6px;
 }
-body:not([data-route='home']) #raceBuoy,
+/* 26 Oct: the race button sits where the cinema shell was, bottom left, on every main screen. */
+#raceBuoy.race-corner {
+  left: max(14px, calc(env(safe-area-inset-left) + 8px));
+  bottom: max(8px, env(safe-area-inset-bottom));
+  width: 78px;
+}
+#raceBuoy.race-corner svg {
+  width: 70px;
+  height: 70px;
+}
+body[data-route='race'] #raceBuoy,
+body[data-route='draw'] #raceBuoy,
 body.intro-running #raceBuoy {
   display: none;
 }
@@ -795,4 +806,37 @@ body.intro-running #raceBuoy {
 /* The clue card stays visible above the paused overlay so he can think about it. */
 .race-screen.paused .race-cue {
   z-index: 6;
+}
+/* Locked tracks: a pearl jar that fills as he earns pearls (50 / 100 / 150). */
+.race-pearl-jar {
+  display: block;
+  width: 90px;
+  height: 14px;
+  margin: 4px auto 2px;
+  border-radius: 99px;
+  background: #ffffff55;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px #fff8;
+}
+.race-pearl-jar i {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #f7efdc, #cbbce6);
+}
+.race-lock small {
+  display: block;
+  font: 800 13px ui-rounded, system-ui, sans-serif;
+  color: #fff;
+}
+.race-locked-nudge {
+  animation: race-nudge 0.45s ease-in-out;
+}
+@keyframes race-nudge {
+  25% {
+    transform: translateX(-6px) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(6px) rotate(1deg);
+  }
 }

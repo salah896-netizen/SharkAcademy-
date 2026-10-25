@@ -1,7 +1,8 @@
 /* Shark Race (24 October 2026): a just-for-fun reward with a little practice inside.
  *
- * - Four tracks, each a real shark habitat. Sunny Lagoon is open; the others unlock as
- *   Haytham finishes learning adventures (reading, maths or writing).
+ * - Four tracks, each a real shark habitat. Sunny Lagoon is open; the others unlock with
+ *   pearls (50, 100, 150), which he earns in learning adventures. (Until 26 Oct pearls bought
+ *   cinema videos; the cinema was dropped and the race took its place.)
  * - Any of the five friends can race. Tap a lane (or swipe) to move between three lanes.
  * - Speed shells: swim through the shell that matches the clue for a burst of speed.
  *   Clues match the lessons: first sounds, numbers, digraphs and tricky words.
@@ -27,7 +28,7 @@ const raceTracks = [
   {
     id: 'reef',
     name: 'Coral Reef',
-    unlockAt: 2,
+    unlockAt: 50,
     gate: 'number',
     helper: 'tiggy',
     obstacle: 'coral',
@@ -40,7 +41,7 @@ const raceTracks = [
   {
     id: 'ocean',
     name: 'Open Ocean',
-    unlockAt: 5,
+    unlockAt: 100,
     gate: 'digraph',
     helper: 'willa',
     obstacle: 'jelly',
@@ -53,7 +54,7 @@ const raceTracks = [
   {
     id: 'trench',
     name: 'Deep Trench',
-    unlockAt: 9,
+    unlockAt: 150,
     gate: 'tricky',
     helper: 'willa',
     obstacle: 'rock',
@@ -159,8 +160,10 @@ function rotate(list, by) {
 function learningAdventuresDone() {
   return (state.completed || []).length + (state.writingLessons || []).length;
 }
+// Pearls unlock tracks (26 Oct, parent's decision, replacing the cinema): 50, 100 and 150.
+// Pearls only come from learning, so racing still follows learning.
 function trackUnlocked(track) {
-  return learningAdventuresDone() >= track.unlockAt;
+  return (Number(state.xp) || 0) >= track.unlockAt;
 }
 function unlockedTrackCount() {
   return raceTracks.filter(trackUnlocked).length;
@@ -182,6 +185,8 @@ save = function () {
     badge.innerHTML = `<span aria-hidden="true">🏁</span><strong>New race track: ${track.name}!</strong>`;
     document.body.append(badge);
     setTimeout(() => badge.remove(), 3800);
+    // Milo says it too (a recorded line), after the pearl sound settles.
+    setTimeout(() => speak('A new race track is open!', { speaker: 'milo' }), 900);
   }
 };
 
@@ -202,8 +207,10 @@ function raceTrackPicker() {
   app.innerHTML = `<section class="race-picker"><span class="tag">SHARK RACE</span><h1>Choose a race track</h1><div class="race-track-cards">${raceTracks
     .map(track => {
       const open = trackUnlocked(track),
-        need = Math.max(0, track.unlockAt - done);
-      return `<button class="race-track-card ${open ? '' : 'locked'}" data-race-track="${track.id}" aria-label="${track.name}${open ? '' : ', locked. Finish ' + need + ' more learning adventures'}">${trackThumb(track)}<strong>${track.name}</strong>${open ? '' : `<span class="race-lock"><b aria-hidden="true">🔒</b>${Array.from({ length: need }, () => '<i aria-hidden="true">○</i>').join('')}</span>`}</button>`;
+        have = Math.min(track.unlockAt, Number(state.xp) || 0),
+        need = Math.max(0, track.unlockAt - have);
+      // A locked track shows how full its pearl jar is: no reading needed.
+      return `<button class="race-track-card ${open ? '' : 'locked'}" data-race-track="${track.id}" aria-label="${track.name}${open ? '' : ', locked. ' + need + ' more pearls to open it'}">${trackThumb(track)}<strong>${track.name}</strong>${open ? '' : `<span class="race-lock"><b aria-hidden="true">🔒</b><span class="race-pearl-jar" aria-hidden="true"><i style="width:${Math.round((have / track.unlockAt) * 100)}%"></i></span><small aria-hidden="true">${have} / ${track.unlockAt}</small></span>`}</button>`;
     })
     .join('')}</div></section>`;
   document.querySelectorAll('[data-race-track]').forEach(button => {
@@ -211,11 +218,11 @@ function raceTrackPicker() {
     button.onclick = () => {
       if (trackUnlocked(track)) location.hash = 'race/' + track.id;
       else {
-        const need = track.unlockAt - learningAdventuresDone();
-        speak(
-          `${track.name} opens after ${need} more learning ${need === 1 ? 'adventure' : 'adventures'}. Let’s learn with our friends, then race!`,
-          { speaker: 'milo' }
-        );
+        // Locked: the jar fills with pearls from learning adventures.
+        button.classList.remove('race-locked-nudge');
+        void button.offsetWidth;
+        button.classList.add('race-locked-nudge');
+        speak('Let’s learn with our friends, then race!', { speaker: 'milo' });
       }
     };
     button.onpointerenter = e => {
@@ -611,14 +618,17 @@ function raceSummary() {
 }
 
 // ---------------------------------------------------------------- ways in
+// The race lives where the cinema shell was (bottom left, every screen). 26 Oct: the cinema is gone.
 function installRaceEntry() {
-  const buoy = document.createElement('a');
+  const buoy = document.getElementById?.('cinemaShell') || document.createElement('a');
   buoy.id = 'raceBuoy';
+  buoy.className = 'race-corner';
   buoy.href = '#race';
+  buoy.removeAttribute?.('title');
   buoy.setAttribute('aria-label', 'Shark race');
   buoy.innerHTML =
     '<svg viewBox="0 0 90 90" aria-hidden="true"><path d="M45 8V46" stroke="#3b4b54" stroke-width="4"/><path d="M47 9H79V31H47Z" fill="#fff"/><path d="M47 9H55V16H47ZM63 9H71V16H63ZM55 16H63V23H55ZM71 16H79V23H71ZM47 23H55V31H47ZM63 23H71V31H63Z" fill="#26343c"/><path d="M14 58Q45 38 76 58L70 76Q45 86 20 76Z" fill="#f08a3c" stroke="#b5612b" stroke-width="3"/><path d="M18 64Q45 52 72 64" stroke="#fff" stroke-width="6" fill="none"/></svg><span>Race</span>';
-  document.body.append(buoy);
+  if (!buoy.isConnected) document.body.append(buoy);
 }
 installRaceEntry();
 const preRaceLibrary = libraryPage;

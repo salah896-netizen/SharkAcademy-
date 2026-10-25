@@ -519,7 +519,8 @@ function render() {
       expeditions,
       stories: storiesPage,
       legend: openKraken,
-      cinema,
+      // The cinema was dropped on 26 Oct; old #cinema links go to the race.
+      cinema: () => (location.hash = 'race'),
       // race.js loads last; until then (e.g. reopening on #race) show home, then race.js re-renders.
       race: () => (typeof raceGame === 'function' ? raceGame() : home()),
       path: () => (typeof pathPage === 'function' ? pathPage() : home()),
@@ -553,7 +554,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v93');
+      const cache = await caches.open('haytham-sharks-v94');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',
@@ -589,8 +590,6 @@ if ('serviceWorker' in navigator) {
         './assets/crew-tiggy.webp',
         './assets/crew-gizmo.webp',
         './assets/crew-dash.webp',
-        './assets/cinema-seats-rear.webp',
-        './assets/cinema-milo-rear.webp',
         './atmosphere.js',
         './ocean-worlds.css',
         './audio/home.m4a',

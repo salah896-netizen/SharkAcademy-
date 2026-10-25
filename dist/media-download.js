@@ -15,6 +15,8 @@
       Object.values(voiceManifest.lines).forEach(f => urls.add(new URL(f, location.href).href));
       Object.values(voiceManifest.sounds).forEach(f => urls.add(new URL(f, location.href).href));
     }
+    if (typeof quizPhotoData !== 'undefined')
+      Object.values(quizPhotoData).forEach(p => urls.add(new URL('assets/' + p.file, location.href).href));
     if (typeof sharkPhotoData !== 'undefined')
       Object.values(sharkPhotoData)
         .flat()

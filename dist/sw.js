@@ -1,5 +1,5 @@
 
-const CACHE = 'haytham-sharks-v93';
+const CACHE = 'haytham-sharks-v94';
 const FILES = [
   './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
@@ -29,6 +29,9 @@ const FILES = [
   './feedback-round3.css',
   './learning-checks.js',
   './learning-checks.css',
+  './quiz-photos.js',
+  './quiz-pictures.js',
+  './quiz-pictures.css',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',
   './assets/icons/icon-192.png',
@@ -64,8 +67,6 @@ const FILES = [
   './assets/crew-tiggy.webp',
   './assets/crew-gizmo.webp',
   './assets/crew-dash.webp',
-  './assets/cinema-seats-rear.webp',
-  './assets/cinema-milo-rear.webp',
   './',
   './index.html',
   './style.css',

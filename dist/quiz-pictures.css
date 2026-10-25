@@ -1,0 +1,105 @@
+/* Real pictures in the shark quizzes. */
+.shark-question [data-book-answer].has-quiz-pic,
+.shark-question [data-book-answer].text-answer {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px !important;
+  width: clamp(180px, 27vw, 300px);
+  min-width: 0 !important;
+  flex: 0 0 auto;
+}
+.shark-question .choices:has(.has-quiz-pic) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 36px) !important;
+}
+.quiz-pic {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.quiz-photo {
+  background: #0a3445;
+}
+.quiz-photo-fill {
+  position: absolute;
+  inset: -14px;
+  background: center / cover;
+  filter: blur(12px) brightness(0.7);
+}
+.quiz-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.quiz-emoji {
+  background: radial-gradient(circle at 50% 40%, #ffffff, #e6f3f1);
+  font-size: clamp(64px, 9vw, 104px);
+  line-height: 1;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+.quiz-swatch {
+  background: radial-gradient(circle at 50% 50%, var(--swatch) 0 34%, transparent 35%), #f3f7f5;
+}
+.quiz-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  font-size: 34px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 3px #0006);
+}
+.shark-question [data-book-answer] .answer-caption {
+  display: block !important;
+  font: 800 clamp(15px, 1.8vw, 19px) / 1.2 ui-rounded, system-ui, sans-serif;
+}
+.shark-question [data-book-answer].text-answer .answer-caption {
+  font-size: clamp(20px, 2.6vw, 28px);
+}
+/* Fact cards and question panels: a photo instead of an outline icon. */
+.quiz-panel-pic {
+  position: relative;
+  display: block;
+  width: clamp(200px, 30vw, 360px);
+  aspect-ratio: 3 / 2;
+  margin: 0 auto 8px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+/* Shark School: a topic photo instead of the line icon. */
+.school-icon.school-photo {
+  display: block;
+  width: clamp(220px, 34vw, 400px);
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  background: none;
+}
+.quiz-topic-pic {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.topic-card .school-icon.school-photo,
+.shelf-card .school-icon.school-photo {
+  width: 100%;
+}
+
+.school-heading .school-icon.school-photo {
+  margin: 0 auto 6px;
+}

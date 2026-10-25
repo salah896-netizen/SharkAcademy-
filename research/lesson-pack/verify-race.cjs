@@ -34,19 +34,19 @@ vm.runInContext(fs.readFileSync('dist/race.js', 'utf8'), context);
 const tracks = vm.runInContext('raceTracks', context),
   RACE = vm.runInContext('RACE', context);
 
-// Unlocking: lagoon open from the start; others need learning adventures (reading, maths or writing).
+// Unlocking: lagoon open from the start; the others open at 50, 100 and 150 pearls (26 Oct).
 assert.equal(tracks.length, 4);
 const open = () => vm.runInContext('unlockedTrackCount()', context);
-assert.equal(open(), 1);
-for (const [done, expected] of [
-  [1, 1],
-  [2, 2],
-  [5, 3],
-  [9, 4]
+for (const [xp, expected] of [
+  [0, 1],
+  [49, 1],
+  [50, 2],
+  [100, 3],
+  [149, 3],
+  [150, 4]
 ]) {
-  context.state.completed = Array.from({ length: done - 1 }, () => ({ type: 'maths' }));
-  context.state.writingLessons = [{}];
-  assert.equal(open(), expected, done + ' adventures');
+  context.state.xp = xp;
+  assert.equal(open(), expected, xp + ' pearls');
 }
 // Every racer has a real encyclopedia entry and every track fact names a real shark.
 for (const r of Object.values(vm.runInContext('racers', context)))
@@ -108,5 +108,5 @@ for (const track of tracks) {
   }
 }
 console.log(
-  'Passed: 4 tracks unlock by learning; sourced facts; course layout; 3-pearl cap; speed shells win races; races about a minute.'
+  'Passed: 4 tracks unlock with pearls (50/100/150); sourced facts; course layout; 3-pearl cap; speed shells win races; races about a minute.'
 );

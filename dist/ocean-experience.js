@@ -177,14 +177,8 @@ updateSound = function () {
 save = function () {
   const gained = state.xp - lastPearls;
   oldSave();
-  if (gained > 0) {
-    pearlFlight(gained);
-    if (Math.floor(state.xp / 50) > Math.floor(lastPearls / 50)) {
-      state.videoUnlocks = earnedVideoCount();
-      oldSave();
-      showVideoUnlock();
-    }
-  }
+  // Pearl milestones now open race tracks (race.js celebrates them), not cinema videos.
+  if (gained > 0) pearlFlight(gained);
   lastPearls = state.xp;
   updateTreasure();
 };
@@ -792,46 +786,7 @@ function bindHomeGreetings() {
     });
   });
 }
-function earnedVideoCount() {
-  return Math.floor(Math.max(0, Number(state.xp) || 0) / 50);
-}
-function showVideoUnlock() {
-  const badge = document.createElement('div');
-  badge.className = 'video-unlocked';
-  badge.setAttribute('role', 'status');
-  badge.innerHTML = '<span aria-hidden="true">🐚 🎬</span><strong>Shark video unlocked!</strong>';
-  document.body.append(badge);
-  setTimeout(() => badge.remove(), 3500);
-}
-const previousCinema = cinema;
-cinema = function () {
-  previousCinema();
-  const earned = earnedVideoCount(),
-    available = Math.min(earned, cinemaVideos.length);
-  const progress = document.createElement('section');
-  progress.className = 'cinema-pearl-progress';
-  progress.innerHTML = `<strong>${earned} video ${earned === 1 ? 'unlock' : 'unlocks'} earned</strong><p>${50 - (state.xp % 50)} more pearls to your next shark video.</p><div class="video-pearl-track"><i style="width:${(state.xp % 50) * 2}%"></i></div><small>${cinemaVideos.length ? available + ' films ready to choose.' : 'Your unlocks are saved. Your family’s films will appear here when they are ready.'}</small>`;
-  app.querySelector('.cinema-page').append(progress);
-  document.querySelectorAll('[data-movie]').forEach((button, index) => {
-    button.disabled = index >= available;
-    if (button.disabled) {
-      button.textContent = '🔒 ' + button.textContent;
-      button.setAttribute('aria-label', 'Locked: earn ' + (index + 1) * 50 + ' pearls');
-    }
-  });
-  if (!available) {
-    const player = $('#sharkMovie');
-    if (player) {
-      player.pause();
-      player.removeAttribute('src');
-      player.load();
-      player.setAttribute('aria-label', 'Earn 50 pearls to unlock your first shark video');
-    }
-  }
-  screenNarration = 'Every fifty pearls unlocks another shark video, Haytham. I’ll watch with you.';
-  updateMilo(screenNarration);
-  requestAnimationFrame(fitScreen);
-};
+// (Cinema and video unlocks removed 26 Oct: pearls now open race tracks; see race.js.)
 const originalParentView = parents;
 parents = function () {
   originalParentView();
