@@ -1,5 +1,5 @@
 importScripts('./voice-manifest.js', './shark-photos.js');
-const CACHE = 'haytham-sharks-v89';
+const CACHE = 'haytham-sharks-v90';
 const FILES = [
   './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
@@ -20,6 +20,10 @@ const FILES = [
   './encyclopedia-more.css',
   './draw-shark.js',
   './draw-shark.css',
+  './kid-buttons.js',
+  './kid-buttons.css',
+  './home-play.js',
+  './home-play.css',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',
   './assets/icons/icon-192.png',

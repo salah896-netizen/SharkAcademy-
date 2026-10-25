@@ -139,3 +139,28 @@
 .shark-article .article-hero.has-gallery {
   grid-template-columns: 1.7fr 1fr !important;
 }
+/* Corner friends never cover the pictures: on shark pages they shrink into the corners and the
+   page stops above them. (Haytham's feedback, 25 Oct.) */
+body[data-route='museum'] #subjectHelper,
+body[data-route='legend'] #subjectHelper {
+  scale: 0.62;
+  transform-origin: bottom left;
+}
+body[data-route='museum'] #miloCompanion,
+body[data-route='legend'] #miloCompanion {
+  scale: 0.62;
+  transform-origin: bottom right;
+}
+body[data-route='museum'] #miloCompanion .companion-copy {
+  display: none !important;
+}
+body[data-route='museum'] #app {
+  bottom: 110px !important;
+  left: 150px !important;
+  right: 150px !important;
+}
+body[data-route='museum'] .shark-article .article-hero,
+body[data-route='museum'] .shark-article > section:not([hidden]) {
+  height: calc(100dvh - 210px) !important;
+  max-height: none;
+}

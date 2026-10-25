@@ -1,0 +1,129 @@
+/* Picture buttons: one shape and colour per action, no reading needed. */
+.kid-btn {
+  display: inline-grid !important;
+  place-items: center;
+  min-width: 96px !important;
+  min-height: 76px !important;
+  padding: 0 22px !important;
+  border: 0 !important;
+  border-radius: 40px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 0 !important;
+  box-shadow: 0 6px 0 var(--kid-shade) !important;
+  transition: transform 0.12s;
+}
+.kid-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--kid-shade) !important;
+}
+.kid-icon {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 900;
+  font-family: ui-rounded, system-ui, sans-serif;
+}
+.kid-next,
+.kid-done {
+  background: #2fa36b !important;
+  --kid-shade: #1d7448;
+  min-width: 120px !important;
+}
+.kid-next {
+  animation: kid-next-pulse 1.8s ease-in-out 1.2s infinite;
+}
+.kid-again {
+  background: #f08a2c !important;
+  --kid-shade: #b9631a;
+}
+.kid-again .kid-icon {
+  font-size: 46px;
+}
+.kid-home {
+  background: #2f7fc0 !important;
+  --kid-shade: #1f5a8a;
+}
+.kid-path,
+.kid-tracks,
+.kid-listen {
+  background: #fffbea !important;
+  --kid-shade: #c9b98f;
+  color: #123c4c !important;
+}
+@keyframes kid-next-pulse {
+  50% {
+    transform: scale(1.07);
+  }
+}
+/* Try again: the tapped choice wobbles and fades; a big round arrow pops up. */
+.kid-wrong {
+  animation: kid-wobble 0.5s ease-in-out;
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+@keyframes kid-wobble {
+  20% {
+    transform: translateX(-10px) rotate(-3deg);
+  }
+  40% {
+    transform: translateX(10px) rotate(3deg);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+.kid-try-again {
+  position: fixed;
+  left: 50%;
+  top: 42%;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: #f08a2c;
+  color: #fff;
+  box-shadow: 0 0 0 10px #ffffff88, 0 18px 40px #0004;
+  pointer-events: none;
+  animation: kid-try 1.7s ease-in-out forwards;
+}
+.kid-try-again span {
+  font: 900 96px/1 ui-rounded, system-ui, sans-serif;
+  animation: kid-spin 1.1s ease-in-out 0.15s;
+}
+@keyframes kid-try {
+  0% {
+    scale: 0.3;
+    opacity: 0;
+  }
+  15% {
+    scale: 1.1;
+    opacity: 1;
+  }
+  25%,
+  80% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 0.8;
+    opacity: 0;
+  }
+}
+@keyframes kid-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kid-next,
+  .kid-try-again span,
+  .kid-wrong {
+    animation: none;
+  }
+}

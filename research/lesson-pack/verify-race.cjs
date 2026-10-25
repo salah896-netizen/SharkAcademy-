@@ -103,9 +103,10 @@ for (const track of tracks) {
     assert.equal(good.run.shells.filter(s => s.right).length, 4);
     assert.equal(good.place, 1, track.id + ': matching shells wins');
     assert(poor.place >= 1 && poor.place <= 3);
-    assert(good.run.time < 50, 'a race lasts under a minute');
+    assert(good.run.time < 90, 'a race lasts about a minute and a bit (slowed 25 Oct)');
+    if (track.id === 'lagoon') console.log('lagoon race time with shells', good.run.time.toFixed(1), 's; without', poor.run.time.toFixed(1), 's');
   }
 }
 console.log(
-  'Passed: 4 tracks unlock by learning; sourced facts; course layout; 3-pearl cap; speed shells win races; races under a minute.'
+  'Passed: 4 tracks unlock by learning; sourced facts; course layout; 3-pearl cap; speed shells win races; races about a minute.'
 );

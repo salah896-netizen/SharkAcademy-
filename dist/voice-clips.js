@@ -46,6 +46,54 @@ function voiceClipsFor(text, speaker = 'milo') {
   }
   return files.length ? files : null;
 }
+// Who can say this? The asked-for friend first, then the friend for this screen, then Milo,
+// then anyone. Whole lines in one voice are preferred; failing that, sentence by sentence.
+function voiceClipsForAnyone(text, speaker = 'milo') {
+  const order = [
+    speaker,
+    typeof crewForRoute === 'function' ? crewForRoute() : null,
+    'milo',
+    'willa',
+    'tiggy',
+    'gizmo',
+    'dash'
+  ].filter((s, i, all) => s && all.indexOf(s) === i);
+  for (const s of order) {
+    const files = voiceClipsFor(text, s);
+    if (files) return { files, speaker: s };
+  }
+  const files = [];
+  for (const sentence of voiceSentences(text)) {
+    const who = order.find(s => voiceClipsFor(sentence, s));
+    if (who) {
+      files.push(...voiceClipsFor(sentence, who));
+      continue;
+    }
+    // Lines made up as you play ("4, 5, hmm, 7, 8.", "crab, squid, crab… What comes next?") are
+    // built from recorded pieces: each number, animal and phrase on its own.
+    const pieces = voicePieces(sentence);
+    if (!pieces) return null;
+    files.push(...pieces);
+  }
+  return files.length ? { files, speaker } : null;
+}
+function voicePieces(sentence) {
+  const lines = typeof voiceManifest !== 'undefined' ? voiceManifest.lines : null;
+  if (!lines) return null;
+  const parts = sentence
+    .split(/[,…:·]+\s*|\.\.\.\s*/)
+    .map(p => p.replace(/[.!?]+$/, '').trim())
+    .filter(Boolean);
+  const files = [];
+  for (const part of parts) {
+    const who = ['tiggy', 'willa', 'milo', 'gizmo', 'dash'].find(s => lines[voiceKey(s, part)]);
+    // A single letter or digraph is said as its Jolly Phonics sound ("f · i · n").
+    const sound = /^[a-z]{1,2}$/i.test(part) ? voiceSoundFile(part.toLowerCase()) : null;
+    if (!who && !sound) return null;
+    files.push(who ? lines[voiceKey(who, part)] : sound);
+  }
+  return files.length ? files : null;
+}
 function voiceSoundFile(id) {
   return typeof voiceManifest !== 'undefined' ? voiceManifest.sounds[id] || null : null;
 }

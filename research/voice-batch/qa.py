@@ -24,7 +24,7 @@ def analyse(path):
                 tail_cut=bool(active[-2:].any()))
 
 
-SHORT_OK = {'Pop, pop, pop!'}  # quick sound effects, checked by length
+SHORT_OK = {'Pop, pop, pop!', 'sh ch ck'}  # quick sound effects, checked by length
 UNVOICED_STRETCH = {'s', 'f', 'sh'}
 STOP_STYLE = {'t', 'p', 'ck', 'h', 'ch'}
 manifest = {'lines': {}, 'sounds': {}}

@@ -169,7 +169,7 @@ function narratePanel(panel) {
         .map((b, i) => 'Choice ' + (i + 1) + ': ' + (b.getAttribute('aria-label') || b.textContent))
         .join('. ')
     : '';
-  const text = heading + '. ' + (choices || body);
+  const text = (/[.!?]$/.test(heading.trim()) ? heading.trim() + ' ' : heading + '. ') + (choices || body);
   if (text.trim() !== '.') setSpeakingPanel(panel, text);
 }
 const previousUpdateSound = updateSound;
@@ -553,9 +553,10 @@ function bindMuseumNarration() {
             (b.onclick = () =>
               setSpeakingPanel(
                 panel,
-                (panel.querySelector('h2')?.textContent || '') +
-                  '. ' +
-                  (panel.querySelector('p')?.textContent || '')
+                ((h, p) => (/[.!?]$/.test(h.trim()) ? h.trim() + ' ' : h + '. ') + p)(
+                  panel.querySelector('h2')?.textContent || '',
+                  panel.querySelector('p')?.textContent || ''
+                )
               ))
         );
       if (panel.matches('.shark-question')) {

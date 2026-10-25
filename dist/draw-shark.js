@@ -9,7 +9,7 @@
  */
 const sharkDrawSteps = [
   {
-    name: 'Back',
+    name: 'Shark’s back',
     say: 'First, draw a big curve for the shark’s back. Start at the nose dot.',
     paths: ['M335 150 C290 95 170 100 105 140']
   },
@@ -60,13 +60,42 @@ const sharkCrayons = [
 ];
 let sharkDraw = null;
 
+// The board fills the screen. Drawing coordinates stay 400 × 300, scaled evenly and centred,
+// so the guide (SVG, "meet") and Haytham's ink (canvas) always line up.
+// The page shows the part of the board where the shark is, so the shark is as big as possible.
+const DRAW_VIEW = { x: 40, y: 40, w: 320, h: 205 };
+function drawFit(canvas) {
+  const r = canvas.getBoundingClientRect(),
+    v = DRAW_VIEW,
+    scale = Math.min(r.width / v.w, r.height / v.h);
+  return {
+    r,
+    scale,
+    x: (r.width - v.w * scale) / 2 - v.x * scale,
+    y: (r.height - v.h * scale) / 2 - v.y * scale
+  };
+}
+let drawSayToken = 0;
+function dashSays(text) {
+  // Each new instruction replaces the last (speak stops anything still playing).
+  drawSayToken++;
+  speak(text, { speaker: 'dash' });
+}
+
 function drawShark() {
   if (typeof writingCleanup === 'function' && writingCleanup) writingCleanup();
-  if (!sharkDraw) sharkDraw = { mode: 'steps', step: 0, strokes: [], colour: '#20313a', saved: false };
+  if (!sharkDraw)
+    sharkDraw = { mode: 'steps', step: 0, strokes: [], colour: '#20313a', tool: 'pen', saved: false };
   const d = sharkDraw,
     stepping = d.mode === 'steps' && d.step < sharkDrawSteps.length,
     colouring = d.mode === 'steps' && d.step >= sharkDrawSteps.length,
     step = sharkDrawSteps[d.step];
+  if (stepping && d.tool !== 'erase') d.tool = 'pen';
+  const instruction = stepping
+    ? step.say
+    : colouring
+      ? 'Pick a crayon and colour your shark. Make it any colour you like!'
+      : 'Draw any shark you like. Look at Dash’s shark if you want an idea.';
   const guide = sharkDrawSteps
     .map((s, i) => {
       if (d.mode !== 'steps') return '';
@@ -83,68 +112,87 @@ function drawShark() {
     })
     .join('');
   const model = sharkDrawSteps.map(s => s.paths.map(p => `<path d="${p}"/>`).join('')).join('');
-  app.innerHTML = `<section class="draw-page"><div class="draw-head"><span class="tag">DASH’S DRAWING SCHOOL</span><h1>${colouring ? 'Colour your shark!' : d.mode === 'free' ? 'Draw on my own' : 'Draw a shark'}</h1><div class="segmented" role="group" aria-label="Drawing mode"><button data-draw-mode="steps" aria-pressed="${d.mode === 'steps'}">Step by step</button><button data-draw-mode="free" aria-pressed="${d.mode === 'free'}">Draw on my own</button></div></div>${
-    stepping
-      ? `<div class="draw-steps" aria-label="Step ${d.step + 1} of ${sharkDrawSteps.length}">${sharkDrawSteps.map((s, i) => `<i class="${i < d.step ? 'done' : i === d.step ? 'now' : ''}" title="${s.name}">${i < d.step ? '🦈' : i + 1}</i>`).join('')}</div><p class="draw-say tap-to-hear" id="drawSay"><b>${step.name}:</b> ${step.say}</p>`
-      : `<p class="draw-say tap-to-hear" id="drawSay">${colouring ? 'Pick a crayon and colour your shark. Make it any colour you like!' : 'Draw any shark you like. Look at Dash’s shark if you want an idea.'}</p>`
-  }<div class="draw-board"><svg viewBox="0 0 400 300" aria-hidden="true">${guide}</svg>${d.mode === 'free' ? `<svg class="draw-model" viewBox="40 40 310 200" aria-label="A shark to copy">${model}</svg>` : ''}<canvas id="drawCanvas" aria-label="Drawing page. Draw with your finger or Apple Pencil."></canvas></div><div class="draw-tools">${
-    stepping
-      ? `<button id="drawWatch" class="quiet">▷ Watch</button>`
-      : `<div class="crayons" role="group" aria-label="Crayons">${sharkCrayons.map(([c, n]) => `<button data-crayon="${c}" aria-label="${n} crayon" aria-pressed="${d.colour === c}" style="--c:${c}"></button>`).join('')}</div>`
-  }<button id="drawUndo" class="quiet">↶ Undo</button><button id="drawClear" class="quiet">Clear</button>${
-    stepping
-      ? `<button id="drawNext" class="primary">${d.step === sharkDrawSteps.length - 1 ? 'Finish drawing ▶' : 'Next part ▶'}</button>`
-      : `<button id="drawDone" class="primary" ${d.saved ? 'disabled' : ''}>I finished my shark! ✓</button>`
-  }</div></section>`;
+  const crayons = `<div class="crayons" role="group" aria-label="Crayons">${sharkCrayons.map(([c, n]) => `<button data-crayon="${c}" aria-label="${n} crayon" aria-pressed="${d.tool === 'pen' && d.colour === c}" style="--c:${c}"></button>`).join('')}</div>`;
+  app.innerHTML = `<section class="draw-page" data-mode="${d.mode}">
+    <div class="draw-top">
+      <div class="segmented draw-modes" role="group" aria-label="Drawing mode"><button data-draw-mode="steps" aria-pressed="${d.mode === 'steps'}" aria-label="Step by step">🦈 1 2 3</button><button data-draw-mode="free" aria-pressed="${d.mode === 'free'}" aria-label="Draw on my own">✏️</button></div>
+      ${stepping ? `<div class="draw-steps" aria-label="Part ${d.step + 1} of ${sharkDrawSteps.length}">${sharkDrawSteps.map((s, i) => `<i class="${i < d.step ? 'done' : i === d.step ? 'now' : ''}">${i < d.step ? '✓' : i + 1}</i>`).join('')}</div>` : ''}
+      <button class="draw-say" id="drawSay" aria-label="Hear Dash again">🔊 <span>${stepping ? `<b>${step.name}</b>` : colouring ? '🖍️' : '✏️'}</span></button>
+    </div>
+    <div class="draw-board"><svg viewBox="${DRAW_VIEW.x} ${DRAW_VIEW.y} ${DRAW_VIEW.w} ${DRAW_VIEW.h}" aria-hidden="true">${guide}</svg>${d.mode === 'free' ? `<svg class="draw-model" viewBox="40 40 310 200" aria-label="A shark to copy">${model}</svg>` : ''}<canvas id="drawCanvas" aria-label="Drawing page. Draw with your finger or Apple Pencil."></canvas></div>
+    <div class="draw-tools">
+      ${stepping ? `<button id="drawWatch" class="draw-tool" aria-label="Watch how">👀</button>` : crayons}
+      <button id="drawPen" class="draw-tool" aria-label="Pencil" aria-pressed="${d.tool === 'pen'}">✏️</button>
+      <button id="drawEraser" class="draw-tool" aria-label="Eraser" aria-pressed="${d.tool === 'erase'}"><span class="eraser-icon" aria-hidden="true"></span></button>
+      <button id="drawUndo" class="draw-tool" aria-label="Undo">↶</button>
+      <button id="drawClear" class="draw-tool" aria-label="Start this part again">🧽</button>
+      ${stepping ? `<button id="drawNext" class="draw-go" aria-label="${d.step === sharkDrawSteps.length - 1 ? 'Finish drawing' : 'Next part'}">▶</button>` : `<button id="drawDone" class="draw-go" aria-label="I finished my shark" ${d.saved ? 'disabled' : ''}>✓</button>`}
+    </div></section>`;
 
-  const say = () =>
-    speak(stepping ? step.say : $('#drawSay').textContent, { speaker: 'dash' });
-  $('#drawSay').onclick = say;
+  $('#drawSay').onclick = () => dashSays(instruction);
   document.querySelectorAll('[data-draw-mode]').forEach(
     b =>
       (b.onclick = () => {
         if (b.dataset.drawMode === d.mode) return;
-        sharkDraw = { mode: b.dataset.drawMode, step: 0, strokes: [], colour: '#20313a', saved: false };
+        sharkDraw = {
+          mode: b.dataset.drawMode,
+          step: 0,
+          strokes: [],
+          colour: '#20313a',
+          tool: 'pen',
+          saved: false
+        };
         drawShark();
+        if (sharkDraw.mode === 'free') dashSays('Draw any shark you like. Look at Dash’s shark if you want an idea.');
       })
   );
+  const setTool = tool => {
+    d.tool = tool;
+    $('#drawPen')?.setAttribute('aria-pressed', String(tool === 'pen'));
+    $('#drawEraser')?.setAttribute('aria-pressed', String(tool === 'erase'));
+    document.querySelectorAll('[data-crayon]').forEach(x =>
+      x.setAttribute('aria-pressed', String(tool === 'pen' && x.dataset.crayon === d.colour))
+    );
+  };
   document.querySelectorAll('[data-crayon]').forEach(
     b =>
       (b.onclick = () => {
         d.colour = b.dataset.crayon;
-        document
-          .querySelectorAll('[data-crayon]')
-          .forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+        setTool('pen');
       })
   );
+  $('#drawPen').onclick = () => setTool('pen');
+  $('#drawEraser').onclick = () => setTool('erase');
 
-  // Ink: Haytham's strokes stay on the page across steps.
+  // Ink: Haytham's strokes stay on the page across steps. Eraser strokes rub out ink only,
+  // never Dash's guide.
   const canvas = $('#drawCanvas'),
     ctx = canvas.getContext('2d');
   let active = null,
     pointer = null;
   const point = e => {
-    const r = canvas.getBoundingClientRect();
-    return { x: ((e.clientX - r.left) / r.width) * 400, y: ((e.clientY - r.top) / r.height) * 300 };
+    const f = drawFit(canvas);
+    return { x: (e.clientX - f.r.left - f.x) / f.scale, y: (e.clientY - f.r.top - f.y) / f.scale };
   };
   function paint() {
-    const r = canvas.getBoundingClientRect(),
+    const f = drawFit(canvas),
       dpr = Math.min(devicePixelRatio || 1, 2);
-    const w = Math.round(r.width * dpr),
-      h = Math.round(r.height * dpr);
+    const w = Math.round(f.r.width * dpr),
+      h = Math.round(f.r.height * dpr);
     if (canvas.width !== w || canvas.height !== h) {
       canvas.width = w;
       canvas.height = h;
     }
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.setTransform(canvas.width / 400, 0, 0, canvas.height / 300, 0, 0);
+    ctx.setTransform(f.scale * dpr, 0, 0, f.scale * dpr, f.x * dpr, f.y * dpr);
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     for (const s of d.strokes) {
-      ctx.strokeStyle = ctx.fillStyle = s.colour;
+      ctx.globalCompositeOperation = s.erase ? 'destination-out' : 'source-over';
+      ctx.strokeStyle = ctx.fillStyle = s.erase ? '#000' : s.colour;
       ctx.lineWidth = s.width;
-      ctx.globalAlpha = s.width > 6 ? 0.75 : 1;
+      ctx.globalAlpha = s.erase ? 1 : s.width > 6 ? 0.75 : 1;
       if (s.points.length === 1) {
         ctx.beginPath();
         ctx.arc(s.points[0].x, s.points[0].y, s.width / 2, 0, Math.PI * 2);
@@ -157,6 +205,7 @@ function drawShark() {
       }
     }
     ctx.globalAlpha = 1;
+    ctx.globalCompositeOperation = 'source-over';
   }
   const end = e => {
     if (pointer !== e.pointerId) return;
@@ -169,10 +218,12 @@ function drawShark() {
     if (pointer !== null || !e.isPrimary) return;
     e.preventDefault();
     pointer = e.pointerId;
+    const erase = d.tool === 'erase';
     active = {
       points: [point(e)],
       colour: stepping ? '#20313a' : d.colour,
-      width: colouring ? 14 : 5,
+      width: erase ? 22 : colouring ? 14 : 5,
+      erase,
       step: d.step
     };
     d.strokes.push(active);
@@ -215,24 +266,22 @@ function drawShark() {
     };
   if ($('#drawNext'))
     $('#drawNext').onclick = () => {
-      if (!d.strokes.some(s => s.step === d.step)) {
+      if (!d.strokes.some(s => s.step === d.step && !s.erase)) {
         $('#drawSay').classList.add('nudge');
-        speak('Have a go at drawing it first. You can tap Watch to see how.', { speaker: 'dash' });
+        dashSays('Have a go at drawing it first. You can tap Watch to see how.');
         setTimeout(() => $('#drawSay')?.classList.remove('nudge'), 600);
         return;
       }
       d.step++;
-      if (d.step === sharkDrawSteps.length)
-        speak('Fin-tastic! You drew a whole shark! Now pick a crayon and colour it in.', {
-          speaker: 'dash'
-        });
       drawShark();
-      if (d.step < sharkDrawSteps.length) say();
+      // Always the new part's words, never the old ones.
+      if (d.step < sharkDrawSteps.length) dashSays(sharkDrawSteps[d.step].say);
+      else dashSays('Fin-tastic! You drew a whole shark! Now pick a crayon and colour it in.');
     };
   if ($('#drawDone'))
     $('#drawDone').onclick = () => {
-      if (!d.strokes.some(s => s.points.length > 3)) {
-        speak('Try drawing something first, Haytham!', { speaker: 'dash' });
+      if (!d.strokes.some(s => s.points.length > 3 && !s.erase)) {
+        dashSays('Try drawing something first, Haytham!');
         return;
       }
       if (d.saved) return;
@@ -241,7 +290,7 @@ function drawShark() {
       state.drawings.push({
         kind: d.mode === 'steps' ? 'shark-steps' : 'shark-free',
         ink: d.strokes.slice(0, 120).map(s => ({
-          c: s.colour,
+          c: s.erase ? 'erase' : s.colour,
           w: s.width,
           p: s.points
             .filter((_, i) => i % Math.max(1, Math.ceil(s.points.length / 200)) === 0)
@@ -253,9 +302,7 @@ function drawShark() {
       save();
       $('#drawDone').disabled = true;
       app.querySelector('.draw-board').classList.add('draw-celebrate');
-      speak('What an amazing shark, Haytham! You’re a real artist. Pearls for your collection!', {
-        speaker: 'dash'
-      });
+      dashSays('What an amazing shark, Haytham! You’re a real artist. Pearls for your collection!');
       if (typeof setMiloMood === 'function') setMiloMood('highfive');
     };
 
@@ -263,16 +310,12 @@ function drawShark() {
   observer.observe(canvas);
   writingCleanup = () => {
     observer.disconnect();
+    drawSayToken++;
     writingCleanup = null;
   };
   paint();
-  updateMilo(
-    stepping ? 'Dash will show you how to draw a shark, one part at a time.' : 'I love your drawing, Haytham!'
-  );
   if (stepping && d.step === 0 && !d.strokes.length)
-    speak('Let’s draw a shark together, Haytham! One part at a time. ' + step.say, {
-      speaker: 'dash'
-    });
+    dashSays('Let’s draw a shark together, Haytham! One part at a time. ' + step.say);
 }
 function startSharkDrawing() {
   sharkDraw = null;

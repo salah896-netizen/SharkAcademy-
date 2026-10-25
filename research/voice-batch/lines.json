@@ -7733,5 +7733,2896 @@
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/61476712f4.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s draw a shark together, Haytham!",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/79f4c1eddf.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "One part at a time.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/1cd4e38cc8.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "First, draw a big curve for the shark\u2019s back. Start at the nose dot.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/0f3830b1a0.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now the tummy. Start at the nose again and curve down and along.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/341e948912.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now the tail. Go up to a point, back to the middle, then down to a point.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/3a1f41ef03.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a pointy fin on its back, like a triangle.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/ef2e50354f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Add a side fin underneath. Sharks use it to steer.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/41b33ec710.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a round eye near the nose.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/7454be45d9.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sharks breathe with gills. Draw three little curvy lines.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/80213178af.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Last one! Give your shark a toothy smile. Zig, zag, zig, zag!",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/91db34ca22.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Fin-tastic! You drew a whole shark! Now pick a crayon and colour it in.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/e8028d0045.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "What an amazing shark, Haytham! You\u2019re a real artist. Pearls for your collection!",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/6c6e890c45.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Have a go at drawing it first. You can tap Watch to see how.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/b990d8a768.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Try drawing something first, Haytham!",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/773526fc7d.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Pick a crayon and colour your shark. Make it any colour you like!",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/5e3b16b554.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw any shark you like. Look at Dash\u2019s shark if you want an idea.",
+  "group": "draw a shark",
+  "settings": "line",
+  "file": "audio/voice/dash/c9322f490e.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "0",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/5e635bd84c.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "4",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/d5ea46dd49.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "5",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/051cb6a1b0.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "6",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/014c3853cd.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "7",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/6593d10de7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "8",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/2f72e3967d.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "9",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/85d77b2f06.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "10",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/a938a945ed.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "11",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/36b6319889.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "12",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/c49548f06e.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "13",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/30a28fadb8.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "14",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/f79834fac4.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "15",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/aacadf3d38.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "16",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/0ab7f62435.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "17",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/417cb26aa7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "18",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/49e2a1b47d.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "19",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/1994f6e8a9.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "20",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/fc70e9c1c9.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "hmm",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/51694e7208.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Count along the line",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/62087c3147.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "what comes next",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/ac66ab4618.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Say the pattern out loud",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/9e2f66683a.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "clownfish",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/23cb7a9850.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "turtle",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/1376fb4713.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "squid",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/300fe951c3.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "crab",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/8cdd6549c7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "blue tang",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/5da7b01abb.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "salmon",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/7aec28ba5e.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "octopus",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/6dcb4b0682.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "dolphin",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/4fe4e6f551.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "hammerhead",
+  "group": "pieces",
+  "settings": "line",
+  "file": "audio/voice/tiggy/956b9302a7.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "All your adventures live in our submarine library.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/8863b4b435.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Choose a shark or a discovery. Gizmo and I are here with you.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/32d0bb1a98.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Fin five! We followed the clues together. Now Willa has a shark discovery for us.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/b64767baeb.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Fin five, Haytham! We make a great team.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/8e041451e7.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo and I are science explorers today, Haytham!",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/c563144916.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo has a new shark discovery for us, Haytham. Let\u2019s explore together.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/eb036db73d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Hello, Haytham! I\u2019m happy to be here with you.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/5b392cd7e4.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m a megalodon too! I\u2019m your make-believe friend. Let\u2019s meet real sharks and learn about my prehistoric family.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/0f4c115120.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m right here, Haytham. Start at the dot, take your time, and have a go.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/583a7efb17.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m with you, Haytham. Let\u2019s help Willa follow the clues.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/8fd59b7546.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m with you, Haytham. Let\u2019s listen and look with Willa.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/d2ffe73d27.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019ve saved you a seat, Haytham. Let\u2019s watch together when the films are ready.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/2aa285d596.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019ve saved you a seat, Haytham. We\u2019ll watch shark adventures together when the films are ready.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/0f47903f1b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s read this page together. Tap a word if you want to hear it.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/269402eb1b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s read together! Tap a word for help, or listen while you follow along.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/0dce5f7728.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s take a Learning Adventure. I\u2019ll be here to help, one little discovery at a time.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/af8755b27a.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Look at everything you\u2019ve discovered! I\u2019m proud of your practising.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/81a691477e.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "My reef friends are here to help, Haytham. I\u2019m staying right here with you!",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/c4cb842014.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Take your time, Haytham. We can work it out together.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/7c74da9cd6.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Whoosh! A little ocean twirl, just for you!",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/88ad03220a.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "You finished the story! Let\u2019s think about what happened.",
+  "group": "milo",
+  "settings": "line",
+  "file": "audio/voice/milo/c7e2746ef5.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m right here with you, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/0418e89a79.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Deep Trench",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/da8eebbd41.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Deep Trench opens after 9 more learning adventures.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/99d3211789.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s learn with our friends, then race!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/8f87158060.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Open Ocean",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/5650e79453.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Open Ocean opens after 5 more learning adventures.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/eb578300f3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Listening ears",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/3509afa456.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Unlock at 30 pearls",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/e190e6e1ce.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019ve saved you a seat, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/bd068069a4.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s watch together when the films are ready.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/17b3ec9e4c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Willa and Tiggy want to see what you already know.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/6c07e570ca.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Just have a go!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/9989f4dbc5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Read the word.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/118de897b7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Thank you!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/9ca062fd81.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Look at everything you\u2019ve discovered!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/3a13eab6c2.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m proud of your practising.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/bbfbd9b74c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Choose a picture, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/2f1b629446.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Willa and Milo are ready for an adventure.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/ef1b070def.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Listening reef",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/e8fb45964b.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sunny Lagoon",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/c3e25422b2.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Milo",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/3cc38ffa95.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Coral Reef",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/7b3922819b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Coral Reef opens after 2 more learning adventures.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/73fde08110.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Choose a picture, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/cc52157fe0.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tiggy and Milo are ready for an adventure.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/e5c1a35171.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Fish friends meet",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/6d1fbfa951.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Ten-frame flash",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/e3b9f98e8d.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Good try, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/b0ddd581c6.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "I\u2019m here with you.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/00a232a110.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Let\u2019s have another go.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/1afa5a8351.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tiggy",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/ac25fca29b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Count the fish",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/182adb15ed.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tiggy is checking the reef.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/98f9864ca3.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tap each animal once as you count.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/23ba4c6310.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many are here?",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/24c2b24a7b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Adding and ten",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/48e51a32b4.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Unlock at 60 pearls",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/bcdbf0bc4b.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Sink, float, move",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/gizmo/d90da5318d.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Choose a picture, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/a26afb8f9e.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Dash and Milo are ready for an adventure.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/ac83926911.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Captain\u2019s c",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/dash/5f3c093344.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Choose a shark or a discovery.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/c2b208cffb.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo and I are here with you.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/06f3f0d39d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "The kraken is a sea monster from old stories.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/1c1dee3365.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Real giant squid exist, but this kraken is make-believe.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/318d8291e0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "It is not a shark!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/b974f94503.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Great white",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/gizmo/b7a8b20cde.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Hammerhead",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/gizmo/57918259bb.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Tiger shark",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/gizmo/f6fb144154.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "You worked it out, Haytham!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/c71ee1b2cf.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Willa\u2019s Secret Reef",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/b8f86f2bc2.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Counting",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/f26b2ff0d0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s read together!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/4069a3408e.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Tap a word for help, or listen while you follow along.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/bce21727e9.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Gizmo has a new shark discovery for us, Haytham.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/124354d7de.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Let\u2019s explore together.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/2f8e355670.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Secret reef",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/f603620c66.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Tricky words",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/68ef7b138d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Take your time.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/a8af81dab0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "I\u2019m right here.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/52917165e8.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Fossil Dig",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/milo/10429d1d68.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Got it!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/willa/75a2822192.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Sink",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/gizmo/8133cd816a.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Patterns",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/3c8f6452d8.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Great trying!",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/7972d5a6aa.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Let\u2019s look again.",
+  "group": "monkey",
+  "settings": "line",
+  "file": "audio/voice/tiggy/77ade5113f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo and the Pumpkin Glow.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/e7d1c6b534.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo sees a light.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/64cee4b961.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It glows beside the reef.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/2b51f2157c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Tonight is Halloween, and a little orange light is bobbing beside the quiet reef.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/8f3c316d30.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cCome, Haytham!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/33f5309529.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201d says Milo.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/61fce0f396.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cLet us look at the light.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/db0fd07aec.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201d",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/d253bdca39.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo swishes his tail.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/50e212aa91.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s find out where that lovely light is coming from.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/1b578a3de3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A crab has a big hat.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/6c0f5be110.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The hat has a bat on it.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/95d85a9ffb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A little crab peeps out from behind a rock.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/d5f0db5d0f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It is wearing a purple hat with a paper bat on top.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/534d544558.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cIs it a ghost?",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/583d9a4574.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201d asks the crab.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/f94a7a3bb9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cI can see it glow!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/ad40085b2f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cIs it a sea ghost?",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/07372e0f1b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201d whispers the crab.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/45ede944da.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo smiles.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/a926a416bf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cLet\u2019s look carefully before we decide.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/489f0bf020.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo looks in the sand.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/7eac317673.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "He sees a shell by a rock.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/15224f7e62.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Haytham follows the glow to a smooth shell beside a rock.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/a468d27101.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Inside it sits a tiny waterproof lantern.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/0d07ead70f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It is a lamp!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/562140fdc5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The lamp is in a shell.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/6a4d5a0d98.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The lantern has a pumpkin face on its cover.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/ffe0308483.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Its warm light shines through two round eyes and a crooked smile.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/a3ae9d2ffd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cNo ghost!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/f26d727bfb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cIt is a fun lamp!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/79fbb1bd99.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cWe solved the mystery!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/612f9c59d7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cIt wasn\u2019t a ghost at all.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/1b97455522.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It was our friend\u2019s Halloween lantern.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/b511111ac9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The crab can hop.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/deb3f3fee7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo and Haytham grin.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/99d8318679.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The crab does a happy little dance.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/312f3468b5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo, Haytham and the reef friends share a cheerful Halloween parade.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/34f84ccea0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo and the Little Fin.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/d5eaa5bb19.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo sees a fish.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/8f561f8834.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The fish is by a net.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/4cf1838439.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo is exploring the reef when he notices a small fish beside an old fishing net.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/a30d1b9778.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The fish is stuck.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/74a71c3879.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It cannot swim away.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/cc00f8c323.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "One corner of the net has caught around a rock.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/52f874090f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The little fish cannot find a clear way out.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/a133f065a2.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cI can help,\u201d says Milo.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/f6f7489364.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cLet us lift the net.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/3d74ddfb10.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cLet\u2019s think together,\u201d says Milo.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/91c7e3524d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Haytham points to a loose edge that can be lifted away from the rock.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/f9a1256eda.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Up goes the net.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/ecdf01e570.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The fish can swim out.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/4dc7cee001.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo gently lifts the loose edge.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/e1dcde73f4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "A space opens up, and the little fish slips through into the open water.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/40311c75c1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The fish is free.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/f158c229a1.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201cThank you!",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/cdfe75acc5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "\u201d says the fish.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/a0d3e59f2c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "The fish circles back to wave its tiny fin.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/bc9288221d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Thinking carefully and helping together made a difference.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/5fba39a555.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It is good to help a friend.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/37f70c1fcc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo and Haytham carry on exploring.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/13fef25e95.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "They have made a new friend and helped keep the reef a little safer.",
+  "group": "story",
+  "settings": "line",
+  "file": "audio/voice/willa/682d26e5d9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Milo",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/f65b6e6081.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sees",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b3d8144e18.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "a",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/7665262a06.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "light",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/c3415b020b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "It",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/90a4632afd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "glows",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/6ecde3d27c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "beside",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/61b214969f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "the",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/79829b3b05.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "reef",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/a8d3791e5e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Tonight",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2f912a34b7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "is",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/a34ebbea9e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Halloween",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/4f026ac934.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "and",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/cfbcd37fcf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "little",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3adfeb1833.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "orange",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/813b87c09c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "bobbing",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8009b62bd5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "quiet",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/7bd2128c29.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Come",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/27b780e877.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Haytham",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/587732fe5a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "says",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/5e14208a43.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/f589dd884d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "us",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/9fe1f80338.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "look",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/65340bf710.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "at",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/77626c0564.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "swishes",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3ffd2e250b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "his",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/27095b5d05.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Let\u2019s",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/0dc1c50a9b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "find",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/c0eabca700.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "out",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/5a9b5851f0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "where",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/0c3e4e6c51.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "that",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/42022535e6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lovely",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/458f26d51d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "coming",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/117be5f5ed.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "from",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/da8a6ea5e6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "crab",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/6ad68d6a2e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "has",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/84695ef212.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "big",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2cba3a1e5e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "bat",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/bcfdcfabdc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "on",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/7671a9be16.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "peeps",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3227c5da87.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "behind",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/244bfe3872.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "wearing",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8413867c23.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "purple",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/cbe1528c98.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "with",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/588f321a36.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "paper",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b2a84ed652.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "top",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8ff2cf8845.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ghost",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3fbdeb4d08.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "asks",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/af913bca3f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "I",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/ed2a033904.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "can",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/f62ebda511.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "see",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/7c83e19303.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "glow",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/44303c09e4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sea",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/64cee18225.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "whispers",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3293c98532.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "smiles",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/699cc55cfd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "carefully",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/bca9ba6d6e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "before",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/6286a7d14c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "we",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/5e1601cc76.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "decide",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/cf59511458.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "looks",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/6ab29a00f4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "in",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/51c0bb0f31.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sand",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3cd5b1c3ec.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "He",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/e89c359e3d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "by",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/757b00b0c5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "follows",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/03d2541d74.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "to",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b91058881d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "smooth",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/359feadd84.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Inside",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/24e4f64f4d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sits",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/61f12aeaca.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "tiny",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/72bb86093c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "waterproof",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/ca95b16345.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lantern",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/d2ecf1ee8d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lamp",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b24f2b4a26.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "pumpkin",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/34a949054c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "face",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/f162326bea.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "its",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/4aaedf711d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "cover",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/d64fa5b945.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "warm",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/7c3b9bf720.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "shines",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/ba9865150b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "through",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/6eb8677fe9.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "two",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/c6fcc3f573.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "round",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2b496ca49b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "eyes",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/640c58328e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "crooked",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/55991878ad.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "smile",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/862e164977.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "No",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/984b650e9c.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "fun",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/e0f45b9b48.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "solved",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/bc7f373083.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "mystery",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/f5369782c3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "wasn\u2019t",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/e44323a769.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "all",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/74c60437fe.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "was",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b30e793f7a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "our",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/5db2ee6308.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "friend\u2019s",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/68374e75b0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "hop",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/01b2003ceb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "grin",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/818fa9bd28.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "does",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/d9af786723.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "happy",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/52557ab7b5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "dance",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/0870b9efe8.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "friends",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b50a5d1469.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "share",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/da26e22fb7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "cheerful",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/eb9682e783.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "parade",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/82eef7bd5b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "exploring",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/3c688dda29.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "when",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/330b5bc2bd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "notices",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/4c50e14028.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "small",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/0e6d1d3517.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "an",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/bdddbc6142.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "old",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/883ffaa043.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "fishing",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/27e237949a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "stuck",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2ab270343e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "cannot",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/cec673546a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "swim",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/401188dac0.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "away",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/d191e17948.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "One",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8b1f36b4e7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "corner",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/35f7d89a2a.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "of",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/d7572c7bcd.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "caught",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/bbe3f5ab4f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "around",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/0a261029ab.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "clear",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/4bd851f033.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "way",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/0787fc53bf.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "help",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/bb4bfad584.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lift",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/b974c2ca2e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "think",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/fa9c624ac7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "together",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8932ba9c86.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "points",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/e1ea0a806b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "loose",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/da3d004110.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "edge",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/72c2ecd70f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "be",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2756dc7eeb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lifted",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2874489708.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Up",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/fe88c3cc31.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "goes",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/9f78cae0f3.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "gently",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/225455b756.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "lifts",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2465af627d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "space",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/2f2b656bab.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "opens",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/4fd29636ee.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "slips",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/ed548b6e7f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "into",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/1f53c4960f.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "open",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/75817275ce.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "water",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/c61f00870d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "free",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/fa18c3abff.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Thank",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8299b5d5b7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "you",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/447dd5639b.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "circles",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/44ad8f2a15.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "back",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/fd39a6a375.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "wave",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/402d6abd91.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Thinking",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/607c77d721.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "helping",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8218052e00.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "made",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/c39c64acbe.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "difference",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/8037914372.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "good",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/fd0d2407c6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "friend",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/12ceba1821.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "carry",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/71e9a78332.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "They",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/16c388e0a7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "have",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/e28291d366.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "new",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/fc0ab342cc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "helped",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/384cf15fc6.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "keep",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/4801250adc.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "safer",
+  "group": "story word",
+  "settings": "line",
+  "file": "audio/voice/willa/1450813dd5.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Ship ahoy",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/willa/97d2b89b56.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Adventure a",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/f7aa5304d3.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Treasure t",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/65f7f0eafe.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Three-letter words",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/willa/d72920b9fc.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Looking closely",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/gizmo/23d99afb89.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sandy letters",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/ffd8819286.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "sh ch ck",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/willa/863f5b4021.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Numbers in order",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/7c1021360d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "ee oo ai ar",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/willa/4abed26dda.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Real or pretend",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/gizmo/6e94ab2cac.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Take away and share",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/d3d0836e18.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s make an a for our adventure log.",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/066711fb5f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s make a t for our treasure label.",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/b4b6cca258.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let\u2019s write cat for our pretend ship\u2019s cat.",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/281e76c0c6.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Unlock at 0 pearls",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/milo/9047bd1021.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Unlock at 100 pearls",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/milo/e99c329491.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Unlock at 160 pearls",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/milo/686aca100d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Unlock at 240 pearls",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/milo/a329c81529.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "More or fewer",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/67260ee294.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Float",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/gizmo/4dda5a7a3b.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Feed the Shark",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/milo/e470b10f56.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Make ten",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/5589ddc570.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Some fish are swimming away.",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/58e2ccc8a5.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "The faded fish have left.",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/2329339189.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many stay in the cove?",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/tiggy/d43bed0b1b.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Lovely practising, Haytham!",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/af584aae64.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Every try helps you learn.",
+  "group": "names",
+  "settings": "line",
+  "file": "audio/voice/dash/4272e4153d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Zoom! Tuna are some of the fastest fish in the sea.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/ec9d913d6d.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Tuna swim together in big groups called schools.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/418f578fd8.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "A tuna keeps swimming all the time, even when it rests.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/48de560065.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Peekaboo, little clownfish!",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/a577614434.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "A clownfish lives safely in a sea anemone.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/eb48ae86b0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Clownfish are orange with white stripes.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/f0a623a757.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Wheee! A turtle twirl!",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/d09977b9ee.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Sea turtles swim up to the surface to breathe air.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/0949c308b9.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "A sea turtle can\u2019t pull its head into its shell like a tortoise can.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/9994cc62bc.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "A shark is swimming by! Hello, shark!",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/e7485e06e5.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Look! A shark in the distance.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/42d5d1cfb5.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "That shark is off exploring the reef.",
+  "group": "reef taps",
+  "settings": "line",
+  "file": "audio/voice/milo/0b1a31150b.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Two little schools of fish are meeting.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/721611eec9.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "How many fish will there be altogether?",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/580313b6b7.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "You kept trying and worked it out!",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/e2ff777487.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "That\u2019s how we learn.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/4f81ce81c9.mp3"
+ },
+ {
+  "speaker": "gizmo",
+  "text": "Gizmo",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/gizmo/ce68e6c0c0.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "Hello, Haytham.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/milo/f36e6f0800.mp3"
+ },
+ {
+  "speaker": "milo",
+  "text": "You found my secret cave!",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/milo/b2fd878ae9.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Tap one animal at a time.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/a694e3ad44.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Each one glows so you can keep track.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/746559b044.mp3"
+ },
+ {
+  "speaker": "tiggy",
+  "text": "Say the last number again: that tells you how many.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/tiggy/3c64e254ab.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Finish the word fin.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/a7a2c119b4.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Which letter is missing?",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/4f669a8386.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Finish the word cat.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/8e3edcecca.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Finish the word sun.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/384278822d.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Finish the word map.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/a31a8b362e.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Finish the word net.",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/5d63f3d941.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound, then blend them together",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/d96c934ed7.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "Say each sound",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/125c6fa5cb.mp3"
+ },
+ {
+  "speaker": "willa",
+  "text": "then blend them together",
+  "group": "final",
+  "settings": "line",
+  "file": "audio/voice/willa/184b917618.mp3"
  }
 ]

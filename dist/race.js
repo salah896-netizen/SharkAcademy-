@@ -73,7 +73,9 @@ const racers = {
 };
 const RACE = {
   length: 10, // in screen widths
-  speed: 0.22, // screen widths per second
+  speed: 0.18, // screen widths per second (slowed 25 Oct so Haytham has time to think)
+  thinkZone: 0.9, // before each speed-shell gate everyone swims slowly…
+  thinkSpeed: 0.6, // …at this fraction of normal speed
   boost: 1.65,
   boostTime: 2.6,
   bump: 0.55,
@@ -439,8 +441,15 @@ function resumeRace(run) {
     }, 900)
   );
 }
+// Calm water before each gate: the whole race slows so there's time to read the clue and choose.
+function inThinkZone(run) {
+  return run.items.some(
+    i => i.type === 'gate' && !i.done && i.at - run.distance < RACE.thinkZone && i.at > run.distance
+  );
+}
 function currentSpeed(run) {
   let v = RACE.speed;
+  if (inThinkZone(run)) v *= RACE.thinkSpeed;
   if (run.time < run.boostUntil) v *= RACE.boost;
   if (run.time < run.bumpUntil) v *= RACE.bump;
   return v;
@@ -459,7 +468,10 @@ function stepRace(run, dt) {
   run.time += dt;
   run.distance += currentSpeed(run) * dt;
   run.rivalDistance = run.rivalDistance.map((d, i) =>
-    Math.min(RACE.length, d + RACE.speed * run.track.rival[i] * dt)
+    Math.min(
+      RACE.length,
+      d + RACE.speed * (inThinkZone(run) ? RACE.thinkSpeed : 1) * run.track.rival[i] * dt
+    )
   );
   for (const item of run.items) {
     if (item.done || item.at > run.distance) continue;
@@ -530,7 +542,7 @@ function renderRace(run) {
       item.el.style.left = x + '%';
       item.el.hidden = x < -25 || x > 125;
     }
-    if (item.type === 'gate' && !item.cued && x < 150 && x > 22) {
+    if (item.type === 'gate' && !item.cued && x < 175 && x > 22) {
       item.cued = true;
       const cue = app.querySelector('.race-cue');
       cue.innerHTML = item.clue.cue;

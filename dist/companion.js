@@ -64,7 +64,7 @@ function encourage(text, mood) {
         ? 'retry'
         : 'celebrate')
   );
-  speak(text);
+  speak(text, { speaker: (typeof crewForRoute === 'function' && crewForRoute()) || 'milo' });
 }
 let speechSequence = 0;
 function stopSpeech() {
@@ -82,8 +82,14 @@ function speak(t, options = {}) {
     return;
   }
   // Prefer a recorded line in the character's own voice; the device voice is the fallback.
-  const clips =
-    typeof voiceClipsFor === 'function' ? voiceClipsFor(t, options.speaker || 'milo') : null;
+  // If this friend hasn't recorded the line, another friend's recording beats the iPad voice.
+  const found =
+    typeof voiceClipsForAnyone === 'function'
+      ? voiceClipsForAnyone(t, options.speaker || 'milo')
+      : null;
+  const clips = found?.files;
+  if (found && found.speaker !== (options.speaker || 'milo'))
+    options = { ...options, speaker: found.speaker };
   if (clips) {
     playVoiceClips(clips, t, options, () => speakWithDevice(t, options));
     return;
