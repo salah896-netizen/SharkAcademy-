@@ -120,7 +120,7 @@ const topicPictures = {
   homes: () => sharkPic('goblin', 0),
   journeys: () => sharkPic('whale', 0),
   fossils: () => sharkPic('megalodon', 0),
-  care: () => extraPic('care')
+  care: () => sharkPic('blacktip', 0)
 };
 // Photos that may not have arrived yet fall back to a library photo.
 const pictureFallbacks = { skin: () => sharkPic('zebra', 0), pores: () => sharkPic('hammerhead', 1), care: () => sharkPic('blacktip', 0) };
@@ -216,3 +216,14 @@ new MutationObserver(() => requestAnimationFrame(upgradeQuizPictures)).observe(a
   subtree: true
 });
 window.addEventListener('hashchange', () => setTimeout(upgradeQuizPictures, 60));
+
+/* Science: real photos of the other sea animals (tuna, clownfish, turtle… from Wikimedia Commons)
+ * replace the flat drawings, once each photo has been added to quizPhotoData. */
+const seaAnimalPhotoKeys = { turtle: 'seaturtle' };
+const preQuizSciencePicture = sciencePicture;
+sciencePicture = function (key) {
+  const p = typeof quizPhotoData !== 'undefined' ? quizPhotoData[seaAnimalPhotoKeys[key] || key] : null;
+  if (p && !scienceArt[key])
+    return `<span class="science-photo-frame"><span class="science-photo-fill" style="background-image:url('assets/${p.file}')"></span><img class="science-photo contain" src="assets/${p.file}" alt=""></span>`;
+  return preQuizSciencePicture(key);
+};

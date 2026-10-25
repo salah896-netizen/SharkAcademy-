@@ -13,5 +13,26 @@ const quizPhotoData = {
   "page": "https://commons.wikimedia.org/wiki/File:Lorenzini_pores_on_snout_of_tiger_shark.jpg",
   "license": "CC BY-SA 3.0",
   "title": "File:Lorenzini pores on snout of tiger shark.jpg"
+ },
+ "tuna": {
+  "file": "quiz/tuna.webp",
+  "credit": "Hugues Evano (IFREMER, Délégation océan Indien (DOI), Département Ressources Biologiques et Environnement (RBE), F-97420",
+  "page": "https://commons.wikimedia.org/wiki/File:Thon_albacore_(Thunnus_albacares)_(Ifremer_00764-87616).jpg",
+  "license": "CC BY 4.0",
+  "title": "File:Thon albacore (Thunnus albacares) (Ifremer 00764-87616).jpg"
+ },
+ "clownfish": {
+  "file": "quiz/clownfish.webp",
+  "credit": "Nhobgood Nick Hobgood",
+  "page": "https://commons.wikimedia.org/wiki/File:Amphiprion_ocellaris_(Clown_anemonefish)_Nemo.jpg",
+  "license": "CC BY-SA 3.0",
+  "title": "File:Amphiprion ocellaris (Clown anemonefish) Nemo.jpg"
+ },
+ "seaturtle": {
+  "file": "quiz/seaturtle.webp",
+  "credit": "Brocken Inaglory",
+  "page": "https://commons.wikimedia.org/wiki/File:Green_turtle_swimming_over_coral_reefs_in_Kona.jpg",
+  "license": "CC BY-SA 3.0",
+  "title": "File:Green turtle swimming over coral reefs in Kona.jpg"
  }
 };
