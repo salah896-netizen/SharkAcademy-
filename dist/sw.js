@@ -1,5 +1,5 @@
-importScripts('./voice-manifest.js', './shark-photos.js');
-const CACHE = 'haytham-sharks-v92';
+
+const CACHE = 'haytham-sharks-v93';
 const FILES = [
   './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
@@ -15,6 +15,7 @@ const FILES = [
   './opening.js',
   './opening.css',
   './shark-taps.js',
+  './media-download.js',
   './shark-taps.css',
   './encyclopedia-more.js',
   './encyclopedia-more.css',
@@ -26,6 +27,8 @@ const FILES = [
   './home-play.css',
   './feedback-round3.js',
   './feedback-round3.css',
+  './learning-checks.js',
+  './learning-checks.css',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',
   './assets/icons/icon-192.png',
@@ -105,21 +108,20 @@ const FILES = [
   './assets/visual-megalodon.jpg',
   './assets/visual-kraken.jpg'
 ];
+// Two caches (25 Oct): the app itself (versioned, small, replaced on every update) and the
+// media library (voice clips and shark photos, about 80 MB, kept across updates). Media files
+// are named by their content, so a kept file is never stale. New media is saved the first time
+// it's used, and the page quietly downloads the rest in small batches for offline play
+// (media-download.js).
+const MEDIA = 'haytham-media-v1';
+const isMedia = url => /\/audio\/voice\/|\/assets\/sharks\//.test(new URL(url).pathname);
 self.addEventListener('install', e => {
   e.waitUntil(
     caches
       .open(CACHE)
       .then(c =>
         c.addAll(
-          [
-            ...FILES,
-            './voice-manifest.js',
-            './voice-clips.js',
-            './shark-photos.js',
-            ...Object.values(sharkPhotoData).flat().map(p => './assets/' + p.file),
-            ...Object.values(voiceManifest.lines).map(f => './' + f),
-            ...Object.values(voiceManifest.sounds).map(f => './' + f)
-          ]
+          [...FILES, './voice-manifest.js', './voice-clips.js', './shark-photos.js']
             .filter((url, i, all) => all.indexOf(url) === i)
             .map(url => new Request(url, { cache: 'reload' }))
         )
@@ -141,15 +143,32 @@ self.addEventListener('activate', e => {
       .then(() => self.clients.claim())
   );
 });
+async function mediaResponse(request) {
+  const cache = await caches.open(MEDIA),
+    url = request.url.split('#')[0];
+  const hit = await cache.match(url);
+  if (hit) return hit;
+  const response = await fetch(url);
+  if (response.ok && response.status === 200) await cache.put(url, response.clone());
+  return response;
+}
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET' || new URL(e.request.url).origin !== location.origin) return;
+  const range = e.request.headers.get('range');
+  if (isMedia(e.request.url)) {
+    e.respondWith(
+      mediaResponse(e.request).then(r =>
+        range && r.ok ? cachedAudioRange(r.clone(), range) : r
+      )
+    );
+    return;
+  }
   e.respondWith(
     caches
-      .open(CACHE)
-      .then(c => c.match(e.request))
+      .match(e.request)
       .then(hit =>
-        hit && e.request.headers.has('range') && new URL(e.request.url).pathname.includes('/audio/')
-          ? cachedAudioRange(hit, e.request.headers.get('range'))
+        hit && range && new URL(e.request.url).pathname.includes('/audio/')
+          ? cachedAudioRange(hit, range)
           : hit || fetch(e.request)
       )
   );

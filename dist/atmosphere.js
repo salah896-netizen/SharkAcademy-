@@ -224,12 +224,6 @@ function initOceanAtmosphere() {
   window.addEventListener('scroll', updateMiloDock, { passive: true });
   window.addEventListener('resize', updateMiloDock);
 }
-function inlineOceanLesson(title, text) {
-  app.innerHTML = `<section class="ocean-lesson"><a class="back-link" href="#museum">← Sharks</a><span class="tag">SHARK SCHOOL</span><h1>${title}</h1><p class="topic-text">${text}</p><button id="topicListen" class="listen">♫ Explore with Milo</button><p class="credits">Science: <a href="https://ocean.si.edu/ocean-life/sharks-rays/sharks" target="_blank" rel="noopener">Smithsonian Ocean</a>.</p></section>`;
-  $('#topicListen').onclick = () => helperSpeak(title + '. ' + text);
-  updateMilo('Let’s discover ' + title.toLowerCase() + ', Haytham. I’m right here.');
-  window.scrollTo(0, 0);
-}
 
 let launchStarted = false;
 function finishLaunch() {

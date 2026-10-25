@@ -24,6 +24,15 @@ jobs:
         with:
           node-version: 22
       - run: sh run-tests.sh
+      # Browser smoke test: plays through lessons, drawing and writing in Chromium.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.63.0 && python -m playwright install --with-deps chromium
+      - run: |
+          python -m http.server 5180 --directory dist >/dev/null 2>&1 &
+          sleep 2
+          python tests/browser/smoke.py
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

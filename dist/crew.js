@@ -221,9 +221,6 @@ function crewGameBadge(type) {
   const key = type === 'reading' ? 'willa' : type === 'fossil' ? 'gizmo' : 'tiggy';
   return `<span class="crew-game-badge"><img src="assets/crew-${key}.webp" alt="">${reefCrew[key].name}</span>`;
 }
-function cinemaPortal() {
-  return `<article class="picture-destination portal-cinema"><a href="#cinema" aria-label="Shark Cinema"><div class="picture-cinema-art">${crewSymbol('film')}<img class="portal-shell-seats" src="assets/cinema-seats-rear.webp" alt=""></div><div class="picture-title"><h2>Shark Cinema</h2><span class="picture-go" aria-hidden="true">▶</span></div></a><button class="picture-listen" data-portal-name="Shark Cinema" aria-label="Hear Shark Cinema">♫</button></article>`;
-}
 
 function cinemaRearMilo() {
   const id = 'cinema-rear-' + ++miloActorCount;

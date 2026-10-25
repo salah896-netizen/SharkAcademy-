@@ -76,18 +76,14 @@ function museumPictogram(title) {
   return `<svg class="museum-pictogram" viewBox="0 0 110 105" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">${drawings[type]}</g><circle cx="88" cy="19" r="15" fill="#e4efce"/><text x="88" y="26" text-anchor="middle" fill="#163d51" font-size="23" font-family="sans-serif">?</text></svg>`;
 }
 
-const oldHome = home,
-  oldRender = render,
+const oldRender = render,
   oldPlay = play,
-  oldStart = start,
   oldArticle = sharkArticle,
   oldTopic = oceanTopicPage,
   oldQuestions = makeQuestions,
   oldSave = save,
   oldAnswer = answer,
   oldReadingAnswer = readingMissionAnswer,
-  oldEncourage = encourage,
-  oldSpeak = speak,
   oldFinish = finish;
 let lastPearls = state.xp,
   rewardIndex = 0,
@@ -220,7 +216,10 @@ function joyfulReaction(extra = '', speaker = 'milo') {
   fx.innerHTML = seaAnimal(animal) + `<strong>${line}</strong>`;
   document.body.append(fx);
   playRewardChime();
-  speak(line + (extra ? ' ' + extra : ''), { speaker });
+  // Short and sweet (friends' feedback): the cheer plus the first few words of the answer. When
+  // the answer was shown after two tries, just the answer, without the cheer.
+  const short = extra ? voiceSentences(extra)[0] : '';
+  speak(game?.revealing ? short || line : line + (short ? ' ' + short : ''), { speaker });
   setTimeout(() => fx.remove(), 2300);
 }
 function playRewardChime() {
@@ -936,32 +935,6 @@ finishReadingMission = function () {
   requestAnimationFrame(fitScreen);
 };
 
-function showDiveOpening() {
-  if (sessionIntroShown) return;
-  sessionIntroShown = true;
-  document.body.classList.add('intro-running');
-  if (location.hash !== '#home') location.hash = 'home';
-  const intro = document.createElement('section');
-  intro.id = 'diveOpening';
-  intro.setAttribute('aria-label', 'The sharks dive from the surface into Haytham’s ocean');
-  intro.innerHTML = `<div class="dive-camera"><div class="dive-sky"><div class="dive-sun"></div><div class="surface-wave"></div></div><div class="dive-water"></div><div class="dive-bottom"></div><div class="dive-wildlife" aria-label="Sea creatures swimming at different depths">${['tuna', 'turtle', 'clownfish', 'squid', 'hammerhead', 'blue-tang'].map((kind, i) => `<div class="depth-creature depth-${i}">${seaAnimal(kind)}</div>`).join('')}</div><div class="passing-sub" aria-label="An exploring submarine">${subSVG}<i></i><i></i><i></i></div><div class="passing-diver" aria-label="A scuba explorer waving to the sharks"><svg viewBox="0 0 220 210" aria-hidden="true"><g transform="rotate(-18 110 110)"><path d="M95 83L77 147L104 169L129 117L145 100" fill="#e6a144" stroke="#163849" stroke-width="9"/><path d="M99 158L89 190L62 196M114 157L144 176L169 169" fill="none" stroke="#153849" stroke-width="13" stroke-linecap="round"/><path d="M61 196L31 186L36 207L64 208M167 169L190 151L199 169L178 183" fill="#86d9d5"/><rect x="75" y="75" width="25" height="65" rx="9" fill="#b2c5cc" stroke="#163849" stroke-width="5"/><path d="M130 99L161 104L177 67M114 106L139 139" fill="none" stroke="#183e53" stroke-width="12" stroke-linecap="round"/><circle cx="124" cy="60" r="30" fill="#d4b196"/><rect x="103" y="46" width="44" height="23" rx="9" fill="#80d7de" stroke="#183e53" stroke-width="6"/><path d="M138 76Q181 91 153 120" fill="none" stroke="#163c50" stroke-width="6"/><circle cx="170" cy="52" r="5" fill="none" stroke="#d5f9f3" stroke-width="3"/><circle cx="183" cy="31" r="8" fill="none" stroke="#d5f9f3" stroke-width="3"/></g></svg></div><div class="dive-crew">${sharkButtons.map(([k], i) => `<div style="--dive-i:${i}">${k === 'milo' ? miloActor() : crewActor(k)}</div>`).join('')}</div></div><button id="skipDive">Skip dive →</button>`;
-  document.body.append(intro);
-  let timer;
-  const close = () => {
-    clearTimeout(timer);
-    intro.classList.add('dive-out');
-    document.body.classList.remove('intro-running');
-    setTimeout(() => intro.remove(), 950);
-  };
-  $('#skipDive').onclick = close;
-  const begin = () => {
-    playDiveSplash();
-    intro.classList.add('diving');
-    timer = setTimeout(close, 5500);
-  };
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setTimeout(close, 700);
-  else begin();
-}
 const layoutObserver = new MutationObserver(() => requestAnimationFrame(fitScreen));
 layoutObserver.observe(app, { childList: true, subtree: true });
 document.addEventListener(
