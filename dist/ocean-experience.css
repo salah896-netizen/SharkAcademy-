@@ -4096,3 +4096,19 @@ body[data-route='library']:not(.voice-muted) .helper-intro {
   grid-template-columns: minmax(0, 340px);
   justify-content: center;
 }
+/* Finish screens: the discovery photo sits centred above its name (26 Oct, parent's screenshot). */
+.quest-finish .quest-fact-photo,
+.lesson-finish .lesson-discovery-photo,
+.activity-fact-reward .lesson-discovery-photo {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.quest-finish {
+  text-align: center;
+}
+.quest-finish .quest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
