@@ -1,0 +1,162 @@
+/* Blending bubbles: numbered speakers that light up as each part is said. */
+.school-blend .blend-bubble {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  cursor: pointer;
+}
+.blend-ear {
+  font-size: 36px;
+}
+.blend-number {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1f8fc0;
+  color: #fff;
+  font: 900 18px/1 ui-rounded, system-ui, sans-serif;
+  opacity: 1 !important;
+}
+.school-blend > b {
+  font-size: 40px;
+  opacity: 0.7;
+}
+.blend-bubble.blend-speaking {
+  animation: none !important;
+  transform: scale(1.25);
+  background: radial-gradient(circle at 35% 30%, #fff 0 18%, #ffe39a 19% 60%, #f2c84b 61%) !important;
+  box-shadow: 0 0 0 8px #f2c84b55 !important;
+  transition: transform 0.2s;
+}
+/* Writing: a model letter drawn from the trace strokes, picture tools, a pulsing ✓. */
+.writing-mission-prompt strong.model-drawn {
+  display: inline-flex;
+  align-items: center;
+}
+.letter-model {
+  height: clamp(70px, 11vh, 110px);
+  width: auto;
+  overflow: visible;
+}
+.letter-model path {
+  fill: none;
+  stroke: #6b4a2b;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.letter-model .model-lines {
+  stroke: #b89a74;
+  stroke-width: 3;
+  stroke-dasharray: 8 10;
+}
+.writing-tool {
+  min-width: 72px !important;
+  min-height: 64px !important;
+  font-size: 30px !important;
+  padding: 0 14px !important;
+}
+#finishWriting.writing-ready {
+  animation: kid-next-pulse 1.4s ease-in-out infinite;
+}
+.writing-mission-prompt .letter-model {
+  height: clamp(90px, 14vh, 140px);
+}
+.writing-page #finishWriting.kid-done,
+body .writing-page .writing-toolbar #finishWriting {
+  background: #2fa36b none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 6px 0 #1d7448 !important;
+}
+.writing-page #finishWriting.kid-done .kid-icon {
+  color: #fff;
+}
+/* Home reef: a picture badge under each friend shows what they teach. */
+.home-friends button {
+  position: relative;
+}
+.friend-badge {
+  position: absolute;
+  left: 50%;
+  top: calc(min(23vh, 220px) + 2px);
+  translate: -50% 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 4px 12px 4px 6px;
+  border-radius: 99px;
+  background: #fffbea;
+  box-shadow: 0 3px 0 #0003;
+  font-style: normal;
+}
+.friend-badge b {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 6px;
+  border-radius: 99px;
+  background: var(--badge);
+  color: #fff;
+  font: 900 18px/1 ui-rounded, system-ui, sans-serif;
+}
+.friend-badge small {
+  display: block !important;
+  color: #123c4c;
+  font: 800 14px ui-rounded, system-ui, sans-serif;
+}
+@media (max-width: 760px) {
+  .friend-badge small {
+    display: none !important;
+  }
+  .friend-badge {
+    padding: 3px;
+  }
+}
+/* Grown-ups' area: easy / medium / hard per subject. */
+.level-controls {
+  margin: 8px 0 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f3f8f2;
+}
+.level-controls h3 {
+  margin-top: 0;
+}
+.level-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+}
+.level-name {
+  font-weight: 800;
+}
+.level-name b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 30px;
+  border-radius: 99px;
+  background: #0a3445;
+  color: #fff;
+  font-size: 14px;
+}
+.level-row .segmented button {
+  min-height: 40px;
+  padding: 0 12px;
+}

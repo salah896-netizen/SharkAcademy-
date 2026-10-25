@@ -33,6 +33,23 @@ const scienceArt = {
   kraken: photo('visual-kraken.jpg', 'The Kraken'),
   milo: { art: '<img class="science-photo contain" src="assets/milo-3d.webp" alt="">', name: 'Milo' }
 };
+// Clearer pictures (25 Oct feedback: "the pictures weren't clear enough"): each shark uses its
+// best encyclopedia photo, chosen so the feature in the question is easy to see, shown whole.
+if (typeof sharkPhotoData !== 'undefined')
+  for (const [key, id, n] of [
+    ['hammerhead', 'hammerhead', 0],
+    ['white', 'white', 0],
+    ['whale', 'whale', 0],
+    ['tiger', 'tiger', 0],
+    ['mako', 'mako', 0],
+    ['goblin', 'goblin', 0],
+    ['basking', 'basking', 0],
+    ['epaulette', 'epaulette', 0]
+  ]) {
+    const p = sharkPhotoData[id]?.[n];
+    if (p)
+      scienceArt[key].art = `<span class="science-photo-frame"><span class="science-photo-fill" style="background-image:url('assets/${p.file}')"></span><img class="science-photo contain" src="assets/${p.file}" alt=""></span>`;
+  }
 function sciencePicture(key) {
   if (scienceArt[key]) return scienceArt[key].art;
   if (['tuna', 'crab', 'turtle', 'clownfish', 'squid', 'dolphin', 'octopus'].includes(key))

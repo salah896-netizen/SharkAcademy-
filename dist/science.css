@@ -117,3 +117,32 @@ body[data-calm-scene='science'] {
     animation: none;
   }
 }
+/* Whole-shark photos over a soft blurred fill, bigger on the shark-spotting screen. */
+.science-photo-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0a3445;
+}
+.science-photo-fill {
+  position: absolute;
+  inset: -16px;
+  background: center / cover;
+  filter: blur(14px) brightness(0.7);
+}
+.science-photo-frame .science-photo {
+  position: relative;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.science-quest.kind-photo .science-choices {
+  width: min(1100px, 98%);
+  gap: 18px;
+}
+.science-quest.kind-photo .science-label {
+  display: none;
+}

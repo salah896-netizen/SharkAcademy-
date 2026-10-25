@@ -127,3 +127,41 @@
     animation: none;
   }
 }
+/* Hear the question again: one big speaker above the answers on every question screen. */
+.kid-repeat {
+  position: fixed;
+  left: 50%;
+  top: max(122px, calc(env(safe-area-inset-top) + 110px));
+  z-index: 30;
+  translate: -50% 0;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #1f8fc0;
+  font-size: 40px;
+  line-height: 1;
+  box-shadow: 0 6px 0 #156a90, 0 0 0 0 #1f8fc066;
+  animation: kid-repeat-ring 2.6s ease-out 3s 3;
+}
+.kid-repeat:active,
+.kid-repeat-pop {
+  transform: scale(0.92);
+}
+@keyframes kid-repeat-ring {
+  0% {
+    box-shadow: 0 6px 0 #156a90, 0 0 0 0 #1f8fc066;
+  }
+  70% {
+    box-shadow: 0 6px 0 #156a90, 0 0 0 22px #1f8fc000;
+  }
+}
+@media (max-height: 700px) {
+  .kid-repeat {
+    width: 64px;
+    height: 64px;
+    font-size: 30px;
+    top: 96px;
+  }
+}

@@ -85,7 +85,16 @@ function voicePieces(sentence) {
     .map(p => p.replace(/[.!?]+$/, '').trim())
     .filter(Boolean);
   const files = [];
-  for (const part of parts) {
+  // Numbers split a piece further: "45 fish and 3 more fish" → 45 · fish and · 3 · more fish.
+  const pieces = parts.flatMap(p =>
+    lines[voiceKey('tiggy', p)] || lines[voiceKey('willa', p)]
+      ? [p]
+      : p
+          .split(/(\d+)/)
+          .map(x => x.trim())
+          .filter(Boolean)
+  );
+  for (const part of pieces) {
     const who = ['tiggy', 'willa', 'milo', 'gizmo', 'dash'].find(s => lines[voiceKey(s, part)]);
     // A single letter or digraph is said as its Jolly Phonics sound ("f · i · n").
     const sound = /^[a-z]{1,2}$/i.test(part) ? voiceSoundFile(part.toLowerCase()) : null;

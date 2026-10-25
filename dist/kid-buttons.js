@@ -69,18 +69,96 @@ function showTryAgain() {
   document.body.append(bubble);
   setTimeout(() => bubble.remove(), 1700);
 }
+/* Short win/lose messages (25 Oct feedback: "keep the win/lose messages simple and short;
+ * repeating longer sentences gets annoying"). Wrong answers get one of three tiny lines;
+ * right answers get a short cheer plus the first sentence of the answer ("Yes! A map!"). */
+const shortTryLines = ['Try again!', 'Oops! Try again.', 'Nearly! Try again.'],
+  shortCheers = ['Yes!', 'Great job!', 'Fin-tastic!'];
+let shortTryIndex = 0,
+  shortCheerIndex = 0;
+const retryPattern = /^(good try|great trying|nice try|let’s try another|oops)/i;
+function shortRetry() {
+  return shortTryLines[shortTryIndex++ % shortTryLines.length];
+}
+function firstSentence(text) {
+  return voiceSentences(String(text || ''))[0] || text;
+}
 const preKidEncourage = encourage;
 encourage = function (text, mood) {
-  if (
-    mood === 'retry' ||
-    /good try|try again|another go|look again|have another/i.test(text || '')
-  )
+  const t = String(text || '');
+  if (mood === 'retry' || /good try|try again|another go|look again|have another/i.test(t)) {
     showTryAgain();
-  return preKidEncourage(text, mood);
+    return preKidEncourage(shortRetry(), 'retry');
+  }
+  if (/new learning stage/i.test(t)) return preKidEncourage(text, mood);
+  if (mood === 'highfive' && voiceSentences(t).length > 1)
+    return preKidEncourage(
+      shortCheers[shortCheerIndex++ % shortCheers.length] + ' ' + firstSentence(t),
+      mood
+    );
+  return preKidEncourage(firstSentence(t), mood);
 };
 const preKidHelperSpeak = helperSpeak;
 helperSpeak = function (text, options) {
-  if (/^(good try|great trying|nice try)/i.test(String(text || '').trim()) && !document.body.classList.contains('race-running'))
+  if (retryPattern.test(String(text || '').trim()) && !document.body.classList.contains('race-running')) {
     showTryAgain();
+    return preKidHelperSpeak(shortRetry(), options);
+  }
   return preKidHelperSpeak(text, options);
 };
+
+/* Repeat the question (25 Oct feedback: "it's easy to miss a detail"). On every question screen a
+ * big 🔊 sits above the answers. It replays the question exactly as it was first spoken, in the
+ * same friend's voice, as often as he likes. The first line spoken after a new screen appears is
+ * taken as that screen's question. */
+let kidQuestion = null,
+  kidAwaitQuestion = false;
+new MutationObserver(() => {
+  kidAwaitQuestion = true;
+  kidQuestion = null;
+  setTimeout(syncRepeatButton, 0);
+}).observe(app, { childList: true });
+const preKidSpeak = speak;
+speak = function (text, options = {}) {
+  if (kidAwaitQuestion && text && !options.repeat) {
+    kidAwaitQuestion = false;
+    kidQuestion = { text, speaker: options.speaker || 'milo' };
+    syncRepeatButton();
+  }
+  return preKidSpeak(text, options);
+};
+function questionScreen() {
+  return (
+    document.body.classList.contains('activity-screen') &&
+    !!app.querySelector(
+      '[data-quest-choice], [data-science-choice], [data-check-choice], [data-group-choice], .choices button, .answer, [data-answer]'
+    )
+  );
+}
+function syncRepeatButton() {
+  let button = document.getElementById('repeatQuestion');
+  const show =
+    questionScreen() && (kidQuestion || document.querySelector('#questInstructions, #app #listen'));
+  if (!show) {
+    button?.remove();
+    return;
+  }
+  if (!button) {
+    button = document.createElement('button');
+    button.id = 'repeatQuestion';
+    button.className = 'kid-repeat';
+    button.setAttribute('aria-label', 'Hear the question again');
+    button.innerHTML = '<span aria-hidden="true">🔊</span>';
+    document.body.append(button);
+  }
+  button.onclick = () => {
+    button.classList.remove('kid-repeat-pop');
+    void button.offsetWidth;
+    button.classList.add('kid-repeat-pop');
+    // The lesson's own "hear the question" control says it best; otherwise replay what was said.
+    const own = document.querySelector('#questInstructions, #app #listen');
+    if (own) own.click();
+    else if (kidQuestion) preKidSpeak(kidQuestion.text, { speaker: kidQuestion.speaker, repeat: true });
+  };
+}
+window.addEventListener('hashchange', () => setTimeout(syncRepeatButton, 50));

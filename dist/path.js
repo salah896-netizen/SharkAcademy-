@@ -280,7 +280,7 @@ function pathNextActivity(subjectWanted = null, today = dayKey()) {
     ? [subjectWanted]
     : rotation.map((_, i) => rotation[(done + i) % rotation.length]);
   for (const subject of order) {
-    const skill = pathSkills.find(s => s.subject === subject && !skillRecord(s.id).readyAt);
+    const skill = pathSkillsInLevelOrder(subject).find(s => !skillRecord(s.id).readyAt);
     if (skill) return { skill: skill.id, subject, lesson: nextLessonInSkill(skill), review: false };
   }
   // Everything here has a star: practise the skill visited longest ago in that subject.
@@ -294,6 +294,14 @@ function pathNextActivity(subjectWanted = null, today = dayKey()) {
     lesson: nextLessonInSkill(stale, true),
     review: false
   };
+}
+// Easy / medium / hard per subject (set in the grown-ups' area): medium starts a third of the
+// way along that subject's skills, hard two thirds; the earlier skills come after, not never.
+function pathSkillsInLevelOrder(subject) {
+  const skills = pathSkills.filter(s => s.subject === subject),
+    level = (state.levels || {})[subject],
+    skip = Math.floor((skills.length * { medium: 1, hard: 2 }[level] || 0) / 3);
+  return [...skills.slice(skip), ...skills.slice(0, skip)];
 }
 function pathCurrentSkill(today = dayKey()) {
   const next = pathNextActivity(null, today);
