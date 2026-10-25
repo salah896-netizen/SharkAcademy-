@@ -34,5 +34,33 @@ const quizPhotoData = {
   "page": "https://commons.wikimedia.org/wiki/File:Green_turtle_swimming_over_coral_reefs_in_Kona.jpg",
   "license": "CC BY-SA 3.0",
   "title": "File:Green turtle swimming over coral reefs in Kona.jpg"
+ },
+ "crab": {
+  "file": "quiz/crab.webp",
+  "credit": "Hans Hillewaert",
+  "page": "https://commons.wikimedia.org/wiki/File:Carcinus_maenas.jpg",
+  "license": "CC BY-SA 4.0",
+  "title": "File:Carcinus maenas.jpg"
+ },
+ "squid": {
+  "file": "quiz/squid.webp",
+  "credit": "Diego Delso",
+  "page": "https://commons.wikimedia.org/wiki/File:Calamar_de_arrecifes_(Sepioteuthis_lessoniana),_Nosy_Iranja,_Madagascar,_2025-09-17,_DD_90.jpg",
+  "license": "CC BY-SA 4.0",
+  "title": "File:Calamar de arrecifes (Sepioteuthis lessoniana), Nosy Iranja, Madagascar, 2025-09-17, DD 90.jpg"
+ },
+ "dolphin": {
+  "file": "quiz/dolphin.webp",
+  "credit": "Tony Hisgett from Birmingham, UK",
+  "page": "https://commons.wikimedia.org/wiki/File:Underwater_dolphin_2_(14942564164).jpg",
+  "license": "CC BY 2.0",
+  "title": "File:Underwater dolphin 2 (14942564164).jpg"
+ },
+ "octopus": {
+  "file": "quiz/octopus.webp",
+  "credit": "Diego Delso",
+  "page": "https://commons.wikimedia.org/wiki/File:Pulpo_com%C3%BAn_(Octopus_vulgaris),_Parque_natural_de_la_Arr%C3%A1bida,_Portugal,_2020-07-21,_DD_33.jpg",
+  "license": "CC BY-SA 4.0",
+  "title": "File:Pulpo común (Octopus vulgaris), Parque natural de la Arrábida, Portugal, 2020-07-21, DD 33.jpg"
  }
 };
