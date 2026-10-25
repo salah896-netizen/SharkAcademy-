@@ -961,6 +961,7 @@ var voiceManifest = {
   "gizmo|a kitten.": "audio/voice/gizmo/074b188e06.mp3",
   "gizmo|a pup.": "audio/voice/gizmo/8f2e50a783.mp3",
   "gizmo|what's for dinner?.": "audio/voice/gizmo/085b6657f8.mp3",
+    "gizmo|what's for dinner?": "audio/voice/gizmo/085b6657f8.mp3",
   "gizmo|tiny meals and big hunters.": "audio/voice/gizmo/cbfa40f5e2.mp3",
   "gizmo|different sharks eat different food.": "audio/voice/gizmo/97f730faa6.mp3",
   "gizmo|some catch fish or squid.": "audio/voice/gizmo/f43aded631.mp3",
