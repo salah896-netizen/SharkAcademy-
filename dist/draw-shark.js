@@ -58,15 +58,206 @@ const sharkCrayons = [
   ['#ffffff', 'white'],
   ['#20313a', 'black']
 ];
+// Dash's drawing school (Jude's idea: "trace a shark or other shapes"). Easiest first.
+const seaDrawings = [
+  {
+    id: 'fish',
+    name: 'Fish',
+    view: { x: 70, y: 70, w: 245, h: 160 },
+    intro: 'Let’s draw a fish together, Haytham! One part at a time.',
+    done: 'Fin-tastic! You drew a fish! Now pick a crayon and colour it in.',
+    steps: [
+      {
+        name: 'Body',
+        say: 'Draw a big lemon shape for the fish’s body. Start at the dot and go all the way round.',
+        paths: ['M300 150 C260 90 160 95 130 150 C160 205 260 210 300 150']
+      },
+      {
+        name: 'Tail',
+        say: 'Now a triangle for the tail.',
+        paths: ['M130 150 L80 110 L80 190 L130 150']
+      },
+      { name: 'Eye', say: 'Draw a round eye near the front.', paths: ['M258 140 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0'] },
+      {
+        name: 'Fin and stripe',
+        say: 'Last one! Add a little fin on top, and a stripe down the middle.',
+        paths: ['M190 112 Q205 80 232 109', 'M215 108 Q205 150 215 192']
+      }
+    ]
+  },
+  {
+    id: 'starfish',
+    name: 'Starfish',
+    view: { x: 95, y: 45, w: 210, h: 200 },
+    intro: 'Let’s draw a starfish together, Haytham!',
+    done: 'Fin-tastic! You drew a starfish! Now pick a crayon and colour it in.',
+    steps: [
+      {
+        name: 'Star',
+        say: 'Start at the top dot. Go down and out, up and in, all the way round to make five points.',
+        paths: ['M200 55 L224 118 L290 121 L238 162 L256 227 L200 190 L144 227 L162 162 L110 121 L176 118 L200 55']
+      },
+      {
+        name: 'Spots',
+        say: 'Starfish are bumpy. Draw three little spots in the middle.',
+        paths: [
+          'M196 140 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0',
+          'M182 165 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0',
+          'M210 165 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'turtle',
+    name: 'Turtle',
+    view: { x: 110, y: 85, w: 230, h: 135 },
+    intro: 'Let’s draw a sea turtle together, Haytham!',
+    done: 'Fin-tastic! You drew a sea turtle! Now pick a crayon and colour it in.',
+    steps: [
+      {
+        name: 'Shell',
+        say: 'Draw a big hill for the shell, then a straight line along the bottom.',
+        paths: ['M120 170 C125 90 275 90 280 170 L120 170']
+      },
+      {
+        name: 'Head',
+        say: 'Now a round head poking out at the front.',
+        paths: ['M280 150 C300 125 335 135 330 155 C325 172 295 172 280 165']
+      },
+      {
+        name: 'Flippers',
+        say: 'Sea turtles have flippers for swimming. Draw two pointy flippers underneath.',
+        paths: ['M240 170 L262 206 L220 172', 'M160 170 L136 206 L182 172']
+      },
+      {
+        name: 'Shell pattern',
+        say: 'Give the shell a pattern, like a little house on top.',
+        paths: ['M160 170 L175 130 L225 130 L240 170', 'M175 130 L200 108 L225 130']
+      },
+      { name: 'Eye', say: 'Last one! A little eye on the head.', paths: ['M312 148 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0'] }
+    ]
+  },
+  {
+    id: 'crab',
+    name: 'Crab',
+    view: { x: 85, y: 78, w: 230, h: 142 },
+    intro: 'Let’s draw a crab together, Haytham!',
+    done: 'Fin-tastic! You drew a crab! Now pick a crayon and colour it in.',
+    steps: [
+      {
+        name: 'Body',
+        say: 'Draw a wide oval for the crab’s body.',
+        paths: ['M140 170 C140 120 260 120 260 170 C260 195 140 195 140 170']
+      },
+      {
+        name: 'Eye stalks',
+        say: 'Crabs have eyes on sticks! Draw two lines going up.',
+        paths: ['M185 131 L180 102', 'M215 131 L220 102']
+      },
+      {
+        name: 'Eyes',
+        say: 'Now a round eye on top of each stick.',
+        paths: ['M173 95 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0', 'M213 95 a7 7 0 1 0 14 0 a7 7 0 1 0 -14 0']
+      },
+      {
+        name: 'Claws',
+        say: 'Draw two arms with snappy claws, like the letter V.',
+        paths: ['M145 152 L110 122 L100 92 M110 122 L132 96', 'M255 152 L290 122 L300 92 M290 122 L268 96']
+      },
+      {
+        name: 'Legs',
+        say: 'Last one! Two little legs on each side.',
+        paths: ['M152 182 L120 202', 'M164 188 L138 214', 'M248 182 L280 202', 'M236 188 L262 214']
+      }
+    ]
+  },
+  {
+    id: 'octopus',
+    name: 'Octopus',
+    view: { x: 120, y: 60, w: 160, h: 190 },
+    intro: 'Let’s draw an octopus together, Haytham!',
+    done: 'Fin-tastic! You drew an octopus! Now pick a crayon and colour it in.',
+    steps: [
+      {
+        name: 'Head',
+        say: 'Draw a big round head, like an upside-down bowl.',
+        paths: ['M140 160 C135 70 265 70 260 160']
+      },
+      {
+        name: 'Arms',
+        say: 'Now the wiggly arms. Draw four wavy lines going down.',
+        paths: [
+          'M150 160 Q140 190 160 200 Q175 210 160 232',
+          'M185 162 Q180 195 195 210 Q205 225 190 242',
+          'M215 162 Q220 195 205 210 Q195 225 210 242',
+          'M250 160 Q260 190 240 200 Q225 210 240 232'
+        ]
+      },
+      {
+        name: 'Eyes',
+        say: 'Two big round eyes.',
+        paths: ['M172 120 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0', 'M212 120 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0']
+      },
+      { name: 'Smile', say: 'Last one! A happy smile.', paths: ['M185 142 Q200 154 215 142'] }
+    ]
+  },
+  {
+    id: 'whale',
+    name: 'Whale',
+    view: { x: 70, y: 38, w: 305, h: 162 },
+    intro: 'Let’s draw a whale together, Haytham!',
+    done: 'Fin-tastic! You drew a whale! Now pick a crayon and colour it in.',
+    steps: [
+      {
+        name: 'Body',
+        say: 'Draw a big round body, like a giant jelly bean.',
+        paths: ['M80 165 C80 95 250 85 300 140 C310 152 300 186 262 190 L120 190 C95 190 80 180 80 165']
+      },
+      {
+        name: 'Tail',
+        say: 'Now the tail, with two big flukes.',
+        paths: ['M300 145 L336 112 L342 146 L366 132 L346 166 L305 162']
+      },
+      { name: 'Eye', say: 'Draw a little eye.', paths: ['M116 145 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0'] },
+      {
+        name: 'Spout',
+        say: 'Whales breathe air through a blowhole. Draw a spout of water on top!',
+        paths: ['M150 92 Q140 62 125 56', 'M150 92 Q150 58 150 46', 'M150 92 Q160 62 175 56']
+      },
+      { name: 'Smile', say: 'Last one! A long, happy smile.', paths: ['M86 168 Q112 179 142 172'] }
+    ]
+  },
+  {
+    id: 'shark',
+    name: 'Shark',
+    view: { x: 40, y: 40, w: 320, h: 205 },
+    intro: 'Let’s draw a shark together, Haytham! One part at a time.',
+    done: 'Fin-tastic! You drew a whole shark! Now pick a crayon and colour it in.',
+    steps: sharkDrawSteps
+  }
+];
+function instructionFor(d) {
+  const drawing = currentDrawing();
+  // The shark keeps its original (recorded) line.
+  if (drawing.id === 'shark') return 'Draw any shark you like. Look at Dash’s shark if you want an idea.';
+  return 'Draw your own ' + drawing.name.toLowerCase() + '. Look at Dash’s picture if you want an idea.';
+}
+function currentDrawing() {
+  return seaDrawings.find(x => x.id === sharkDraw?.subject) || seaDrawings.find(x => x.id === 'shark');
+}
+function drawingThumb(drawing) {
+  const v = drawing.view;
+  return `<svg viewBox="${v.x - 8} ${v.y - 8} ${v.w + 16} ${v.h + 16}" aria-hidden="true">${drawing.steps.map(s => s.paths.map(p => `<path d="${p}"/>`).join('')).join('')}</svg>`;
+}
 let sharkDraw = null;
 
 // The board fills the screen. Drawing coordinates stay 400 × 300, scaled evenly and centred,
 // so the guide (SVG, "meet") and Haytham's ink (canvas) always line up.
 // The page shows the part of the board where the shark is, so the shark is as big as possible.
-const DRAW_VIEW = { x: 40, y: 40, w: 320, h: 205 };
 function drawFit(canvas) {
   const r = canvas.getBoundingClientRect(),
-    v = DRAW_VIEW,
+    v = currentDrawing().view,
     scale = Math.min(r.width / v.w, r.height / v.h);
   return {
     r,
@@ -85,7 +276,18 @@ function dashSays(text) {
 function drawShark() {
   if (typeof writingCleanup === 'function' && writingCleanup) writingCleanup();
   if (!sharkDraw)
-    sharkDraw = { mode: 'steps', step: 0, strokes: [], colour: '#20313a', tool: 'pen', saved: false };
+    sharkDraw = {
+      mode: 'steps',
+      subject: 'shark',
+      step: 0,
+      strokes: [],
+      colour: '#20313a',
+      tool: 'pen',
+      saved: false
+    };
+  const drawing = currentDrawing(),
+    sharkDrawSteps = drawing.steps,
+    view = drawing.view;
   const d = sharkDraw,
     stepping = d.mode === 'steps' && d.step < sharkDrawSteps.length,
     colouring = d.mode === 'steps' && d.step >= sharkDrawSteps.length,
@@ -95,7 +297,7 @@ function drawShark() {
     ? step.say
     : colouring
       ? 'Pick a crayon and colour your shark. Make it any colour you like!'
-      : 'Draw any shark you like. Look at Dash’s shark if you want an idea.';
+      : instructionFor(d);
   const guide = sharkDrawSteps
     .map((s, i) => {
       if (d.mode !== 'steps') return '';
@@ -117,25 +319,27 @@ function drawShark() {
     <div class="draw-top">
       <div class="segmented draw-modes" role="group" aria-label="Drawing mode"><button data-draw-mode="steps" aria-pressed="${d.mode === 'steps'}" aria-label="Step by step">🦈 1 2 3</button><button data-draw-mode="free" aria-pressed="${d.mode === 'free'}" aria-label="Draw on my own">✏️</button></div>
       ${stepping ? `<div class="draw-steps" aria-label="Part ${d.step + 1} of ${sharkDrawSteps.length}">${sharkDrawSteps.map((s, i) => `<i class="${i < d.step ? 'done' : i === d.step ? 'now' : ''}">${i < d.step ? '✓' : i + 1}</i>`).join('')}</div>` : ''}
+      <div class="draw-picks" role="group" aria-label="Choose what to draw">${seaDrawings.map(x => `<button class="draw-pick${x.id === drawing.id ? ' chosen' : ''}${(state.drawings || []).some(r => r.subject === x.id) ? ' drawn' : ''}" data-draw-pick="${x.id}" aria-label="Draw a ${x.name.toLowerCase()}" aria-pressed="${x.id === drawing.id}">${drawingThumb(x)}</button>`).join('')}</div>
       <button class="draw-say" id="drawSay" aria-label="Hear Dash again">🔊 <span>${stepping ? `<b>${step.name}</b>` : colouring ? '🖍️' : '✏️'}</span></button>
     </div>
-    <div class="draw-board"><svg viewBox="${DRAW_VIEW.x} ${DRAW_VIEW.y} ${DRAW_VIEW.w} ${DRAW_VIEW.h}" aria-hidden="true">${guide}</svg>${d.mode === 'free' ? `<svg class="draw-model" viewBox="40 40 310 200" aria-label="A shark to copy">${model}</svg>` : ''}<canvas id="drawCanvas" aria-label="Drawing page. Draw with your finger or Apple Pencil."></canvas></div>
+    <div class="draw-board"><svg viewBox="${view.x} ${view.y} ${view.w} ${view.h}" aria-hidden="true">${guide}</svg>${d.mode === 'free' ? `<svg class="draw-model" viewBox="${view.x - 8} ${view.y - 8} ${view.w + 16} ${view.h + 16}" aria-label="A ${drawing.name.toLowerCase()} to copy">${model}</svg>` : ''}<canvas id="drawCanvas" aria-label="Drawing page. Draw with your finger or Apple Pencil."></canvas></div>
     <div class="draw-tools">
       ${stepping ? `<button id="drawWatch" class="draw-tool" aria-label="Watch how">👀</button>` : crayons}
       <button id="drawPen" class="draw-tool" aria-label="Pencil" aria-pressed="${d.tool === 'pen'}">✏️</button>
       <button id="drawEraser" class="draw-tool" aria-label="Eraser" aria-pressed="${d.tool === 'erase'}"><span class="eraser-icon" aria-hidden="true"></span></button>
       <button id="drawUndo" class="draw-tool" aria-label="Undo">↶</button>
       <button id="drawClear" class="draw-tool" aria-label="Start this part again">🧽</button>
-      ${stepping ? `<button id="drawNext" class="draw-go" aria-label="${d.step === sharkDrawSteps.length - 1 ? 'Finish drawing' : 'Next part'}">▶</button>` : `<button id="drawDone" class="draw-go" aria-label="I finished my shark" ${d.saved ? 'disabled' : ''}>✓</button>`}
+      ${stepping ? `<button id="drawNext" class="draw-go" aria-label="${d.step === sharkDrawSteps.length - 1 ? 'Finish drawing' : 'Next part'}">▶</button>` : `<button id="drawDone" class="draw-go" aria-label="I finished my drawing" ${d.saved ? 'disabled' : ''}>✓</button>`}
     </div></section>`;
 
   $('#drawSay').onclick = () => dashSays(instruction);
-  document.querySelectorAll('[data-draw-mode]').forEach(
+  document.querySelectorAll('[data-draw-pick]').forEach(
     b =>
       (b.onclick = () => {
-        if (b.dataset.drawMode === d.mode) return;
+        if (b.dataset.drawPick === drawing.id) return;
         sharkDraw = {
-          mode: b.dataset.drawMode,
+          mode: d.mode,
+          subject: b.dataset.drawPick,
           step: 0,
           strokes: [],
           colour: '#20313a',
@@ -143,7 +347,24 @@ function drawShark() {
           saved: false
         };
         drawShark();
-        if (sharkDraw.mode === 'free') dashSays('Draw any shark you like. Look at Dash’s shark if you want an idea.');
+        if (sharkDraw.mode === 'free') dashSays(instructionFor(sharkDraw));
+      })
+  );
+  document.querySelectorAll('[data-draw-mode]').forEach(
+    b =>
+      (b.onclick = () => {
+        if (b.dataset.drawMode === d.mode) return;
+        sharkDraw = {
+          mode: b.dataset.drawMode,
+          subject: d.subject,
+          step: 0,
+          strokes: [],
+          colour: '#20313a',
+          tool: 'pen',
+          saved: false
+        };
+        drawShark();
+        if (sharkDraw.mode === 'free') dashSays(instructionFor(sharkDraw));
       })
   );
   const setTool = tool => {
@@ -222,7 +443,8 @@ function drawShark() {
     active = {
       points: [point(e)],
       colour: stepping ? '#20313a' : d.colour,
-      width: erase ? 22 : colouring ? 14 : 5,
+      // Same pen size on screen whichever animal (smaller animals are zoomed in more).
+      width: (erase ? 22 : colouring ? 14 : 5) * (view.w / 320),
       erase,
       step: d.step
     };
@@ -276,7 +498,7 @@ function drawShark() {
       drawShark();
       // Always the new part's words, never the old ones.
       if (d.step < sharkDrawSteps.length) dashSays(sharkDrawSteps[d.step].say);
-      else dashSays('Fin-tastic! You drew a whole shark! Now pick a crayon and colour it in.');
+      else dashSays(drawing.done);
     };
   if ($('#drawDone'))
     $('#drawDone').onclick = () => {
@@ -288,7 +510,8 @@ function drawShark() {
       d.saved = true;
       state.drawings = state.drawings || [];
       state.drawings.push({
-        kind: d.mode === 'steps' ? 'shark-steps' : 'shark-free',
+        kind: d.mode === 'steps' ? 'steps' : 'free',
+        subject: drawing.id,
         ink: d.strokes.slice(0, 120).map(s => ({
           c: s.erase ? 'erase' : s.colour,
           w: s.width,
@@ -302,7 +525,7 @@ function drawShark() {
       save();
       $('#drawDone').disabled = true;
       app.querySelector('.draw-board').classList.add('draw-celebrate');
-      dashSays('What an amazing shark, Haytham! You’re a real artist. Pearls for your collection!');
+      dashSays('Great job! Fin-tastic!');
       if (typeof setMiloMood === 'function') setMiloMood('highfive');
     };
 
@@ -315,7 +538,7 @@ function drawShark() {
   };
   paint();
   if (stepping && d.step === 0 && !d.strokes.length)
-    dashSays('Let’s draw a shark together, Haytham! One part at a time. ' + step.say);
+    dashSays(drawing.intro + ' ' + step.say);
 }
 function startSharkDrawing() {
   sharkDraw = null;
@@ -330,7 +553,7 @@ writing = function () {
   if (!controls || controls.querySelector('#drawSharkLink')) return;
   controls.insertAdjacentHTML(
     'beforeend',
-    '<button id="drawSharkLink" class="draw-shark-link">🦈 Draw a shark</button>'
+    '<button id="drawSharkLink" class="draw-shark-link" aria-label="Drawing school: draw sea animals with Dash">🎨 Draw sea animals</button>'
   );
   $('#drawSharkLink').onclick = startSharkDrawing;
 };

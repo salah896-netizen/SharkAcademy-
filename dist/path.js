@@ -495,7 +495,7 @@ function pathCheckScreen() {
       ? 'How many more counters will fill the ten-frame?'
       : item.kind === 'join'
         ? 'How many turtles altogether?'
-        : 'How many can you count?';
+        : 'How many are here?';
   const total = pathCheckItems.reading.length + pathCheckItems.maths.length,
     doneCount = pathCheck.results.reading.length + pathCheck.results.maths.length;
   app.innerHTML = `<section class="reading-quest school-quest path-check"><div class="path-check-dots" aria-label="Starting check">${Array.from({ length: total }, (_, i) => `<i class="${i < doneCount ? 'done' : ''}"></i>`).join('')}</div><div class="quest-scroll"><p>${prompt}</p>${clue}<div class="quest-pictures ${reading ? '' : 'number-choices'}">${item.options.map((o, i) => `<button data-check-choice="${i}" aria-label="${o}">${reading ? readingArt(o) : `<span class="check-number">${o}</span>`}</button>`).join('')}</div></div></section>`;
@@ -503,7 +503,7 @@ function pathCheckScreen() {
     pathCheck.index === 0 && pathCheck.stage === 'reading'
       ? 'Willa and Tiggy want to see what you already know. Just have a go! '
       : pathCheck.index === 0 && pathCheck.stage === 'maths'
-        ? 'Now some counting with Tiggy! '
+        ? 'Let’s go, Haytham! Let’s go counting! '
         : '';
   speak(intro + prompt, { speaker: friend });
   document.querySelectorAll('[data-check-choice]').forEach(button => {

@@ -14,6 +14,7 @@ function voiceKey(speaker, text) {
       .replace(/[“”]/g, '"')
       .replace(/\s+/g, ' ')
       .trim()
+      .replace(/([!?])\.+$/, '$1') // "Is it a whale?." reads the same as "Is it a whale?"
       .toLowerCase()
   );
 }

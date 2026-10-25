@@ -553,7 +553,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v91');
+      const cache = await caches.open('haytham-sharks-v92');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',
@@ -594,6 +594,7 @@ if ('serviceWorker' in navigator) {
         './atmosphere.js',
         './ocean-worlds.css',
         './audio/home.m4a',
+        './audio/race.m4a',
         './audio/learning.m4a',
         './audio/sharks.m4a',
         './audio/writing.m4a',

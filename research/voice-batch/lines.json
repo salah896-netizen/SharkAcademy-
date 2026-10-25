@@ -127,21 +127,21 @@
  },
  {
   "speaker": "willa",
-  "text": "Listen. shh\u2026 ip. Blend the sounds. Which picture is it?",
+  "text": "Listen. shh… ip. Blend the sounds. Which picture is it?",
   "group": "prompt",
   "settings": "line",
   "file": "audio/voice/willa/d85d856e6f.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Shh\u2026 ip. Ship! You blended it.",
+  "text": "Shh… ip. Ship! You blended it.",
   "group": "reveal",
   "settings": "line",
   "file": "audio/voice/willa/9bddc9215c.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Say it faster: shh\u2026 ip. Push the sounds together.",
+  "text": "Say it faster: shh… ip. Push the sounds together.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/e5e538e83e.mp3"
@@ -183,7 +183,7 @@
  },
  {
   "speaker": "willa",
-  "text": "A shell! Let\u2019s keep it for the treasure chest.",
+  "text": "A shell! Let’s keep it for the treasure chest.",
   "group": "reveal",
   "settings": "line",
   "file": "audio/voice/willa/576e32dbe8.mp3"
@@ -225,7 +225,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s read together, one word at a time. The colour word tells us which one to choose.",
+  "text": "Let’s read together, one word at a time. The colour word tells us which one to choose.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/f54dcdcc84.mp3"
@@ -246,7 +246,7 @@
  },
  {
   "speaker": "willa",
-  "text": "she is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for s, h, e.",
+  "text": "she is a tricky word. We can’t sound it all out, so we remember how it looks. Look for s, h, e.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/6b31bad932.mp3"
@@ -267,7 +267,7 @@
  },
  {
   "speaker": "willa",
-  "text": "the is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for t, h, e.",
+  "text": "the is a tricky word. We can’t sound it all out, so we remember how it looks. Look for t, h, e.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/68d6ce7e18.mp3"
@@ -288,7 +288,7 @@
  },
  {
   "speaker": "willa",
-  "text": "was is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for w, a, s.",
+  "text": "was is a tricky word. We can’t sound it all out, so we remember how it looks. Look for w, a, s.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/daa3e71956.mp3"
@@ -309,7 +309,7 @@
  },
  {
   "speaker": "willa",
-  "text": "he is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for h, e.",
+  "text": "he is a tricky word. We can’t sound it all out, so we remember how it looks. Look for h, e.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/944cc76360.mp3"
@@ -372,7 +372,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Tail, snail! A shark\u2019s tail pushes it through the water.",
+  "text": "Tail, snail! A shark’s tail pushes it through the water.",
   "group": "reveal",
   "settings": "line",
   "file": "audio/voice/willa/7e43b65938.mp3"
@@ -463,21 +463,21 @@
  },
  {
   "speaker": "willa",
-  "text": "Listen. shh\u2026 ark. Blend the sounds. Which picture is it?",
+  "text": "Listen. shh… ark. Blend the sounds. Which picture is it?",
   "group": "prompt",
   "settings": "line",
   "file": "audio/voice/willa/6b7e7b4ec9.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Shh\u2026 ark. Shark! Our favourite word.",
+  "text": "Shh… ark. Shark! Our favourite word.",
   "group": "reveal",
   "settings": "line",
   "file": "audio/voice/willa/e5e5cd974d.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Say it faster: shh\u2026 ark. Push the sounds together.",
+  "text": "Say it faster: shh… ark. Push the sounds together.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/bb99e25429.mp3"
@@ -589,21 +589,21 @@
  },
  {
   "speaker": "willa",
-  "text": "Listen. mmm\u2026 oon. Blend the sounds. Which picture is it?",
+  "text": "Listen. mmm… oon. Blend the sounds. Which picture is it?",
   "group": "prompt",
   "settings": "line",
   "file": "audio/voice/willa/9a4ca0f569.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Mmm\u2026 oon. Moon! Great blending.",
+  "text": "Mmm… oon. Moon! Great blending.",
   "group": "reveal",
   "settings": "line",
   "file": "audio/voice/willa/dc7e4582ea.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Say it faster: mmm\u2026 oon. Push the sounds together.",
+  "text": "Say it faster: mmm… oon. Push the sounds together.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/63762d0b16.mp3"
@@ -673,7 +673,7 @@
  },
  {
   "speaker": "willa",
-  "text": "I is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for I.",
+  "text": "I is a tricky word. We can’t sound it all out, so we remember how it looks. Look for I.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/05ac6c1d84.mp3"
@@ -694,7 +694,7 @@
  },
  {
   "speaker": "willa",
-  "text": "to is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for t, o.",
+  "text": "to is a tricky word. We can’t sound it all out, so we remember how it looks. Look for t, o.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/f690eaa9e8.mp3"
@@ -715,7 +715,7 @@
  },
  {
   "speaker": "willa",
-  "text": "said is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for s, a, i, d.",
+  "text": "said is a tricky word. We can’t sound it all out, so we remember how it looks. Look for s, a, i, d.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/5eaa59f937.mp3"
@@ -736,7 +736,7 @@
  },
  {
   "speaker": "willa",
-  "text": "you is a tricky word. We can\u2019t sound it all out, so we remember how it looks. Look for y, o, u.",
+  "text": "you is a tricky word. We can’t sound it all out, so we remember how it looks. Look for y, o, u.",
   "group": "hint",
   "settings": "line",
   "file": "audio/voice/willa/e87c67655b.mp3"
@@ -855,35 +855,35 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s go, Haytham! Let\u2019s read together!",
+  "text": "Let’s go, Haytham! Let’s read together!",
   "group": "tap line",
   "settings": "line",
   "file": "audio/voice/willa/b6faab9356.mp3"
  },
  {
   "speaker": "tiggy",
-  "text": "Let\u2019s go, Haytham! Let\u2019s go counting!",
+  "text": "Let’s go, Haytham! Let’s go counting!",
   "group": "tap line",
   "settings": "line",
   "file": "audio/voice/tiggy/0774faca97.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s go, Haytham! Let\u2019s discover sharks!",
+  "text": "Let’s go, Haytham! Let’s discover sharks!",
   "group": "tap line",
   "settings": "line",
   "file": "audio/voice/gizmo/974c8a914a.mp3"
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s go, Haytham! Let\u2019s make sandy letters!",
+  "text": "Let’s go, Haytham! Let’s make sandy letters!",
   "group": "tap line",
   "settings": "line",
   "file": "audio/voice/dash/e4c2156a1d.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s go, Haytham!",
+  "text": "Let’s go, Haytham!",
   "group": "tap line",
   "settings": "line",
   "file": "audio/voice/milo/b11334eb17.mp3"
@@ -1870,14 +1870,14 @@
  },
  {
   "speaker": "willa",
-  "text": "Take your time. I\u2019m right here.",
+  "text": "Take your time. I’m right here.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/willa/c27a7868cf.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Great trying! Let\u2019s look again.",
+  "text": "Great trying! Let’s look again.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/willa/8de251f4d6.mp3"
@@ -1898,14 +1898,14 @@
  },
  {
   "speaker": "tiggy",
-  "text": "Take your time. I\u2019m right here.",
+  "text": "Take your time. I’m right here.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/tiggy/475ae38be9.mp3"
  },
  {
   "speaker": "tiggy",
-  "text": "Great trying! Let\u2019s look again.",
+  "text": "Great trying! Let’s look again.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/tiggy/11d791235e.mp3"
@@ -1926,14 +1926,14 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Take your time. I\u2019m right here.",
+  "text": "Take your time. I’m right here.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/gizmo/32406fac40.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "Great trying! Let\u2019s look again.",
+  "text": "Great trying! Let’s look again.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/gizmo/87e6baa447.mp3"
@@ -1954,14 +1954,14 @@
  },
  {
   "speaker": "dash",
-  "text": "Take your time. I\u2019m right here.",
+  "text": "Take your time. I’m right here.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/dash/584db71452.mp3"
  },
  {
   "speaker": "dash",
-  "text": "Great trying! Let\u2019s look again.",
+  "text": "Great trying! Let’s look again.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/dash/52fab5f0d5.mp3"
@@ -1982,14 +1982,14 @@
  },
  {
   "speaker": "milo",
-  "text": "Take your time. I\u2019m right here.",
+  "text": "Take your time. I’m right here.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/milo/d0ac88ace0.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Great trying! Let\u2019s look again.",
+  "text": "Great trying! Let’s look again.",
   "group": "encouragement",
   "settings": "line",
   "file": "audio/voice/milo/692d647bc7.mp3"
@@ -2003,7 +2003,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Scientists look very closely. Let\u2019s spot what makes each shark special!",
+  "text": "Scientists look very closely. Let’s spot what makes each shark special!",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/31deb9e637.mp3"
@@ -2080,7 +2080,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Fish have fins and breathe with gills. Let\u2019s sort the sea animals!",
+  "text": "Fish have fins and breathe with gills. Let’s sort the sea animals!",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/bd0cc1a424.mp3"
@@ -2185,7 +2185,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Sharks don\u2019t sink to the bottom when they swim. Most sharks have a big, oily liver that helps them stay up in the water.",
+  "text": "Sharks don’t sink to the bottom when they swim. Most sharks have a big, oily liver that helps them stay up in the water.",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/e19be7d9af.mp3"
@@ -2248,7 +2248,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "It floats! Wood floats, and the boat\u2019s shape helps too.",
+  "text": "It floats! Wood floats, and the boat’s shape helps too.",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/93b460128c.mp3"
@@ -2479,7 +2479,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Think about it: is it heavy for its size? Is it full of air? There\u2019s no wrong guess.",
+  "text": "Think about it: is it heavy for its size? Is it full of air? There’s no wrong guess.",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/8fbace7b2e.mp3"
@@ -2500,7 +2500,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Good try, Haytham. Let\u2019s look again.",
+  "text": "Good try, Haytham. Let’s look again.",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/87973a8de6.mp3"
@@ -2514,7 +2514,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s see what happened.",
+  "text": "Let’s see what happened.",
   "group": "science",
   "settings": "line",
   "file": "audio/voice/gizmo/612569dda9.mp3"
@@ -2633,21 +2633,21 @@
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s dive into our first adventure!",
+  "text": "Let’s dive into our first adventure!",
   "group": "opening",
   "settings": "line",
   "file": "audio/voice/milo/33377ccb29.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s do three adventures today!",
+  "text": "Let’s do three adventures today!",
   "group": "opening",
   "settings": "line",
   "file": "audio/voice/milo/49ecc854ee.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "Here\u2019s today\u2019s shark!",
+  "text": "Here’s today’s shark!",
   "group": "opening",
   "settings": "line",
   "file": "audio/voice/gizmo/92566a008a.mp3"
@@ -2668,7 +2668,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Scientists study huge fossil teeth and other remains, including some backbone fossils. Its name means \u201cbig tooth\u201d.",
+  "text": "Scientists study huge fossil teeth and other remains, including some backbone fossils. Its name means “big tooth”.",
   "group": "shark fact",
   "settings": "line",
   "file": "audio/voice/gizmo/6a9199cd6c.mp3"
@@ -2934,7 +2934,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "In shallow coral-reef water, including Australia\u2019s Great Barrier Reef.",
+  "text": "In shallow coral-reef water, including Australia’s Great Barrier Reef.",
   "group": "shark fact",
   "settings": "line",
   "file": "audio/voice/gizmo/977e471562.mp3"
@@ -3039,7 +3039,7 @@
  },
  {
   "speaker": "willa",
-  "text": "What\u2019s a shark\u2019s favourite story?",
+  "text": "What’s a shark’s favourite story?",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/7276443022.mp3"
@@ -3060,7 +3060,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s discover something new!",
+  "text": "Let’s discover something new!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/f74e5a8a24.mp3"
@@ -3137,14 +3137,14 @@
  },
  {
   "speaker": "milo",
-  "text": "Here\u2019s our path, Haytham.",
+  "text": "Here’s our path, Haytham.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/milo/049de641cb.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Milo shows where we\u2019re up to.",
+  "text": "Milo shows where we’re up to.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/milo/856e24bcb7.mp3"
@@ -3179,7 +3179,7 @@
  },
  {
   "speaker": "dash",
-  "text": "I\u2019m the speedy one!",
+  "text": "I’m the speedy one!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/dash/31576efd50.mp3"
@@ -3200,7 +3200,7 @@
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s make a little c for our captain\u2019s log.",
+  "text": "Let’s make a little c for our captain’s log.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/dash/482cbdb6f1.mp3"
@@ -3221,7 +3221,7 @@
  },
  {
   "speaker": "tiggy",
-  "text": "I\u2019m right here.",
+  "text": "I’m right here.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/a1d6dbbc25.mp3"
@@ -3235,7 +3235,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s look again.",
+  "text": "Let’s look again.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/52b9a8ae6c.mp3"
@@ -3256,7 +3256,7 @@
  },
  {
   "speaker": "willa",
-  "text": "You\u2019re a super reader, Haytham!",
+  "text": "You’re a super reader, Haytham!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/fa670acccd.mp3"
@@ -3298,7 +3298,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "We\u2019ll explore it together.",
+  "text": "We’ll explore it together.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/8d7626a893.mp3"
@@ -3319,7 +3319,7 @@
  },
  {
   "speaker": "milo",
-  "text": "You\u2019re my best ocean buddy!",
+  "text": "You’re my best ocean buddy!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/milo/f02d5a5a7f.mp3"
@@ -3354,7 +3354,7 @@
  },
  {
   "speaker": "tiggy",
-  "text": "You\u2019re a number champion!",
+  "text": "You’re a number champion!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/55725b662b.mp3"
@@ -3410,14 +3410,14 @@
  },
  {
   "speaker": "willa",
-  "text": "I\u2019m a whale shark.",
+  "text": "I’m a whale shark.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/0c5e31ea10.mp3"
  },
  {
   "speaker": "willa",
-  "text": "I\u2019m a fish, not a whale!",
+  "text": "I’m a fish, not a whale!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/4305ee2012.mp3"
@@ -3431,7 +3431,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "I live deep, deep down, where it\u2019s very dark.",
+  "text": "I live deep, deep down, where it’s very dark.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/7e3b5261f6.mp3"
@@ -3508,14 +3508,14 @@
  },
  {
   "speaker": "tiggy",
-  "text": "G\u2019day, Haytham!",
+  "text": "G’day, Haytham!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/86093961b8.mp3"
  },
  {
   "speaker": "tiggy",
-  "text": "Let\u2019s count my stripes!",
+  "text": "Let’s count my stripes!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/ae8a6fce86.mp3"
@@ -3550,7 +3550,7 @@
  },
  {
   "speaker": "dash",
-  "text": "What\u2019s a shark\u2019s favourite letter?",
+  "text": "What’s a shark’s favourite letter?",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/dash/936df6e1b9.mp3"
@@ -3641,7 +3641,7 @@
  },
  {
   "speaker": "willa",
-  "text": "I\u2019m Willa the whale shark.",
+  "text": "I’m Willa the whale shark.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/a8f26c6a0b.mp3"
@@ -3669,14 +3669,14 @@
  },
  {
   "speaker": "tiggy",
-  "text": "I\u2019m Tiggy the tiger shark.",
+  "text": "I’m Tiggy the tiger shark.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/c240f29d0c.mp3"
  },
  {
   "speaker": "tiggy",
-  "text": "Let\u2019s count fish and solve number puzzles!",
+  "text": "Let’s count fish and solve number puzzles!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/1c0cb9823d.mp3"
@@ -3697,21 +3697,21 @@
  },
  {
   "speaker": "gizmo",
-  "text": "I\u2019m Gizmo the goblin shark.",
+  "text": "I’m Gizmo the goblin shark.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/fccc7255fb.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "I\u2019m a curious shark detective.",
+  "text": "I’m a curious shark detective.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/b3933010e2.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s explore amazing sharks with Milo!",
+  "text": "Let’s explore amazing sharks with Milo!",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/gizmo/1b99b1ad98.mp3"
@@ -3725,14 +3725,14 @@
  },
  {
   "speaker": "dash",
-  "text": "I\u2019m Dash the mako shark.",
+  "text": "I’m Dash the mako shark.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/dash/7d41ef697a.mp3"
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s practise letters and numbers.",
+  "text": "Let’s practise letters and numbers.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/dash/03c08edb6d.mp3"
@@ -3865,7 +3865,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s read together: A red fin.",
+  "text": "Let’s read together: A red fin.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/c3671c6b08.mp3"
@@ -3886,7 +3886,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s swim home together.",
+  "text": "Let’s swim home together.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/153d921627.mp3"
@@ -3914,7 +3914,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s find a place for our picnic.",
+  "text": "Let’s find a place for our picnic.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/0ba4465d0d.mp3"
@@ -3970,7 +3970,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s read together: A red cup.",
+  "text": "Let’s read together: A red cup.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/4847dbcfd1.mp3"
@@ -4061,14 +4061,14 @@
  },
  {
   "speaker": "willa",
-  "text": "The captain\u2019s cat is beside the hat.",
+  "text": "The captain’s cat is beside the hat.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/d2cb5ca7e4.mp3"
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s read together: A red hat.",
+  "text": "Let’s read together: A red hat.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/98d9602926.mp3"
@@ -4124,7 +4124,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s keep our treasure bag clear of the old net.",
+  "text": "Let’s keep our treasure bag clear of the old net.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/cd131beaf3.mp3"
@@ -4145,7 +4145,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s read together: A red bag.",
+  "text": "Let’s read together: A red bag.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/8d7e55bfbc.mp3"
@@ -4166,7 +4166,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Our pretend ship\u2019s cat is ready for a voyage.",
+  "text": "Our pretend ship’s cat is ready for a voyage.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/9db6e75e3c.mp3"
@@ -4222,14 +4222,14 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s collect our pretend picnic things.",
+  "text": "Let’s collect our pretend picnic things.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/355ac9cfb2.mp3"
  },
  {
   "speaker": "willa",
-  "text": "It belongs with the captain\u2019s picnic things.",
+  "text": "It belongs with the captain’s picnic things.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/9876789866.mp3"
@@ -4250,7 +4250,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s discover a shark fact.",
+  "text": "Let’s discover a shark fact.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/willa/c60faa71ae.mp3"
@@ -4292,14 +4292,14 @@
  },
  {
   "speaker": "tiggy",
-  "text": "That\u2019s five.",
+  "text": "That’s five.",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/accbc94176.mp3"
  },
  {
   "speaker": "tiggy",
-  "text": "Count on from five: six, seven\u2026",
+  "text": "Count on from five: six, seven…",
   "group": "day2",
   "settings": "line",
   "file": "audio/voice/tiggy/8ce1328ad4.mp3"
@@ -4390,7 +4390,7 @@
  },
  {
   "speaker": "milo",
-  "text": "Hello Haytham! I\u2019m Milo. Let\u2019s explore the ocean and make some amazing discoveries together.",
+  "text": "Hello Haytham! I’m Milo. Let’s explore the ocean and make some amazing discoveries together.",
   "group": "day2 extra",
   "settings": "line",
   "file": "audio/voice/milo/49fcf2601a.mp3"
@@ -4418,7 +4418,7 @@
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s keep going!",
+  "text": "Let’s keep going!",
   "group": "day2 extra",
   "settings": "line",
   "file": "audio/voice/milo/240aa446de.mp3"
@@ -4432,7 +4432,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Here\u2019s a real shark fact.",
+  "text": "Here’s a real shark fact.",
   "group": "day2 extra",
   "settings": "line",
   "file": "audio/voice/gizmo/65b3cb47be.mp3"
@@ -4663,7 +4663,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Its name means \u201cbig tooth\u201d.",
+  "text": "Its name means “big tooth”.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/094fa21ead.mp3"
@@ -4712,7 +4712,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Megalodon.",
+  "text": "Let’s meet Megalodon.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/d79dcba619.mp3"
@@ -4845,7 +4845,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Whale shark.",
+  "text": "Let’s meet Whale shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/a68f5f35a9.mp3"
@@ -4936,7 +4936,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Great white shark.",
+  "text": "Let’s meet Great white shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/c857f8fbc6.mp3"
@@ -5034,7 +5034,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Scalloped hammerhead.",
+  "text": "Let’s meet Scalloped hammerhead.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/1f63e263f9.mp3"
@@ -5048,7 +5048,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Why \u201ctiger\u201d?",
+  "text": "Why “tiger”?",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/187824e738.mp3"
@@ -5097,7 +5097,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Tiger shark.",
+  "text": "Let’s meet Tiger shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/3154298532.mp3"
@@ -5167,7 +5167,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "What can a goblin shark\u2019s jaws do?",
+  "text": "What can a goblin shark’s jaws do?",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/bbb0371668.mp3"
@@ -5188,7 +5188,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Goblin shark.",
+  "text": "Let’s meet Goblin shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/36eee1e70a.mp3"
@@ -5265,7 +5265,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Shortfin mako.",
+  "text": "Let’s meet Shortfin mako.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/14a9e5f81c.mp3"
@@ -5370,7 +5370,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Basking shark.",
+  "text": "Let’s meet Basking shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/8ae26eb29c.mp3"
@@ -5461,7 +5461,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Epaulette shark.",
+  "text": "Let’s meet Epaulette shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/78e9772125.mp3"
@@ -5552,7 +5552,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "What shape is a Port Jackson shark\u2019s egg case?",
+  "text": "What shape is a Port Jackson shark’s egg case?",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/19295a0d44.mp3"
@@ -5573,7 +5573,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Port Jackson shark.",
+  "text": "Let’s meet Port Jackson shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/bd4f84a6cd.mp3"
@@ -5685,7 +5685,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Spotted wobbegong.",
+  "text": "Let’s meet Spotted wobbegong.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/0d62d214ed.mp3"
@@ -5776,7 +5776,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Not many are left on Australia\u2019s east coast, so the law protects them.",
+  "text": "Not many are left on Australia’s east coast, so the law protects them.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/5d13e8f49c.mp3"
@@ -5804,7 +5804,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Grey nurse shark.",
+  "text": "Let’s meet Grey nurse shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/33c0359d81.mp3"
@@ -5909,7 +5909,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Bull shark.",
+  "text": "Let’s meet Bull shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/dbed40fb86.mp3"
@@ -5979,7 +5979,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Young blacktips stay in very shallow water near the beach, where big animals can\u2019t easily reach them.",
+  "text": "Young blacktips stay in very shallow water near the beach, where big animals can’t easily reach them.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/e52708702d.mp3"
@@ -6007,7 +6007,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Blacktip reef shark.",
+  "text": "Let’s meet Blacktip reef shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/df7d7117c6.mp3"
@@ -6112,7 +6112,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Thresher shark.",
+  "text": "Let’s meet Thresher shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/c09712fcb4.mp3"
@@ -6224,7 +6224,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Greenland shark.",
+  "text": "Let’s meet Greenland shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/2d9d07b102.mp3"
@@ -6329,14 +6329,14 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Let\u2019s meet Zebra shark.",
+  "text": "Let’s meet Zebra shark.",
   "group": "encyclopedia core",
   "settings": "line",
   "file": "audio/voice/gizmo/9eeded5362.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "A group of sharks can be called a\u2026.",
+  "text": "A group of sharks can be called a….",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/291d0d32bf.mp3"
@@ -6511,7 +6511,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Look behind a shark\u2019s head.",
+  "text": "Look behind a shark’s head.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/4b24a6cc4c.mp3"
@@ -6693,7 +6693,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "\u201cDermal denticle\u201d means a little skin tooth.",
+  "text": "“Dermal denticle” means a little skin tooth.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/50f917545a.mp3"
@@ -6721,7 +6721,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "What covers a shark\u2019s skin?",
+  "text": "What covers a shark’s skin?",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/54c4a7a692.mp3"
@@ -6791,7 +6791,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Sharks\u2019 ears are inside their heads.",
+  "text": "Sharks’ ears are inside their heads.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/981e83bca9.mp3"
@@ -6819,14 +6819,14 @@
  },
  {
   "speaker": "gizmo",
-  "text": "A shark\u2019s lateral line can sense water moving.",
+  "text": "A shark’s lateral line can sense water moving.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/4d9e39c38a.mp3"
  },
  {
   "speaker": "gizmo",
-  "text": "What are a shark\u2019s nostrils for?",
+  "text": "What are a shark’s nostrils for?",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/a835538120.mp3"
@@ -6896,7 +6896,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "A hammerhead\u2019s broad head spreads its sensors over a wide area.",
+  "text": "A hammerhead’s broad head spreads its sensors over a wide area.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/405ba3803a.mp3"
@@ -6938,7 +6938,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Someone\u2019s thoughts.",
+  "text": "Someone’s thoughts.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/1282077177.mp3"
@@ -7043,7 +7043,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "What\u2019s for dinner?.",
+  "text": "What’s for dinner?.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/085b6657f8.mp3"
@@ -7106,7 +7106,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "A change to one animal\u2019s numbers can affect others in the web.",
+  "text": "A change to one animal’s numbers can affect others in the web.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/b78ecfc53f.mp3"
@@ -7281,7 +7281,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Scientists use tags to learn about sharks\u2019 movements.",
+  "text": "Scientists use tags to learn about sharks’ movements.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/3ab8f1d2ba.mp3"
@@ -7295,7 +7295,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "A track from one shark is a clue, not a map of every shark\u2019s journey.",
+  "text": "A track from one shark is a clue, not a map of every shark’s journey.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/ab856952b9.mp3"
@@ -7344,7 +7344,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Megalodon\u2019s fossil story.",
+  "text": "Megalodon’s fossil story.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/8cc423b11a.mp3"
@@ -7372,7 +7372,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "Teeth preserve more easily than a shark\u2019s cartilage skeleton.",
+  "text": "Teeth preserve more easily than a shark’s cartilage skeleton.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/7b09cb491a.mp3"
@@ -7547,7 +7547,7 @@
  },
  {
   "speaker": "gizmo",
-  "text": "The strong, bendy material that makes a shark\u2019s skeleton.",
+  "text": "The strong, bendy material that makes a shark’s skeleton.",
   "group": "encyclopedia school",
   "settings": "line",
   "file": "audio/voice/gizmo/91eeeb660c.mp3"
@@ -7736,7 +7736,7 @@
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s draw a shark together, Haytham!",
+  "text": "Let’s draw a shark together, Haytham!",
   "group": "draw a shark",
   "settings": "line",
   "file": "audio/voice/dash/79f4c1eddf.mp3"
@@ -7750,7 +7750,7 @@
  },
  {
   "speaker": "dash",
-  "text": "First, draw a big curve for the shark\u2019s back. Start at the nose dot.",
+  "text": "First, draw a big curve for the shark’s back. Start at the nose dot.",
   "group": "draw a shark",
   "settings": "line",
   "file": "audio/voice/dash/0f3830b1a0.mp3"
@@ -7813,7 +7813,7 @@
  },
  {
   "speaker": "dash",
-  "text": "What an amazing shark, Haytham! You\u2019re a real artist. Pearls for your collection!",
+  "text": "What an amazing shark, Haytham! You’re a real artist. Pearls for your collection!",
   "group": "draw a shark",
   "settings": "line",
   "file": "audio/voice/dash/6c6e890c45.mp3"
@@ -7841,7 +7841,7 @@
  },
  {
   "speaker": "dash",
-  "text": "Draw any shark you like. Look at Dash\u2019s shark if you want an idea.",
+  "text": "Draw any shark you like. Look at Dash’s shark if you want an idea.",
   "group": "draw a shark",
   "settings": "line",
   "file": "audio/voice/dash/c9322f490e.mp3"
@@ -8100,91 +8100,91 @@
  },
  {
   "speaker": "milo",
-  "text": "Gizmo has a new shark discovery for us, Haytham. Let\u2019s explore together.",
+  "text": "Gizmo has a new shark discovery for us, Haytham. Let’s explore together.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/eb036db73d.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Hello, Haytham! I\u2019m happy to be here with you.",
+  "text": "Hello, Haytham! I’m happy to be here with you.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/5b392cd7e4.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m a megalodon too! I\u2019m your make-believe friend. Let\u2019s meet real sharks and learn about my prehistoric family.",
+  "text": "I’m a megalodon too! I’m your make-believe friend. Let’s meet real sharks and learn about my prehistoric family.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/0f4c115120.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m right here, Haytham. Start at the dot, take your time, and have a go.",
+  "text": "I’m right here, Haytham. Start at the dot, take your time, and have a go.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/583a7efb17.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m with you, Haytham. Let\u2019s help Willa follow the clues.",
+  "text": "I’m with you, Haytham. Let’s help Willa follow the clues.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/8fd59b7546.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m with you, Haytham. Let\u2019s listen and look with Willa.",
+  "text": "I’m with you, Haytham. Let’s listen and look with Willa.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/d2ffe73d27.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019ve saved you a seat, Haytham. Let\u2019s watch together when the films are ready.",
+  "text": "I’ve saved you a seat, Haytham. Let’s watch together when the films are ready.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/2aa285d596.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019ve saved you a seat, Haytham. We\u2019ll watch shark adventures together when the films are ready.",
+  "text": "I’ve saved you a seat, Haytham. We’ll watch shark adventures together when the films are ready.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/0f47903f1b.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s read this page together. Tap a word if you want to hear it.",
+  "text": "Let’s read this page together. Tap a word if you want to hear it.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/269402eb1b.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s read together! Tap a word for help, or listen while you follow along.",
+  "text": "Let’s read together! Tap a word for help, or listen while you follow along.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/0dce5f7728.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s take a Learning Adventure. I\u2019ll be here to help, one little discovery at a time.",
+  "text": "Let’s take a Learning Adventure. I’ll be here to help, one little discovery at a time.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/af8755b27a.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Look at everything you\u2019ve discovered! I\u2019m proud of your practising.",
+  "text": "Look at everything you’ve discovered! I’m proud of your practising.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/81a691477e.mp3"
  },
  {
   "speaker": "milo",
-  "text": "My reef friends are here to help, Haytham. I\u2019m staying right here with you!",
+  "text": "My reef friends are here to help, Haytham. I’m staying right here with you!",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/c4cb842014.mp3"
@@ -8205,14 +8205,14 @@
  },
  {
   "speaker": "milo",
-  "text": "You finished the story! Let\u2019s think about what happened.",
+  "text": "You finished the story! Let’s think about what happened.",
   "group": "milo",
   "settings": "line",
   "file": "audio/voice/milo/c7e2746ef5.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m right here with you, Haytham.",
+  "text": "I’m right here with you, Haytham.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/0418e89a79.mp3"
@@ -8233,7 +8233,7 @@
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s learn with our friends, then race!",
+  "text": "Let’s learn with our friends, then race!",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/8f87158060.mp3"
@@ -8268,14 +8268,14 @@
  },
  {
   "speaker": "milo",
-  "text": "I\u2019ve saved you a seat, Haytham.",
+  "text": "I’ve saved you a seat, Haytham.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/bd068069a4.mp3"
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s watch together when the films are ready.",
+  "text": "Let’s watch together when the films are ready.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/17b3ec9e4c.mp3"
@@ -8310,14 +8310,14 @@
  },
  {
   "speaker": "milo",
-  "text": "Look at everything you\u2019ve discovered!",
+  "text": "Look at everything you’ve discovered!",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/3a13eab6c2.mp3"
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m proud of your practising.",
+  "text": "I’m proud of your practising.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/bbfbd9b74c.mp3"
@@ -8408,14 +8408,14 @@
  },
  {
   "speaker": "tiggy",
-  "text": "I\u2019m here with you.",
+  "text": "I’m here with you.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/tiggy/00a232a110.mp3"
  },
  {
   "speaker": "tiggy",
-  "text": "Let\u2019s have another go.",
+  "text": "Let’s have another go.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/tiggy/1afa5a8351.mp3"
@@ -8492,7 +8492,7 @@
  },
  {
   "speaker": "dash",
-  "text": "Captain\u2019s c",
+  "text": "Captain’s c",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/dash/5f3c093344.mp3"
@@ -8562,7 +8562,7 @@
  },
  {
   "speaker": "milo",
-  "text": "Willa\u2019s Secret Reef",
+  "text": "Willa’s Secret Reef",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/b8f86f2bc2.mp3"
@@ -8576,7 +8576,7 @@
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s read together!",
+  "text": "Let’s read together!",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/4069a3408e.mp3"
@@ -8597,7 +8597,7 @@
  },
  {
   "speaker": "milo",
-  "text": "Let\u2019s explore together.",
+  "text": "Let’s explore together.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/2f8e355670.mp3"
@@ -8625,7 +8625,7 @@
  },
  {
   "speaker": "milo",
-  "text": "I\u2019m right here.",
+  "text": "I’m right here.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/milo/52917165e8.mp3"
@@ -8667,7 +8667,7 @@
  },
  {
   "speaker": "tiggy",
-  "text": "Let\u2019s look again.",
+  "text": "Let’s look again.",
   "group": "monkey",
   "settings": "line",
   "file": "audio/voice/tiggy/77ade5113f.mp3"
@@ -8702,28 +8702,28 @@
  },
  {
   "speaker": "willa",
-  "text": "\u201cCome, Haytham!",
+  "text": "“Come, Haytham!",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/33f5309529.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201d says Milo.",
+  "text": "” says Milo.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/61fce0f396.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cLet us look at the light.",
+  "text": "“Let us look at the light.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/db0fd07aec.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201d",
+  "text": "”",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/d253bdca39.mp3"
@@ -8737,7 +8737,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s find out where that lovely light is coming from.",
+  "text": "Let’s find out where that lovely light is coming from.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/1b578a3de3.mp3"
@@ -8772,35 +8772,35 @@
  },
  {
   "speaker": "willa",
-  "text": "\u201cIs it a ghost?",
+  "text": "“Is it a ghost?",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/583d9a4574.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201d asks the crab.",
+  "text": "” asks the crab.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/f94a7a3bb9.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cI can see it glow!",
+  "text": "“I can see it glow!",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/ad40085b2f.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cIs it a sea ghost?",
+  "text": "“Is it a sea ghost?",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/07372e0f1b.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201d whispers the crab.",
+  "text": "” whispers the crab.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/45ede944da.mp3"
@@ -8814,7 +8814,7 @@
  },
  {
   "speaker": "willa",
-  "text": "\u201cLet\u2019s look carefully before we decide.",
+  "text": "“Let’s look carefully before we decide.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/489f0bf020.mp3"
@@ -8877,35 +8877,35 @@
  },
  {
   "speaker": "willa",
-  "text": "\u201cNo ghost!",
+  "text": "“No ghost!",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/f26d727bfb.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cIt is a fun lamp!",
+  "text": "“It is a fun lamp!",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/79fbb1bd99.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cWe solved the mystery!",
+  "text": "“We solved the mystery!",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/612f9c59d7.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cIt wasn\u2019t a ghost at all.",
+  "text": "“It wasn’t a ghost at all.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/1b97455522.mp3"
  },
  {
   "speaker": "willa",
-  "text": "It was our friend\u2019s Halloween lantern.",
+  "text": "It was our friend’s Halloween lantern.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/b511111ac9.mp3"
@@ -8996,21 +8996,21 @@
  },
  {
   "speaker": "willa",
-  "text": "\u201cI can help,\u201d says Milo.",
+  "text": "“I can help,” says Milo.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/f6f7489364.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cLet us lift the net.",
+  "text": "“Let us lift the net.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/3d74ddfb10.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201cLet\u2019s think together,\u201d says Milo.",
+  "text": "“Let’s think together,” says Milo.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/91c7e3524d.mp3"
@@ -9059,14 +9059,14 @@
  },
  {
   "speaker": "willa",
-  "text": "\u201cThank you!",
+  "text": "“Thank you!",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/cdfe75acc5.mp3"
  },
  {
   "speaker": "willa",
-  "text": "\u201d says the fish.",
+  "text": "” says the fish.",
   "group": "story",
   "settings": "line",
   "file": "audio/voice/willa/a0d3e59f2c.mp3"
@@ -9290,7 +9290,7 @@
  },
  {
   "speaker": "willa",
-  "text": "Let\u2019s",
+  "text": "Let’s",
   "group": "story word",
   "settings": "line",
   "file": "audio/voice/willa/0dc1c50a9b.mp3"
@@ -9731,7 +9731,7 @@
  },
  {
   "speaker": "willa",
-  "text": "wasn\u2019t",
+  "text": "wasn’t",
   "group": "story word",
   "settings": "line",
   "file": "audio/voice/willa/e44323a769.mp3"
@@ -9759,7 +9759,7 @@
  },
  {
   "speaker": "willa",
-  "text": "friend\u2019s",
+  "text": "friend’s",
   "group": "story word",
   "settings": "line",
   "file": "audio/voice/willa/68374e75b0.mp3"
@@ -10298,21 +10298,21 @@
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s make an a for our adventure log.",
+  "text": "Let’s make an a for our adventure log.",
   "group": "names",
   "settings": "line",
   "file": "audio/voice/dash/066711fb5f.mp3"
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s make a t for our treasure label.",
+  "text": "Let’s make a t for our treasure label.",
   "group": "names",
   "settings": "line",
   "file": "audio/voice/dash/b4b6cca258.mp3"
  },
  {
   "speaker": "dash",
-  "text": "Let\u2019s write cat for our pretend ship\u2019s cat.",
+  "text": "Let’s write cat for our pretend ship’s cat.",
   "group": "names",
   "settings": "line",
   "file": "audio/voice/dash/281e76c0c6.mp3"
@@ -10466,7 +10466,7 @@
  },
  {
   "speaker": "milo",
-  "text": "A sea turtle can\u2019t pull its head into its shell like a tortoise can.",
+  "text": "A sea turtle can’t pull its head into its shell like a tortoise can.",
   "group": "reef taps",
   "settings": "line",
   "file": "audio/voice/milo/9994cc62bc.mp3"
@@ -10515,7 +10515,7 @@
  },
  {
   "speaker": "tiggy",
-  "text": "That\u2019s how we learn.",
+  "text": "That’s how we learn.",
   "group": "final",
   "settings": "line",
   "file": "audio/voice/tiggy/4f81ce81c9.mp3"
@@ -11639,5 +11639,453 @@
   "group": "final",
   "settings": "line",
   "file": "audio/voice/dash/b312a2a10e.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let’s draw a fish together, Haytham!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/1ef867e4e3.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew a fish!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/4de85f55e8.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now pick a crayon and colour it in.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/e3926eabf1.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a big lemon shape for the fish’s body.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/54206d2341.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Start at the dot and go all the way round.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/dd3d8ac222.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now a triangle for the tail.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/eafb759718.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a round eye near the front.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/dd3ce46cc5.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Last one!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/6a8cb06f73.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Add a little fin on top, and a stripe down the middle.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/58977a68df.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw your own fish.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/8a9a185c17.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Look at Dash’s picture if you want an idea.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/2998ad74f6.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let’s draw a starfish together, Haytham!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/a7e4ca9e17.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew a starfish!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/0be90205a2.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Start at the top dot.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/fd57e0684c.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Go down and out, up and in, all the way round to make five points.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/16de5a954f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Starfish are bumpy.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/4c57c6d7f6.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw three little spots in the middle.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/d82c090f67.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw your own starfish.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/2ec173fa36.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let’s draw a sea turtle together, Haytham!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/9241468759.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew a sea turtle!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/3f07a7ce98.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a big hill for the shell, then a straight line along the bottom.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/cf6e76f09f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now a round head poking out at the front.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/e4f1fc6beb.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sea turtles have flippers for swimming.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/d201d16d93.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw two pointy flippers underneath.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/19cfa93bdb.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Give the shell a pattern, like a little house on top.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/0481fcf518.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "A little eye on the head.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/f0e944c2c8.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw your own turtle.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/788375190f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let’s draw a crab together, Haytham!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/8d7cf4199a.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew a crab!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/718989cf46.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a wide oval for the crab’s body.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/4d3b8e8f37.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Crabs have eyes on sticks!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/a1ce6a8772.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw two lines going up.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/fddd5f31dc.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now a round eye on top of each stick.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/439966fd89.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw two arms with snappy claws, like the letter V.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/cd5131cbc7.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Two little legs on each side.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/393250ef97.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw your own crab.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/63005ccf25.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let’s draw an octopus together, Haytham!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/162637e88c.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew an octopus!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/8d25dfbe52.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a big round head, like an upside-down bowl.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/a44ce62504.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now the wiggly arms.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/57daa7e5c2.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw four wavy lines going down.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/a3eabca7cf.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Two big round eyes.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/199e10e5af.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "A happy smile.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/29e0b5b069.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw your own octopus.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/41db033c56.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Let’s draw a whale together, Haytham!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/8fe0c2535f.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew a whale!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/b395953fed.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a big round body, like a giant jelly bean.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/08fdc14313.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now the tail, with two big flukes.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/0849234274.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a little eye.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/bfed268e79.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Whales breathe air through a blowhole.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/3b99fd924d.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw a spout of water on top!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/d130da721b.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "A long, happy smile.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/4a6acdb2a4.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw your own whale.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/383b247ee8.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "You drew a whole shark!",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/0bb5896386.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "First, draw a big curve for the shark’s back.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/0807019dd1.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Start at the nose dot.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/a7b65c626d.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now the tummy.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/eb9dfe6468.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Start at the nose again and curve down and along.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/d4f4ea6a8a.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Now the tail.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/b9c37e9531.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Go up to a point, back to the middle, then down to a point.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/9fe6fe7f0e.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Add a side fin underneath.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/95549263a1.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sharks use it to steer.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/90f1555b2a.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Sharks breathe with gills.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/5cd2bacbc5.mp3"
+ },
+ {
+  "speaker": "dash",
+  "text": "Draw three little curvy lines.",
+  "group": "drawing school",
+  "settings": "line",
+  "file": "audio/voice/dash/0d09a2174e.mp3"
  }
 ]

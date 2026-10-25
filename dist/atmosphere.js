@@ -107,7 +107,10 @@ function updateMusicButton() {
 async function updateAdventureMusic() {
   if (!musicUnlocked || !musicEnabled || !musicContext) return;
   const route = (location.hash.slice(1) || 'home').split('/')[0],
-    track = (oceanWorlds[route] || oceanWorlds.home).track;
+    // The race has its own livelier tune; drawing shares the calm writing theme.
+    track =
+      { race: 'race', draw: 'writing', path: 'learning', library: 'home' }[route] ||
+      (oceanWorlds[route] || oceanWorlds.home).track;
   if (musicCurrent && musicCurrentTrack === track) {
     fadeMusic(musicCurrent, musicTarget());
     return;
@@ -121,12 +124,19 @@ async function updateAdventureMusic() {
       gain = musicContext.createGain();
     source.buffer = buffer;
     source.loop = true;
+    // Each music file carries a 0.064 s wrap-around margin at both ends (research/music/
+    // compose.py); looping the middle keeps the repeat seamless on every device.
+    const pad = 2048 / 32000;
+    if (buffer.duration > pad * 4) {
+      source.loopStart = pad;
+      source.loopEnd = buffer.duration - pad;
+    }
     gain.gain.value = 0;
     source.connect(gain);
     gain.connect(musicContext.destination);
     musicCurrent = { source, gain };
     musicCurrentTrack = track;
-    source.start();
+    source.start(0, buffer.duration > (2048 / 32000) * 4 ? 2048 / 32000 : 0);
     fadeMusic(musicCurrent, musicTarget(), 1200);
     if (previous) {
       fadeMusic(previous, 0, 1000);
