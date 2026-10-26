@@ -160,13 +160,35 @@ function playVoiceClips(files, text, options = {}, fallback) {
     speaking(false);
     options.end?.();
   };
+  // A recording that won't play (still downloading, or a network hiccup) is fetched and tried
+  // again rather than handed to the iPad voice, which Haytham noticed and disliked (27 Oct).
+  // Only if it still can't play does the line end quietly; its words are on screen.
+  let retried = false;
   const fail = () => {
+    if (!active()) return;
+    if (!retried) {
+      retried = true;
+      const file = files[Math.max(0, index - 1)];
+      clearTimeout(voiceLineWatchdog);
+      voiceLineWatchdog = setTimeout(() => active() && !started && giveUp(), 9000);
+      fetch(file)
+        .then(r => (r.ok ? r.blob() : Promise.reject()))
+        .then(() => {
+          if (!active()) return;
+          index = Math.max(0, index - 1);
+          next();
+        })
+        .catch(giveUp);
+      return;
+    }
+    giveUp();
+  };
+  const giveUp = () => {
     if (!active()) return;
     stopVoiceLine();
     speaking(false);
-    // Nothing played yet: let the device voice say it instead, so no line is ever lost.
-    if (!started && fallback) fallback();
-    else options.end?.();
+    logVoiceGap('could not play', speaker, text);
+    options.end?.();
   };
   const next = () => {
     if (!active()) return;
@@ -189,11 +211,11 @@ function playVoiceClips(files, text, options = {}, fallback) {
   voiceLinePlayer.onpause = () => {
     if (active() && started && !voiceLinePlayer.ended) finish();
   };
-  // Safety net: if a recording hasn't started within 2 seconds, say it with the device voice.
+  // Safety net: a recording that hasn't started within 3 seconds is fetched and tried again.
   clearTimeout(voiceLineWatchdog);
   voiceLineWatchdog = setTimeout(() => {
     if (active() && !started) fail();
-  }, 2000);
+  }, 3000);
   next();
 }
 // Tap a sound tile to hear Willa say that Jolly Phonics sound.
@@ -204,3 +226,49 @@ function playPhonicsSound(id) {
   playVoiceClips([file], id, { speaker: 'willa' });
   return true;
 }
+
+/* Lines that used the iPad voice, or a recording that couldn't play, are noted on this device
+ * (grown-ups' area → "Voice check") so they can be recorded. Never more than 200. */
+function logVoiceGap(kind, speaker, text) {
+  try {
+    const key = 'haytham-voice-gaps',
+      gaps = JSON.parse(localStorage.getItem(key) || '[]'),
+      line = String(text || '').trim().slice(0, 300);
+    if (!line) return;
+    const found = gaps.find(g => g.text === line && g.speaker === speaker && g.kind === kind);
+    if (found) {
+      found.count++;
+      found.at = new Date().toISOString();
+    } else gaps.push({ kind, speaker, text: line, count: 1, at: new Date().toISOString(), where: location.hash });
+    localStorage.setItem(key, JSON.stringify(gaps.slice(-200)));
+  } catch {}
+}
+function voiceGaps() {
+  try {
+    return JSON.parse(localStorage.getItem('haytham-voice-gaps') || '[]');
+  } catch {
+    return [];
+  }
+}
+
+/* Get ahead: when a lesson starts, fetch the recordings for all of its questions, hints and
+ * answers in the background, so each line is already on the iPad when it's needed. */
+let voicePrefetchedGame = null;
+function prefetchLessonVoices() {
+  if (typeof game === 'undefined' || !game || game === voicePrefetchedGame || !game.items) return;
+  voicePrefetchedGame = game;
+  const speaker =
+    { reading: 'willa', maths: 'tiggy', science: 'gizmo', writing: 'dash' }[game.type] ||
+    (typeof crewForRoute === 'function' ? crewForRoute() : null) ||
+    'milo';
+  const files = new Set();
+  for (const q of game.items)
+    for (const t of [q.prompt, q.spoken, q.hint, q.reveal, q.ask, q.fact])
+      if (typeof t === 'string')
+        (voiceClipsForAnyone(t, speaker)?.files || []).forEach(f => files.add(f));
+  let delay = 0;
+  for (const f of files) setTimeout(() => fetch(f).catch(() => {}), (delay += 120));
+}
+new MutationObserver(() => setTimeout(prefetchLessonVoices, 50)).observe(document.getElementById('app'), {
+  childList: true
+});

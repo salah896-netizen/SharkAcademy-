@@ -7,8 +7,8 @@
 (function () {
   if (!('caches' in window) || !('serviceWorker' in navigator)) return;
   const MEDIA = 'haytham-media-v1',
-    BATCH = 6,
-    PAUSE = 1500;
+    BATCH = 8,
+    PAUSE = 400;
   function mediaUrls() {
     const urls = new Set();
     if (typeof voiceManifest !== 'undefined') {
@@ -40,7 +40,7 @@
     window.mediaDownload = { total: mediaUrls().length, left: queue.length };
     while (queue.length) {
       if (busy()) {
-        await new Promise(r => setTimeout(r, 5000));
+        await new Promise(r => setTimeout(r, 1500));
         continue;
       }
       const batch = queue.splice(0, BATCH);
@@ -50,7 +50,7 @@
       await new Promise(r => setTimeout(r, PAUSE));
     }
   }
-  const start = () => setTimeout(() => run().catch(() => {}), 8000);
+  const start = () => setTimeout(() => run().catch(() => {}), 3000);
   if (document.readyState === 'complete') start();
   else window.addEventListener('load', start);
 })();

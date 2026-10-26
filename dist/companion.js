@@ -94,6 +94,7 @@ function speak(t, options = {}) {
     playVoiceClips(clips, t, options, () => speakWithDevice(t, options));
     return;
   }
+  if (typeof logVoiceGap === 'function') logVoiceGap('iPad voice', options.speaker || 'milo', t);
   speakWithDevice(t, options);
 }
 function speakWithDevice(t, options = {}) {

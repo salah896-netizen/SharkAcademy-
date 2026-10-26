@@ -114,3 +114,13 @@
 .science-tank .emoji-pic {
   font-size: clamp(56px, 7vw, 84px);
 }
+.voice-gap-list {
+  max-height: 220px;
+  overflow: auto;
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: 20px;
+}
+.voice-gap-list small {
+  opacity: 0.6;
+}
