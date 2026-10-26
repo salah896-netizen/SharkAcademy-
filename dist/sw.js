@@ -32,6 +32,8 @@ const FILES = [
   './quiz-photos.js',
   './quiz-pictures.js',
   './quiz-pictures.css',
+  './lessons-more.js',
+  './lessons-more.css',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',
   './assets/icons/icon-192.png',

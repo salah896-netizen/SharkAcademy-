@@ -119,6 +119,34 @@ async def main():
         await page.wait_for_timeout(300)
         check(await ev('(state.writingHistory || []).length') == n0 + 1, 'writing: real trace accepted')
 
+        # Every lesson opens with a picture on every choice, and every line in it is recorded
+        await ev("location.hash = 'home'")
+        await page.wait_for_timeout(300)
+        blank = []
+        for lid in await ev('readingMissionLibrary.map(l => l.id)'):
+            await ev(f"startReadingMission('{lid}')")
+            await page.wait_for_timeout(120)
+            ok = await ev("[...document.querySelectorAll('[data-quest-choice]')].length >= 2 && [...document.querySelectorAll('[data-quest-choice]')].every(b => b.querySelector('svg, .emoji-pic, img'))")
+            if not ok:
+                blank.append(lid)
+        check(not blank, f'reading: every lesson shows pictures ({blank[:3]})')
+        for lid in await ev('mathsAdventures.map(l => l.id)'):
+            await ev(f"requestedMathsLesson = '{lid}'; start('maths')")
+            await page.wait_for_timeout(150)
+        for lid in await ev('scienceLessons.map(l => l.id)'):
+            await ev(f"startScienceMission('{lid}')")
+            await page.wait_for_timeout(150)
+        check(not errors, f'every maths and science lesson opens ({errors[:1]})')
+        unvoiced = await ev("""(() => { const bad = [], say = (t, sp) => t && !voiceClipsForAnyone(t, sp) && bad.push(t);
+            for (const l of readingMissionLibrary.filter(l => l.school)) for (const q of l.items) { say(q.prompt, 'willa'); say(q.hint, 'willa'); say(q.reveal, 'willa'); }
+            for (const l of scienceLessons) { say(l.intro, 'gizmo'); for (const q of l.items) { say(q.ask, 'gizmo'); say(q.reveal, 'gizmo'); } }
+            for (const l of writingAdventures) say(l.goal, 'dash');
+            for (const l of mathsAdventures) for (let n = 0; n < 12; n++) {
+              state.completed = Array.from({ length: n }, () => ({ type: 'maths' })); requestedMathsLesson = l.id;
+              makeQuestions('maths').forEach(q => { say(q.prompt, 'tiggy'); say(q.hint, 'tiggy'); }); }
+            state.completed = []; return bad })()""")
+        check(not unvoiced, f'every lesson line is recorded ({unvoiced[:3]})')
+
         check(not errors, f'no page errors ({errors[:2]})')
         await browser.close()
     if failures:

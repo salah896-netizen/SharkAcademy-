@@ -66,6 +66,8 @@ for line in lines:
         key = line['speaker'] + '|' + re.sub(r'\s+', ' ', t.replace('‘', "'").replace('’', "'")
                                              .replace('“', '"').replace('”', '"')).strip().lower()
         manifest['lines'][key] = line['file']
+        if key.endswith('?.'):
+            manifest['lines'][key[:-1]] = line['file']  # voiceKey turns '?.' into '?'
 
 open(D + 'voice-manifest.js', 'w').write(
     '/* Generated from the voice batch by voicegen/qa.py. Maps character + text to a recording. */\n'

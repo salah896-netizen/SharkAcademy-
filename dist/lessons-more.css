@@ -1,0 +1,116 @@
+/* More lessons: detailed colour pictures for new words, and the new maths screens. */
+.emoji-pic {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 1.2em;
+  font-size: clamp(54px, 8.5vw, 96px);
+  line-height: 1;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+.emoji-pic.small {
+  font-size: clamp(30px, 4.5vw, 52px);
+}
+.emoji-pic.big {
+  font-size: clamp(66px, 10.5vw, 118px);
+}
+.science-thing .emoji-pic,
+.lesson-card-art .emoji-pic {
+  font-size: clamp(70px, 11vw, 130px);
+}
+/* Maths: one more arriving, doubles, teen numbers. */
+.one-more-arrives {
+  animation: one-more-swim 1.2s ease-out both;
+}
+@keyframes one-more-swim {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+}
+.doubles-model > b {
+  width: 4px;
+  align-self: stretch;
+  background: #2c4a5755;
+  border-radius: 2px;
+  color: transparent;
+}
+.teen-model {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+/* Shapes: three big tappable shapes. */
+.shapes-model {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 36px);
+}
+.shape-choice {
+  width: clamp(110px, 18vw, 190px);
+  aspect-ratio: 1;
+  padding: 12px;
+}
+.shape-choice svg {
+  width: 100%;
+  height: 100%;
+}
+/* Longer or shorter: two sharks in lanes, noses lined up on the left. */
+.measure-model {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(720px, 86vw);
+}
+.measure-lane {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 90px;
+  padding: 8px 12px;
+  border-left: 6px solid #2c4a57;
+}
+.measure-shark {
+  height: clamp(70px, 12vh, 120px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+}
+.measure-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+}
+.measure-card .measure-shark {
+  height: 42px;
+}
+.countdown span:first-child {
+  color: #b5482f;
+}
+.shape-card {
+  width: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .one-more-arrives {
+    animation: none;
+  }
+}
+.teen-model {
+  flex-wrap: nowrap;
+}
+.teen-model .ten-frame {
+  width: min(300px, 38vw) !important;
+  height: auto;
+}
+.compare-model.measure-model {
+  width: min(760px, 86vw) !important;
+  max-width: none !important;
+}
+.science-tank .emoji-pic {
+  font-size: clamp(56px, 7vw, 84px);
+}
