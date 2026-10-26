@@ -191,8 +191,8 @@ function readingMissionAnswer(value) {
     b.disabled = true;
     b.classList.toggle('chosen-correct', q.options[+b.dataset.questChoice] === value);
   });
-  $('#questHint').hidden = true;
-  $('#questNext').hidden = false;
+  ($('#questHint') || {}).hidden = true;
+  ($('#questNext') || {}).hidden = false;
   $('#questFeedback').textContent = q.reveal;
   $('.quest-scroll').classList.add('clue-solved');
   encourage(q.reveal, 'highfive');

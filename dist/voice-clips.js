@@ -105,6 +105,8 @@ function voicePieces(sentence) {
   return files.length ? files : null;
 }
 function voiceSoundFile(id) {
+  // Letters that share a Jolly Phonics sound: c and k say ck; ll says l; oo says the long oo.
+  id = { c: 'ck', k: 'ck', ll: 'l', oo: 'oo-long' }[id] || id;
   return typeof voiceManifest !== 'undefined' ? voiceManifest.sounds[id] || null : null;
 }
 

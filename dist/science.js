@@ -445,8 +445,8 @@ function scienceAnswer(value, button) {
     b.disabled = true;
     b.classList.toggle('chosen-correct', b === button);
   });
-  $('#questHint').hidden = true;
-  $('#questNext').hidden = false;
+  ($('#questHint') || {}).hidden = true;
+  ($('#questNext') || {}).hidden = false;
   let line = q.reveal;
   if (predict) {
     // Show the test: the object drops to the bottom or bobs at the top of the water.

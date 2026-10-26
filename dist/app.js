@@ -358,8 +358,8 @@ function answer(value) {
     ? `You worked it out with help! +${stepPearls} pearls ✦`
     : `You worked it out! +${stepPearls} pearls ✦`;
   document.querySelectorAll('[data-choice]').forEach(b => (b.disabled = true));
-  $('#hint').hidden = true;
-  $('#next').hidden = false;
+  ($('#hint') || {}).hidden = true;
+  ($('#next') || {}).hidden = false;
   encourage(
     advanced
       ? 'You’re ready for a new learning stage, Haytham! Your next adventure will have a new challenge.'
@@ -554,7 +554,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v98');
+      const cache = await caches.open('haytham-sharks-v99');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',
