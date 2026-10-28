@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" preserveAspectRatio="xMidYMax slice">
+  <!-- The race pickers' backdrop (29 Oct 2026): a painted racing lagoon, lane ropes of floats,
+       start/finish buoys and a sandy floor, in the soft painted style. Mid-blue so the cream
+       headings stay readable and the track cards stand out. -->
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d93bd"/>
+      <stop offset=".55" stop-color="#2a7aa6"/>
+      <stop offset="1" stop-color="#1f6690"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy="0" r=".9">
+      <stop offset="0" stop-color="#d8f4ff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#d8f4ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9d5a2"/>
+      <stop offset="1" stop-color="#d4b97e"/>
+    </linearGradient>
+    <linearGradient id="sandBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5f9fae"/>
+      <stop offset="1" stop-color="#4f8d9f"/>
+    </linearGradient>
+    <radialGradient id="floatR" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#ffb3a6"/>
+      <stop offset=".6" stop-color="#e8604a"/>
+      <stop offset="1" stop-color="#b8432f"/>
+    </radialGradient>
+    <radialGradient id="floatW" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#f0f4f6"/>
+      <stop offset="1" stop-color="#c7d3da"/>
+    </radialGradient>
+    <radialGradient id="buoy" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#ffd9a6"/>
+      <stop offset=".6" stop-color="#f39039"/>
+      <stop offset="1" stop-color="#c2651f"/>
+    </radialGradient>
+    <radialGradient id="kelp" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#7fc196"/>
+      <stop offset=".6" stop-color="#4f9a72"/>
+      <stop offset="1" stop-color="#3a7c5a"/>
+    </radialGradient>
+    <radialGradient id="coral" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#ffc0ad"/>
+      <stop offset=".6" stop-color="#ee8a76"/>
+      <stop offset="1" stop-color="#c96a57"/>
+    </radialGradient>
+    <g id="flag">
+      <path d="M0 0V-46" stroke="#5d4e37" stroke-width="4" stroke-linecap="round"/>
+      <path d="M2 -46h30v20h-30z" fill="#fff" stroke="#3a4650" stroke-width="2"/>
+      <path d="M2 -46h7.5v5h-7.5zM17 -46h7.5v5h-7.5zM9.5 -41h7.5v5h-7.5zM24.5 -41h7.5v5h-7.5zM2 -36h7.5v5h-7.5zM17 -36h7.5v5h-7.5zM9.5 -31h7.5v5h-7.5zM24.5 -31h7.5v5h-7.5z" fill="#26323a"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="840" fill="url(#water)"/>
+  <ellipse cx="600" cy="0" rx="760" ry="360" fill="url(#glow)"/>
+  <path d="M150 0H250L90 840H-60Z M480 0H540L430 840H320Z M800 0H900L880 840H720Z M1060 0H1130L1200 620V0Z" fill="url(#ray)"/>
+
+  <!-- surface ripples -->
+  <g fill="none" stroke="#e6f7ff" stroke-width="3" stroke-linecap="round" opacity=".45">
+    <path d="M80 60Q110 44 140 60T200 60"/>
+    <path d="M940 90Q970 74 1000 90T1060 90"/>
+    <path d="M640 34Q662 22 684 34"/>
+  </g>
+
+  <!-- a lane rope of floats across the top -->
+  <path d="M-20 118Q600 98 1220 118" fill="none" stroke="#e9f2f5" stroke-width="2.5" opacity=".9"/>
+  <g stroke-width="1.6">
+    <ellipse cx="40" cy="115" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="120" cy="112" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="200" cy="110" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="280" cy="109" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="360" cy="108" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="440" cy="107" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="520" cy="106" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="600" cy="106" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="680" cy="106" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="760" cy="107" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="840" cy="108" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="920" cy="109" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="1000" cy="110" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+    <ellipse cx="1080" cy="112" rx="16" ry="9" fill="url(#floatW)" stroke="#9fb0ba"/>
+    <ellipse cx="1160" cy="115" rx="16" ry="9" fill="url(#floatR)" stroke="#a83a29"/>
+  </g>
+
+  <!-- distant racing silhouettes -->
+  <g fill="#bfe1ee" opacity=".28">
+    <path d="M90 330q40-22 90-14l30-20-6 26 6 26-30-20q-50 8-90-14z"/>
+    <path d="M1010 290q-36-20-80-12l-26-18 5 23-5 23 26-18q44 8 80-12z"/>
+  </g>
+
+  <!-- far sand -->
+  <path d="M0 640Q200 610 420 630T840 620T1200 610V840H0Z" fill="url(#sandBack)"/>
+  <g fill="#3f7f84" opacity=".55">
+    <path d="M260 640Q246 590 266 556Q280 530 270 500Q292 530 288 564Q282 600 288 640Z"/>
+    <path d="M930 630Q918 580 936 548Q950 520 940 492Q962 520 958 554Q952 590 958 630Z"/>
+  </g>
+
+  <!-- near sand -->
+  <path d="M0 720Q240 690 520 712T1000 706T1200 698V840H0Z" fill="url(#sand)"/>
+  <g fill="#c4a76a" opacity=".45">
+    <ellipse cx="330" cy="780" rx="28" ry="4"/>
+    <ellipse cx="780" cy="790" rx="36" ry="4"/>
+  </g>
+
+  <!-- left: kelp, coral and the start buoy -->
+  <g stroke-linejoin="round" stroke-width="2.5">
+    <path d="M40 750Q12 640 50 560Q82 494 58 410Q108 478 96 560Q82 650 92 750Z" fill="url(#kelp)" stroke="#2f6a4c"/>
+    <path d="M150 760Q142 712 162 694Q166 718 178 712Q174 684 192 670Q206 706 198 760Z" fill="url(#coral)" stroke="#a5523f"/>
+  </g>
+  <g transform="translate(250 742)">
+    <ellipse cx="0" cy="8" rx="30" ry="6" fill="#0b2d3a" opacity=".18"/>
+    <ellipse cx="0" cy="0" rx="22" ry="15" fill="url(#buoy)" stroke="#9a4e16" stroke-width="2.4"/>
+    <path d="M-12 -6Q-6 -11 2 -11" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8"/>
+    <use href="#flag" y="-10"/>
+  </g>
+
+  <!-- right: kelp, coral and the finish buoy -->
+  <g stroke-linejoin="round" stroke-width="2.5">
+    <path d="M1130 750Q1110 640 1142 570Q1168 510 1150 440Q1196 500 1186 576Q1176 660 1182 750Z" fill="url(#kelp)" stroke="#2f6a4c"/>
+    <path d="M1030 760Q1024 708 1046 694Q1050 720 1064 712Q1062 682 1080 670Q1096 708 1088 760Z" fill="url(#coral)" stroke="#a5523f"/>
+  </g>
+  <g transform="translate(950 736)">
+    <ellipse cx="0" cy="8" rx="30" ry="6" fill="#0b2d3a" opacity=".18"/>
+    <ellipse cx="0" cy="0" rx="22" ry="15" fill="url(#buoy)" stroke="#9a4e16" stroke-width="2.4"/>
+    <path d="M-12 -6Q-6 -11 2 -11" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8"/>
+    <use href="#flag" y="-10"/>
+  </g>
+
+  <!-- bubbles -->
+  <g fill="#fff" fill-opacity=".3" stroke="#fff" stroke-opacity=".75" stroke-width="1.5">
+    <circle cx="70" cy="380" r="8"/><circle cx="88" cy="340" r="5"/><circle cx="64" cy="310" r="4"/>
+    <circle cx="1150" cy="400" r="9"/><circle cx="1130" cy="352" r="5"/><circle cx="1162" cy="322" r="4"/>
+  </g>
+</svg>

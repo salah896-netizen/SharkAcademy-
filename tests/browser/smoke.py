@@ -188,6 +188,14 @@ async def main():
         bad = await ev("""(() => /[💡🐚◌]/u.test((document.querySelector('#questHint')?.textContent || '') + (document.querySelector('.quest-trail')?.textContent || '')) )()""")
         check(not bad, 'reading lesson: painted help and trail')
 
+        # Treasures and race pickers are painted (29 Oct, v111)
+        await ev("location.hash = 'collection'"); await page.wait_for_timeout(300)
+        bad = await ev("""[...document.querySelectorAll('.collect .treasure-art')].filter(s => !s.querySelector('svg')).length""")
+        emo = await ev("""/[🦈🐚🪸🦷🐢🏆🔒]/u.test(document.querySelector('.collection')?.textContent || '')""")
+        check(not bad and not emo, f'treasures: painted pictures and locks ({bad} missing, emoji {emo})')
+        await ev("location.hash = 'race'"); await page.wait_for_timeout(300)
+        check(await ev("document.body.dataset.calmScene === 'race-room' && !/[🔒🏁]/u.test(document.querySelector('.race-picker')?.textContent || '')"), 'race picker: painted backdrop, lock and flag')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

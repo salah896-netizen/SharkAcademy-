@@ -182,7 +182,7 @@ save = function () {
     const badge = document.createElement('div');
     badge.className = 'video-unlocked race-unlocked';
     badge.setAttribute('role', 'status');
-    badge.innerHTML = `<span aria-hidden="true">🏁</span><strong>New race track: ${track.name}!</strong>`;
+    badge.innerHTML = `<span aria-hidden="true">${paintedIcon('flag')}</span><strong>New race track: ${track.name}!</strong>`;
     document.body.append(badge);
     setTimeout(() => badge.remove(), 3800);
     // Milo says it too (a recorded line), after the pearl sound settles.
@@ -210,7 +210,7 @@ function raceTrackPicker() {
         have = Math.min(track.unlockAt, Number(state.xp) || 0),
         need = Math.max(0, track.unlockAt - have);
       // A locked track shows how full its pearl jar is: no reading needed.
-      return `<button class="race-track-card ${open ? '' : 'locked'}" data-race-track="${track.id}" aria-label="${track.name}${open ? '' : ', locked. ' + need + ' more pearls to open it'}">${trackThumb(track)}<strong>${track.name}</strong>${open ? '' : `<span class="race-lock"><b aria-hidden="true">🔒</b><span class="race-pearl-jar" aria-hidden="true"><i style="width:${Math.round((have / track.unlockAt) * 100)}%"></i></span><small aria-hidden="true">${have} / ${track.unlockAt}</small></span>`}</button>`;
+      return `<button class="race-track-card ${open ? '' : 'locked'}" data-race-track="${track.id}" aria-label="${track.name}${open ? '' : ', locked. ' + need + ' more pearls to open it'}">${trackThumb(track)}<strong>${track.name}</strong>${open ? '' : `<span class="race-lock"><b aria-hidden="true">${paintedIcon('lock')}</b><span class="race-pearl-jar" aria-hidden="true"><i style="width:${Math.round((have / track.unlockAt) * 100)}%"></i></span><small aria-hidden="true">${have} / ${track.unlockAt}</small></span>`}</button>`;
     })
     .join('')}</div></section>`;
   document.querySelectorAll('[data-race-track]').forEach(button => {
@@ -267,7 +267,7 @@ function raceStart(track, racerId) {
   const others = Object.keys(racers).filter(k => k !== racerId),
     seed = (state.races || []).length;
   const rivals = [others[seed % others.length], others[(seed + 2) % others.length]];
-  app.innerHTML = `<section class="race-screen race-scene-${track.id}" aria-label="${track.name} race"><div class="race-floor" aria-hidden="true"></div><div class="race-progress" aria-hidden="true"><i class="race-finish-flag">🏁</i>${[racerId, ...rivals].map((k, i) => `<img class="race-marker ${i === 0 ? 'you' : ''}" data-marker="${i}" src="${racers[k].image}" alt="">`).join('')}</div><div class="race-pearls" aria-live="polite"><span>0</span>/${RACE.maxPearls}</div><div class="race-lanes">${[0, 1, 2].map(l => `<button class="race-lane" data-lane="${l}" aria-label="Swim to lane ${l + 1}"></button>`).join('')}<div class="race-world"></div><div class="race-cue" hidden></div><img class="race-shark" src="${racers[racerId].image}" alt="${racers[racerId].name}"></div><button id="racePause" class="race-pause" aria-label="Pause the race" hidden><span aria-hidden="true">❚❚</span> Pause</button><div class="race-start"><button id="raceGo" class="primary">Go! <span aria-hidden="true">🏁</span></button><p>Tap a lane to swim there. Swim through the right shell to go faster!</p></div></section>`;
+  app.innerHTML = `<section class="race-screen race-scene-${track.id}" aria-label="${track.name} race"><div class="race-floor" aria-hidden="true"></div><div class="race-progress" aria-hidden="true"><i class="race-finish-flag">${paintedIcon('flag')}</i>${[racerId, ...rivals].map((k, i) => `<img class="race-marker ${i === 0 ? 'you' : ''}" data-marker="${i}" src="${racers[k].image}" alt="">`).join('')}</div><div class="race-pearls" aria-live="polite"><span>0</span>/${RACE.maxPearls}</div><div class="race-lanes">${[0, 1, 2].map(l => `<button class="race-lane" data-lane="${l}" aria-label="Swim to lane ${l + 1}"></button>`).join('')}<div class="race-world"></div><div class="race-cue" hidden></div><img class="race-shark" src="${racers[racerId].image}" alt="${racers[racerId].name}"></div><button id="racePause" class="race-pause" aria-label="Pause the race" hidden><span aria-hidden="true">❚❚</span> Pause</button><div class="race-start"><button id="raceGo" class="primary">Go! <span aria-hidden="true">${paintedIcon('flag')}</span></button><p>Tap a lane to swim there. Swim through the right shell to go faster!</p></div></section>`;
   const run = {
     track,
     racerId,
@@ -593,12 +593,12 @@ function finishRace(run) {
   const book = sharkBook.find(s => s.id === racers[run.racerId].book),
     fact = book.facts[(state.races.length - 1) % book.facts.length],
     trackBook = sharkBook.find(s => s.id === run.track.fact.shark);
-  const medal = ['🥇', '🥈', '🥉'][place - 1];
+  const medal = paintedIcon('medal-' + place);
   const words = ['first', 'second', 'third'][place - 1];
   const finishLine = `${racers[run.racerId].name} came ${words}! You caught ${run.pearls} ${run.pearls === 1 ? 'pearl' : 'pearls'} and found ${right} speed ${right === 1 ? 'shell' : 'shells'}.`;
   const overlay = document.createElement('div');
   overlay.className = 'race-results';
-  overlay.innerHTML = `<div class="race-result-card"><div class="race-medal" aria-hidden="true">${medal}</div><h2>${racers[run.racerId].name} came ${words}!</h2><div class="race-tally"><span><i class="tally-pearl"></i>${run.pearls}</span><span><i class="tally-shell"></i>${right} / ${run.shells.length}</span></div><div class="race-fact"><img src="assets/${book.image || 'visual-megalodon.jpg'}" alt="${book.name}"><div><strong>${book.name}${book.group === 'prehistoric' ? ' · extinct' : ''}</strong><p>${fact[1]}</p><button id="raceFactListen">♫ Hear the fact</button></div></div><p class="race-track-fact"><b>${run.track.name}:</b> ${run.track.fact.text}</p><div class="race-actions"><button id="raceAgain" class="primary">Race again</button><button id="raceTracks">Race tracks</button></div></div>`;
+  overlay.innerHTML = `<div class="race-result-card"><div class="race-medal" aria-hidden="true">${medal}</div><h2>${racers[run.racerId].name} came ${words}!</h2><div class="race-tally"><span><i class="tally-pearl"></i>${run.pearls}</span><span><i class="tally-shell">${paintedIcon('shell')}</i>${right} / ${run.shells.length}</span></div><div class="race-fact"><img src="assets/${book.image || 'visual-megalodon.jpg'}" alt="${book.name}"><div><strong>${book.name}${book.group === 'prehistoric' ? ' · extinct' : ''}</strong><p>${fact[1]}</p><button id="raceFactListen">♫ Hear the fact</button></div></div><p class="race-track-fact"><b>${run.track.name}:</b> ${run.track.fact.text}</p><div class="race-actions"><button id="raceAgain" class="primary">Race again</button><button id="raceTracks">Race tracks</button></div></div>`;
   app.querySelector('.race-screen').append(overlay);
   const factText = book.name + '. ' + fact[1];
   $('#raceFactListen').onclick = () => speak(factText, { speaker: 'gizmo' });

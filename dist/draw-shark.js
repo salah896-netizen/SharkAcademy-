@@ -320,7 +320,7 @@ function drawShark() {
       <div class="segmented draw-modes" role="group" aria-label="Drawing mode"><button data-draw-mode="steps" aria-pressed="${d.mode === 'steps'}" aria-label="Step by step">🦈 1 2 3</button><button data-draw-mode="free" aria-pressed="${d.mode === 'free'}" aria-label="Draw on my own">✏️</button></div>
       ${stepping ? `<div class="draw-steps" aria-label="Part ${d.step + 1} of ${sharkDrawSteps.length}">${sharkDrawSteps.map((s, i) => `<i class="${i < d.step ? 'done' : i === d.step ? 'now' : ''}">${i < d.step ? '✓' : i + 1}</i>`).join('')}</div>` : ''}
       <div class="draw-picks" role="group" aria-label="Choose what to draw">${seaDrawings.map(x => `<button class="draw-pick${x.id === drawing.id ? ' chosen' : ''}${(state.drawings || []).some(r => r.subject === x.id) ? ' drawn' : ''}" data-draw-pick="${x.id}" aria-label="Draw a ${x.name.toLowerCase()}" aria-pressed="${x.id === drawing.id}">${drawingThumb(x)}</button>`).join('')}</div>
-      <button class="draw-say" id="drawSay" aria-label="Hear Dash again">🔊 <span>${stepping ? `<b>${step.name}</b>` : colouring ? '🖍️' : '✏️'}</span></button>
+      <button class="draw-say" id="drawSay" aria-label="Hear Dash again">${paintedIcon('speaker-blue')} <span>${stepping ? `<b>${step.name}</b>` : colouring ? '🖍️' : '✏️'}</span></button>
     </div>
     <div class="draw-board"><svg viewBox="${view.x} ${view.y} ${view.w} ${view.h}" aria-hidden="true">${guide}</svg>${d.mode === 'free' ? `<svg class="draw-model" viewBox="${view.x - 8} ${view.y - 8} ${view.w + 16} ${view.h + 16}" aria-label="A ${drawing.name.toLowerCase()} to copy">${model}</svg>` : ''}<canvas id="drawCanvas" aria-label="Drawing page. Draw with your finger or Apple Pencil."></canvas></div>
     <div class="draw-tools">

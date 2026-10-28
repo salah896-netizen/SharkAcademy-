@@ -62,7 +62,10 @@ body[data-calm-tone] .quest-trail span:not(.found) {
     transform: scale(1);
   }
 }
-/* Music and voices */
+/* Music and voices: on dark screens the note sits on a pale button so it stays visible */
+body[data-calm-tone='dark'] #oceanVoice {
+  background: #eef6f2e6 !important;
+}
 #oceanVoice .p-icon {
   width: 1.25em;
   height: 1.25em;
@@ -72,6 +75,85 @@ body[data-calm-tone] .quest-trail span:not(.found) {
   width: 1.3em;
   height: 1.3em;
   vertical-align: -0.3em;
+}
+/* Rewards and race (29 Oct, v111) */
+.treasure-art .p-icon {
+  width: 2.3em;
+  height: 2.3em;
+}
+.treasure-art .sea-animal {
+  width: 3.6em;
+  height: 2.1em;
+}
+.treasure-art {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.treasure-art .milo-actor {
+  width: 3.6em;
+  height: 2.4em;
+}
+/* Locked treasures: a calm dashed card with a readable name and a painted lock. */
+body .collect.locked {
+  opacity: 1 !important;
+  background: #e9f0ea !important;
+  border: 2px dashed #a9c4bd !important;
+}
+body .collect.locked h3,
+body .collect.locked p {
+  color: #4f6f72 !important;
+  opacity: 1;
+}
+.collect.locked .treasure-art .p-icon {
+  width: 1.6em;
+  height: 1.6em;
+}
+.reward .p-icon {
+  width: 1.4em;
+  height: 1.4em;
+  filter: drop-shadow(0 6px 10px #f2c14e55);
+}
+.race-medal .p-icon {
+  width: 1.25em;
+  height: 1.25em;
+  filter: drop-shadow(0 4px 6px #0b2d3a33);
+}
+.tally-shell {
+  background: none !important;
+  border-radius: 0 !important;
+}
+.tally-shell .p-icon {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.race-lock b .p-icon {
+  width: 1.1em;
+  height: 1.1em;
+  filter: drop-shadow(0 3px 4px #0008);
+}
+.race-finish-flag .p-icon {
+  width: 1.1em;
+  height: 1.1em;
+}
+.path-toast strong .p-icon,
+.video-unlocked strong .p-icon,
+.video-unlocked > span .p-icon {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.3em;
+}
+.blend-ear .p-icon,
+#drawSay .p-icon {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.25em;
+}
+.tag .p-icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.45em;
 }
 @media (prefers-reduced-motion: reduce) {
   .quest-trail span.found .p-icon,

@@ -99,12 +99,12 @@ if ('speechSynthesis' in window)
   speechSynthesis.addEventListener('voiceschanged', populateVoicePicker);
 const shark = `<svg viewBox="0 0 450 260" role="img" aria-label="Milo, a friendly illustrated megalodon with realistic shark fins and colouring"><defs><linearGradient id="miloBody" x2="0.2" y2="1"><stop stop-color="#425e72"/><stop offset=".52" stop-color="#809da9"/><stop offset="1" stop-color="#c5d6d6"/></linearGradient><linearGradient id="miloFin" x2="1" y2="1"><stop stop-color="#354f63"/><stop offset="1" stop-color="#90aab3"/></linearGradient></defs><path d="M323 131Q367 100 409 38L391 121L374 147L407 211Q362 189 328 166" fill="url(#miloFin)"/><path d="M182 101Q196 64 216 25Q244 64 249 105" fill="url(#miloFin)"/><path d="M243 161L294 211L268 162" fill="#607f91"/><path d="M41 147Q80 112 128 101Q190 83 267 110Q323 121 353 146Q321 176 264 185Q165 206 83 179Q53 169 41 147" fill="url(#miloBody)"/><path d="M43 150Q111 165 174 162Q260 163 347 149Q305 186 220 190Q103 200 43 150" fill="#e2e6db"/><path d="M180 160Q194 183 239 235Q238 188 216 160" fill="url(#miloFin)"/><path d="M64 153Q91 166 126 158" fill="none" stroke="#334a53" stroke-width="3" stroke-linecap="round"/><path d="M82 158L86 164L91 160M99 161L103 166L108 161" fill="#fff9e6"/><circle cx="100" cy="137" r="6.5" fill="#142b36"/><circle cx="98" cy="135" r="2" fill="#f1f6ee"/><path d="M142 128Q151 143 145 158M155 126Q165 143 158 160M169 127Q179 144 172 161M182 130Q192 146 184 162M195 134Q205 148 197 163" fill="none" stroke="#4e6c7c" stroke-width="2.8" stroke-linecap="round"/><path d="M59 142Q114 109 172 108" fill="none" stroke="#c2d8db" stroke-width="2" opacity=".5"/><circle cx="59" cy="149" r="1.8" fill="#4d6770"/></svg>`;
 const rewards = [
-  ['🦈', 'Milo the megalodon', 0],
-  ['🐚', 'Pearl shell', 30],
-  ['🪸', 'Coral garden', 60],
-  ['🦷', 'Megalodon tooth', 100],
-  ['🐢', 'Turtle friend', 160],
-  ['🏆', 'Ocean explorer trophy', 240]
+  ['milo', 'Milo the megalodon', 0],
+  ['shell', 'Pearl shell', 30],
+  ['coral', 'Coral garden', 60],
+  ['tooth', 'Megalodon tooth', 100],
+  ['turtle', 'Turtle friend', 160],
+  ['trophy', 'Ocean explorer trophy', 240]
 ];
 const words = [
   ['fin', 'f · i · n', 'fin', 'fan', 'fit'],
@@ -300,7 +300,7 @@ function play() {
     return;
   }
   const q = game.items[game.index];
-  app.innerHTML = `<section class="game"><div class="game-top"><button class="quiet" id="exit">← Back to ocean</button><small>DISCOVERY ${game.index + 1} OF 5</small><button class="listen" id="listen" aria-label="Listen to instructions">♫ Listen</button></div><div class="track"><div style="width:${game.index * 20}%"></div></div><div class="game-panel"><span class="tag">${game.type === 'fossil' ? '🦷 ' + game.index + ' / 5 FOSSIL PIECES' : 'YOUR NEXT LITTLE CHALLENGE'}</span><h1 style="font-size:36px">${q.title}</h1><p id="prompt">${q.prompt}</p><div class="scene sentence">${q.scene}</div><div class="choices">${q.choices.map((c, i) => `<button class="choice shell-choice" data-choice="${i}"><svg viewBox="0 0 140 110" aria-hidden="true"><path d="M70 101L15 61Q-1 13 39 12Q65-3 70 16Q91-4 110 13Q145 11 130 60Z" fill="currentColor"/><path d="M70 100V23M70 100L33 26M70 100L111 27" stroke="white" stroke-opacity=".3" stroke-width="3"/></svg><span>${c}</span></button>`).join('')}</div><div class="feedback" aria-live="polite"></div><button class="quiet" id="hint">Help me, ${reefCrew[crewForRoute()].name}</button><button class="primary" id="next" hidden>Next discovery →</button></div></section>`;
+  app.innerHTML = `<section class="game"><div class="game-top"><button class="quiet" id="exit">← Back to ocean</button><small>DISCOVERY ${game.index + 1} OF 5</small><button class="listen" id="listen" aria-label="Listen to instructions">♫ Listen</button></div><div class="track"><div style="width:${game.index * 20}%"></div></div><div class="game-panel"><span class="tag">${game.type === 'fossil' ? paintedIcon('tooth') + ' ' + game.index + ' / 5 FOSSIL PIECES' : 'YOUR NEXT LITTLE CHALLENGE'}</span><h1 style="font-size:36px">${q.title}</h1><p id="prompt">${q.prompt}</p><div class="scene sentence">${q.scene}</div><div class="choices">${q.choices.map((c, i) => `<button class="choice shell-choice" data-choice="${i}"><svg viewBox="0 0 140 110" aria-hidden="true"><path d="M70 101L15 61Q-1 13 39 12Q65-3 70 16Q91-4 110 13Q145 11 130 60Z" fill="currentColor"/><path d="M70 100V23M70 100L33 26M70 100L111 27" stroke="white" stroke-opacity=".3" stroke-width="3"/></svg><span>${c}</span></button>`).join('')}</div><div class="feedback" aria-live="polite"></div><button class="quiet" id="hint">Help me, ${reefCrew[crewForRoute()].name}</button><button class="primary" id="next" hidden>Next discovery →</button></div></section>`;
   $('#listen').onclick = () => helperSpeak(q.spoken);
   $('#exit').onclick = () => {
     game = null;
@@ -373,7 +373,7 @@ function finish() {
   state.completed.push({ type: game.type, at: new Date().toISOString() });
   state.xp += pearlCompletionBonus(game.items.length);
   save();
-  app.innerHTML = `<section class="game game-panel"><div class="reward">${game.type === 'fossil' ? '🦷' : '🌟'}</div><span class="tag">EXPEDITION COMPLETE</span><h1>Fin-tastic, Haytham!</h1><p>You made five discoveries and earned <strong>${PEARLS.adventure} pearls</strong>.</p><p>New treasures appear in your collection as you explore.</p><div class="choices"><button class="primary" id="done">Back to ocean →</button><button id="viewCollection">My collection</button></div><p class="muted">That’s a great place to stop for a break, too.</p></section>`;
+  app.innerHTML = `<section class="game game-panel"><div class="reward">${paintedIcon(game.type === 'fossil' ? 'tooth' : 'star')}</div><span class="tag">EXPEDITION COMPLETE</span><h1>Fin-tastic, Haytham!</h1><p>You made five discoveries and earned <strong>${PEARLS.adventure} pearls</strong>.</p><p>New treasures appear in your collection as you explore.</p><div class="choices"><button class="primary" id="done">Back to ocean →</button><button id="viewCollection">My collection</button></div><p class="muted">That’s a great place to stop for a break, too.</p></section>`;
   $('#done').onclick = () => (location.hash = 'home');
   $('#viewCollection').onclick = () => (location.hash = 'collection');
   game = null;
@@ -382,7 +382,7 @@ function finish() {
   for (const step of finishSteps) step(finished);
 }
 function collection() {
-  app.innerHTML = `<div class="section-head"><div><span class="tag">YOUR OCEAN TREASURES</span><h1>My collection</h1><p>Meet Milo now. Find more treasures as you learn!</p></div></div><div class="collection">${rewards.map(([icon, name, xp]) => `<article class="collect ${state.xp < xp ? 'locked' : ''}"><span>${state.xp >= xp ? icon : '🔒'}</span><h3>${name}</h3><p class="muted">${state.xp >= xp ? 'Discovered!' : `Unlock at ${xp} pearls`}</p></article>`).join('')}</div><p class="muted">Milo is a pretend megalodon companion. Real megalodons are extinct.</p>`;
+  app.innerHTML = `<div class="section-head"><div><span class="tag">YOUR OCEAN TREASURES</span><h1>My collection</h1><p>Meet Milo now. Find more treasures as you learn!</p></div></div><div class="collection">${rewards.map(([icon, name, xp]) => `<article class="collect ${state.xp < xp ? 'locked' : ''}"><span class="treasure-art">${state.xp < xp ? paintedIcon('lock') : icon === 'turtle' ? seaAnimal('turtle') : icon === 'milo' ? miloActor() : paintedIcon(icon)}</span><h3>${name}</h3><p class="muted">${state.xp >= xp ? 'Discovered!' : `Unlock at ${xp} pearls`}</p></article>`).join('')}</div><p class="muted">Milo is a pretend megalodon companion. Real megalodons are extinct.</p>`;
 }
 function museum() {
   encyclopedia();
@@ -552,7 +552,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v110');
+      const cache = await caches.open('haytham-sharks-v111');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',

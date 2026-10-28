@@ -3,7 +3,8 @@
  * the question again), 🐚 / ○ (the progress trail), ♫ (music) and the picture buttons' 🏠 🗺️ 🏁.
  *
  * paintedIcon(name) returns an inline <svg class="p-icon"> sized 1em, so it follows the font size of
- * the button it sits in. Names: bulb, speaker, shell, spot, note, note-off, home, map, flag. */
+ * the button it sits in. Names: bulb, speaker, speaker-blue (for pale buttons), shell, spot, note,
+ * note-off, home, map, flag, star, trophy, tooth, coral, lock, medal-1, medal-2, medal-3. */
 const paintedIcon = (function () {
   let uid = 0;
   const grad = (id, a, b, c) =>
@@ -56,6 +57,61 @@ const paintedIcon = (function () {
       `<path d="M12 8Q22 4 28 8Q34 12 42 8V26Q34 30 28 26Q22 22 12 26Z" fill="url(#${g}a)" stroke="#5b6670" stroke-width="1.8" stroke-linejoin="round"/>` +
       `<g fill="#26323a"><path d="M12 8Q17 6 20 6.4V15Q16 14.6 12 16.6Z"/><path d="M28 8Q31 10 34 10V18.6Q31 18.6 28 16.6Z"/><path d="M20 15Q24 15 28 16.6V26Q24 23.4 20 23.4Z"/><path d="M34 18.6Q38 18.4 42 17V26Q38 27.6 34 27.4Z"/></g>`
   };
+  // ---------------------------------------------------------------- rewards and race (29 Oct, v111)
+  const medal = (g, a, b, c, edge, n) =>
+    `<defs>${grad(g + 'm', a, b, c)}</defs>` +
+    `<path d="M15 3H23L27 17H19Z" fill="#3e8fd6" stroke="#2a6aa6" stroke-width="1.5" stroke-linejoin="round"/>` +
+    `<path d="M33 3H25L21 17H29Z" fill="#e0473d" stroke="#a83429" stroke-width="1.5" stroke-linejoin="round"/>` +
+    `<circle cx="24" cy="30" r="14" fill="url(#${g}m)" stroke="${edge}" stroke-width="2.2"/>` +
+    `<circle cx="24" cy="30" r="10" fill="none" stroke="${edge}" stroke-width="1.4" opacity=".55"/>` +
+    `<text x="24" y="35.5" text-anchor="middle" font-family="ui-rounded,system-ui,sans-serif" font-size="15" font-weight="800" fill="${edge}">${n}</text>` +
+    `<path d="M15 24Q18 19 23 18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>`;
+  Object.assign(I, {
+    'speaker-blue': g =>
+      `<defs>${grad(g + 'a', '#7fd0e6', '#2f8fbf', '#1d6a93')}</defs>` +
+      `<path d="M7 19H14L25 9V39L14 29H7Q5 29 5 27V21Q5 19 7 19Z" fill="url(#${g}a)" stroke="#185b7e" stroke-width="1.8" stroke-linejoin="round"/>` +
+      `<path d="M31 18Q35 24 31 30M36 13Q43 24 36 35" fill="none" stroke="#2f8fbf" stroke-width="3.6" stroke-linecap="round"/>` +
+      `<path d="M9 21Q12 20 14 20" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>`,
+    star: g =>
+      `<defs>${grad(g + 'a', '#fff6c8', '#ffd24a', '#e8a21a')}</defs>` +
+      `<path d="M24 4L29.6 16.6L43 18L32.8 27.2L35.8 40.6L24 33.6L12.2 40.6L15.2 27.2L5 18L18.4 16.6Z" fill="url(#${g}a)" stroke="#b9801a" stroke-width="2" stroke-linejoin="round"/>` +
+      `<circle cx="20" cy="22" r="1.8" fill="#22313b"/><circle cx="28" cy="22" r="1.8" fill="#22313b"/>` +
+      `<path d="M20.5 27Q24 30 27.5 27" fill="none" stroke="#22313b" stroke-width="1.6" stroke-linecap="round"/>` +
+      `<path d="M15 19Q19 17 21 13" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".85"/>`,
+    trophy: g =>
+      `<defs>${grad(g + 'a', '#fff3b8', '#f2c14e', '#c98f22')}</defs>` +
+      `<path d="M14 10H6Q5 22 16 24M34 10H42Q43 22 32 24" fill="none" stroke="#c98f22" stroke-width="3.4" stroke-linecap="round"/>` +
+      `<path d="M13 6H35V16Q35 29 24 31Q13 29 13 16Z" fill="url(#${g}a)" stroke="#a87418" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M21 31H27V36H21Z" fill="url(#${g}a)" stroke="#a87418" stroke-width="1.8"/>` +
+      `<rect x="14" y="36" width="20" height="7" rx="2" fill="#8a5a3a" stroke="#5e3c25" stroke-width="1.6"/>` +
+      `<path d="M24 11L25.8 15H30L26.6 17.6L27.8 21.6L24 19.2L20.2 21.6L21.4 17.6L18 15H22.2Z" fill="#fff6d8" opacity=".9"/>` +
+      `<path d="M16 9Q16 18 19 23" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>`,
+    tooth: g =>
+      `<defs>${grad(g + 'a', '#fbf4e4', '#e3cfa2', '#b99a62')}</defs>` +
+      `<ellipse cx="24" cy="44" rx="13" ry="2.4" fill="#0b2d3a" opacity=".14"/>` +
+      `<path d="M8 10Q24 4 40 10Q38 14 36 16L26 42Q24 45 22 42L12 16Q10 14 8 10Z" fill="url(#${g}a)" stroke="#8d7444" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M9 10Q24 15 39 10Q24 9 9 10Z" fill="#7d6646" opacity=".75"/>` +
+      `<path d="M13 17L16 15M18 25L20.5 23M27 23L29.5 25M32 15L35 17" stroke="#8d7444" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>` +
+      `<path d="M16 16Q19 25 22 32" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>`,
+    coral: g =>
+      `<defs>${grad(g + 'a', '#ffc7b8', '#f08068', '#c95a46')}${grad(g + 'b', '#ffe6a6', '#f5c24c', '#cf972a')}</defs>` +
+      `<ellipse cx="24" cy="43" rx="17" ry="3" fill="#0b2d3a" opacity=".14"/>` +
+      `<path d="M20 43Q18 32 12 26Q8 22 9 14Q14 14 15 22Q17 16 16 8Q22 9 20 20Q22 26 24 30Q24 22 28 16Q32 18 28 26Q27 32 28 43Z" fill="url(#${g}a)" stroke="#a5452f" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M30 43Q30 34 34 30Q32 24 37 20Q42 22 38 30Q41 30 42 34Q38 36 36 43Z" fill="url(#${g}b)" stroke="#a87418" stroke-width="2" stroke-linejoin="round"/>` +
+      `<circle cx="11" cy="40" r="3.4" fill="#f6c8d6" stroke="#c97f98" stroke-width="1.4"/>` +
+      `<path d="M13 16Q14 19 15 21" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>`,
+    lock: g =>
+      `<defs>${grad(g + 'a', '#fff3b8', '#e9b949', '#b98420')}</defs>` +
+      `<path d="M15 21V15Q15 6 24 6Q33 6 33 15V21" fill="none" stroke="#8796a3" stroke-width="4.4" stroke-linecap="round"/>` +
+      `<path d="M15 21V15Q15 6 24 6Q33 6 33 15V21" fill="none" stroke="#c6d0d7" stroke-width="1.6" stroke-linecap="round"/>` +
+      `<rect x="10" y="20" width="28" height="22" rx="6" fill="url(#${g}a)" stroke="#9a6d18" stroke-width="2"/>` +
+      `<circle cx="24" cy="29" r="3.4" fill="#5d4e37"/><path d="M22.6 30.5L21.6 36H26.4L25.4 30.5Z" fill="#5d4e37"/>` +
+      `<path d="M14 24Q16 22 20 22" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".85"/>`,
+    'medal-1': g => medal(g, '#fff3b8', '#f2c14e', '#c98f22', '#8a5f10', 1),
+    'medal-2': g => medal(g, '#ffffff', '#d5dde3', '#9fadb8', '#5c6a75', 2),
+    'medal-3': g => medal(g, '#ffd9b8', '#d98d52', '#a8612e', '#6e3c18', 3)
+  });
+
   return function paintedIcon(name) {
     const draw = I[name];
     if (!draw) return '';

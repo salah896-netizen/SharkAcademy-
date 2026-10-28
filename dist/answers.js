@@ -22,7 +22,7 @@ const kidButtonKinds = [
   ['listen', '🔊', /^♫\s*hear (our|the)/i]
 ];
 // Painted pictures for the emoji kinds (icons.js); ▶ ↻ ✓ stay as bold shapes.
-const kidButtonPictures = { home: 'home', path: 'map', tracks: 'flag', listen: 'speaker' };
+const kidButtonPictures = { home: 'home', path: 'map', tracks: 'flag', listen: 'speaker-blue' };
 function kidButtonKind(text) {
   const clean = text.replace(/[→←✨✓]/g, '').trim();
   return kidButtonKinds.find(([, , pattern]) => pattern.test(clean));
@@ -202,7 +202,7 @@ function upgradeBlendQuestion() {
   strip.dataset.upgraded = '1';
   old.replaceWith(strip);
   strip.querySelectorAll('.blend-bubble').forEach((bubble, i) => {
-    bubble.innerHTML = `<span class="blend-ear" aria-hidden="true">🔊</span><b class="blend-number" aria-hidden="true">${i + 1}</b>`;
+    bubble.innerHTML = `<span class="blend-ear" aria-hidden="true">${paintedIcon('speaker-blue')}</span><b class="blend-number" aria-hidden="true">${i + 1}</b>`;
     bubble.setAttribute('aria-label', 'Hear sound ' + (i + 1));
     bubble.addEventListener('click', e => {
       e.stopPropagation();

@@ -382,11 +382,11 @@ function finishPathActivity(skillId, review, independentShare) {
   const fresh = updatePathState(today);
   save();
   fresh.forEach((skill, i) =>
-    setTimeout(() => pathToast(`⭐ New star: ${skill.name}!`), 1200 + i * 3800)
+    setTimeout(() => pathToast(`${paintedIcon('star')} New star: ${skill.name}!`), 1200 + i * 3800)
   );
   if (adventuresToday(today) === PATH.dailyGoal)
     setTimeout(
-      () => pathToast('🏁 Today’s goal done! Race or story time?', true),
+      () => pathToast(`${paintedIcon('flag')} Today’s goal done! Race or story time?`, true),
       1400 + fresh.length * 3800
     );
 }

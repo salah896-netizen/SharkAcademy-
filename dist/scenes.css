@@ -42,3 +42,18 @@ body[data-calm-scene='library-room'] .library-choices button {
     height: 84px;
   }
 }
+
+/* The race pickers' painted lagoon (assets/race-bg.svg, 29 Oct). The race itself keeps its own scene. */
+body[data-calm-scene='race-room'] {
+  --calm-background: url('assets/race-bg.svg') center bottom / cover no-repeat, #2a7aa6;
+  --calm-ink: #f4efdb;
+  --calm-border: #8cc3d3;
+}
+body[data-calm-scene='race-room'] .race-picker h1 {
+  text-shadow: 0 2px 10px #0b2d3a66;
+}
+body[data-calm-scene='race-room'] .race-track-card,
+body[data-calm-scene='race-room'] .race-racer-card {
+  background: #12405cdd;
+  box-shadow: 0 10px 26px #0b2d3a55;
+}
