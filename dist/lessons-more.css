@@ -136,3 +136,78 @@
   color: #fffbe8;
   font: 700 18px ui-rounded, system-ui, sans-serif;
 }
+/* How's Haytham going? */
+.progress-view .pv-week {
+  font-size: 17px;
+  margin: 4px 0 12px;
+}
+.pv-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.pv-card {
+  border-radius: 18px;
+  padding: 12px 14px;
+  background: #ffffff;
+  border-left: 8px solid var(--pv);
+  box-shadow: 0 2px 8px #0a344522;
+  color: #183746;
+}
+.pv-card .pv-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.pv-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--pv);
+  color: #fff;
+  font: 800 15px ui-rounded, system-ui, sans-serif;
+}
+.pv-name {
+  font-size: 18px;
+}
+.pv-sub {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.pv-card .pv-head p {
+  margin: 2px 0 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.pv-doing {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.pv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pv-chip {
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 13px;
+  background: #eef3f2;
+}
+.pv-ready,
+.pv-review {
+  background: #fff3c4;
+}
+.pv-learning {
+  background: #dff3e4;
+}
+.pv-new {
+  opacity: 0.6;
+}
+.pv-key {
+  font-size: 13px;
+  margin-top: 10px;
+}
