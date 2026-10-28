@@ -20,14 +20,16 @@ for (const f of scripts) {
     if (node.type === 'FunctionDeclaration') defined[node.id.name] = f;
     if (node.type === 'ExpressionStatement' && node.expression.type === 'AssignmentExpression' && node.expression.left.type === 'Identifier' && /Function/.test(node.expression.right.type))
       (wrapped[node.expression.left.name] = wrapped[node.expression.left.name] || []).push(f);
-    // Registrations: list.push(function name…) / list.unshift(name)
-    const e = node.type === 'ExpressionStatement' && node.expression;
-    if (e && e.type === 'CallExpression' && e.callee.type === 'MemberExpression' && /^(push|unshift)$/.test(e.callee.property.name) && /(Steps|Layers|Sources)$/.test(e.callee.object.name || '')) {
+  }
+  // Registrations anywhere in the file (also inside an IIFE): list.push(function name…) / list.unshift(name)
+  require('acorn-walk').simple(ast, {
+    CallExpression(e) {
+      if (e.callee.type !== 'MemberExpression' || !/^(push|unshift)$/.test(e.callee.property.name || '') || !/(Steps|Layers|Sources)$/.test(e.callee.object.name || '')) return;
       const a = e.arguments[0], fn = a && (a.id?.name || a.name || 'anonymous');
       const list = (hooks[e.callee.object.name] = hooks[e.callee.object.name] || []);
       if (e.callee.property.name === 'unshift') list.unshift([fn, f]); else list.push([fn, f]);
     }
-  }
+  });
 }
 const lines = [
   '# Architecture',

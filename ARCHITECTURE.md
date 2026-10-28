@@ -20,7 +20,7 @@ A few older functions are still **wrapped** by reassignment (`const preX = x; x 
 | `homeSteps` | `ocean-experience.js` | `bindFriendTaps` (friend-taps.js) → `addFriendBadges` (friend-taps.js) |
 | `parentsSteps` | `app.js` | `groupParentSections` (ocean-experience.js) → `addLevelControls` (path.js) → `addVoiceCheck` (grown-ups.js) → `addProgressBackup` (grown-ups.js) → `addProgressOverview` (grown-ups.js) |
 | `questionLayers` | `app.js` | `schoolMathsLessons` (school-pack.js) → `shareFairly` (hands-on-sharing.js) → `packMathsLessons` (lesson-pack.js) → `countSeaAnimals` (ocean-experience.js) |
-| `readingPictureSources` | `reading-adventure.js` | `morePicture` (lessons-more.js) → `schoolReadingPicture` (school-pack.js) → `packReadingPicture` (lesson-pack.js) |
+| `readingPictureSources` | `reading-adventure.js` | `drawPicture` (pictures.js) → `morePicture` (lessons-more.js) → `schoolReadingPicture` (school-pack.js) → `packReadingPicture` (lesson-pack.js) |
 | `sciencePictureSources` | `science.js` | `seaAnimalPhoto` (quiz-pictures.js) |
 | `speakLayers` | `companion.js` | `rememberQuestion` (answers.js) → `holdForLessonJourney` (calm-scenes.js) |
 
