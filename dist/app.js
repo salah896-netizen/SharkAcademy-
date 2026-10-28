@@ -483,6 +483,15 @@ $('#closeModal').onclick = () => {
   stopSpeech();
   $('#modal').close();
 };
+// Always-visible way out of the grown-ups' area (29 Oct): Back closes it, Home closes it and
+// goes to the reef. The bar is pinned to the top of the dialog, so it shows however far down
+// the page you've scrolled; Close stays at the bottom too.
+$('#modalBack').onclick = () => $('#closeModal').click();
+$('#modalHome').onclick = () => {
+  $('#closeModal').click();
+  if (typeof goHomeNow === 'function') goHomeNow();
+  else location.hash = 'home';
+};
 $('#sound').onclick = () => {
   state.voice = !state.voice;
   save();
@@ -552,7 +561,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v112');
+      const cache = await caches.open('haytham-sharks-v113');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',

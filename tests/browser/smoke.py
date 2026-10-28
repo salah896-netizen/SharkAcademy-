@@ -211,6 +211,16 @@ async def main():
         await ev("location.hash = 'race'"); await page.wait_for_timeout(200)
         await ev(f"state.xp = {saved_xp}")
 
+        # Grown-ups' area: Back and Home are always on screen and both close it (29 Oct, v113)
+        await ev("location.hash = 'library'"); await page.wait_for_timeout(200)
+        await ev("parents(); document.querySelector('#modal').showModal(); document.querySelector('#modal').scrollTop = 99999"); await page.wait_for_timeout(200)
+        seen = await ev("""(() => { const r = document.querySelector('#modalHome').getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight })()""")
+        await ev("document.querySelector('#modalBack').click()"); await page.wait_for_timeout(200)
+        back = await ev("!document.querySelector('#modal').open && location.hash === '#library'")
+        await ev("parents(); document.querySelector('#modal').showModal(); document.querySelector('#modalHome').click()"); await page.wait_for_timeout(300)
+        home = await ev("!document.querySelector('#modal').open && location.hash === '#home'")
+        check(seen and back and home, f'grown-ups area: Back and Home always visible and working ({seen}, {back}, {home})')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

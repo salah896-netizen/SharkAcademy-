@@ -1863,6 +1863,39 @@ body[data-route='museum'] #app {
   max-height: none;
   overflow: hidden;
 }
+/* Back and Home, pinned to the top of the dialog (29 Oct). */
+#modal {
+  overflow-y: auto;
+  padding-top: 0;
+}
+.modal-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0 -22px 8px;
+  padding: 14px 22px 10px;
+  background: linear-gradient(#f2f6efff 75%, #f2f6ef00);
+}
+.modal-bar button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 8px 20px;
+  border-radius: 99px;
+  border: 2px solid #c3dcc0;
+  background: #e6f2df;
+  color: #173d4d;
+  font: 700 17px ui-rounded, system-ui, sans-serif;
+  box-shadow: 0 3px 0 #244c5814;
+}
+.modal-bar svg {
+  width: 22px;
+  height: 22px;
+}
 #modalContent > [hidden] {
   display: none !important;
 }
