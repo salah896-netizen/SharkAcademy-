@@ -1,0 +1,11 @@
+/* Lesson pictures (pictures.js). On iPad-sized screens the answer cards show the pictures larger,
+ * filling the card the way the emoji did; phones and short screens keep their existing sizes. */
+svg.pic {
+  overflow: visible;
+}
+@media (min-width: 701px) and (min-height: 701px) {
+  .activity-screen .quest-pictures svg.pic {
+    width: 172px;
+    height: 150px;
+  }
+}

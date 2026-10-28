@@ -57,10 +57,11 @@ A few older functions are still **wrapped** by reassignment (`const preX = x; x 
 29. `quiz-photos.js` — Extra licensed photos for the quizzes (Wikimedia Commons)
 30. `quiz-pictures.js` — Real pictures in the shark quizzes (26 October 2026)
 31. `lessons-more.js` — More lessons (26 October 2026): "each skill has only a few lessons, so after a week or two he'll start seeing repeats." Adds lessons to ever
-32. `grown-ups.js` — The grown-ups' area additions, in the order they appear: Voice check (27 Oct), progress saved automatically with backup files (28 Oct), and 
-33. `media-download.js` — Gentle offline download (25 Oct)
-34. `opening.js` — Tap to dive (24 October 2026)
-35. `boot.js` — Start-up, loaded last
+32. `pictures.js` — Lesson pictures (29 October 2026): one soft painted style for every reading picture, in place of the mix of emoji and flat drawings
+33. `grown-ups.js` — The grown-ups' area additions, in the order they appear: Voice check (27 Oct), progress saved automatically with backup files (28 Oct), and 
+34. `media-download.js` — Gentle offline download (25 Oct)
+35. `opening.js` — Tap to dive (24 October 2026)
+36. `boot.js` — Start-up, loaded last
 
 ## Functions still wrapped by later files
 
@@ -119,6 +120,7 @@ Also: `learning-checks.js` wraps `answer`, `readingMissionAnswer` and `scienceAn
 22. `friendly.css`
 23. `quiz-pictures.css`
 24. `lessons-more.css`
+25. `pictures.css`
 
 ## Caches
 

@@ -132,6 +132,12 @@ async def main():
         await page.wait_for_timeout(300)
         check(await ev('(state.writingHistory || []).length') == n0 + 1, 'writing: real trace accepted')
 
+        # Every picture any lesson or race asks for is drawn in the one lesson style (pictures.js)
+        old_style = await ev("""(() => { const keys = new Set();
+            for (const l of readingMissionLibrary) for (const q of l.items) { (q.options || []).forEach(o => keys.add(o)); if (q.target) keys.add(q.target) }
+            return [...keys].filter(k => typeof k === 'string' && !k.startsWith('word:') && !/class="pic/.test(readingArt(k))) })()""")
+        check(not old_style, f'pictures: every lesson picture in the new style ({old_style[:4]})')
+
         # Every lesson opens with a picture on every choice, and every line in it is recorded
         await ev("location.hash = 'home'")
         await page.wait_for_timeout(300)
