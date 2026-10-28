@@ -362,7 +362,7 @@ function libraryPage() {
   ]
     .map(
       ([route, icon, label]) =>
-        `<button data-library-route="${route}"><span class="library-picture"><img src="assets/visual-${{ reading: 'stories', maths: 'adventure', writing: 'writing', museum: 'sharks', stories: 'stories', collection: 'fossil', expeditions: 'adventure' }[route]}.jpg" alt=""></span>${label}</button>`
+        `<button data-library-route="${route}"><span class="library-picture" aria-hidden="true">${paintedScene(route)}</span>${label}</button>`
     )
     .join('')}</div></section>`;
   document.querySelectorAll('[data-library-route]').forEach(

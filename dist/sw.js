@@ -1,5 +1,5 @@
 
-const CACHE = 'haytham-sharks-v108';
+const CACHE = 'haytham-sharks-v109';
 const FILES = [
   './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
@@ -33,6 +33,9 @@ const FILES = [
   './pictures.js',
   './pictures.css',
   './fin-five.css',
+  './scenes.css',
+  './scenes.js',
+  './assets/library-bg.svg',
   './grown-ups.js',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',

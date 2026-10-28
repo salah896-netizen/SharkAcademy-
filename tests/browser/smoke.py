@@ -166,6 +166,15 @@ async def main():
             state.completed = []; return bad })()""")
         check(not unvoiced, f'every lesson line is recorded ({unvoiced[:3]})')
 
+        # Library and race track cards are all painted scenes (28 Oct)
+        await ev("location.hash = 'library'"); await page.wait_for_timeout(300)
+        lib = await ev("[...document.querySelectorAll('.library-choices .library-picture')].map(p => !!p.querySelector('svg.painted-scene'))")
+        check(len(lib) == 10 and all(lib), f'library: all 10 cards painted ({lib})')
+        check(await ev("document.body.dataset.calmScene === 'library-room'"), 'library: painted background')
+        await ev("location.hash = 'race'"); await page.wait_for_timeout(300)
+        tracks = await ev("[...document.querySelectorAll('.race-track-card')].map(c => !!c.querySelector('svg.painted-scene'))")
+        check(len(tracks) == 4 and all(tracks), f'race: all 4 track cards painted ({tracks})')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

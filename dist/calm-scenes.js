@@ -12,7 +12,7 @@ function calmSceneFor() {
         ? 'discovery'
         : 'maths';
   if (route === 'library')
-    return { reading: 'reading', maths: 'maths', writing: 'library-sand' }[subject] || 'library';
+    return { reading: 'reading', maths: 'maths', writing: 'library-sand' }[subject] || (subject ? 'library' : 'library-room');
   if (['museum', 'legend'].includes(route)) return 'discovery';
   if (route === 'stories') return 'stories';
   if (route === 'cinema') return 'cinema';
@@ -21,7 +21,7 @@ function calmSceneFor() {
 }
 function applyCalmScene() {
   const scene = calmSceneFor(),
-    tone = ['reading', 'maths', 'library', 'library-sand', 'stories', 'science'].includes(scene)
+    tone = ['reading', 'maths', 'library', 'library-room', 'library-sand', 'stories', 'science'].includes(scene)
       ? 'light'
       : 'dark';
   if (document.body.dataset.calmScene !== scene) document.body.dataset.calmScene = scene;

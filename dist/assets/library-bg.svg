@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" preserveAspectRatio="xMidYMax slice">
+  <!-- The submarine library's backdrop (28 Oct 2026): a calm, softly painted sea floor in the
+       lesson-picture style. Kept pale so the cards stay the brightest things on screen. -->
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3f3f1"/>
+      <stop offset=".55" stop-color="#cfe8e6"/>
+      <stop offset="1" stop-color="#bcdedf"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0e2bf"/>
+      <stop offset="1" stop-color="#e2cf9f"/>
+    </linearGradient>
+    <linearGradient id="sandBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9e6d2"/>
+      <stop offset="1" stop-color="#cfdcc4"/>
+    </linearGradient>
+    <radialGradient id="kelp" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#a9d2ae"/>
+      <stop offset=".6" stop-color="#8cc095"/>
+      <stop offset="1" stop-color="#76ab81"/>
+    </radialGradient>
+    <radialGradient id="kelpFar" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#c3e0cc"/>
+      <stop offset="1" stop-color="#a9cfb6"/>
+    </radialGradient>
+    <radialGradient id="coral" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#f6c3b3"/>
+      <stop offset=".6" stop-color="#eda690"/>
+      <stop offset="1" stop-color="#d98d78"/>
+    </radialGradient>
+    <radialGradient id="coral2" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#f7dc9a"/>
+      <stop offset="1" stop-color="#e9c271"/>
+    </radialGradient>
+    <radialGradient id="shell" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#fbe3d8"/>
+      <stop offset="1" stop-color="#e9b9a6"/>
+    </radialGradient>
+    <radialGradient id="star" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#f9c79f"/>
+      <stop offset="1" stop-color="#ec9c6c"/>
+    </radialGradient>
+    <radialGradient id="glow" cx=".5" cy="0" r=".9">
+      <stop offset="0" stop-color="#fffbe6" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#fffbe6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="840" fill="url(#water)"/>
+  <ellipse cx="600" cy="0" rx="700" ry="380" fill="url(#glow)"/>
+
+  <!-- light rays -->
+  <path d="M180 0H280L120 840H-40Z M520 0H580L470 840H360Z M820 0H920L900 840H740Z M1080 0H1140L1200 600V0Z" fill="url(#ray)"/>
+
+  <!-- gentle wave lines near the top -->
+  <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55">
+    <path d="M90 70Q120 52 150 70T210 70"/>
+    <path d="M950 110Q980 92 1010 110T1070 110"/>
+    <path d="M700 40Q722 28 744 40"/>
+  </g>
+
+  <!-- distant fish -->
+  <g fill="#9fc9cc" opacity=".55">
+    <path d="M960 240q18-12 36-4l12-9-2 13 2 13-12-9q-18 8-36-4z"/>
+    <path d="M1010 266q14-9 28-3l9-7-1 10 1 10-9-7q-14 6-28-3z"/>
+    <path d="M150 300q-18-12-36-4l-12-9 2 13-2 13 12-9q18 8 36-4z"/>
+  </g>
+
+  <!-- far sand and kelp -->
+  <path d="M0 690Q200 650 420 680T840 670T1200 660V840H0Z" fill="url(#sandBack)"/>
+  <g fill="url(#kelpFar)" stroke="#9cc4aa" stroke-width="2" stroke-linejoin="round">
+    <path d="M240 690Q220 600 248 540Q270 490 252 430Q284 480 274 545Q262 610 270 690Z"/>
+    <path d="M960 680Q944 610 966 560Q984 520 970 470Q998 512 990 566Q980 620 990 680Z"/>
+    <path d="M1010 680Q1000 630 1016 600Q1028 576 1020 548Q1040 574 1034 606Q1028 640 1034 680Z"/>
+  </g>
+
+  <!-- near sand -->
+  <path d="M0 740Q240 708 520 732T1000 726T1200 716V840H0Z" fill="url(#sand)"/>
+  <g fill="#d8c18c" opacity=".5">
+    <ellipse cx="320" cy="790" rx="26" ry="4"/>
+    <ellipse cx="760" cy="800" rx="34" ry="4"/>
+    <ellipse cx="1040" cy="780" rx="22" ry="3"/>
+  </g>
+
+  <!-- left corner: kelp and coral -->
+  <g stroke-linejoin="round" stroke-width="2.5">
+    <path d="M40 760Q10 640 50 560Q84 492 58 400Q110 470 96 556Q82 650 92 760Z" fill="url(#kelp)" stroke="#6c9e77"/>
+    <path d="M100 760Q86 680 112 630Q132 594 120 548Q150 588 144 636Q136 690 140 760Z" fill="url(#kelp)" stroke="#6c9e77"/>
+    <path d="M150 770Q140 720 160 700Q164 726 176 720Q172 690 190 676Q204 712 196 770Z" fill="url(#coral)" stroke="#c98371"/>
+  </g>
+
+  <!-- right corner: coral, kelp -->
+  <g stroke-linejoin="round" stroke-width="2.5">
+    <path d="M1060 770Q1052 712 1076 696Q1080 726 1094 718Q1092 686 1112 672Q1128 712 1118 770Z" fill="url(#coral2)" stroke="#cda55a"/>
+    <path d="M1130 760Q1112 650 1144 580Q1170 520 1152 450Q1196 510 1186 586Q1176 670 1182 760Z" fill="url(#kelp)" stroke="#6c9e77"/>
+    <circle cx="1030" cy="764" r="18" fill="url(#coral)" stroke="#c98371"/>
+  </g>
+
+  <!-- shells and a starfish on the sand -->
+  <g stroke-linejoin="round" stroke-width="2">
+    <path d="M420 790q-2-22 18-24q20 2 18 24z" fill="url(#shell)" stroke="#c99a88"/>
+    <path d="M430 788l-3-16M438 788v-20M446 788l3-16" stroke="#c99a88" fill="none" stroke-linecap="round"/>
+    <path d="M820 772l6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2z" fill="url(#star)" stroke="#c97d55"/>
+  </g>
+
+  <!-- rising bubbles -->
+  <g fill="#fff" fill-opacity=".35" stroke="#fff" stroke-opacity=".8" stroke-width="1.5">
+    <circle cx="70" cy="360" r="8"/><circle cx="88" cy="320" r="5"/><circle cx="64" cy="290" r="4"/>
+    <circle cx="1150" cy="400" r="9"/><circle cx="1130" cy="352" r="5"/><circle cx="1160" cy="320" r="4"/>
+  </g>
+</svg>

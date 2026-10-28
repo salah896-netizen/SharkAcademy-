@@ -200,7 +200,7 @@ function raceGame() {
   return raceStart(track, racerId);
 }
 function trackThumb(track) {
-  return `<span class="race-thumb race-scene-${track.id}" aria-hidden="true"><i></i></span>`;
+  return `<span class="race-thumb race-painted race-scene-${track.id}" aria-hidden="true">${paintedScene(track.id)}</span>`;
 }
 function raceTrackPicker() {
   const done = learningAdventuresDone();
@@ -638,7 +638,7 @@ libraryPage = function () {
   if (!grid || grid.querySelector('[data-library-route="race"]')) return;
   grid.insertAdjacentHTML(
     'beforeend',
-    '<button data-library-route="race"><span class="library-picture race-library-picture"><span class="race-thumb race-scene-lagoon"><i></i></span></span>Shark race</button>'
+    `<button data-library-route="race"><span class="library-picture" aria-hidden="true">${paintedScene('race')}</span>Shark race</button>`
   );
   grid.querySelector('[data-library-route="race"]').onclick = () => (location.hash = 'race');
 };

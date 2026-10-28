@@ -729,7 +729,7 @@ libraryPage = function () {
   if (!grid || grid.querySelector('[data-library-route="path"]')) return;
   grid.insertAdjacentHTML(
     'afterbegin',
-    '<button data-library-route="path"><span class="library-picture path-library-picture" aria-hidden="true"><i></i><i></i><i></i></span>My path</button>'
+    `<button data-library-route="path" data-kid-text="library card"><span class="library-picture" aria-hidden="true">${paintedScene('path')}</span>My path</button>`
   );
   grid.querySelector('[data-library-route="path"]').onclick = () => (location.hash = 'path');
 };

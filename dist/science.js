@@ -527,7 +527,7 @@ libraryPage = function () {
   if (!grid || grid.querySelector('[data-library-route="science"]')) return;
   const sharks = grid.querySelector('[data-library-route="museum"]');
   const card =
-    '<button data-library-route="science"><span class="library-picture"><img src="assets/hammerhead.jpg" alt=""></span>Science with Gizmo</button>';
+    `<button data-library-route="science"><span class="library-picture" aria-hidden="true">${paintedScene('science')}</span>Science with Gizmo</button>`;
   if (sharks) sharks.insertAdjacentHTML('beforebegin', card);
   else grid.insertAdjacentHTML('beforeend', card);
   grid.querySelector('[data-library-route="science"]').onclick = () =>

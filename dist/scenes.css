@@ -1,0 +1,44 @@
+/* Painted scenes (28 Oct 2026): library cards, race track cards, library background. See scenes.js. */
+.painted-scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.library-choices .library-picture {
+  height: 104px;
+  background: #cfe8ec;
+}
+.library-choices button {
+  transition: transform 0.15s ease;
+}
+.library-choices button:active {
+  transform: scale(0.97);
+}
+
+/* Race track cards: the painting replaces the old CSS drawing. */
+.race-thumb.race-painted {
+  background: none;
+}
+.race-thumb.race-painted::after,
+.race-thumb.race-painted i {
+  display: none;
+}
+
+/* The library's own backdrop: a calm painted sea floor (assets/library-bg.svg). */
+body[data-calm-scene='library-room'] {
+  --calm-background: url('assets/library-bg.svg') center bottom / cover no-repeat, #d6ebe8;
+  --calm-ink: #284f54;
+  --calm-border: #a9cbc4;
+}
+body[data-calm-scene='library-room'] .library-choices button {
+  background: #fbfcf6 !important;
+  box-shadow:
+    0 6px 0 #244c5814,
+    0 10px 24px #1d4a5422 !important;
+}
+
+@media (max-width: 600px) {
+  .library-choices .library-picture {
+    height: 84px;
+  }
+}
