@@ -85,7 +85,19 @@ function readingPracticeSummary() {
     independent = attempts.filter(a => !a.supported).length;
   return `${sessions.length} short adventures · ${independent} picture matches without help · ${attempts.length - independent} with help. These are practice records, not an oral-reading assessment or proof of mastery.`;
 }
+// Every reading picture comes through here. Later files add a picture source to the front of this
+// list (lessons-more.js, school-pack.js, lesson-pack.js), so the newest source is asked first; the
+// first one with a picture for the key wins, and the original drawings below are the fallback.
+const readingPictureSources = [];
 function readingArt(key) {
+  if (typeof key !== 'string') return '';
+  for (const source of readingPictureSources) {
+    const art = source(key);
+    if (art) return art;
+  }
+  return basicReadingArt(key);
+}
+function basicReadingArt(key) {
   if (key.includes('cup')) {
     const colour =
       key === 'red-cup'

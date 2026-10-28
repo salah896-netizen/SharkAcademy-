@@ -13,7 +13,7 @@ code, take another, and diff them. Any difference is a visible change.
 import asyncio, json, os, re, sys
 from playwright.async_api import async_playwright
 
-BASE = 'http://127.0.0.1:5180/'
+BASE = f"http://127.0.0.1:{os.environ.get('PORT', '5180')}/"
 FIXED = 1793500200000  # Wed 28 Oct 2026, 11:00 local
 
 INIT = """(() => {
@@ -31,8 +31,8 @@ INIT = """(() => {
 })();""" % FIXED
 
 QUIET = """window.__said = [];
-speakWithDevice = (t, o = {}) => { __said.push(String(t)); setTimeout(() => (o.end || o.onend)?.(), 15); };
-playVoiceClips = (f, t, o = {}) => { __said.push(String(t)); setTimeout(() => o.end?.(), 15); };
+speakWithDevice = (t, o = {}) => { __said.push((o.speaker || 'milo') + ': ' + t); setTimeout(() => (o.end || o.onend)?.(), 15); };
+playVoiceClips = (f, t, o = {}) => { __said.push((o.speaker || 'milo') + ': ' + t); setTimeout(() => o.end?.(), 15); };
 document.querySelector('#tapToDive')?.remove(); document.body.classList.remove('intro-running'); 0;"""
 
 CAPTURE = """(() => {
@@ -74,6 +74,22 @@ async def main(out):
             cdp = await ctx.new_cdp_session(page)
             await cdp.send('Profiler.enable')
             await cdp.send('Profiler.startPreciseCoverage', {'callCount': True, 'detailed': False})
+        # Cold starts: opening the app straight onto each screen, and the first open of the day.
+        cold = [('home', True), ('home', False), ('library', True), ('museum', True), ('museum/whale', True), ('museum/all', True),
+                ('race', True), ('path', True), ('draw', True), ('writing', True), ('stories', True), ('collection', True), ('play', True)]
+        for route, dived in cold:
+            c = await browser.new_context(viewport={'width': 1194, 'height': 834}, has_touch=True, reduced_motion='reduce')
+            await c.add_init_script(INIT if dived else INIT.replace("lastOpening: ", "notOpened: "))
+            cp = await c.new_page()
+            cerr = []
+            cp.on('pageerror', lambda e: cerr.append(str(e)))
+            await cp.goto(BASE + '#' + route)
+            await cp.wait_for_timeout(2000)
+            shot = norm(await cp.evaluate(CAPTURE.replace('window.__said.slice()', '[]')))
+            shot['hash'] = await cp.evaluate('location.hash')
+            shot['errors'] = cerr
+            snaps[f'000 cold {route}{"" if dived else " (first open today)"}'] = shot
+            await c.close()
         await page.goto(BASE + '#home')
         await page.wait_for_timeout(1500)
         await ev(QUIET)

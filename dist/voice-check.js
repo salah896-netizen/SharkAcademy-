@@ -2,9 +2,7 @@
  * from the friends' recordings. Lines that used the iPad voice (or a recording that couldn't
  * play) are listed here, with how many voices are saved for offline use, and a button to copy
  * the list so it can be sent over and recorded. */
-const preVoiceCheckParents = parents;
-parents = function () {
-  preVoiceCheckParents();
+parentsSteps.push(function addVoiceCheck() {
   const host = $('#modalContent');
   if (!host || host.querySelector('.voice-check')) return;
   const gaps = voiceGaps(),
@@ -33,4 +31,4 @@ parents = function () {
     } catch {}
     host.querySelector('.voice-check')?.remove();
   });
-};
+});

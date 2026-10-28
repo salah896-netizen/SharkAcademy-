@@ -47,15 +47,14 @@ calmContentObserver.observe(app, { childList: true, subtree: true });
 const calmRouteObserver = new MutationObserver(applyCalmScene);
 calmRouteObserver.observe(document.body, { attributes: true, attributeFilter: ['data-route'] });
 let lessonJourney = null;
-const preJourneySpeak = speak,
-  preJourneyDaily = dailyAdventure;
-speak = function (text, options = {}) {
+const preJourneyDaily = dailyAdventure;
+speakLayers.unshift(function holdForLessonJourney(text, options, next) {
   if (lessonJourney && !lessonJourney.revealed) {
     lessonJourney.narration = { text, options };
     return;
   }
-  return preJourneySpeak(text, options);
-};
+  return next(text, options);
+});
 function stopLessonJourney() {
   const active = lessonJourney;
   if (!active) return;
@@ -133,7 +132,7 @@ dailyAdventure = function () {
       const narration = active.narration;
       active.revealed = true;
       stopLessonJourney();
-      if (narration) preJourneySpeak(narration.text, narration.options);
+      if (narration) speakNow(narration.text, narration.options);
     },
     reduced ? 280 : 2050
   );

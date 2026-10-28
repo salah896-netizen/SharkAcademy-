@@ -120,9 +120,7 @@ function alertProgress(text) {
 }
 
 // Grown-ups' area: last saved, plus a backup file to move to another iPad.
-const preSafeParents = parents;
-parents = function () {
-  preSafeParents();
+parentsSteps.push(function addProgressBackup() {
   const host = $('#modalContent');
   if (!host || host.querySelector('.progress-safe')) return;
   const oldExport = document.getElementById('export');
@@ -165,4 +163,4 @@ parents = function () {
       alertProgress('That file isn’t a Shark Academy backup.');
     }
   };
-};
+});

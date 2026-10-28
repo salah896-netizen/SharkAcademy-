@@ -139,9 +139,7 @@ const friendBadges = {
   gizmo: ['🔬', 'Science', '#9b6bc4'],
   dash: ['✏️', 'Writing', '#2f7fc0']
 };
-const preBadgeHome = home;
-home = function () {
-  preBadgeHome();
+homeSteps.push(function addFriendBadges() {
   document.querySelectorAll('.home-friends [data-friend-route]').forEach(button => {
     const badge = friendBadges[button.dataset.friendRoute];
     if (!badge || button.querySelector('.friend-badge')) return;
@@ -150,8 +148,7 @@ home = function () {
       `<i class="friend-badge" style="--badge:${badge[2]}" aria-hidden="true"><b>${badge[0]}</b><small>${badge[1]}</small></i>`
     );
   });
-};
-if (document.body.dataset.route === 'home') render();
+});
 
 /* Easy / medium / hard for each subject (Haytham may be ahead in maths and not in reading).
  * Set in the grown-ups' area. Each level:
@@ -195,9 +192,7 @@ function levelControls() {
     )
     .join('')}</section>`;
 }
-const preLevelParents = parents;
-parents = function () {
-  preLevelParents();
+parentsSteps.push(function addLevelControls() {
   const host = $('#modalContent');
   if (!host || host.querySelector('.level-controls')) return;
   const firstHeading = host.querySelector('h3');
@@ -212,7 +207,7 @@ parents = function () {
           .forEach(x => x.setAttribute('aria-pressed', String(x === b)));
       })
   );
-};
+});
 // Maths on medium/hard: every other maths adventure from the path is a bigger-number one.
 let levelMathsCount = 0;
 const preLevelLaunch = launchPathActivity;

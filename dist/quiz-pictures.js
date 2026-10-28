@@ -220,10 +220,10 @@ window.addEventListener('hashchange', () => setTimeout(upgradeQuizPictures, 60))
 /* Science: real photos of the other sea animals (tuna, clownfish, turtle… from Wikimedia Commons)
  * replace the flat drawings, once each photo has been added to quizPhotoData. */
 const seaAnimalPhotoKeys = { turtle: 'seaturtle' };
-const preQuizSciencePicture = sciencePicture;
-sciencePicture = function (key) {
-  const p = typeof quizPhotoData !== 'undefined' ? quizPhotoData[seaAnimalPhotoKeys[key] || key] : null;
-  if (p && !scienceArt[key])
-    return `<span class="science-photo-frame"><span class="science-photo-fill" style="background-image:url('assets/${p.file}')"></span><img class="science-photo contain" src="assets/${p.file}" alt=""></span>`;
-  return preQuizSciencePicture(key);
-};
+sciencePictureSources.unshift(seaAnimalPhoto);
+function seaAnimalPhoto(key) {
+  const p = quizPhotoData[seaAnimalPhotoKeys[key] || key];
+  return p
+    ? `<span class="science-photo-frame"><span class="science-photo-fill" style="background-image:url('assets/${p.file}')"></span><img class="science-photo contain" src="assets/${p.file}" alt=""></span>`
+    : null;
+}

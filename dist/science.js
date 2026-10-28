@@ -50,8 +50,16 @@ if (typeof sharkPhotoData !== 'undefined')
     if (p)
       scienceArt[key].art = `<span class="science-photo-frame"><span class="science-photo-fill" style="background-image:url('assets/${p.file}')"></span><img class="science-photo contain" src="assets/${p.file}" alt=""></span>`;
   }
+// Science pictures: the lesson's own art, then any extra source (real sea-animal photos from
+// quiz-pictures.js), then the drawn sea animal, then any reading picture.
+const sciencePictureSources = [];
 function sciencePicture(key) {
+  if (!key) return '';
   if (scienceArt[key]) return scienceArt[key].art;
+  for (const source of sciencePictureSources) {
+    const art = source(key);
+    if (art) return art;
+  }
   if (['tuna', 'crab', 'turtle', 'clownfish', 'squid', 'dolphin', 'octopus'].includes(key))
     return seaAnimal(key);
   return readingArt(key);

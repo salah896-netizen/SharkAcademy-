@@ -645,5 +645,3 @@ libraryPage = function () {
 window.addEventListener('hashchange', () => {
   if (!location.hash.startsWith('#race')) stopRace();
 });
-// If the app was opened straight onto a race page, draw it now that the race code exists.
-if (location.hash.startsWith('#race')) render();

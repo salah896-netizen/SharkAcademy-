@@ -24,9 +24,12 @@ const context = {
   render() {},
   Date,
   stageFor: () => 1,
-  makeQuestions: () => ['existing'],
+  questionLayers:[],makeBasicQuestions:() => ['existing'],makeQuestions(type){let i=0;const next=t=>i<this.questionLayers.length?this.questionLayers[i++](t,next):this.makeBasicQuestions(t);return next(type)},
   play() {},
   finish() {},
+  finishSteps: [],
+  homeSteps: [],
+  parentsSteps: [],
   writing() {},
   advanceLearning() {
     return true;

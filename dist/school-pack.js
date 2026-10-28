@@ -109,11 +109,10 @@ function wordCardArt(word) {
   const size = word.length > 4 ? 30 : word.length > 2 ? 38 : 46;
   return `<svg class="word-shell" viewBox="0 0 120 100" aria-hidden="true"><path d="M60 94L14 58Q2 20 34 16Q50 2 60 14Q70 2 86 16Q118 20 106 58Z" fill="#f8efe0" stroke="#d2b48c" stroke-width="3"/><text x="60" y="${54 + size / 3}" text-anchor="middle" font-family="ui-rounded, 'Trebuchet MS', system-ui, sans-serif" font-weight="700" font-size="${size}" fill="#24485a">${word}</text></svg>`;
 }
-const preSchoolReadingArt = readingArt;
-readingArt = function (key) {
-  if (key.startsWith('word:')) return wordCardArt(key.slice(5));
-  return schoolPicture(key) || preSchoolReadingArt(key);
-};
+readingPictureSources.unshift(schoolReadingPicture);
+function schoolReadingPicture(key) {
+  return key.startsWith('word:') ? wordCardArt(key.slice(5)) : schoolPicture(key);
+}
 function pictureName(key) {
   return key.startsWith('word:')
     ? key.slice(5)
@@ -747,16 +746,15 @@ function schoolMathsCardArt(record) {
   return null;
 }
 
-const preSchoolQuestions = makeQuestions;
-makeQuestions = function (type) {
+questionLayers.unshift(function schoolMathsLessons(type, next) {
   if (type !== 'maths' || (stageFor('maths') !== 1 && !requestedMathsLesson))
-    return preSchoolQuestions(type);
+    return next(type);
   const number = state.completed.filter(x => x.type === 'maths').length,
     lesson =
       mathsAdventures.find(l => l.id === requestedMathsLesson) ||
       mathsAdventures[number % mathsAdventures.length],
     build = schoolMathsBuilders[lesson.kind];
-  if (!build) return preSchoolQuestions(type);
+  if (!build) return next(type);
   requestedMathsLesson = null;
   const cycle = Math.floor(number / mathsAdventures.length);
   return Array.from({ length: 5 }, (_, i) => {
@@ -771,7 +769,7 @@ makeQuestions = function (type) {
       spoken: q.prompt
     };
   });
-};
+});
 
 // ---------------------------------------------------------------- visible thinking
 const thinkingIcons = {

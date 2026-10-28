@@ -474,4 +474,3 @@ oceanTopicPage = function (id) {
   // Read the whole explanation as the page opens, not just its title.
   setSpeakingPanel(heading, t.title + '. ' + t.text);
 };
-if (document.body.dataset.route === 'museum') render();

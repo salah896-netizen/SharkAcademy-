@@ -401,10 +401,7 @@ finishReadingMission = function () {
   );
   pathFinishButtons();
 };
-const prePathFinish = finish;
-finish = function () {
-  const finished = game;
-  prePathFinish();
+finishSteps.push(function pathFinish(finished) {
   if (finished?.type === 'maths') pathFinishButtons();
   if (finished?.type !== 'maths' || !finished.pathSkill) return;
   const answers = (state.history || []).filter(x => x.session === finished.session);
@@ -414,7 +411,7 @@ finish = function () {
     answers.length ? answers.filter(x => x.independent).length / answers.length : 0
   );
   pathFinishButtons();
-};
+});
 const prePathWritingFinish = finishWritingAdventure;
 finishWritingAdventure = function (active) {
   prePathWritingFinish(active);
@@ -724,4 +721,3 @@ libraryPage = function () {
   );
   grid.querySelector('[data-library-route="path"]').onclick = () => (location.hash = 'path');
 };
-if (location.hash.startsWith('#path')) render();

@@ -557,4 +557,3 @@ writing = function () {
   );
   $('#drawSharkLink').onclick = startSharkDrawing;
 };
-if (location.hash === '#draw') render();

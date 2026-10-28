@@ -56,10 +56,8 @@ function progressOverview() {
     .join('');
   return `<section class="progress-view"><h3>How’s Haytham going?</h3><p class="pv-week">This week: <b>${week.lessons}</b> lesson${week.lessons === 1 ? '' : 's'} on <b>${week.days}</b> day${week.days === 1 ? '' : 's'} · <b>${Number(state.xp) || 0}</b> pearls so far</p><div class="pv-cards">${cards}</div><p class="muted pv-key">⭐ mastered (8 of the last 10 right on his own, over two days) · 🌱 practising · 🔁 review due · ○ not started yet. Practice evidence, not a school assessment.</p></section>`;
 }
-const preProgressParents = parents;
-parents = function () {
-  preProgressParents();
+parentsSteps.push(function addProgressOverview() {
   const host = $('#modalContent');
   if (!host || host.querySelector('.progress-view')) return;
   host.insertAdjacentHTML('afterbegin', progressOverview());
-};
+});

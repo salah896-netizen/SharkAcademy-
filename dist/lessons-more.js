@@ -22,17 +22,13 @@ const morePictures = {
   cake: '🎂', snake: '🐍', apple: '🍎', key: '🔑', leaf: '🍃', sponge: '🧽', dinosaur: '🦕',
   mermaid: '🧜‍♀️', unicorn: '🦄', mammoth: '🦣', penguin: '🐧', lobster: '🦞'
 };
+readingPictureSources.unshift(morePicture);
 function morePicture(key) {
   const size = key.match(/^(big|small)-/)?.[1] || '';
   const base = key.replace(/^(red|blue|yellow|big|small)-/, '');
   const emoji = morePictures[base];
   return emoji ? `<span class="emoji-pic ${size}" aria-hidden="true">${emoji}</span>` : null;
 }
-const preMoreReadingArt = readingArt;
-readingArt = function (key) {
-  if (typeof key !== 'string') return '';
-  return morePicture(key) || preMoreReadingArt(key);
-};
 
 // ---------------------------------------------------------------- reading
 // Three-letter words: tap each tile to hear its sound, then blend.
@@ -504,11 +500,6 @@ scienceShelf = function () {
     const art = card.querySelector('.lesson-card-art');
     if (lesson?.picture && art) art.innerHTML = sciencePicture(lesson.picture);
   });
-};
-const preMoreSciencePicture = sciencePicture;
-sciencePicture = function (key) {
-  if (!key) return '';
-  return preMoreSciencePicture(key);
 };
 
 // ---------------------------------------------------------------- writing

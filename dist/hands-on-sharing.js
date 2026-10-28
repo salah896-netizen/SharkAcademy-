@@ -35,9 +35,8 @@ function tapSharingAnimal(model, index, selected) {
   }
   return selected === index ? null : index;
 }
-const preSharingQuestions = makeQuestions;
-makeQuestions = function (type) {
-  return preSharingQuestions(type).map(q => {
+questionLayers.unshift(function shareFairly(type, next) {
+  return next(type).map(q => {
     if (type !== 'maths' || q.skill !== 'share') return q;
     const animal = q.scene.match(/animal-([a-z-]+)/)?.[1] || 'tuna';
     return {
@@ -51,7 +50,7 @@ makeQuestions = function (type) {
       hint: 'Give one picture to the first basket and one to the second. Keep taking turns until the tray is empty. Then count one basket.'
     };
   });
-};
+});
 let sharingRound = null;
 function removeSharingDrag(round) {
   round?.ghost?.remove();

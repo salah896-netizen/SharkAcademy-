@@ -111,4 +111,3 @@ function openingHello() {
   updateMilo(hello);
   speak(hello, { speaker: 'milo', end: gizmoTurn, unavailable: gizmoTurn });
 }
-showTapToDive();

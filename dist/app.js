@@ -166,7 +166,16 @@ function start(type) {
     render();
   } else location.hash = 'play';
 }
+// Questions for the older games and the maths adventures. Later files add layers to the front of
+// this list (school-pack.js, hands-on-sharing.js, lesson-pack.js, ocean-experience.js); each gets
+// (type, next) and either makes the questions itself or calls next(type) and adjusts the result.
+const questionLayers = [];
 function makeQuestions(type) {
+  let i = 0;
+  const next = t => (i < questionLayers.length ? questionLayers[i++](t, next) : makeBasicQuestions(t));
+  return next(type);
+}
+function makeBasicQuestions(type) {
   if (type === 'reading') {
     const n = state.history.filter(x => x.type === 'reading').length;
     return Array.from({ length: 5 }, (_, i) => {
@@ -346,7 +355,11 @@ function answer(value) {
     'celebrate'
   );
 }
+// Later files add to the finish screen through this list (shark fact, maths discovery, path
+// buttons). finish() clears game, so each step is given the game that just finished.
+const finishSteps = [];
 function finish() {
+  const finished = game;
   state.completed.push({ type: game.type, at: new Date().toISOString() });
   state.xp += pearlCompletionBonus(game.items.length);
   save();
@@ -356,6 +369,7 @@ function finish() {
   game = null;
   updateMilo('Fin-tastic, Haytham! We finished an adventure together.');
   speak('Fin-tastic, Haytham! We finished an adventure together.');
+  for (const step of finishSteps) step(finished);
 }
 function collection() {
   app.innerHTML = `<div class="section-head"><div><span class="tag">YOUR OCEAN TREASURES</span><h1>My collection</h1><p>Meet Milo now. Find more treasures as you learn!</p></div></div><div class="collection">${rewards.map(([icon, name, xp]) => `<article class="collect ${state.xp < xp ? 'locked' : ''}"><span>${state.xp >= xp ? icon : '🔒'}</span><h3>${name}</h3><p class="muted">${state.xp >= xp ? 'Discovered!' : `Unlock at ${xp} pearls`}</p></article>`).join('')}</div><p class="muted">Milo is a pretend megalodon companion. Real megalodons are extinct.</p>`;
@@ -372,6 +386,9 @@ $('#parent').onclick = () => {
     else $('#gateFeedback').textContent = 'Please ask a grown-up to help.';
   };
 };
+// Later files add their own section of the grown-ups' area to this list; each runs, in load order,
+// after the base page is drawn.
+const parentsSteps = [];
 function parents() {
   const summary = t => {
     const h = state.history.filter(x => x.type === t),
@@ -450,6 +467,7 @@ function parents() {
       render();
     };
   };
+  for (const step of parentsSteps) step();
 }
 $('#closeModal').onclick = () => {
   stopSpeech();
@@ -524,7 +542,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v104');
+      const cache = await caches.open('haytham-sharks-v105');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',

@@ -75,7 +75,17 @@ function stopSpeech() {
   fadeMusic(musicCurrent, musicTarget(), 350);
   if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
+// Everything said in the app goes through speak(). Later files can step in first by adding a layer
+// to the front of this list (kid-buttons.js remembers the question; calm-scenes.js holds narration
+// until the lesson journey arrives). Each layer gets (text, options, next) and calls next() to carry on.
+const speakLayers = [];
 function speak(t, options = {}) {
+  let i = 0;
+  const next = (text, opts) => (i < speakLayers.length ? speakLayers[i++](text, opts, next) : speakNow(text, opts));
+  return next(t, options);
+}
+// Say it now: a recorded line in the character's voice if there is one, otherwise the device voice.
+function speakNow(t, options = {}) {
   stopSpeech();
   if (!state.voice) {
     options.unavailable?.();

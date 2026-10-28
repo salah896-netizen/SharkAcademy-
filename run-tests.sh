@@ -11,4 +11,5 @@ node research/lesson-pack/verify-school-pack.cjs
 node research/lesson-pack/verify-race.cjs
 node research/lesson-pack/verify-path.cjs
 node research/lesson-pack/verify-science.cjs
+node research/architecture/check-offline-list.cjs
 echo "All checks passed."

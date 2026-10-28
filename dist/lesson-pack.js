@@ -126,8 +126,8 @@ function startReadingMission(requestedId) {
   if (location.hash === '#play') render();
   else location.hash = 'play';
 };
-const packReadingArt = readingArt;
-readingArt = function (key) {
+readingPictureSources.unshift(packReadingPicture);
+function packReadingPicture(key) {
   const colour = key.startsWith('red-')
     ? '#ee7d78'
     : key.startsWith('yellow-')
@@ -139,8 +139,8 @@ readingArt = function (key) {
     return `<svg viewBox="0 0 120 100" aria-hidden="true"><path d="M29 64L37 25Q60 10 83 25L91 64Z" fill="${key === 'hat' ? '#be9b70' : colour}" stroke="#6b777b" stroke-width="3"/><ellipse cx="60" cy="68" rx="51" ry="14" fill="${key === 'hat' ? '#d8b58a' : colour}" stroke="#6b777b" stroke-width="3"/><path d="M33 51Q60 60 87 51" fill="none" stroke="#f0e6c6" stroke-width="8"/></svg>`;
   if (key.includes('bag'))
     return `<svg viewBox="0 0 120 100" aria-hidden="true"><path d="M33 32Q35 11 60 12Q85 11 87 32" fill="none" stroke="#e8dfbb" stroke-width="8"/><path d="M23 32H97L105 88Q60 101 15 88Z" fill="${key === 'bag' ? '#b8a18a' : colour}" stroke="#697e82" stroke-width="3"/><path d="M35 37L30 79" stroke="#fff8d955" stroke-width="5" stroke-linecap="round"/></svg>`;
-  return packReadingArt(key);
-};
+  return null;
+}
 
 const mathsAdventures = [
   {
@@ -177,10 +177,9 @@ function animalCollection(count, kind, cls = '') {
   return `<div class="counting-school lesson-animals animals-${count} ${cls}" aria-label="Animals to count">${Array.from({ length: count }, (_, i) => `<span data-count-animal="${i}" aria-label="Animal ${i + 1}">${seaAnimal(kind)}</span>`).join('')}</div>`;
 }
 let requestedMathsLesson = null;
-const prePackQuestions = makeQuestions;
-makeQuestions = function (type) {
+questionLayers.unshift(function packMathsLessons(type, next) {
   if (type !== 'maths' || (stageFor('maths') !== 1 && !requestedMathsLesson))
-    return prePackQuestions(type);
+    return next(type);
   const requested = requestedMathsLesson;
   requestedMathsLesson = null;
   const number = state.completed.filter(x => x.type === 'maths').length,
@@ -235,7 +234,7 @@ makeQuestions = function (type) {
       hint
     };
   });
-};
+});
 const packPlay = play;
 play = function () {
   packPlay();
@@ -299,11 +298,8 @@ function nextLessonDiscovery(subject) {
   return currentLessonDiscovery;
 }
 let completedLessonType = null;
-const packFinish = finish;
-finish = function () {
-  const active = game;
+finishSteps.push(function mathsDiscovery(active) {
   if (active) completedLessonType = active.type;
-  packFinish();
   if (active?.type !== 'maths') return;
   const discovery = nextLessonDiscovery('maths'),
     box = app.querySelector('.activity-fact-reward');
@@ -314,7 +310,7 @@ finish = function () {
     helperSpeak('We did it, Haytham! ' + discovery.text);
     requestAnimationFrame(fitScreen);
   }
-};
+});
 
 const writingAdventures = [
   { id: 'W-F-01A', target: 'c', goal: 'Let’s make a little c for our captain’s log.' },

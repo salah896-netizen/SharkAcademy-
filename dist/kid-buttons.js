@@ -118,15 +118,14 @@ new MutationObserver(() => {
   kidQuestion = null;
   setTimeout(syncRepeatButton, 0);
 }).observe(app, { childList: true });
-const preKidSpeak = speak;
-speak = function (text, options = {}) {
+speakLayers.unshift(function rememberQuestion(text, options, next) {
   if (kidAwaitQuestion && text && !options.repeat) {
     kidAwaitQuestion = false;
     kidQuestion = { text, speaker: options.speaker || 'milo' };
     syncRepeatButton();
   }
-  return preKidSpeak(text, options);
-};
+  return next(text, options);
+});
 function questionScreen() {
   return (
     document.body.classList.contains('activity-screen') &&
@@ -158,7 +157,7 @@ function syncRepeatButton() {
     // The lesson's own "hear the question" control says it best; otherwise replay what was said.
     const own = document.querySelector('#questInstructions, #app #listen');
     if (own) own.click();
-    else if (kidQuestion) preKidSpeak(kidQuestion.text, { speaker: kidQuestion.speaker, repeat: true });
+    else if (kidQuestion) speak(kidQuestion.text, { speaker: kidQuestion.speaker, repeat: true });
   };
 }
 window.addEventListener('hashchange', () => setTimeout(syncRepeatButton, 50));

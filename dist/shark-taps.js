@@ -110,9 +110,7 @@ touchMilo = function () {
 };
 
 // Home reef: first tap = trick + fun line + "Let's go!" bubble; tap again to start.
-const preTapHome = home;
-home = function () {
-  preTapHome();
+homeSteps.push(function bindFriendTaps() {
   document.querySelectorAll('[data-friend-route]').forEach(button => {
     const key = button.dataset.friendRoute,
       launch = button.onclick;
@@ -141,5 +139,4 @@ home = function () {
       }, 8100);
     };
   });
-};
-if (document.body.dataset.route === 'home') render();
+});

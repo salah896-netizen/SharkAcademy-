@@ -80,11 +80,9 @@ const oldRender = render,
   oldPlay = play,
   oldArticle = sharkArticle,
   oldTopic = oceanTopicPage,
-  oldQuestions = makeQuestions,
   oldSave = save,
   oldAnswer = answer,
-  oldReadingAnswer = readingMissionAnswer,
-  oldFinish = finish;
+  oldReadingAnswer = readingMissionAnswer;
 let lastPearls = state.xp,
   rewardIndex = 0,
   screenCleanup = () => {},
@@ -270,9 +268,8 @@ readingMissionAnswer = function (value) {
     advanceAfterCelebration();
   }
 };
-finish = function () {
-  const key = game?.type;
-  oldFinish();
+finishSteps.push(function sharkFactReward(finished) {
+  const key = finished?.type;
   if (!key) return;
   const s = sharkBook[state.completed.length % sharkBook.length];
   const fact = s.facts[0].join(' ');
@@ -286,9 +283,9 @@ finish = function () {
     helperSpeak(s.name + '. ' + fact);
     requestAnimationFrame(fitScreen);
   }
-};
-makeQuestions = function (type) {
-  const items = oldQuestions(type);
+});
+questionLayers.unshift(function countSeaAnimals(type, next) {
+  const items = next(type);
   if (type === 'maths')
     items.forEach((q, i) => {
       if (q.scene.includes('🐟')) {
@@ -306,7 +303,7 @@ makeQuestions = function (type) {
       }
     });
   return items;
-};
+});
 function shellBoard() {
   return `<img class="fossil-tooth" src="assets/fossil-gateway-carved.webp" alt="Haytham’s Shark Adventures chiseled into a fossil shark tooth" width="1254" height="1254">`;
 }
@@ -317,6 +314,9 @@ const sharkButtons = [
   ['gizmo', 'Sharks', 'museum'],
   ['dash', 'Writing', 'writing']
 ];
+// Later files add to the home reef through this list (friend taps, subject badges); each runs after
+// the reef is drawn, in load order.
+const homeSteps = [];
 function home() {
   app.innerHTML = `<section class="new-reef-home"><div class="home-light-rays" aria-hidden="true"></div><div class="home-board">${shellBoard()}<button id="dailyPlay" aria-label="Play today's learning adventure"><span aria-hidden="true">▶</span></button></div><p class="home-one-line">Your friends. Your ocean. A new adventure.</p><div class="home-fish" aria-hidden="true">${seaAnimal('tuna')}${seaAnimal('clownfish')}${seaAnimal('turtle')}</div><div class="home-friends" aria-label="Choose a friend to learn with">${sharkButtons.map(([k, label]) => `<button data-friend-route="${k}" aria-label="${k === 'milo' ? 'Milo' : reefCrew[k].name}: ${label}"><span>${k === 'milo' ? miloActor() : crewActor(k)}</span><strong>${k === 'milo' ? 'Milo' : reefCrew[k].name}</strong><small>${label}</small></button>`).join('')}</div></section>`;
   $('#dailyPlay').onclick = dailyAdventure;
@@ -331,7 +331,8 @@ function home() {
         launchWithFriend(b.dataset.friendRoute);
       })
   );
-};
+  for (const step of homeSteps) step();
+}
 function dailyAdventure() {
   // The learning path chooses the lesson (picked before the swim journey when there was one).
   if (typeof pathNextActivity === 'function') {
@@ -775,9 +776,7 @@ function bindHomeGreetings() {
   });
 }
 // (Cinema and video unlocks removed 26 Oct: pearls now open race tracks; see race.js.)
-const originalParentView = parents;
-parents = function () {
-  originalParentView();
+parentsSteps.push(function groupParentSections() {
   const host = $('#modalContent'),
     nodes = [...host.children],
     groups = [];
@@ -808,7 +807,7 @@ parents = function () {
   };
   select.onchange = show;
   show();
-};
+});
 render = function () {
   clearTimeout(autoAdvanceTimer);
   screenNarration = '';
@@ -889,7 +888,5 @@ document.addEventListener(
 );
 installOceanChrome();
 updateSound();
-window.addEventListener('hashchange', render);
 window.addEventListener('resize', fitScreen);
-render();
-// The opening now lives in opening.js (Tap to dive), loaded last.
+// The first render happens in boot.js, once every screen exists.
