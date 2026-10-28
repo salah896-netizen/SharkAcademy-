@@ -383,7 +383,7 @@ function joinHeading(heading, body) {
   if (!heading) return body;
   return heading + (/[.!?]$/.test(heading) ? ' ' : '. ') + body;
 }
-narratePanel = function (panel) {
+function narratePanel(panel) {
   if (!panel) return;
   const heading = panel.querySelector('h1,h2,strong')?.textContent || '';
   const body = panel.querySelector('p')?.textContent || '';

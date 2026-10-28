@@ -75,25 +75,6 @@ p {
   font-size: 10px;
   letter-spacing: 2.3px;
 }
-.ocean-home {
-  position: relative;
-}
-.ocean-welcome {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 24px 20px 0;
-  pointer-events: none;
-}
-.ocean-welcome h1 {
-  font-size: clamp(40px, 5.1vw, 66px);
-  margin: 16px 0;
-}
-.ocean-welcome p {
-  font-size: 15px;
-  color: #c2dbe1;
-  margin: 0;
-}
 .reef-scene {
   position: relative;
   height: 390px;
@@ -108,22 +89,6 @@ p {
     #000 88%,
     transparent 100%
   );
-}
-.sun-rays {
-  position: absolute;
-  inset: -100% -20%;
-  background: conic-gradient(
-    from 160deg at 25% 15%,
-    transparent 0deg,
-    #b8faff09 10deg,
-    transparent 15deg,
-    #b8faff0c 20deg,
-    transparent 27deg,
-    #b8faff08 34deg,
-    transparent 45deg
-  );
-  animation: light-drift 16s ease-in-out infinite;
-  pointer-events: none;
 }
 .milo-swim {
   position: absolute;
@@ -174,204 +139,8 @@ p {
   margin: 10px 0 12px;
   font-weight: 500;
 }
-.greet-button {
-  color: #ceeeee;
-  border: 1px solid #c4e9e64d;
-  border-radius: 30px;
-  background: #143c4d88;
-  font-size: 11px;
-  padding: 9px 16px;
-  min-height: 42px;
-}
-.scene-controls {
-  position: absolute;
-  bottom: 13px;
-  right: 12px;
-  display: flex;
-  gap: 8px;
-  z-index: 4;
-}
-.scene-controls button {
-  font-size: 10px;
-  min-height: 36px;
-  padding: 8px 13px;
-  background: #092638a0;
-}
-.distant-shark {
-  position: absolute;
-  color: #72b8c8;
-  opacity: 0.18;
-  width: 150px;
-  z-index: 0;
-}
-.shark-one {
-  top: 25px;
-  animation: shark-pass 40s linear infinite;
-  animation-delay: -17s;
-}
-.shark-two {
-  top: 140px;
-  width: 105px;
-  opacity: 0.12;
-  animation: shark-pass 54s linear infinite reverse;
-  animation-delay: -11s;
-}
-.shark-three {
-  top: 65px;
-  width: 90px;
-  opacity: 0.1;
-  animation: shark-pass 47s linear infinite;
-  animation-delay: -29s;
-}
-.distant-shark svg {
-  width: 100%;
-  animation: tail-drift 3s ease-in-out infinite;
-}
-.fish-school {
-  position: absolute;
-  left: 10%;
-  top: 45%;
-  width: 190px;
-  height: 85px;
-  animation: school-drift 32s linear infinite;
-  opacity: 0.45;
-}
-.fish-school i {
-  position: absolute;
-  left: calc(var(--i) * 20px);
-  top: calc(mod(var(--i), 3) * 17px);
-  width: 10px;
-  height: 4px;
-  background: #c6ddbb;
-  border-radius: 50%;
-  transform: translateY(calc(var(--i) * 6px));
-}
-.fish-school i:after {
-  content: '';
-  position: absolute;
-  right: -3px;
-  top: 0;
-  border-right: 4px solid #c6ddbb;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-}
-.sea-particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.sea-particles i {
-  position: absolute;
-  left: calc(var(--i) * 7%);
-  top: 100%;
-  width: 3px;
-  height: 3px;
-  background: #b2e3e4;
-  border-radius: 50%;
-  animation: particle-rise calc(9s + var(--i) * 1s) linear infinite;
-  animation-delay: calc(var(--i) * -2s);
-  opacity: 0.3;
-}
-.ocean-paths {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr;
-  gap: 16px;
-  position: relative;
-  z-index: 3;
-}
-.ocean-destination {
-  border: 1px solid #d2f2f32a;
-  border-radius: 24px;
-  background: linear-gradient(140deg, #96dce620, #1c486630);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  padding: 23px;
-  text-decoration: none;
-  position: relative;
-  transition:
-    transform 0.3s,
-    background 0.3s;
-  min-height: 183px;
-}
-.ocean-destination:hover {
-  transform: translateY(-4px);
-  background: #76c2d92b;
-}
-.ocean-destination.featured {
-  background: linear-gradient(140deg, #8bdcd631, #285b6c50);
-}
-.destination-icon {
-  display: block;
-  color: #abe4de;
-  margin-bottom: 22px;
-}
-.destination-icon svg {
-  width: 30px;
-  height: 30px;
-}
-.ocean-destination h2 {
-  font-size: 22px;
-  margin: 8px 0;
-}
-.ocean-destination p {
-  font-size: 12px;
-  margin: 0;
-  color: #b6d2d9;
-}
-.ocean-destination .tag {
-  font-size: 8px;
-  letter-spacing: 1.5px;
-}
-.destination-arrow {
-  position: absolute;
-  right: 24px;
-  top: 25px;
-  color: #b2d7dc;
-}
-.ocean-progress {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  max-width: 600px;
-  margin: 30px auto 0;
-}
-.ocean-progress > div {
-  flex: 1;
-}
-.ocean-progress strong {
-  font-size: 12px;
-  font-weight: 500;
-}
-.ocean-progress strong span {
-  color: #8fbdc8;
-}
-.ocean-progress .track {
-  margin-top: 9px;
-  background: #bddfeb14;
-  height: 4px;
-}
 .track > div {
   background: #9ad8cd;
-}
-.ocean-progress > span:last-child {
-  font-size: 20px;
-  font-weight: 500;
-}
-.ocean-progress small {
-  display: block;
-  font-size: 7px;
-  letter-spacing: 2px;
-  color: #8bbbc8;
-}
-.progress-star {
-  font-size: 35px;
-  color: #bad9c9;
-}
-.ocean-footnote {
-  text-align: center;
-  color: #83acb9;
-  font-size: 10px;
-  margin: 20px 0 0;
 }
 nav {
   left: 50%;
@@ -398,10 +167,6 @@ nav a {
 nav span {
   font-size: 10px;
   font-weight: 500;
-}
-nav .nav-symbol {
-  font-size: 23px;
-  line-height: 1;
 }
 nav a.active {
   color: #edffff;
@@ -440,15 +205,6 @@ nav a.active:after {
   color: #edf8fa;
   padding: 26px;
   backdrop-filter: blur(16px);
-}
-.card-icon {
-  background: linear-gradient(145deg, #63b6b42b, #12354c) !important;
-  color: #c8e7dd;
-  height: 150px;
-  margin: -26px -26px 24px;
-  font-size: 55px;
-  font-weight: 300;
-  letter-spacing: -3px;
 }
 .card p {
   color: #aac8d3;
@@ -974,35 +730,6 @@ dialog::backdrop {
     transform: translateY(-13px) rotate(1deg);
   }
 }
-@keyframes shark-pass {
-  from {
-    left: 110%;
-    transform: translateY(0);
-  }
-  to {
-    left: -25%;
-    transform: translateY(-25px);
-  }
-}
-@keyframes school-drift {
-  from {
-    transform: translateX(-200px);
-  }
-  to {
-    transform: translateX(1200px);
-  }
-}
-@keyframes tail-drift {
-  50% {
-    transform: rotate(3deg) scaleX(0.96);
-  }
-}
-@keyframes particle-rise {
-  to {
-    transform: translate(25px, -430px);
-    opacity: 0;
-  }
-}
 @keyframes greeting-appear {
   from {
     opacity: 0;
@@ -1023,12 +750,6 @@ dialog::backdrop {
     transform: translateY(0);
   }
 }
-@keyframes light-drift {
-  50% {
-    transform: rotate(4deg);
-    opacity: 0.5;
-  }
-}
 @media (min-width: 1450px) {
   .reef-scene {
     height: 430px;
@@ -1038,12 +759,6 @@ dialog::backdrop {
   }
 }
 @media (max-width: 1000px) {
-  .ocean-destination {
-    padding: 21px;
-  }
-  .ocean-destination h2 {
-    font-size: 20px;
-  }
   .species-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1052,9 +767,6 @@ dialog::backdrop {
   }
   .milo-greeting {
     left: 5%;
-  }
-  .ocean-welcome h1 {
-    font-size: 53px;
   }
   .reef-scene {
     height: 340px;
@@ -1109,19 +821,6 @@ dialog::backdrop {
   main {
     padding: 8px 20px;
   }
-  .ocean-welcome {
-    padding: 25px 0 0;
-  }
-  .ocean-welcome h1 {
-    font-size: 43px;
-    letter-spacing: -2px;
-  }
-  .ocean-welcome .tag {
-    font-size: 8px;
-  }
-  .ocean-welcome p {
-    font-size: 11px;
-  }
   .reef-scene {
     height: 330px;
     margin: 0 -20px;
@@ -1143,58 +842,6 @@ dialog::backdrop {
   .milo-name {
     font-size: 7px;
   }
-  .greet-button {
-    padding: 7px 12px;
-    font-size: 10px;
-    min-height: 38px;
-  }
-  .scene-controls {
-    bottom: 12px;
-    right: 17px;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .scene-controls .quiet {
-    font-size: 8px;
-    padding: 7px 10px;
-    min-height: 30px;
-  }
-  .ocean-paths {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .ocean-destination {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    min-height: 110px;
-    padding: 22px;
-    border-radius: 23px;
-  }
-  .destination-icon {
-    margin: 0;
-  }
-  .destination-icon svg {
-    width: 32px;
-    height: 32px;
-  }
-  .ocean-destination h2 {
-    font-size: 21px;
-    margin: 6px 0;
-  }
-  .ocean-destination p {
-    font-size: 11px;
-  }
-  .destination-arrow {
-    right: 20px;
-    top: 46px;
-  }
-  .ocean-progress {
-    margin-top: 25px;
-  }
-  .ocean-progress strong {
-    font-size: 11px;
-  }
   nav {
     width: calc(100% - 30px);
     bottom: 12px;
@@ -1209,9 +856,6 @@ dialog::backdrop {
   }
   nav span {
     font-size: 9px;
-  }
-  .nav-symbol {
-    font-size: 21px !important;
   }
   .species-grid {
     grid-template-columns: 1fr 1fr;
@@ -1359,9 +1003,6 @@ dialog::backdrop {
     font-size: 10px;
     padding: 10px;
   }
-  .card-icon {
-    height: 120px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1378,18 +1019,6 @@ dialog::backdrop {
   .milo-greeting {
     opacity: 1;
     transform: none;
-  }
-  .shark-one {
-    left: 15%;
-  }
-  .shark-two {
-    left: 65%;
-  }
-  .shark-three {
-    left: 45%;
-  }
-  .sea-particles i {
-    top: calc(var(--i) * 6%);
   }
 }
 body:before {

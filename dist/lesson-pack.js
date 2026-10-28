@@ -1,10 +1,4 @@
 /* Foundation adventure pack. Practice evidence is kept separate from mastery. */
-const lessonPackSources = {
-  english:
-    'https://www.australiancurriculum.edu.au/resources/work-samples/english/foundation/ws02-big-write',
-  maths:
-    'https://www.australiancurriculum.edu.au/resources/work-samples/mathematics/foundation/ws04-lets-pack-a-picnic'
-};
 function clue(word, options, answer, reveal) {
   return {
     word,
@@ -108,7 +102,7 @@ readingMissionLibrary.push(
   }
 );
 // Continue after the most recently completed lesson, including older pilot records.
-startReadingMission = function (requestedId) {
+function startReadingMission(requestedId) {
   const completed = state.readingAdventures || [],
     last = completed.at(-1),
     previous = readingMissionLibrary.findIndex(l => l.id === last?.lesson),

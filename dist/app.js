@@ -98,14 +98,6 @@ function populateVoicePicker() {
 if ('speechSynthesis' in window)
   speechSynthesis.addEventListener('voiceschanged', populateVoicePicker);
 const shark = `<svg viewBox="0 0 450 260" role="img" aria-label="Milo, a friendly illustrated megalodon with realistic shark fins and colouring"><defs><linearGradient id="miloBody" x2="0.2" y2="1"><stop stop-color="#425e72"/><stop offset=".52" stop-color="#809da9"/><stop offset="1" stop-color="#c5d6d6"/></linearGradient><linearGradient id="miloFin" x2="1" y2="1"><stop stop-color="#354f63"/><stop offset="1" stop-color="#90aab3"/></linearGradient></defs><path d="M323 131Q367 100 409 38L391 121L374 147L407 211Q362 189 328 166" fill="url(#miloFin)"/><path d="M182 101Q196 64 216 25Q244 64 249 105" fill="url(#miloFin)"/><path d="M243 161L294 211L268 162" fill="#607f91"/><path d="M41 147Q80 112 128 101Q190 83 267 110Q323 121 353 146Q321 176 264 185Q165 206 83 179Q53 169 41 147" fill="url(#miloBody)"/><path d="M43 150Q111 165 174 162Q260 163 347 149Q305 186 220 190Q103 200 43 150" fill="#e2e6db"/><path d="M180 160Q194 183 239 235Q238 188 216 160" fill="url(#miloFin)"/><path d="M64 153Q91 166 126 158" fill="none" stroke="#334a53" stroke-width="3" stroke-linecap="round"/><path d="M82 158L86 164L91 160M99 161L103 166L108 161" fill="#fff9e6"/><circle cx="100" cy="137" r="6.5" fill="#142b36"/><circle cx="98" cy="135" r="2" fill="#f1f6ee"/><path d="M142 128Q151 143 145 158M155 126Q165 143 158 160M169 127Q179 144 172 161M182 130Q192 146 184 162M195 134Q205 148 197 163" fill="none" stroke="#4e6c7c" stroke-width="2.8" stroke-linecap="round"/><path d="M59 142Q114 109 172 108" fill="none" stroke="#c2d8db" stroke-width="2" opacity=".5"/><circle cx="59" cy="149" r="1.8" fill="#4d6770"/></svg>`;
-const ranks = [
-  'Shark Pup',
-  'Reef Explorer',
-  'Shark Ranger',
-  'Deep-Sea Scientist',
-  'Megalodon Master'
-];
-const rank = () => Math.min(4, Math.floor(state.xp / 100));
 const rewards = [
   ['🦈', 'Milo the megalodon', 0],
   ['🐚', 'Pearl shell', 30],
@@ -133,25 +125,6 @@ function shuffled(a) {
   return [...a].sort(() => Math.random() - 0.5);
 }
 const sharkSilhouette = `<svg viewBox="0 0 450 260" aria-hidden="true"><path d="M41 147Q100 85 182 101L216 25L249 105Q315 118 353 146L409 38L391 121L374 147L407 211L328 166Q280 192 216 190L239 235L180 191Q85 192 41 147" fill="currentColor"/></svg>`;
-let reefMotion = true;
-function home() {
-  app.innerHTML = `<section class="ocean-home"><div class="ocean-welcome treasure-welcome"><h1 aria-label="Haytham’s Shark Adventures"><img class="welcome-treasure-art" src="assets/haytham-surfboard-bite.webp" alt="Haytham’s Shark Adventures — a painted surfboard with a shark bite in its tail" fetchpriority="high" width="1500" height="507"></h1></div><div class="reef-scene" aria-label="An underwater reef with sharks swimming in the distance"><div class="sun-rays" aria-hidden="true"></div><div class="distant-shark shark-one" aria-hidden="true">${sharkSilhouette}</div><div class="distant-shark shark-two" aria-hidden="true">${sharkSilhouette}</div><div class="distant-shark shark-three" aria-hidden="true">${sharkSilhouette}</div><div class="fish-school" aria-hidden="true">${Array.from({ length: 7 }, (_, i) => `<i style="--i:${i}"></i>`).join('')}</div><div class="sea-particles" aria-hidden="true">${Array.from({ length: 14 }, (_, i) => `<i style="--i:${i}"></i>`).join('')}</div>${homeCrew()}${reefMysteries()}<div class="scene-controls"><button class="quiet" id="motionToggle" aria-pressed="${!reefMotion}">${reefMotion ? 'Ⅱ Pause ocean' : '▷ Resume ocean'}</button></div></div><section class="picture-ocean-paths" aria-label="Choose an ocean adventure">${picturePortal('sharks', 'Meet the sharks', 'Discover amazing sharks.', 'museum')}${picturePortal('adventure', 'Learning Adventure', 'Play with Milo.', 'expeditions')}${picturePortal('writing', 'Write with Milo', 'Draw letters and numbers.', 'writing')}${picturePortal('stories', 'A sea of stories', 'Read with Milo.', 'stories')}</section><a class="ocean-progress" href="#collection" aria-label="View my ocean treasures"><span class="progress-star">✧</span><div><strong>${ranks[rank()]} <span>· Level ${rank() + 1}</span></strong><div class="track"><div style="width:${rank() === 4 ? 100 : state.xp % 100}%"></div></div></div><span>${state.xp} <small>PEARLS</small></span></a></section>`;
-  $('#greetMilo').onclick = () => {
-    expandTappedShark('milo');
-    setMiloMood('idle');
-    playCharacterGreeting('milo');
-  };
-  $('#motionToggle').onclick = () => {
-    reefMotion = !reefMotion;
-    $('.reef-scene').classList.toggle('paused', !reefMotion);
-    $('#motionToggle').textContent = reefMotion ? 'Ⅱ Pause ocean' : '▷ Resume ocean';
-    $('#motionToggle').setAttribute('aria-pressed', String(!reefMotion));
-  };
-  $('.reef-scene').classList.toggle('paused', !reefMotion);
-  bindReefMysteries();
-  bindPictureNames();
-  bindAdventureInvites();
-}
 function icon(name) {
   const paths = {
     book: 'M4 5Q9 3 16 6Q23 3 28 5V26Q23 24 16 27Q9 24 4 26ZM16 6V27',
@@ -534,12 +507,9 @@ function render() {
   if (!storageOK) showSaveWarning();
   updateMiloDock();
   finishLaunch();
-  playPendingAdventureInvite(route);
 }
 initReefCrew();
 initOceanAtmosphere();
-window.addEventListener('hashchange', render);
-render();
 if ('serviceWorker' in navigator) {
   let reloading = false;
   const wasControlled = !!navigator.serviceWorker.controller;
@@ -554,7 +524,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v103');
+      const cache = await caches.open('haytham-sharks-v104');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',

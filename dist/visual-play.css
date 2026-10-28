@@ -1,11 +1,3 @@
-.picture-ocean-paths {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  position: relative;
-  z-index: 3;
-}
-.picture-destination,
 .picture-game {
   position: relative;
   border-radius: 26px;
@@ -17,57 +9,12 @@
     transform 0.25s,
     box-shadow 0.25s;
 }
-.picture-destination a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-.picture-destination img {
-  display: block;
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  transition: transform 0.7s;
-}
-.picture-destination:hover,
 .picture-game:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 40px #48d5c52a;
 }
-.picture-destination:hover img,
 .picture-game:hover img {
   transform: scale(1.055);
-}
-.picture-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 18px 0;
-  gap: 8px;
-}
-.picture-title h2 {
-  font-size: 22px;
-  margin: 0;
-  line-height: 1.15;
-  font-weight: 650;
-  letter-spacing: -0.5px;
-}
-.picture-go {
-  display: grid;
-  place-items: center;
-  background: #c9eee2;
-  color: #154d5a;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  font-size: 12px;
-  box-shadow: 0 0 20px #a4ffe128;
-}
-.picture-destination p {
-  font-size: 11px;
-  margin: 10px 18px 20px;
-  color: #b9d9de;
 }
 .picture-listen {
   position: absolute;
@@ -198,121 +145,6 @@
   overflow: visible;
   mask-image: none;
   -webkit-mask-image: none;
-}
-.reef-mysteries {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 4;
-}
-.reef-hotspot {
-  pointer-events: auto;
-  position: absolute;
-  background: none;
-  border: 0;
-  border-radius: 50%;
-  padding: 5px;
-  min-height: 55px;
-  min-width: 55px;
-  isolation: isolate;
-  filter: drop-shadow(0 4px 12px #00233344);
-  transition: filter 0.2s;
-}
-.reef-hotspot svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.reef-hotspot:hover {
-  filter: drop-shadow(0 0 12px #b7f5d8aa);
-}
-.hotspot-spark {
-  position: absolute;
-  right: 0;
-  top: 2px;
-  font-size: 20px;
-  color: #d5ffe8;
-  animation: spark-invite 3s ease-in-out infinite;
-}
-.sub-hotspot {
-  width: 125px;
-  height: 90px;
-  top: 15px;
-  left: 2%;
-  animation: sub-idle 6s ease-in-out infinite;
-}
-.turtle-hotspot {
-  width: 95px;
-  height: 95px;
-  right: 1%;
-  top: 115px;
-  animation: turtle-glide 9s ease-in-out infinite;
-}
-.turtle-flippers {
-  transform-origin: 100px 85px;
-  animation: turtle-paddle 1.8s ease-in-out infinite;
-}
-.chest-hotspot {
-  width: 90px;
-  height: 80px;
-  left: 2%;
-  bottom: 30px;
-}
-.kraken-hotspot {
-  width: 75px;
-  height: 85px;
-  right: 23%;
-  bottom: 10px;
-  opacity: 0.8;
-  animation: tentacle-peek 7s ease-in-out infinite;
-}
-.reef-discovery {
-  position: absolute;
-  bottom: -20px;
-  left: 13%;
-  right: 13%;
-  margin: 0;
-  text-align: center;
-  color: #c8e6e1;
-  font-size: 10px;
-  line-height: 1.5;
-  text-shadow: 0 2px 4px #002233;
-  min-height: 20px;
-}
-.sub-hotspot.discovered {
-  animation: sub-zoom 2s ease-in-out;
-}
-.sub-hotspot.discovered .sub-sonar {
-  animation: sonar-ping 0.65s ease-out 3;
-}
-.turtle-hotspot.discovered {
-  animation: turtle-hello 2s ease-in-out;
-}
-.turtle-hotspot.discovered .turtle-flippers {
-  animation: turtle-paddle 0.35s ease-in-out 5;
-}
-.treasure-lid {
-  transform-origin: 25px 65px;
-  transition: transform 0.7s;
-}
-.treasure-pearl {
-  opacity: 0;
-  transition:
-    opacity 0.5s,
-    transform 0.7s;
-}
-.chest-hotspot.discovered .treasure-lid {
-  transform: translateY(-18px) rotate(-15deg);
-}
-.chest-hotspot.discovered .treasure-pearl {
-  opacity: 1;
-  transform: translateY(-20px);
-}
-.kraken-hotspot.discovered {
-  animation: tentacle-wave 1.5s ease-in-out;
-}
-.scene-controls {
-  z-index: 5;
 }
 .milo-greeting {
   left: 14%;
@@ -588,12 +420,6 @@
 .kraken-picture.awake > img {
   animation: kraken-awakens 2.5s ease-in-out;
 }
-.kraken-encounter p {
-  font-size: 16px;
-}
-.kraken-encounter .tag {
-  color: #635086;
-}
 #krakenReaction {
   font-size: 13px;
   color: #536c7a;
@@ -623,50 +449,6 @@
   50% {
     opacity: 0.3;
     transform: scale(0.7);
-  }
-}
-@keyframes sub-idle {
-  50% {
-    transform: translate(16px, -5px) rotate(2deg);
-  }
-}
-@keyframes turtle-glide {
-  50% {
-    transform: translate(-16px, 9px) rotate(-6deg);
-  }
-}
-@keyframes turtle-paddle {
-  50% {
-    transform: scaleX(0.8) rotate(3deg);
-  }
-}
-@keyframes tentacle-peek {
-  50% {
-    transform: translateY(8px) rotate(8deg);
-  }
-}
-@keyframes sub-zoom {
-  35% {
-    transform: translate(45px, -12px) rotate(-8deg);
-  }
-  65% {
-    transform: translate(25px, 3px) rotate(4deg);
-  }
-}
-@keyframes sonar-ping {
-  to {
-    opacity: 0;
-    transform: translateX(-15px);
-  }
-}
-@keyframes turtle-hello {
-  50% {
-    transform: translate(-30px, -25px) rotate(-15deg) scale(1.16);
-  }
-}
-@keyframes tentacle-wave {
-  50% {
-    transform: translateY(-15px) rotate(-15deg) scale(1.15);
   }
 }
 @keyframes milo-free-swim {
@@ -746,12 +528,6 @@
   }
 }
 @media (max-width: 1100px) {
-  .picture-ocean-paths {
-    grid-template-columns: 1fr 1fr;
-  }
-  .picture-destination img {
-    height: 205px;
-  }
   .picture-games {
     gap: 15px;
   }
@@ -769,49 +545,8 @@
   .milo-greeting {
     left: 13%;
   }
-  .sub-hotspot {
-    width: 100px;
-    height: 75px;
-  }
-  .turtle-hotspot {
-    width: 80px;
-    height: 80px;
-  }
-  .chest-hotspot {
-    width: 75px;
-    height: 70px;
-  }
 }
 @media (max-width: 700px) {
-  .picture-ocean-paths {
-    gap: 13px;
-    margin-top: 28px;
-  }
-  .picture-destination {
-    border-radius: 23px;
-  }
-  .picture-destination img {
-    height: 160px;
-  }
-  .picture-title {
-    padding: 17px 14px 0;
-    align-items: flex-start;
-  }
-  .picture-title h2 {
-    font-size: 21px;
-    min-height: 48px;
-  }
-  .picture-go {
-    width: 26px;
-    height: 26px;
-    font-size: 9px;
-    margin-top: 1px;
-  }
-  .picture-destination p {
-    font-size: 10px;
-    margin: 7px 14px 16px;
-    min-height: 30px;
-  }
   .picture-listen {
     top: 9px;
     right: 9px;
@@ -854,46 +589,12 @@
     margin-top: 0;
     height: 360px;
   }
-  .sub-hotspot {
-    left: 1%;
-    top: 1px;
-    width: 95px;
-    height: 70px;
-  }
-  .turtle-hotspot {
-    right: 0;
-    top: 140px;
-    width: 75px;
-    height: 75px;
-  }
-  .chest-hotspot {
-    left: 1%;
-    bottom: 27px;
-    width: 67px;
-    height: 65px;
-  }
-  .kraken-hotspot {
-    right: 31%;
-    bottom: 1px;
-    width: 55px;
-    height: 65px;
-  }
   .milo-greeting {
     left: 23px;
     top: 202px;
   }
   .milo-greeting p {
     font-size: 21px;
-  }
-  .scene-controls {
-    bottom: 38px;
-  }
-  .reef-discovery {
-    bottom: -9px;
-    left: 12%;
-    right: 12%;
-    font-size: 9px;
-    min-height: 25px;
   }
   .milo-companion {
     right: 8px;
@@ -950,9 +651,6 @@
   .has-companion {
     padding-bottom: 240px;
   }
-  .hotspot-spark {
-    font-size: 15px;
-  }
   .kraken-discover-card {
     grid-template-columns: 1fr;
   }
@@ -965,9 +663,6 @@
   .kraken-discover-card strong {
     font-size: 27px;
   }
-  .kraken-encounter h2 {
-    font-size: 26px;
-  }
   .kraken-picture img {
     max-height: 300px;
   }
@@ -978,47 +673,23 @@
     font-size: clamp(17px, 5vw, 24px);
   }
 }
-@media (max-width: 380px) {
-  .picture-destination img {
-    height: 130px;
-  }
-  .picture-title h2 {
-    font-size: 19px;
-  }
-  .picture-go {
-    display: none;
-  }
-  .picture-title {
-    padding: 14px 12px 0;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .picture-destination,
   .picture-game,
-  .picture-destination img,
   .picture-game img {
     transition: none;
   }
   .picture-pop,
   .game-play-symbol,
-  .reef-hotspot,
-  .hotspot-spark,
-  .turtle-flippers,
   .companion-actor,
   .milo-high-fin,
   .milo-sparkles,
   .five-pop,
   .kraken-picture.awake > img,
-  .game-panel h1,
-  .sub-sonar {
+  .game-panel h1 {
     animation: none !important;
   }
   .companion-actor {
     transform: none;
-  }
-  .reef-hotspot.discovered {
-    outline: 2px solid #bbe7de;
-    outline-offset: 3px;
   }
   .milo-companion .milo-actor {
     animation: none !important;
@@ -1072,11 +743,5 @@ body.has-companion main {
     width: 44px;
     height: 44px;
     min-height: 44px;
-  }
-}
-@media (max-width: 700px) {
-  .chest-hotspot {
-    left: 27%;
-    bottom: 25px;
   }
 }

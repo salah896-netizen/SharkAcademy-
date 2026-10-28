@@ -134,22 +134,6 @@ header {
   font-size: 8px;
   letter-spacing: 0.4px;
 }
-.ocean-welcome {
-  padding: 12px 0 0;
-  text-align: left;
-  max-width: 1100px;
-  margin: auto;
-}
-.ocean-welcome h1 {
-  font-size: clamp(38px, 5.5vw, 66px);
-  letter-spacing: -2px;
-  margin: 0;
-  line-height: 1.05;
-  font-weight: 550;
-}
-.ocean-welcome h1 br {
-  display: none;
-}
 .reef-scene {
   height: 335px;
   margin: 0 0 10px;
@@ -160,56 +144,8 @@ header {
   top: -8px;
   max-width: 550px;
 }
-.reef-discovery:empty {
-  display: none;
-}
-.scene-controls {
-  bottom: 8px;
-  right: 0;
-}
-.scene-controls .quiet {
-  font-size: 9px;
-  min-height: 34px;
-  padding: 8px 12px;
-  background: #123b4c77;
-}
 .milo-greeting {
   display: none !important;
-}
-.picture-ocean-paths {
-  gap: 15px;
-}
-.picture-destination {
-  border: 1px solid #bce5e92f;
-  box-shadow: none;
-  background: #10344ba1;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 24px;
-}
-.picture-destination img {
-  height: 170px;
-}
-.picture-title {
-  padding: 17px 17px 20px;
-  align-items: center;
-}
-.picture-title h2 {
-  font-size: 21px;
-  min-height: 0;
-}
-.ocean-progress {
-  margin-top: 25px;
-  max-width: 560px;
-}
-.ocean-progress strong {
-  font-size: 11px;
-}
-.ocean-progress .track {
-  height: 3px;
-}
-.ocean-progress .progress-star {
-  font-size: 28px;
 }
 .book-head {
   padding: 22px 0 20px;
@@ -335,18 +271,15 @@ header {
   border-color: #cbb1ef33;
   background: #24284b88;
 }
-.kraken-ocean-page,
-.ocean-lesson {
+.kraken-ocean-page {
   max-width: 900px;
   margin: 10px auto 35px;
 }
-.kraken-ocean-page > .tag,
-.ocean-lesson > .tag {
+.kraken-ocean-page > .tag {
   display: block;
   margin-top: 15px;
 }
-.kraken-ocean-page h1,
-.ocean-lesson h1 {
+.kraken-ocean-page h1 {
   font-size: clamp(36px, 5vw, 58px);
   margin: 18px 0 25px;
 }
@@ -361,20 +294,11 @@ header {
 .kraken-ocean-page .kraken-picture img {
   max-height: 490px;
 }
-.kraken-ocean-page .listen,
-.ocean-lesson .listen {
+.kraken-ocean-page .listen {
   border-radius: 30px;
 }
 .kraken-ocean-page #krakenReaction {
   color: #c4d6e6;
-}
-.ocean-lesson .topic-text {
-  font-size: 26px;
-  line-height: 1.9;
-  color: #d6e8ee;
-}
-.ocean-lesson .credits {
-  margin-top: 30px;
 }
 .expedition-page > h1 {
   font-size: clamp(40px, 5vw, 62px);
@@ -533,11 +457,6 @@ body.has-companion main {
 .milo-companion.dock-above-writing .fin-five-target {
   left: 10px;
 }
-.ocean-world-name {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--world-accent);
-}
 @keyframes world-arrival {
   from {
     opacity: 0.4;
@@ -570,15 +489,6 @@ body.has-companion main {
   }
 }
 @media (max-width: 1100px) {
-  .picture-ocean-paths {
-    grid-template-columns: 1fr 1fr;
-  }
-  .picture-destination img {
-    height: 195px;
-  }
-  .ocean-welcome h1 {
-    font-size: 53px;
-  }
   .reef-scene {
     height: 320px;
   }
@@ -631,18 +541,6 @@ body.has-companion main {
     order: 4;
     margin-top: 2px;
   }
-  .ocean-welcome {
-    padding: 15px 0 0;
-    text-align: left;
-  }
-  .ocean-welcome h1 {
-    font-size: 43px;
-    letter-spacing: -1.8px;
-    max-width: 380px;
-  }
-  .ocean-welcome h1 br {
-    display: inline;
-  }
   .reef-scene {
     height: 280px;
     margin-top: 0;
@@ -652,66 +550,6 @@ body.has-companion main {
     width: 88%;
     left: 9%;
     top: -25px;
-  }
-  .sub-hotspot {
-    top: 0;
-    width: 80px;
-    height: 60px;
-  }
-  .turtle-hotspot {
-    top: 108px;
-    width: 67px;
-    height: 67px;
-  }
-  .chest-hotspot {
-    left: 7%;
-    bottom: 18px;
-    width: 60px;
-    height: 60px;
-  }
-  .kraken-hotspot {
-    right: 27%;
-    bottom: 0;
-    width: 48px;
-    height: 58px;
-  }
-  .scene-controls {
-    bottom: 16px;
-    right: 14px;
-  }
-  .scene-controls .quiet {
-    font-size: 8px;
-    min-height: 30px;
-    padding: 7px 10px;
-  }
-  .reef-discovery {
-    bottom: -4px;
-    font-size: 8px;
-    left: 18%;
-    right: 18%;
-    min-height: 20px;
-  }
-  .picture-ocean-paths {
-    margin-top: 24px;
-    gap: 12px;
-  }
-  .picture-destination img {
-    height: 150px;
-  }
-  .picture-title {
-    padding: 15px 13px 18px;
-  }
-  .picture-title h2 {
-    font-size: 20px;
-    min-height: 46px;
-  }
-  .picture-go {
-    width: 25px;
-    height: 25px;
-    margin: 0;
-  }
-  .ocean-progress {
-    margin: 23px auto 0;
   }
   .book-head {
     padding-top: 20px;
@@ -786,13 +624,9 @@ body.has-companion main {
   .topic-card strong {
     font-size: 18px;
   }
-  .kraken-ocean-page h1,
-  .ocean-lesson h1 {
+  .kraken-ocean-page h1 {
     font-size: 38px;
     letter-spacing: -1.5px;
-  }
-  .ocean-lesson .topic-text {
-    font-size: 23px;
   }
   .kraken-ocean-page > p {
     font-size: 18px;
@@ -858,18 +692,6 @@ body.has-companion main {
   }
   .brand-milo {
     width: 38px;
-  }
-  .ocean-welcome h1 {
-    font-size: 39px;
-  }
-  .picture-destination img {
-    height: 128px;
-  }
-  .picture-title h2 {
-    font-size: 18px;
-  }
-  .picture-go {
-    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

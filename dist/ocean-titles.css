@@ -36,17 +36,6 @@ h2 {
   letter-spacing: -0.2px;
   font-weight: 600;
 }
-.ocean-welcome h1 {
-  font-family: var(--ocean-heading-font);
-  font-size: clamp(38px, 4.8vw, 60px);
-  letter-spacing: -1px !important;
-}
-.ocean-welcome h1:after {
-  width: 110px;
-  height: 16px;
-  margin-top: 10px;
-}
-.picture-title h2,
 .picture-game h2 {
   font-family: var(--ocean-heading-font);
   font-size: 24px;
@@ -135,9 +124,6 @@ h2 {
 .cinema-page > p {
   margin-top: 10px;
 }
-.ocean-lesson h1:after {
-  width: 130px;
-}
 @media (max-width: 700px) {
   h1 {
     font-size: 40px !important;
@@ -147,12 +133,6 @@ h2 {
     width: 115px;
     height: 17px;
     margin-top: 10px;
-  }
-  .ocean-welcome h1 {
-    font-size: 40px !important;
-  }
-  .picture-title h2 {
-    font-size: 20px;
   }
   .picture-game h2 {
     font-size: 27px;
@@ -184,9 +164,6 @@ h2 {
   }
 }
 @media (max-width: 390px) {
-  .ocean-welcome h1 {
-    font-size: 35px !important;
-  }
   .cinema-page > h1 {
     font-size: 33px !important;
     padding-left: 23px;

@@ -58,13 +58,6 @@ function crewActor(key) {
     c = reefCrew[key];
   return `<svg class="crew-actor crew-${key}" data-actor="${key}" viewBox="0 0 1536 1024" aria-hidden="true"><defs><clipPath id="${id}-body"><path d="M0 0H1200V1024H0Z"/></clipPath><clipPath id="${id}-tail"><path d="M1198 0H1536V1024H1198Z"/></clipPath></defs><image href="assets/crew-${key}.webp" width="1536" height="1024" clip-path="url(#${id}-body)"/><g class="crew-tail"><image href="assets/crew-${key}.webp" width="1536" height="1024" clip-path="url(#${id}-tail)"/></g><g class="crew-mouth-opening" style="--jaw-x:${key === 'gizmo' ? 350 : 180}px;--jaw-y:525px"><path d="${key === 'gizmo' ? 'M282 540Q349 554 421 520Q377 585 300 558Z' : key === 'willa' ? 'M40 508Q145 522 269 523Q175 569 67 531Z' : key === 'dash' ? 'M145 556Q216 559 289 520Q240 587 158 574Z' : 'M130 540Q208 546 301 490Q230 567 147 554Z'}" fill="#392a3d"/><path d="${key === 'gizmo' ? 'M300 545l8 12 9-9 9 13 9-12 9 11 9-14 10 9 8-12 10 7 8-12' : key === 'willa' ? 'M62 516l5 6 7-5 7 6 8-5 7 7 8-6 8 7 8-6 8 7 8-6 8 7 8-7 8 6 8-7 8 6 8-8' : 'M153 543l8 13 9-9 10 12 9-12 9 10 9-14 10 9 9-13 9 6 9-13 9 5 9-13'}" fill="#fff6db"/><path d="${key === 'gizmo' ? 'M320 562Q360 571 389 549' : 'M167 552Q204 562 240 544'}" stroke="#b16c85" stroke-width="6" stroke-linecap="round" fill="none"/></g></svg>`;
 }
-function homeCrew() {
-  const friend = key => {
-    const c = reefCrew[key];
-    return `<button class="crew-friend" data-crew-hello="${key}" aria-label="Meet ${c.name} the ${c.species.toLowerCase()}, ${c.subject}" style="--crew-colour:${c.colour};--arrival-delay:${{ willa: 0.1, dash: 1.4, tiggy: 2.7, gizmo: 4 }[key]}s"><span class="crew-swimmer">${crewActor(key)}</span><span class="crew-name">${c.name}<span class="crew-subject-icon">${crewSymbol(c.symbol)}</span></span><small>${c.subject}</small></button>`;
-  };
-  return `<section class="reef-crew band-crew" aria-label="Milo and his reef friends together"><div class="crew-swim-lane">${friend('willa')}${friend('tiggy')}<button class="crew-friend band-milo" id="greetMilo" aria-label="Hear Milo greet Haytham" style="--crew-colour:#f3dfb1;--arrival-delay:5.4s"><span class="crew-swimmer">${miloActor()}</span><span class="crew-name">Milo</span><small>Your ocean friend</small></button>${friend('gizmo')}${friend('dash')}</div><p id="crewGreeting" class="crew-greeting" aria-live="polite">Tap a friend to say hello.</p></section>`;
-}
 function crewForRoute() {
   const route = (location.hash.slice(1) || 'home').split('/')[0];
   if (route === 'play')
@@ -79,7 +72,6 @@ function helperSpeak(text, options = {}) {
   speak(text, { ...options, speaker: crewForRoute() || 'milo' });
 }
 function greetCrew(key) {
-  expandTappedShark(key);
   const c = reefCrew[key];
   if (!c) return;
   stopStory();
@@ -237,88 +229,3 @@ function showCrewTip(text) {
   crewTipTimer = setTimeout(() => host.classList.remove('show-tip'), 9000);
 }
 
-const adventureInvites = {
-  museum: { key: 'gizmo', text: 'I’m Gizmo! Let’s explore sharks, Haytham. Let’s do it!' },
-  expeditions: { key: 'tiggy', text: 'I’m Tiggy! Let’s count some fish, Haytham. Let’s do it!' },
-  writing: { key: 'dash', text: 'I’m Dash! Let’s write together, Haytham. Let’s do it!' },
-  stories: { key: 'willa', text: 'I’m Willa! Let’s read a story, Haytham. Let’s do it!' }
-};
-let adventureHoverTimer = null,
-  pendingAdventureInvite = null,
-  lastAdventureInvite = '',
-  lastAdventureTime = 0;
-function previewAdventure(route) {
-  const invitation = adventureInvites[route];
-  if (!invitation) return;
-  document.body.dataset.previewHelper = invitation.key;
-  const label = $('#crewGreeting');
-  if (label) label.textContent = invitation.text;
-  if (lastAdventureInvite !== route || Date.now() - lastAdventureTime > 4500) {
-    lastAdventureInvite = route;
-    lastAdventureTime = Date.now();
-    speak(invitation.text, { speaker: invitation.key });
-  }
-}
-function clearAdventurePreview() {
-  clearTimeout(adventureHoverTimer);
-  delete document.body.dataset.previewHelper;
-}
-function bindAdventureInvites() {
-  document.querySelectorAll('.picture-ocean-paths .picture-destination').forEach(tile => {
-    const link = tile.querySelector('a'),
-      route = link.hash.slice(1),
-      invitation = adventureInvites[route];
-    if (!invitation) return;
-    tile.dataset.adventureHelper = invitation.key;
-    tile.style.setProperty('--helper-accent', reefCrew[invitation.key].colour);
-    tile.addEventListener('pointerenter', e => {
-      if (e.pointerType === 'touch') return;
-      clearTimeout(adventureHoverTimer);
-      document.body.dataset.previewHelper = invitation.key;
-      adventureHoverTimer = setTimeout(() => previewAdventure(route), 220);
-    });
-    tile.addEventListener('pointerleave', clearAdventurePreview);
-    link.addEventListener('focus', () => previewAdventure(route));
-    link.addEventListener('blur', clearAdventurePreview);
-    link.addEventListener('pointerdown', e => {
-      if (e.pointerType === 'touch') {
-        document.body.dataset.previewHelper = invitation.key;
-        pendingAdventureInvite = route;
-      }
-    });
-    link.addEventListener('click', () => {
-      clearTimeout(adventureHoverTimer);
-      if (lastAdventureInvite !== route || Date.now() - lastAdventureTime > 4500)
-        pendingAdventureInvite = route;
-    });
-    const listen = tile.querySelector('.picture-listen');
-    if (listen) listen.onclick = () => previewAdventure(route);
-  });
-}
-function playPendingAdventureInvite(route) {
-  clearAdventurePreview();
-  if (pendingAdventureInvite !== route) {
-    pendingAdventureInvite = null;
-    return;
-  }
-  pendingAdventureInvite = null;
-  const invitation = adventureInvites[route];
-  lastAdventureInvite = route;
-  lastAdventureTime = Date.now();
-  setTimeout(() => {
-    if ((location.hash.slice(1) || 'home').split('/')[0] !== route) return;
-    showCrewTip(invitation.text);
-    reactCrew('happy', invitation.key);
-    speak(invitation.text, { speaker: invitation.key });
-  }, 100);
-}
-
-function expandTappedShark(key) {
-  const button =
-    key === 'milo'
-      ? $('#greetMilo')
-      : document.querySelector('.band-crew [data-crew-hello="' + key + '"]');
-  if (!button) return;
-  button.classList.add('is-expanded');
-  setTimeout(() => button.classList.remove('is-expanded'), 1800);
-}

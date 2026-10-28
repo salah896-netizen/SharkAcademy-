@@ -55,6 +55,7 @@ def norm(v):
     s = re.sub(r'\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?Z', 'ISO', s)
     s = re.sub(r'\b1[67]\d{11}\b', 'NOW', s)
     s = re.sub(r'zoom: ?[\d.]+;?', '', s)
+    s = re.sub(r'(crew|milo)-\d+-', r'\1-N-', s)  # SVG id counter; depends on how many friends were drawn before
     return json.loads(s)
 
 
@@ -182,7 +183,7 @@ async def main(out):
 
 
 def diff(a, b):
-    A, B = json.load(open(a)), json.load(open(b))
+    A, B = norm(json.load(open(a))), norm(json.load(open(b)))
     bad = 0
     for k in sorted(set(A) | set(B)):
         if A.get(k) == B.get(k):

@@ -89,8 +89,7 @@ let lastPearls = state.xp,
   rewardIndex = 0,
   screenCleanup = () => {},
   speechGlow = null,
-  narrationTimer = null,
-  sessionIntroShown = false;
+  narrationTimer = null;
 let screenNarration = '';
 let autoAdvanceTimer = null;
 function advanceAfterCelebration() {
@@ -156,18 +155,6 @@ greetCrew = function (key) {
   }
   previousGreetCrew(key);
 };
-function narratePanel(panel) {
-  if (!panel) return;
-  const heading = panel.querySelector('h1,h2,strong')?.textContent || '';
-  const body = panel.querySelector('p')?.textContent || '';
-  const choices = panel.matches('.shark-question')
-    ? [...panel.querySelectorAll('[data-book-answer]')]
-        .map((b, i) => 'Choice ' + (i + 1) + ': ' + (b.getAttribute('aria-label') || b.textContent))
-        .join('. ')
-    : '';
-  const text = (/[.!?]$/.test(heading.trim()) ? heading.trim() + ' ' : heading + '. ') + (choices || body);
-  if (text.trim() !== '.') setSpeakingPanel(panel, text);
-}
 const previousUpdateSound = updateSound;
 updateSound = function () {
   previousUpdateSound();
@@ -330,7 +317,7 @@ const sharkButtons = [
   ['gizmo', 'Sharks', 'museum'],
   ['dash', 'Writing', 'writing']
 ];
-home = function () {
+function home() {
   app.innerHTML = `<section class="new-reef-home"><div class="home-light-rays" aria-hidden="true"></div><div class="home-board">${shellBoard()}<button id="dailyPlay" aria-label="Play today's learning adventure"><span aria-hidden="true">▶</span></button></div><p class="home-one-line">Your friends. Your ocean. A new adventure.</p><div class="home-fish" aria-hidden="true">${seaAnimal('tuna')}${seaAnimal('clownfish')}${seaAnimal('turtle')}</div><div class="home-friends" aria-label="Choose a friend to learn with">${sharkButtons.map(([k, label]) => `<button data-friend-route="${k}" aria-label="${k === 'milo' ? 'Milo' : reefCrew[k].name}: ${label}"><span>${k === 'milo' ? miloActor() : crewActor(k)}</span><strong>${k === 'milo' ? 'Milo' : reefCrew[k].name}</strong><small>${label}</small></button>`).join('')}</div></section>`;
   $('#dailyPlay').onclick = dailyAdventure;
   bindHomeGreetings();
@@ -902,7 +889,6 @@ document.addEventListener(
 );
 installOceanChrome();
 updateSound();
-window.removeEventListener('hashchange', oldRender);
 window.addEventListener('hashchange', render);
 window.addEventListener('resize', fitScreen);
 render();

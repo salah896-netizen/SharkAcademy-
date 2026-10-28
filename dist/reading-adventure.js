@@ -109,24 +109,6 @@ function readingArt(key) {
   }
   return `<span aria-hidden="true">${{ map: '🗺️', sun: '☀️', net: '🥅' }[key]}</span>`;
 }
-function startReadingMission() {
-  const previous = (state.readingAdventures || []).at(-1);
-  const lesson = readingMissionLibrary[previous && previous.lesson !== 'R-F-PILOT-02' ? 1 : 0];
-  game = {
-    lesson: lesson.id,
-    type: 'reading',
-    mission: true,
-    index: 0,
-    assisted: false,
-    answered: false,
-    attempts: [],
-    session: 'reading-reef-' + Date.now(),
-    stage: 1,
-    items: lesson.items
-  };
-  if (location.hash === '#play') render();
-  else location.hash = 'play';
-}
 function readingMission() {
   if (!game?.mission) return;
   const q = game.items[game.index];

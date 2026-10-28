@@ -301,8 +301,7 @@ body[data-calm-tone='light'] #app .story-word {
   color: var(--calm-ink) !important;
 }
 body[data-calm-tone='light'] .collect,
-body[data-calm-tone='light'] .picture-game,
-body[data-calm-tone='light'] .ocean-progress {
+body[data-calm-tone='light'] .picture-game {
   background: #f3f7ed;
   border-color: var(--calm-border);
   color: var(--calm-ink);

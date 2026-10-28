@@ -55,7 +55,6 @@ The app is plain browser JavaScript with no build step. Every file in `dist/` sh
 | `makeQuestions` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `hands-on-sharing.js` → `school-pack.js` |
 | `play` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `hands-on-sharing.js` → `school-pack.js` |
 | `finish` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `path.js` |
-| `home` | `app.js` | `ocean-experience.js` → `shark-taps.js` → `feedback-round3.js` |
 | `readingArt` | `reading-adventure.js` | `lesson-pack.js` → `school-pack.js` → `lessons-more.js` |
 | `readingMission` | `reading-adventure.js` | `ocean-experience.js` → `school-pack.js` → `science.js` |
 | `save` | `app.js` | `ocean-experience.js` → `race.js` → `progress-safe.js` |
@@ -65,6 +64,7 @@ The app is plain browser JavaScript with no build step. Every file in `dist/` sh
 | `finishReadingMission` | `reading-adventure.js` | `ocean-experience.js` → `path.js` |
 | `greetCrew` | `crew.js` | `ocean-experience.js` → `shark-taps.js` |
 | `helperSpeak` | `crew.js` | `ocean-experience.js` → `kid-buttons.js` |
+| `home` | `ocean-experience.js` | `shark-taps.js` → `feedback-round3.js` |
 | `oceanTopicPage` | `encyclopedia.js` | `ocean-experience.js` → `encyclopedia-more.js` |
 | `sciencePicture` | `science.js` | `quiz-pictures.js` → `lessons-more.js` |
 | `sharkArticle` | `encyclopedia.js` | `ocean-experience.js` → `encyclopedia-more.js` |
@@ -75,12 +75,10 @@ The app is plain browser JavaScript with no build step. Every file in `dist/` sh
 | `dailyAdventure` | `ocean-experience.js` | `calm-scenes.js` |
 | `finishWritingAdventure` | `lesson-pack.js` | `path.js` |
 | `launchPathActivity` | `path.js` | `feedback-round3.js` |
-| `narratePanel` | `ocean-experience.js` | `encyclopedia-more.js` |
 | `readingMissionAnswer` | `reading-adventure.js` | `ocean-experience.js` |
 | `render` | `app.js` | `ocean-experience.js` |
 | `schoolMathsCardArt` | `school-pack.js` | `lessons-more.js` |
 | `scienceShelf` | `science.js` | `lessons-more.js` |
-| `startReadingMission` | `reading-adventure.js` | `lesson-pack.js` |
 | `syncCrew` | `crew.js` | `ocean-experience.js` |
 | `updateMiloDock` | `atmosphere.js` | `ocean-experience.js` |
 | `updateSound` | `app.js` | `ocean-experience.js` |
