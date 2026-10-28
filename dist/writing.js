@@ -156,7 +156,8 @@ function writing() {
   const phrase =
       writingChoice === 'name'
         ? 'Haytham'
-        : ['cat', 'fin', 'shark'].includes(writingChoice)
+        : // Any word whose letters all have guides (cat, fin, shark, dog, sun…)
+          writingChoice.length > 1 && [...writingChoice].every(c => letterStrokes[c])
           ? writingChoice
           : null,
     name = !!phrase,

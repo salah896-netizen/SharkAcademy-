@@ -95,6 +95,19 @@ async def main():
             synced = synced and (not nxt or nxt in said)
         check(synced, 'drawing: instructions match each part')
 
+        # Every writing lesson opens with its own guide and no errors
+        broken = []
+        for lid in await ev('writingAdventures.map(l => l.id)'):
+            before = len(errors)
+            await ev(f"location.hash = 'home'"); await page.wait_for_timeout(150)
+            await ev(f"guidedWriting = {{ lesson: writingAdventures.find(l => l.id === '{lid}'), step: 0, samples: [], session: 'w' }}; location.hash = 'writing'")
+            await page.wait_for_timeout(300)
+            ok = await ev(f"document.querySelector('.writing-mission-prompt strong')?.getAttribute('aria-label') === writingAdventures.find(l => l.id === '{lid}').target && document.querySelectorAll('#writingGuide path').length > 1")
+            if len(errors) > before or not ok:
+                broken.append(lid)
+            del errors[before:]
+        check(not broken, f'writing: every lesson opens with its guide ({broken})')
+
         # Writing: a scribble is not accepted, a real trace is
         await ev("location.hash = 'home'")
         await page.wait_for_timeout(300)

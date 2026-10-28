@@ -149,7 +149,7 @@ async def main(out):
 
         # Stories
         for i in range(await ev('stories.length')):
-            await snap(f'story {i}', f"location.hash = 'stories'; setTimeout(() => storyPage = 0; storyReader(stories[{i}]), 100)", 600)
+            await snap(f'story {i}', f"location.hash = 'stories'; setTimeout(() => {{ storyPage = 0; storyReader(stories[{i}]) }}, 100)", 600)
 
         # Grown-ups' area, every section
         await snap('home 4', 'goHomeNow()', 300)
