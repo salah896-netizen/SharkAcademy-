@@ -37,19 +37,28 @@ The app is plain browser JavaScript with no build step. Every file in `dist/` sh
 29. `home-play.js` — Tappable home reef (25 October 2026)
 30. `feedback-round3.js` — Friends' feedback, round 3 (25 October 2026): Jude's and Archer's families, and Haytham's
 31. `learning-checks.js` — Learning checks (25 October 2026): stop guessing, and real tracing
-32. `media-download.js` — Gentle offline download (25 Oct)
-33. `opening.js` — Tap to dive (24 October 2026)
+32. `quiz-photos.js` — Extra licensed photos for the quizzes (Wikimedia Commons)
+33. `quiz-pictures.js` — Real pictures in the shark quizzes (26 October 2026)
+34. `lessons-more.js` — More lessons (26 October 2026): "each skill has only a few lessons, so after a week or two he'll start seeing repeats." Adds lessons to ever
+35. `voice-check.js` — Grown-ups' area: "Voice check" (27 Oct)
+36. `progress-safe.js` — Progress saved automatically (28 Oct)
+37. `progress-view.js` — "How's Haytham going?" (28 Oct): a plain-words summary at the top of the grown-ups' area
+38. `media-download.js` — Gentle offline download (25 Oct)
+39. `opening.js` — Tap to dive (24 October 2026)
 
 ## Functions replaced by later files
 
 | Function | Defined in | Then wrapped by (in order) |
 |---|---|---|
+| `parents` | `app.js` | `ocean-experience.js` → `feedback-round3.js` → `voice-check.js` → `progress-safe.js` → `progress-view.js` |
 | `libraryPage` | `ocean-experience.js` | `lesson-pack.js` → `race.js` → `science.js` → `path.js` |
 | `makeQuestions` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `hands-on-sharing.js` → `school-pack.js` |
 | `play` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `hands-on-sharing.js` → `school-pack.js` |
 | `finish` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `path.js` |
 | `home` | `app.js` | `ocean-experience.js` → `shark-taps.js` → `feedback-round3.js` |
+| `readingArt` | `reading-adventure.js` | `lesson-pack.js` → `school-pack.js` → `lessons-more.js` |
 | `readingMission` | `reading-adventure.js` | `ocean-experience.js` → `school-pack.js` → `science.js` |
+| `save` | `app.js` | `ocean-experience.js` → `race.js` → `progress-safe.js` |
 | `writing` | `writing.js` | `lesson-pack.js` → `draw-shark.js` → `feedback-round3.js` |
 | `answer` | `app.js` | `ocean-experience.js` → `hands-on-sharing.js` |
 | `encourage` | `companion.js` | `kid-buttons.js` → `learning-checks.js` |
@@ -57,14 +66,11 @@ The app is plain browser JavaScript with no build step. Every file in `dist/` sh
 | `greetCrew` | `crew.js` | `ocean-experience.js` → `shark-taps.js` |
 | `helperSpeak` | `crew.js` | `ocean-experience.js` → `kid-buttons.js` |
 | `oceanTopicPage` | `encyclopedia.js` | `ocean-experience.js` → `encyclopedia-more.js` |
-| `parents` | `app.js` | `ocean-experience.js` → `feedback-round3.js` |
-| `readingArt` | `reading-adventure.js` | `lesson-pack.js` → `school-pack.js` |
-| `save` | `app.js` | `ocean-experience.js` → `race.js` |
+| `sciencePicture` | `science.js` | `quiz-pictures.js` → `lessons-more.js` |
 | `sharkArticle` | `encyclopedia.js` | `ocean-experience.js` → `encyclopedia-more.js` |
 | `speak` | `companion.js` | `calm-scenes.js` → `kid-buttons.js` |
 | `touchMilo` | `companion.js` | `ocean-experience.js` → `shark-taps.js` |
 | `advanceLearning` | `learning.js` | `lesson-pack.js` |
-| `cinema` | `crew.js` | `ocean-experience.js` |
 | `crewForRoute` | `crew.js` | `lesson-pack.js` |
 | `dailyAdventure` | `ocean-experience.js` | `calm-scenes.js` |
 | `finishWritingAdventure` | `lesson-pack.js` | `path.js` |
@@ -72,6 +78,8 @@ The app is plain browser JavaScript with no build step. Every file in `dist/` sh
 | `narratePanel` | `ocean-experience.js` | `encyclopedia-more.js` |
 | `readingMissionAnswer` | `reading-adventure.js` | `ocean-experience.js` |
 | `render` | `app.js` | `ocean-experience.js` |
+| `schoolMathsCardArt` | `school-pack.js` | `lessons-more.js` |
+| `scienceShelf` | `science.js` | `lessons-more.js` |
 | `startReadingMission` | `reading-adventure.js` | `lesson-pack.js` |
 | `syncCrew` | `crew.js` | `ocean-experience.js` |
 | `updateMiloDock` | `atmosphere.js` | `ocean-experience.js` |
@@ -106,6 +114,8 @@ Also: `learning-checks.js` wraps `answer`, `readingMissionAnswer` and `scienceAn
 23. `home-play.css`
 24. `feedback-round3.css`
 25. `learning-checks.css`
+26. `quiz-pictures.css`
+27. `lessons-more.css`
 
 ## Caches
 
