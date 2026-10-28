@@ -30,6 +30,7 @@ const context = {
   ].map(id => ({ id, name: id, facts: [['q', 'fact']] }))
 };
 vm.createContext(context);
+vm.runInContext(fs.readFileSync('dist/icons.js', 'utf8'), context); // race clues use paintedIcon (29 Oct)
 vm.runInContext(fs.readFileSync('dist/race.js', 'utf8'), context);
 const tracks = vm.runInContext('raceTracks', context),
   RACE = vm.runInContext('RACE', context);

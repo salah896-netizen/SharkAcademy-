@@ -1,5 +1,5 @@
 
-const CACHE = 'haytham-sharks-v111';
+const CACHE = 'haytham-sharks-v112';
 const FILES = [
   './assets/fossil-gateway-carved.webp',
   './assets/writing-sand.svg',
@@ -40,6 +40,15 @@ const FILES = [
   './icons.css',
   './assets/library-bg.svg',
   './assets/race-bg.svg',
+  './race-scenes.css',
+  './assets/race/lagoon-far.svg',
+  './assets/race/lagoon-floor.svg',
+  './assets/race/reef-far.svg',
+  './assets/race/reef-floor.svg',
+  './assets/race/ocean-far.svg',
+  './assets/race/ocean-floor.svg',
+  './assets/race/trench-far.svg',
+  './assets/race/trench-floor.svg',
   './grown-ups.js',
   './manifest.webmanifest',
   './assets/icons/apple-touch-icon.png',

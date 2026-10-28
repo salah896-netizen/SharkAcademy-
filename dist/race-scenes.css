@@ -1,0 +1,83 @@
+/* The race itself, painted (29 Oct 2026). Each track has two scenery tiles from
+ * research/race-scenes/make.py: a far layer that drifts slowly (parallax) and a seabed that
+ * scrolls with the race. Both repeat seamlessly and move with --race-scroll, which race.js
+ * already updates every frame, so no extra work happens per frame. */
+.race-screen {
+  background:
+    linear-gradient(105deg, transparent 18%, #ffffff1c 22%, transparent 27%, transparent 52%, #ffffff14 56%, transparent 61%),
+    radial-gradient(ellipse at 70% -10%, #ffffff44, transparent 55%),
+    linear-gradient(var(--race-top), var(--race-bottom));
+}
+.race-scene-trench.race-screen {
+  background:
+    radial-gradient(ellipse at 50% -20%, #2a5a7a55, transparent 60%),
+    linear-gradient(var(--race-top), var(--race-bottom));
+}
+
+/* Far layer: distant reef, rocks, shoals. Sits just above the seabed. */
+.race-screen::before {
+  opacity: 1;
+  inset: auto 0 calc(var(--race-bed-h) - 8px) 0;
+  height: min(34%, 240px);
+  background-image: var(--race-far);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: calc(var(--race-scroll) * -30vw) bottom;
+}
+.race-scene-trench::before {
+  opacity: 1;
+  background-image: var(--race-far);
+}
+.race-scene-lagoon {
+  --race-far: url('assets/race/lagoon-far.svg');
+  --race-bed: url('assets/race/lagoon-floor.svg');
+}
+.race-scene-reef {
+  --race-far: url('assets/race/reef-far.svg');
+  --race-bed: url('assets/race/reef-floor.svg');
+}
+.race-scene-ocean {
+  --race-far: url('assets/race/ocean-far.svg');
+  --race-bed: url('assets/race/ocean-floor.svg');
+}
+.race-scene-trench {
+  --race-far: url('assets/race/trench-far.svg');
+  --race-bed: url('assets/race/trench-floor.svg');
+}
+
+/* Seabed: scrolls at the race's speed. */
+.race-screen {
+  --race-bed-h: clamp(64px, 14%, 112px);
+}
+.race-floor {
+  height: var(--race-bed-h);
+  border-top: 0;
+  background: var(--race-bed) repeat-x;
+  background-size: auto 100%;
+  background-position-x: calc(var(--race-scroll) * -100vw);
+}
+.race-lanes {
+  bottom: calc(var(--race-bed-h) - 10px);
+}
+.race-lane {
+  border-bottom-color: #ffffff1f;
+}
+
+/* Painted obstacles and speed shells */
+.race-coral svg,
+.race-jelly svg,
+.race-rock svg {
+  filter: drop-shadow(0 6px 6px #0b2d3a33);
+}
+.speed-shell {
+  filter: drop-shadow(0 6px 10px #0b2d3a44);
+}
+.race-cue-ear .p-icon {
+  width: 1.3em;
+  height: 1.3em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .race-screen::before {
+    background-position: 0 bottom;
+  }
+}

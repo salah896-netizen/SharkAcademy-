@@ -196,6 +196,21 @@ async def main():
         await ev("location.hash = 'race'"); await page.wait_for_timeout(300)
         check(await ev("document.body.dataset.calmScene === 'race-room' && !/[🔒🏁]/u.test(document.querySelector('.race-picker')?.textContent || '')"), 'race picker: painted backdrop, lock and flag')
 
+        # The race itself: painted scenery tiles on every track, painted obstacles and shells (29 Oct, v112)
+        bad = []
+        saved_xp = await ev("state.xp"); await ev("state.xp = 400")
+        for t in ['lagoon', 'reef', 'ocean', 'trench']:
+            await ev(f"location.hash = 'race/{t}/milo'"); await page.wait_for_timeout(250)
+            ok = await ev("""(() => { const s = document.querySelector('.race-screen'); if (!s) return false;
+              const far = getComputedStyle(s, '::before').backgroundImage, bed = getComputedStyle(s.querySelector('.race-floor')).backgroundImage;
+              const shells = [...s.querySelectorAll('.speed-shell svg')].every(v => /radialGradient/.test(v.innerHTML));
+              const obst = [...s.querySelectorAll('.race-coral svg, .race-jelly svg, .race-rock svg')].every(v => /radialGradient/.test(v.innerHTML));
+              return /assets\\/race\\//.test(far) && /assets\\/race\\//.test(bed) && shells && obst })()""")
+            if not ok: bad.append(t)
+        check(not bad, f'race: painted scenery, shells and obstacles on every track ({bad})')
+        await ev("location.hash = 'race'"); await page.wait_for_timeout(200)
+        await ev(f"state.xp = {saved_xp}")
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

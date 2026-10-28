@@ -138,7 +138,7 @@ function raceClue(track, index, seed) {
     return {
       answer: item[0],
       options: rotate(item[1], seed + index),
-      cue: '<div class="race-cue-ear" aria-hidden="true">♫</div>',
+      cue: `<div class="race-cue-ear" aria-hidden="true">${paintedIcon('speaker-blue')}</div>`,
       say: 'Find the word ' + item[0] + '!'
     };
   return {
@@ -298,7 +298,7 @@ function raceStart(track, racerId) {
       item.el.innerHTML = item.clue.options
         .map(
           (o, lane) =>
-            `<span class="speed-shell" data-shell-lane="${lane}"><svg viewBox="0 0 140 110" aria-hidden="true"><path d="M70 101L15 61Q-1 13 39 12Q65-3 70 16Q91-4 110 13Q145 11 130 60Z" fill="currentColor"/><path d="M70 100V23M70 100L33 26M70 100L111 27" stroke="white" stroke-opacity=".35" stroke-width="3"/></svg><b>${o}</b></span>`
+            `<span class="speed-shell" data-shell-lane="${lane}">${raceShellArt()}<b>${o}</b></span>`
         )
         .join('');
     } else {
@@ -365,12 +365,23 @@ function buildRaceCourse(track, seed) {
     });
   return items;
 }
+// Painted obstacles (29 Oct 2026): soft shading and a darker outline, like the rest of the app.
+// Speed shells: one scallop shape; the fill is currentColor (cream, or green when right), with a
+// painted highlight, ridges and a darker rim laid over it so it looks shaded in any colour.
+function raceShellArt() {
+  const g = 'sh' + Math.random().toString(36).slice(2, 7);
+  const shape = 'M70 101L15 61Q-1 13 39 12Q65-3 70 16Q91-4 110 13Q145 11 130 60Z';
+  return `<svg viewBox="0 0 140 110" aria-hidden="true"><defs><radialGradient id="${g}" cx=".36" cy=".24" r=".85"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#5a3a1a" stop-opacity=".22"/></radialGradient></defs><path d="${shape}" fill="currentColor"/><path d="${shape}" fill="url(#${g})"/><path d="M70 100V23M70 100L33 26M70 100L111 27M70 100L18 50M70 100L122 50" stroke="#8a5a3a" stroke-opacity=".28" stroke-width="3" stroke-linecap="round"/><path d="${shape}" fill="none" stroke="#6b4a2f" stroke-opacity=".55" stroke-width="3" stroke-linejoin="round"/><path d="M34 22Q46 16 58 22" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/></svg>`;
+}
 function raceObstacleArt(kind) {
+  const g = 'ob' + Math.random().toString(36).slice(2, 7);
+  const shade = (id, a, b, c) =>
+    `<radialGradient id="${g}${id}" cx=".36" cy=".3" r=".9"><stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></radialGradient>`;
   if (kind === 'coral')
-    return '<svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 88V50M50 60L28 34M28 34V16M28 34L14 26M50 56L72 30M72 30V12M72 30L86 22M50 50V24" stroke="#e8836f" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M26 88H74" stroke="#c96b5c" stroke-width="8" stroke-linecap="round"/></svg>';
+    return `<svg viewBox="0 0 100 92" aria-hidden="true"><defs>${shade('a', '#ffc0ad', '#ee8a76', '#c96a57')}${shade('b', '#ffe6a6', '#f5c24c', '#cf972a')}</defs><ellipse cx="50" cy="88" rx="34" ry="4" fill="#0b2d3a" opacity=".18"/><path d="M44 88Q44 64 30 54Q18 46 20 30Q16 22 22 16Q30 18 30 28Q32 40 40 44Q38 30 42 16Q46 6 54 10Q56 22 52 32Q54 42 60 46Q66 36 70 24Q76 18 82 24Q82 36 74 46Q66 58 60 66Q58 76 58 88Z" fill="url(#${g}a)" stroke="#a5523f" stroke-width="2.4" stroke-linejoin="round"/><path d="M66 88Q66 76 74 70Q72 62 80 58Q88 62 84 70Q90 72 90 78Q84 82 80 88Z" fill="url(#${g}b)" stroke="#a87418" stroke-width="2.2" stroke-linejoin="round"/><path d="M24 26Q26 22 28 24M46 16Q50 12 52 16" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".8"/></svg>`;
   if (kind === 'jelly')
-    return '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M14 46Q14 8 50 8Q86 8 86 46Q70 40 50 46Q30 40 14 46Z" fill="#e7c6f2cc" stroke="#c49ad8" stroke-width="3"/><path d="M28 46Q22 66 32 92M44 46Q40 70 48 94M58 46Q62 70 54 94M72 46Q78 66 68 92" stroke="#c49ad8" stroke-width="4" fill="none" stroke-linecap="round"/></svg>';
-  return '<svg viewBox="0 0 100 80" aria-hidden="true"><path d="M8 76Q4 44 26 32Q36 10 60 16Q88 18 94 48Q98 72 84 76Z" fill="#46535c" stroke="#2c363c" stroke-width="3"/><circle cx="66" cy="34" r="4" fill="#7ff3e1"/><circle cx="34" cy="50" r="3" fill="#7ff3e1"/></svg>';
+    return `<svg viewBox="0 0 100 104" aria-hidden="true"><defs>${shade('a', '#fbeaff', '#e2b7f0', '#b88ad2')}</defs><g fill="none" stroke-linecap="round"><path d="M28 46Q20 66 30 92M44 48Q38 72 48 98M58 48Q64 72 54 98M72 46Q80 66 70 92" stroke="#c49ad8" stroke-width="4.5" opacity=".85"/><path d="M36 48Q34 62 40 74M64 48Q66 62 60 74" stroke="#f3dcfb" stroke-width="3" opacity=".9"/></g><path d="M12 48Q12 8 50 8Q88 8 88 48Q80 44 72 48Q62 42 50 48Q38 42 28 48Q20 44 12 48Z" fill="url(#${g}a)" fill-opacity=".92" stroke="#9e6fb8" stroke-width="2.4" stroke-linejoin="round"/><circle cx="38" cy="30" r="3.2" fill="#22313b"/><circle cx="62" cy="30" r="3.2" fill="#22313b"/><path d="M44 38Q50 42 56 38" fill="none" stroke="#22313b" stroke-width="2" stroke-linecap="round"/><path d="M24 26Q30 14 44 13" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></svg>`;
+  return `<svg viewBox="0 0 100 84" aria-hidden="true"><defs>${shade('a', '#7d8d98', '#4f5f6a', '#2f3b43')}</defs><ellipse cx="52" cy="80" rx="42" ry="4" fill="#000" opacity=".25"/><path d="M8 78Q4 46 26 34Q36 12 60 16Q88 18 94 48Q98 74 84 78Z" fill="url(#${g}a)" stroke="#1f282e" stroke-width="2.4" stroke-linejoin="round"/><path d="M30 34Q40 22 56 22" fill="none" stroke="#a9b8c2" stroke-width="3" stroke-linecap="round" opacity=".6"/><circle cx="66" cy="36" r="9" fill="#7ff3e1" opacity=".18"/><circle cx="66" cy="36" r="4" fill="#7ff3e1"/><circle cx="34" cy="54" r="7" fill="#fbe48a" opacity=".18"/><circle cx="34" cy="54" r="3" fill="#fbe48a"/><circle cx="76" cy="60" r="2.4" fill="#7ff3e1"/></svg>`;
 }
 function beginRace(run) {
   if (run.started) return;
