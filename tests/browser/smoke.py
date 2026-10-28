@@ -147,6 +147,13 @@ async def main():
             state.completed = []; return bad })()""")
         check(not unvoiced, f'every lesson line is recorded ({unvoiced[:3]})')
 
+        # Going home from writing clears the sandy backdrop; progress has a spare copy
+        await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
+        await ev("goHomeNow()"); await page.wait_for_timeout(400)
+        check(await ev("document.getElementById('oceanWorld').style.background === '' && document.body.dataset.calmScene === 'home'"), 'home: no sandy backdrop after writing')
+        await ev("state.xp += 1; save(); 0"); await page.wait_for_timeout(500)
+        check(await ev("progressDB.get('latest').then(s => !!s && s.state.xp === state.xp)"), 'progress: saved to the spare copy')
+
         check(not errors, f'no page errors ({errors[:2]})')
         await browser.close()
     if failures:

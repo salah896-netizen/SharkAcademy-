@@ -266,6 +266,24 @@ function prefetchLessonVoices() {
     for (const t of [q.prompt, q.spoken, q.hint, q.reveal, q.ask, q.fact])
       if (typeof t === 'string')
         (voiceClipsForAnyone(t, speaker)?.files || []).forEach(f => files.add(f));
+  // The shark fact that comes after this lesson's reward, worked out without using it up.
+  try {
+    if (typeof sharkBook !== 'undefined') {
+      const pool = sharkBook.filter(s => s.image),
+        used =
+          Number(state.lessonDiscoveryCount) ||
+          (state.discoveries || []).filter(x => x.startsWith('lesson-fact-')).length,
+        s = pool[used % pool.length],
+        fact = s?.facts[Math.floor(used / pool.length) % s.facts.length];
+      if (fact) {
+        const text = s.name + '. ' + fact[1];
+        for (const t of [text, 'We did it, Haytham! ' + text, 'Lovely practising, Haytham! ' + text])
+          (voiceClipsForAnyone(t, speaker)?.files || []).forEach(f => files.add(f));
+      }
+      const quick = sharkBook[(state.completed || []).length % sharkBook.length];
+      if (quick) (voiceClipsForAnyone(quick.name + '. ' + quick.facts[0].join(' '), speaker)?.files || []).forEach(f => files.add(f));
+    }
+  } catch {}
   let delay = 0;
   for (const f of files) setTimeout(() => fetch(f).catch(() => {}), (delay += 120));
 }

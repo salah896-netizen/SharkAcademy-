@@ -124,3 +124,15 @@
 .voice-gap-list small {
   opacity: 0.6;
 }
+.progress-note {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 200;
+  padding: 12px 22px;
+  border-radius: 99px;
+  background: #0a3445;
+  color: #fffbe8;
+  font: 700 18px ui-rounded, system-ui, sans-serif;
+}

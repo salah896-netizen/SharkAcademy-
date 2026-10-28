@@ -413,6 +413,7 @@ function goHomeNow() {
   stopSpeech();
   clearTimeout(autoAdvanceTimer);
   if (typeof stopLessonJourney === 'function') stopLessonJourney();
+  friendLaunchPending = false; // a friend's "Let's go!" mustn't carry him off after he chose home
   if (typeof guidedWriting !== 'undefined') guidedWriting = null;
   if (typeof freeWriting !== 'undefined') freeWriting = false;
   game = null;

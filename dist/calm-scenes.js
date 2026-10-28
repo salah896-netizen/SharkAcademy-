@@ -26,6 +26,19 @@ function applyCalmScene() {
       : 'dark';
   if (document.body.dataset.calmScene !== scene) document.body.dataset.calmScene = scene;
   if (document.body.dataset.calmTone !== tone) document.body.dataset.calmTone = tone;
+  // Set the backdrop directly too (28 Oct): Safari on the iPad sometimes kept the sandy writing
+  // colour after going home, because it didn't redraw the fixed ocean layer when only the body's
+  // data attribute changed.
+  const ocean = document.getElementById?.('oceanWorld');
+  if (ocean) {
+    const calm = scene !== 'home';
+    const want = calm ? getComputedStyle(document.body).getPropertyValue('--calm-background').trim() : '';
+    if (ocean.style.background !== want) {
+      ocean.style.background = want;
+      ocean.querySelectorAll('.world-backdrop, #livingOcean').forEach(el => (el.style.display = calm ? 'none' : ''));
+      void ocean.offsetHeight;
+    }
+  }
   const playButton = $('#dailyPlay');
   if (playButton) playButton.onclick = dailyAdventure;
 }
