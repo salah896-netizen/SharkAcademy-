@@ -1,4 +1,11 @@
-/* Tap to dive: one continuous painted scene from the sunny surface down to the reef. */
+/* Tap to dive (29 October 2026 overhaul). Five beats, about six seconds, all painted:
+ * 1. Milo waits at a sunrise surface beside a glowing pearl, with a painted hand showing the tap.
+ * 2. Tap: Milo counts 3-2-1 (his recorded voice), big bouncing numbers, dipping lower each time.
+ * 3. SPLASH: a crown of droplets, foam and a little shake.
+ * 4. The dive: Milo leads him down past a turtle, a shoal and a jellyfish, bubbles rushing up,
+ *    a depth gauge counting the metres.
+ * 5. Arrival: the reef, the fossil tooth rising, friends wiggling hello, and a first-dive pearl.
+ * Any tap after the first skips straight to the reef. Reduced motion: a calm fade. */
 .tap-dive {
   position: fixed;
   inset: 0;
@@ -19,302 +26,549 @@
   right: 0;
   top: 0;
   height: 300vh;
-  transition: transform 2.3s cubic-bezier(0.55, 0, 0.25, 1);
+  transition: transform 2.6s cubic-bezier(0.6, 0, 0.3, 1);
 }
-.diving .td-camera {
+.splashed .td-camera {
   transform: translateY(-200vh);
 }
+.td-shake {
+  animation: td-shake 0.45s ease-out;
+}
+@keyframes td-shake {
+  20% {
+    translate: -6px 4px;
+  }
+  40% {
+    translate: 5px -3px;
+  }
+  60% {
+    translate: -3px 2px;
+  }
+  80% {
+    translate: 2px -1px;
+  }
+}
+
+/* ---------------------------------------------------------------- 1. the surface */
 .td-sky {
   position: absolute;
   inset: 0 0 auto;
   height: 82vh;
-  background:
-    radial-gradient(circle at 74% 26%, #fff6d8 0 5%, #ffe7a8 6%, #ffd98a33 18%, transparent 34%),
-    linear-gradient(#7fc7e8 0%, #b5e1ef 55%, #e9f3e9 100%);
 }
-.td-sun {
+.td-sky > svg {
   position: absolute;
-  left: 74%;
-  top: 26%;
-  width: 9vmin;
-  height: 9vmin;
-  translate: -50% -50%;
-  border-radius: 50%;
-  background: #fff8e0;
-  box-shadow: 0 0 60px 30px #fff3c477;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
-.td-cloud {
-  position: absolute;
-  height: 5vmin;
-  border-radius: 99px;
-  background: #ffffffcc;
-  filter: blur(2px);
-  animation: td-cloud 40s linear infinite;
+.td-clouds {
+  animation: td-drift 60s linear infinite alternate;
 }
-.td-cloud.c1 {
-  width: 22vw;
-  top: 16%;
-  left: 8%;
-}
-.td-cloud.c2 {
-  width: 15vw;
-  top: 34%;
-  left: 52%;
-  animation-duration: 55s;
-  opacity: 0.8;
-}
-@keyframes td-cloud {
+@keyframes td-drift {
   to {
-    translate: 20vw 0;
+    transform: translateX(80px);
   }
 }
 .td-surface {
   position: absolute;
   left: 0;
   right: 0;
-  top: 64vh;
-  height: 16vh;
+  top: 62vh;
+  height: 20vh;
 }
-.td-surface svg {
+.td-wave {
   position: absolute;
-  inset: 0;
+  left: 0;
   width: 125%;
   height: 100%;
 }
-.td-surface .w1 {
-  fill: #3aa6c4;
-  animation: td-wave 7s linear infinite;
+.td-wave.back {
+  top: 0;
+  animation: td-wave 8s linear infinite;
 }
-.td-surface .w2 {
-  fill: #1f88aa;
-  animation: td-wave 5s linear infinite reverse;
+.td-wave.front {
+  top: 26%;
+  z-index: 3;
+  animation: td-wave 6s linear infinite reverse;
 }
 @keyframes td-wave {
   to {
-    transform: translateX(-12.5%);
+    transform: translateX(-20%);
   }
 }
-/* Milo's dorsal fin glides back and forth on the surface. */
-.td-fin {
+/* Milo bobs in the water, half in front of the back wave, half behind the front one. */
+.td-milo {
   position: absolute;
-  top: 4%;
-  left: 14%;
-  width: clamp(54px, 8vmin, 84px);
   z-index: 2;
-  animation: td-fin 9s ease-in-out infinite;
+  left: 50%;
+  top: -8vh;
+  width: clamp(240px, 42vmin, 440px);
+  translate: -62% 0;
+  transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1);
+  animation: td-bob 2.6s ease-in-out infinite;
 }
-.td-fin svg {
+.td-milo .milo-actor {
   display: block;
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 8px 12px #0b2d3a33);
 }
-@keyframes td-fin {
-  0% {
-    transform: translateX(0) scaleX(1);
+.td-milo .milo-original-fin {
+  display: block !important;
+  transform-origin: 690px 600px;
+  animation: td-fin-wave 1.3s ease-in-out infinite;
+}
+@keyframes td-bob {
+  50% {
+    translate: -62% 1.6vh;
   }
-  48% {
-    transform: translateX(60vw) scaleX(1);
+}
+@keyframes td-fin-wave {
+  0%,
+  100% {
+    transform: rotate(-30deg);
   }
   50% {
-    transform: translateX(60vw) scaleX(-1);
-  }
-  98% {
-    transform: translateX(0) scaleX(-1);
-  }
-  100% {
-    transform: translateX(0) scaleX(1);
+    transform: rotate(-54deg);
   }
 }
-.td-mid {
+.count-3 .td-milo {
+  transform: translateY(2.5vh);
+}
+.count-2 .td-milo {
+  transform: translateY(5vh);
+}
+.count-1 .td-milo {
+  transform: translateY(7.5vh) rotate(-8deg);
+}
+.splashed .td-milo {
+  transform: translateY(20vh) rotate(-40deg);
+  opacity: 0;
+  transition:
+    transform 0.4s ease-in,
+    opacity 0.3s 0.15s;
+}
+
+/* The glowing pearl: the thing to tap. */
+.td-pearl {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 47vh;
+  translate: 40% 0;
+  width: clamp(110px, 17vmin, 170px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  animation: td-pearl-float 2.4s ease-in-out infinite;
+}
+.td-pearl svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.td-pearl .glow {
+  transform-origin: 60px 60px;
+  animation: td-pearl-glow 1.6s ease-in-out infinite;
+}
+@keyframes td-pearl-float {
+  50% {
+    translate: 40% -1.4vh;
+  }
+}
+@keyframes td-pearl-glow {
+  50% {
+    opacity: 0.35;
+    transform: scale(1.18);
+  }
+}
+.td-hand {
+  position: absolute;
+  z-index: 5;
+  right: -18%;
+  bottom: -26%;
+  width: 52%;
+  animation: td-hand 1.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.td-hand svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@keyframes td-hand {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-14deg);
+  }
+  45% {
+    transform: translate(-16%, -16%) rotate(-14deg) scale(0.92);
+  }
+  55% {
+    transform: translate(-16%, -16%) rotate(-14deg) scale(0.92);
+  }
+}
+.counting .td-pearl,
+.splashed .td-pearl {
+  animation: none;
+  transform: scale(0);
+  opacity: 0;
+  transition:
+    transform 0.35s ease-in,
+    opacity 0.35s;
+}
+
+/* ---------------------------------------------------------------- 2. countdown */
+.td-count {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 22vh;
+  translate: -50% 0;
+  pointer-events: none;
+  font:
+    900 clamp(110px, 22vmin, 220px) / 1 ui-rounded,
+    'Arial Rounded MT Bold',
+    system-ui,
+    sans-serif;
+  color: #fff8e0;
+  -webkit-text-stroke: clamp(4px, 0.8vmin, 8px) #e8823a;
+  paint-order: stroke fill;
+  text-shadow:
+    0 8px 0 #c4642066,
+    0 14px 30px #0b2d3a44;
+}
+.td-count.pop {
+  animation: td-count 0.7s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+.td-count.go {
+  -webkit-text-stroke-color: #2fa36b;
+  text-shadow:
+    0 8px 0 #1d744866,
+    0 14px 30px #0b2d3a44;
+}
+@keyframes td-count {
+  from {
+    transform: scale(0.2) rotate(-12deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15) rotate(4deg);
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------------- 3. splash */
+.td-splash {
+  position: absolute;
+  z-index: 7;
+  left: 50%;
+  bottom: 30vh;
+  width: clamp(320px, 66vmin, 700px);
+  translate: -58% 0;
+  transform-origin: 50% 92%;
+  pointer-events: none;
+  opacity: 0;
+}
+.td-splash svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.splash-go .td-splash {
+  animation: td-splash 0.9s ease-out forwards;
+}
+@keyframes td-splash {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.05);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(1, 1.08);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1, 0.7);
+  }
+}
+.td-splash .drop {
+  animation: td-drop 0.9s ease-out forwards;
+}
+@keyframes td-drop {
+  to {
+    transform: translate(var(--dx), var(--dy));
+  }
+}
+
+/* ---------------------------------------------------------------- 4. the dive */
+.td-under {
   position: absolute;
   left: 0;
   right: 0;
   top: 78vh;
-  height: 130vh;
-  background: linear-gradient(#1f88aa 0%, #1a7aa6 45%, #227eb2 100%);
-  overflow: hidden;
+  bottom: 0;
+  background: linear-gradient(#2a9cc0 0%, #1f7fa6 30%, #165f86 60%, #0d3f63 100%);
 }
-.td-mid .ray {
+.td-under .ray {
   position: absolute;
-  top: -10%;
+  top: 0;
+  height: 160vh;
   width: 14vw;
-  height: 120%;
-  background: linear-gradient(#ffffff38, transparent 75%);
+  background: linear-gradient(#ffffff40, #ffffff00);
   transform: skewX(-14deg);
 }
-.td-mid .r1 {
-  left: 18%;
+.td-under .ray:nth-child(1) {
+  left: 12%;
 }
-.td-mid .r2 {
-  left: 48%;
+.td-under .ray:nth-child(2) {
+  left: 44%;
   width: 8vw;
 }
-.td-mid .r3 {
-  left: 70%;
+.td-under .ray:nth-child(3) {
+  left: 72%;
   width: 11vw;
 }
-/* The last screen is the same painted reef as the home screen, so the fade is seamless. */
-.td-deep {
+/* Sea creatures placed down the water column; the camera passes them on the way down. */
+.td-creature {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 190vh;
-  height: 110vh;
-  background:
-    linear-gradient(#227eb2 0%, #227eb200 26%),
-    url('assets/world-home.jpg') center bottom / cover;
+  opacity: 0.95;
 }
-.td-bubble {
-  position: absolute;
-  left: 50%;
-  top: 42%;
-  translate: -50% -50%;
-  width: clamp(170px, 26vmin, 260px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 3px solid #ffffffcc;
-  background: radial-gradient(
-    circle at 34% 28%,
-    #ffffff 0 9%,
-    #e6fbffcc 10% 30%,
-    #9be3f0aa 60%,
-    #5cc6dc88 100%
-  );
-  box-shadow:
-    0 0 0 10px #ffffff22,
-    0 12px 40px #0b3b5a55,
-    inset 0 -14px 26px #2b9fbd55;
+.td-creature svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.td-turtle {
+  top: 52vh;
+  left: 64%;
+  width: clamp(120px, 20vmin, 210px);
+}
+.td-shoal {
+  top: 92vh;
+  left: 6%;
+  width: clamp(170px, 30vmin, 320px);
   display: grid;
-  place-items: center;
-  color: #0d4a62;
-  font:
-    800 clamp(22px, 3.4vmin, 30px) / 1.1 ui-rounded,
-    'Trebuchet MS',
-    system-ui,
-    sans-serif;
-  text-align: center;
-  animation: td-bubble 2.4s ease-in-out infinite;
-  transition:
-    opacity 0.3s,
-    transform 0.3s;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px 0;
 }
-@keyframes td-bubble {
-  50% {
-    transform: translateY(-10px) scale(1.04);
-    box-shadow:
-      0 0 0 18px #ffffff18,
-      0 16px 44px #0b3b5a55,
-      inset 0 -14px 26px #2b9fbd55;
+.td-shoal span:nth-child(even) {
+  translate: 30% 0;
+}
+.td-jelly {
+  top: 130vh;
+  left: 70%;
+  width: clamp(80px, 13vmin, 130px);
+}
+.splashed .td-turtle {
+  animation: td-swim-left 3s ease-out forwards;
+}
+.splashed .td-shoal {
+  animation: td-swim-right 3s ease-out forwards;
+}
+.splashed .td-jelly {
+  animation: td-jelly-up 3s ease-out forwards;
+}
+@keyframes td-swim-left {
+  to {
+    translate: -26vw 0;
   }
 }
-.td-finger {
+@keyframes td-swim-right {
+  to {
+    translate: 24vw 0;
+  }
+}
+@keyframes td-jelly-up {
+  to {
+    translate: 0 -10vh;
+  }
+}
+/* Milo leads the way down: fixed on screen, nose first. */
+.td-leader {
   position: absolute;
-  right: -6%;
-  bottom: -6%;
-  font-style: normal;
-  font-size: clamp(38px, 6vmin, 56px);
-  animation: td-tap 1.4s ease-in-out infinite;
+  z-index: 6;
+  left: 50%;
+  top: 30vh;
+  width: clamp(200px, 34vmin, 360px);
+  translate: -50% 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-40vh) rotate(-62deg);
 }
-@keyframes td-tap {
-  50% {
-    transform: translate(-8px, -10px) scale(0.92);
+.td-leader .milo-actor {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 14px #0005);
+}
+.splashed .td-leader {
+  animation: td-lead 2.7s cubic-bezier(0.4, 0, 0.3, 1) 0.25s forwards;
+}
+@keyframes td-lead {
+  0% {
+    opacity: 0;
+    transform: translateY(-40vh) rotate(-62deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(2vh) rotate(-58deg) translateX(-3vw);
+  }
+  75% {
+    transform: translateY(6vh) rotate(-30deg) translateX(3vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(30vh) rotate(-8deg);
   }
 }
-.diving .td-bubble {
-  opacity: 0;
-  transform: scale(1.6);
-  animation: none;
+/* Bubbles rushing up past the camera. */
+.td-rush {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
 }
-/* Bubbles rush past as we dive. */
 .td-rush i {
   position: absolute;
   left: var(--x);
   bottom: -40px;
   width: var(--s);
-  height: var(--s);
+  aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px solid #ffffffaa;
-  background: #ffffff22;
+  border: 2px solid #ffffffb0;
+  background: radial-gradient(circle at 35% 30%, #ffffffcc 0 18%, #ffffff22 30%, #ffffff10);
   opacity: 0;
 }
-.diving .td-rush i {
-  animation: td-rush 1.3s var(--d) ease-in forwards;
+.splashed .td-rush i {
+  animation: td-rush 1.5s ease-in var(--d) 2 both;
 }
 @keyframes td-rush {
   10% {
     opacity: 1;
   }
   to {
-    opacity: 0;
+    opacity: 0.2;
     transform: translateY(-115vh);
   }
 }
-/* The friends swoop up to meet Haytham, then settle where the reef row sits. */
-.td-friends {
+/* Depth gauge */
+.td-depth {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 4vh;
-  height: 22vh;
+  z-index: 8;
+  right: max(18px, env(safe-area-inset-right));
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 14px 12px;
+  border-radius: 99px;
+  background: #0b2d3a99;
+  border: 2px solid #ffffff55;
+  color: #fff8e0;
+  font:
+    900 clamp(26px, 4.4vmin, 40px) / 1 ui-rounded,
+    system-ui,
+    sans-serif;
+  opacity: 0;
   pointer-events: none;
 }
-.td-friend {
-  position: absolute;
-  bottom: 0;
-  width: 18vw;
-  max-width: 230px;
-  opacity: 0;
-  transform: translateY(70vh) rotate(-25deg);
+.td-depth small {
+  font-size: 0.5em;
+  font-weight: 800;
+  opacity: 0.85;
 }
-.td-friend svg {
-  width: 100%;
-  height: auto;
+.td-depth svg {
+  width: 1em;
+  height: 1em;
 }
-.td-friend.f0 {
-  left: 3%;
+.splashed .td-depth {
+  animation: td-depth-in 0.4s ease-out 0.5s forwards;
 }
-.td-friend.f1 {
-  left: 21%;
-}
-.td-friend.f2 {
-  left: 40%;
-  width: 22vw;
-  max-width: 280px;
-}
-.td-friend.f3 {
-  left: 61%;
-}
-.td-friend.f4 {
-  left: 79%;
-}
-.diving .td-friend {
-  animation: td-swoop 1.5s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
-}
-.diving .td-friend.f0 {
-  animation-delay: 0.7s;
-}
-.diving .td-friend.f1 {
-  animation-delay: 0.85s;
-}
-.diving .td-friend.f2 {
-  animation-delay: 0.6s;
-}
-.diving .td-friend.f3 {
-  animation-delay: 0.95s;
-}
-.diving .td-friend.f4 {
-  animation-delay: 1.05s;
-}
-@keyframes td-swoop {
-  60% {
-    opacity: 1;
-    transform: translateY(-6vh) rotate(6deg);
-  }
+@keyframes td-depth-in {
   to {
     opacity: 1;
-    transform: none;
   }
 }
+
+/* ---------------------------------------------------------------- 5. arrival */
+.reef-arrive .home-friends button > span {
+  animation: td-friend-hello 0.9s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+.reef-arrive .home-friends button:nth-child(1) > span {
+  animation-delay: 0.35s;
+}
+.reef-arrive .home-friends button:nth-child(2) > span {
+  animation-delay: 0.5s;
+}
+.reef-arrive .home-friends button:nth-child(3) > span {
+  animation-delay: 0.2s;
+}
+.reef-arrive .home-friends button:nth-child(4) > span {
+  animation-delay: 0.65s;
+}
+.reef-arrive .home-friends button:nth-child(5) > span {
+  animation-delay: 0.8s;
+}
+@keyframes td-friend-hello {
+  from {
+    transform: translateY(14vh) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-2vh) rotate(5deg);
+    opacity: 1;
+  }
+}
+/* First dive of the day: a pearl floats up and drops into the treasure chest. */
+.dive-pearl {
+  position: fixed;
+  z-index: 140;
+  left: 50%;
+  top: 46%;
+  width: clamp(70px, 11vmin, 110px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  pointer-events: none;
+  animation: dive-pearl-in 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+.dive-pearl svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.dive-pearl.fly {
+  transition:
+    left 0.9s cubic-bezier(0.5, 0, 0.6, 1),
+    top 0.9s cubic-bezier(0.3, -0.4, 0.6, 1),
+    width 0.9s,
+    opacity 0.3s 0.75s;
+}
+@keyframes dive-pearl-in {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+#treasureChest.chest-pop {
+  animation: chest-pop 0.6s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+@keyframes chest-pop {
+  40% {
+    transform: scale(1.18);
+  }
+}
+
 /* The fossil tooth rises as the reef appears. */
 .reef-arrive .home-board {
   animation: tooth-rise 1.2s cubic-bezier(0.2, 0.7, 0.3, 1);
@@ -381,25 +635,27 @@
     translate: -50% -20px;
   }
 }
-/* Reduced motion: no plunge, just a gentle fade. */
-.tap-dive.reduced .td-camera,
-.tap-dive.reduced .td-bubble,
-.tap-dive.reduced .td-fin,
-.tap-dive.reduced .td-cloud,
-.tap-dive.reduced .td-surface path {
+/* Reduced motion: no countdown bounce, splash or plunge; a gentle fade to the reef. */
+.tap-dive.reduced *,
+.tap-dive.reduced {
   animation: none !important;
   transition: none !important;
 }
-.tap-dive.reduced.diving .td-camera {
-  transform: none;
-}
+.tap-dive.reduced .td-splash,
+.tap-dive.reduced .td-leader,
 .tap-dive.reduced .td-rush,
-.tap-dive.reduced .td-friends {
+.tap-dive.reduced .td-depth,
+.tap-dive.reduced .td-hand {
   display: none;
+}
+.tap-dive.reduced.splashed .td-camera {
+  transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .reef-arrive .home-board,
-  .shark-of-day {
-    animation: none;
+  .reef-arrive .home-friends button > span,
+  .shark-of-day,
+  .dive-pearl {
+    animation: none !important;
   }
 }

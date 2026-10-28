@@ -32,6 +32,17 @@ async def main():
         ev = lambda js: page.evaluate(js)
         await page.goto(BASE + '#home')
         await page.wait_for_timeout(1500)
+        # Tap to dive (29 Oct, v114): painted, no emoji; the tap finishes it, marks today, gives a pearl
+        intro = await ev("""(() => { const t = document.querySelector('#tapToDive'); if (!t) return null;
+          return { painted: !!t.querySelector('.td-pearl svg') && !!t.querySelector('.td-milo .milo-actor') && !!t.querySelector('.td-splash svg'),
+                   emoji: /[☝👆🫧]/u.test(t.textContent), xp: state.xp } })()""")
+        if intro:
+            await ev("document.querySelector('#tapToDive').click()"); await page.wait_for_timeout(900)
+            done = await ev("[!document.querySelector('#tapToDive') || document.querySelector('#tapToDive').classList.contains('td-out'), state.lastOpening === openingTodayKey(), state.xp]")
+            check(intro['painted'] and not intro['emoji'] and done[0] and done[1] and done[2] == intro['xp'] + 1,
+                  f'tap to dive: painted, no emoji, finishes, once a day, first-dive pearl ({intro}, {done})')
+        else:
+            check(False, 'tap to dive: shows on the first open of the day')
         await ev(QUIET)
 
         # Home
