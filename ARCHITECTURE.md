@@ -17,12 +17,12 @@ A few older functions are still **wrapped** by reassignment (`const preX = x; x 
 | List | Owned by | Runs (in order) |
 |---|---|---|
 | `finishSteps` | `app.js` | `sharkFactReward` (ocean-experience.js) → `mathsDiscovery` (lesson-pack.js) → `pathFinish` (path.js) |
-| `homeSteps` | `ocean-experience.js` | `bindFriendTaps` (shark-taps.js) → `addFriendBadges` (feedback-round3.js) |
-| `parentsSteps` | `app.js` | `groupParentSections` (ocean-experience.js) → `addLevelControls` (feedback-round3.js) → `addVoiceCheck` (voice-check.js) → `addProgressBackup` (progress-safe.js) → `addProgressOverview` (progress-view.js) |
+| `homeSteps` | `ocean-experience.js` | `bindFriendTaps` (friend-taps.js) → `addFriendBadges` (friend-taps.js) |
+| `parentsSteps` | `app.js` | `groupParentSections` (ocean-experience.js) → `addLevelControls` (path.js) → `addVoiceCheck` (grown-ups.js) → `addProgressBackup` (grown-ups.js) → `addProgressOverview` (grown-ups.js) |
 | `questionLayers` | `app.js` | `schoolMathsLessons` (school-pack.js) → `shareFairly` (hands-on-sharing.js) → `packMathsLessons` (lesson-pack.js) → `countSeaAnimals` (ocean-experience.js) |
 | `readingPictureSources` | `reading-adventure.js` | `morePicture` (lessons-more.js) → `schoolReadingPicture` (school-pack.js) → `packReadingPicture` (lesson-pack.js) |
 | `sciencePictureSources` | `science.js` | `seaAnimalPhoto` (quiz-pictures.js) |
-| `speakLayers` | `companion.js` | `rememberQuestion` (kid-buttons.js) → `holdForLessonJourney` (calm-scenes.js) |
+| `speakLayers` | `companion.js` | `rememberQuestion` (answers.js) → `holdForLessonJourney` (calm-scenes.js) |
 
 ## Script load order
 
@@ -35,37 +35,32 @@ A few older functions are still **wrapped** by reassignment (`const preX = x; x 
 7. `companion.js`
 8. `learning.js`
 9. `stories.js`
-10. `reef-play.js`
-11. `atmosphere.js`
-12. `secrets.js`
-13. `crew.js`
-14. `reading-adventure.js`
-15. `app.js`
-16. `ocean-experience.js` — Screen-based ocean adventures
-17. `shark-photos.js` — Licensed shark photos from Wikimedia Commons, chosen for clear views of the whole shark
-18. `encyclopedia-more.js` — Encyclopedia, part 2 (25 October 2026), from Haytham's feedback: "read it all to me" and "the pictures are weak"
-19. `lesson-pack.js` — Foundation adventure pack
-20. `hands-on-sharing.js` — A child must model equal groups before choosing the number in each group.
-21. `calm-scenes.js` — Calm learning canvases and one uninterrupted journey from the home Play action.
-22. `school-pack.js` — School-aligned lesson batch, 24 October 2026
-23. `race.js` — Shark Race (24 October 2026): a just-for-fun reward with a little practice inside
-24. `science.js` — Science with Gizmo (24 October 2026)
-25. `path.js` — Learning path (24 October 2026), in the spirit of Khan Academy Kids' guided path
-26. `draw-shark.js` — Draw a shark with Dash (25 October 2026)
-27. `shark-taps.js` — Shark taps (25 October 2026): Haytham loves tapping his friends, so every tap does something
-28. `kid-buttons.js` — Picture buttons for a child who can't read yet (25 October 2026)
-29. `home-play.js` — Tappable home reef (25 October 2026)
-30. `feedback-round3.js` — Friends' feedback, round 3 (25 October 2026): Jude's and Archer's families, and Haytham's
-31. `learning-checks.js` — Learning checks (25 October 2026): stop guessing, and real tracing
-32. `quiz-photos.js` — Extra licensed photos for the quizzes (Wikimedia Commons)
-33. `quiz-pictures.js` — Real pictures in the shark quizzes (26 October 2026)
-34. `lessons-more.js` — More lessons (26 October 2026): "each skill has only a few lessons, so after a week or two he'll start seeing repeats." Adds lessons to ever
-35. `voice-check.js` — Grown-ups' area: "Voice check" (27 Oct)
-36. `progress-safe.js` — Progress saved automatically (28 Oct)
-37. `progress-view.js` — "How's Haytham going?" (28 Oct): a plain-words summary at the top of the grown-ups' area
-38. `media-download.js` — Gentle offline download (25 Oct)
-39. `opening.js` — Tap to dive (24 October 2026)
-40. `boot.js` — Start-up, loaded last
+10. `atmosphere.js`
+11. `secrets.js`
+12. `crew.js`
+13. `reading-adventure.js`
+14. `app.js`
+15. `ocean-experience.js` — Screen-based ocean adventures
+16. `shark-photos.js` — Licensed shark photos from Wikimedia Commons, chosen for clear views of the whole shark
+17. `encyclopedia-more.js` — Encyclopedia, part 2 (25 October 2026), from Haytham's feedback: "read it all to me" and "the pictures are weak"
+18. `lesson-pack.js` — Foundation adventure pack
+19. `hands-on-sharing.js` — A child must model equal groups before choosing the number in each group.
+20. `calm-scenes.js` — Calm learning canvases and one uninterrupted journey from the home Play action.
+21. `school-pack.js` — School-aligned lesson batch, 24 October 2026
+22. `race.js` — Shark Race (24 October 2026): a just-for-fun reward with a little practice inside
+23. `science.js` — Science with Gizmo (24 October 2026)
+24. `path.js` — Learning path (24 October 2026), in the spirit of Khan Academy Kids' guided path
+25. `draw-shark.js` — Draw a shark with Dash (25 October 2026)
+26. `friend-taps.js` — Friends answer every tap (25 October 2026)
+27. `answers.js` — Answering, for a child who can't read yet (25 October 2026)
+28. `writing-help.js` — Writing help (25 October 2026): the model letter drawn from the trace strokes, picture tool buttons, and the real tracing check
+29. `quiz-photos.js` — Extra licensed photos for the quizzes (Wikimedia Commons)
+30. `quiz-pictures.js` — Real pictures in the shark quizzes (26 October 2026)
+31. `lessons-more.js` — More lessons (26 October 2026): "each skill has only a few lessons, so after a week or two he'll start seeing repeats." Adds lessons to ever
+32. `grown-ups.js` — The grown-ups' area additions, in the order they appear: Voice check (27 Oct), progress saved automatically with backup files (28 Oct), and 
+33. `media-download.js` — Gentle offline download (25 Oct)
+34. `opening.js` — Tap to dive (24 October 2026)
+35. `boot.js` — Start-up, loaded last
 
 ## Functions still wrapped by later files
 
@@ -74,21 +69,20 @@ A few older functions are still **wrapped** by reassignment (`const preX = x; x 
 | `libraryPage` | `ocean-experience.js` | `lesson-pack.js` → `race.js` → `science.js` → `path.js` |
 | `play` | `app.js` | `ocean-experience.js` → `lesson-pack.js` → `hands-on-sharing.js` → `school-pack.js` |
 | `readingMission` | `reading-adventure.js` | `ocean-experience.js` → `school-pack.js` → `science.js` |
-| `save` | `app.js` | `ocean-experience.js` → `race.js` → `progress-safe.js` |
-| `writing` | `writing.js` | `lesson-pack.js` → `draw-shark.js` → `feedback-round3.js` |
+| `save` | `app.js` | `ocean-experience.js` → `race.js` → `grown-ups.js` |
+| `writing` | `writing.js` | `lesson-pack.js` → `draw-shark.js` → `writing-help.js` |
 | `answer` | `app.js` | `ocean-experience.js` → `hands-on-sharing.js` |
-| `encourage` | `companion.js` | `kid-buttons.js` → `learning-checks.js` |
+| `encourage` | `companion.js` | `answers.js` → `answers.js` |
 | `finishReadingMission` | `reading-adventure.js` | `ocean-experience.js` → `path.js` |
-| `greetCrew` | `crew.js` | `ocean-experience.js` → `shark-taps.js` |
-| `helperSpeak` | `crew.js` | `ocean-experience.js` → `kid-buttons.js` |
+| `greetCrew` | `crew.js` | `ocean-experience.js` → `friend-taps.js` |
+| `helperSpeak` | `crew.js` | `ocean-experience.js` → `answers.js` |
 | `oceanTopicPage` | `encyclopedia.js` | `ocean-experience.js` → `encyclopedia-more.js` |
 | `sharkArticle` | `encyclopedia.js` | `ocean-experience.js` → `encyclopedia-more.js` |
-| `touchMilo` | `companion.js` | `ocean-experience.js` → `shark-taps.js` |
+| `touchMilo` | `companion.js` | `ocean-experience.js` → `friend-taps.js` |
 | `advanceLearning` | `learning.js` | `lesson-pack.js` |
 | `crewForRoute` | `crew.js` | `lesson-pack.js` |
 | `dailyAdventure` | `ocean-experience.js` | `calm-scenes.js` |
 | `finishWritingAdventure` | `lesson-pack.js` | `path.js` |
-| `launchPathActivity` | `path.js` | `feedback-round3.js` |
 | `readingMissionAnswer` | `reading-adventure.js` | `ocean-experience.js` |
 | `render` | `app.js` | `ocean-experience.js` |
 | `schoolMathsCardArt` | `school-pack.js` | `lessons-more.js` |
@@ -119,15 +113,12 @@ Also: `learning-checks.js` wraps `answer`, `readingMissionAnswer` and `scienceAn
 16. `path.css`
 17. `science.css`
 18. `opening.css`
-19. `shark-taps.css`
+19. `friend-taps.css`
 20. `encyclopedia-more.css`
 21. `draw-shark.css`
-22. `kid-buttons.css`
-23. `home-play.css`
-24. `feedback-round3.css`
-25. `learning-checks.css`
-26. `quiz-pictures.css`
-27. `lessons-more.css`
+22. `friendly.css`
+23. `quiz-pictures.css`
+24. `lessons-more.css`
 
 ## Caches
 

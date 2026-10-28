@@ -1,79 +1,55 @@
-/* Learning checks (25 October 2026): stop guessing, and real tracing.
- *
- * Two tries, then we show you: with three pictures to choose from, tapping at random gets one
- * in three right. Now the first wrong tap gets the usual "try again"; on the second, the right
- * picture glows, the friend says the answer, and that question comes back once at the end of
- * the lesson, so he gets to answer it himself. Shown answers count as helped practice (they
- * never count towards a skill being "ready"), and pearls are never taken away.
- */
-function showRightChoice(button) {
-  if (!button) return;
-  document.querySelector('.kid-try-again')?.remove();
-  button.classList.add('kid-show-answer');
-  document
-    .querySelectorAll('#app button')
-    .forEach(b => b !== button && b.matches('[data-quest-choice],[data-science-choice],[data-choice],[data-group-choice]') && (b.disabled = true));
+/* Writing help (25 October 2026): the model letter drawn from the trace strokes, picture tool
+ * buttons, and the real tracing check. From round 3's feedback and learning-checks.js. */
+
+/* Writing (Archer's feedback): the little model letter above the sand used the computer font,
+ * whose "a" has a hook on top, while the trace teaches the round school "a". The model is now
+ * drawn from the very same strokes as the trace, bigger, so what he sees is what he writes.
+ * The tool buttons are pictures, and the green ✓ pulses once he has written something, so it's
+ * clear what to press next. */
+function letterModelSVG(target) {
+  const chars = Array.from(target).filter(c => letterStrokes[c]);
+  if (!chars.length) return null;
+  const strokes = (c, dx) =>
+    letterStrokes[c].paths
+      .map(d => `<path d="${d}" transform="translate(${dx} 0)"/>`)
+      .join('');
+  // Each letter sits in a 400-wide cell; crop to the part of the board letters use.
+  const width = chars.length * 220;
+  const body = chars.map((c, i) => strokes(c, i * 220 - 90)).join('');
+  return `<svg class="letter-model" viewBox="0 30 ${width} 215" aria-hidden="true"><path class="model-lines" d="M0 110H${width} M0 225H${width}"/>${body}</svg>`;
 }
-function revisitLater(q) {
-  if (!game?.items || q.revisit) return;
-  game.items.push({ ...q, revisit: true });
-}
-function twoTries(name, { question, buttonFor, call }) {
-  const original = window[name];
-  window[name] = function (value, ...rest) {
-    const q = question();
-    if (!game || game.answered || !q || q.kind === 'predict' || value === q.answer)
-      return original.call(this, value, ...rest);
-    const index = game.index;
-    game.wrongTaps = game.wrongTaps || {};
-    game.wrongTaps[index] = (game.wrongTaps[index] || 0) + 1;
-    if (game.wrongTaps[index] < 2) return original.call(this, value, ...rest);
-    // Second wrong tap: show the right answer, then carry on as if it were chosen (as helped).
-    if (game.showingAnswer) return;
-    game.showingAnswer = true;
-    game.assisted = true;
-    const button = buttonFor(q.answer);
-    showRightChoice(button);
-    revisitLater(q);
-    setTimeout(() => {
-      game && (game.showingAnswer = false);
-      if (!game || game.index !== index || game.answered) return;
-      game.revealing = true;
-      call(original, q.answer, button);
-      if (game) game.revealing = false;
-    }, 1100);
-  };
-}
-twoTries('readingMissionAnswer', {
-  question: () => game?.items?.[game.index],
-  buttonFor: answer =>
-    [...document.querySelectorAll('[data-quest-choice]')].find(
-      b => game.items[game.index].options[+b.dataset.questChoice] === answer
-    ),
-  call: (original, answer) => original(answer)
-});
-twoTries('scienceAnswer', {
-  question: () => (game?.science ? game.items[game.index] : null),
-  buttonFor: answer =>
-    [...document.querySelectorAll('[data-science-choice]')].find(
-      b => game.items[game.index].options[+b.dataset.scienceChoice] === answer
-    ),
-  call: (original, answer, button) => original(answer, button)
-});
-twoTries('answer', {
-  question: () => game?.items?.[game.index],
-  buttonFor: answer =>
-    document.querySelector(`[data-group-choice="${answer}"]`) ||
-    [...document.querySelectorAll('#app [data-choice], #app .choices button')].find(
-      b => b.textContent.trim() === String(answer) || b.dataset.choice === String(answer)
-    ),
-  call: (original, answer) => original(answer)
-});
-// A shown answer is said plainly ("A map!"), without "Yes!" or "Great job!".
-const preCheckEncourage = encourage;
-encourage = function (text, mood) {
-  if (game?.revealing) return preCheckEncourage(firstSentence(text), 'happy');
-  return preCheckEncourage(text, mood);
+const writingToolIcons = {
+  showStrokes: ['👀', 'Show me'],
+  undoInk: ['↶', 'Undo'],
+  clearInk: ['🧽', 'Wave away']
+};
+const preRound3Writing = writing;
+writing = function () {
+  preRound3Writing();
+  const page = app.querySelector('.writing-page');
+  if (!page) return;
+  const model = page.querySelector('.writing-mission-prompt strong');
+  const svg = model && letterModelSVG(model.textContent.trim());
+  if (svg) {
+    model.setAttribute('aria-label', model.textContent.trim());
+    model.innerHTML = svg;
+    model.classList.add('model-drawn');
+  }
+  for (const [id, [icon, label]] of Object.entries(writingToolIcons)) {
+    const b = document.getElementById(id);
+    if (!b) continue;
+    b.setAttribute('aria-label', b.textContent.trim() || label);
+    b.classList.add('writing-tool');
+    b.innerHTML = `<span aria-hidden="true">${icon}</span>`;
+  }
+  const done = document.getElementById('finishWriting');
+  if (done) {
+    done.setAttribute('aria-label', done.textContent.trim() || 'I finished');
+    done.classList.add('kid-btn', 'kid-done');
+    done.innerHTML = '<span class="kid-icon" aria-hidden="true">✓</span>';
+    const canvas = document.getElementById('writingCanvas');
+    canvas?.addEventListener('pointerup', () => done.classList.add('writing-ready'));
+  }
 };
 
 /* Real tracing (writing lagoon). A scribble and a tap on ✓ used to earn pearls. Now, when he

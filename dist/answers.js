@@ -1,3 +1,7 @@
+/* Answering, for a child who can't read yet (25 October 2026). Brought together from
+ * kid-buttons.js, round 3's feedback and learning-checks.js: picture buttons, try again, short
+ * win/lose lines, repeat the question, the blending bubbles, and two tries then show. */
+
 /* Picture buttons for a child who can't read yet (25 October 2026).
  *
  * 1. Try again: after a wrong answer, the choice he tapped wobbles and fades, and a big round
@@ -161,3 +165,128 @@ function syncRepeatButton() {
   };
 }
 window.addEventListener('hashchange', () => setTimeout(syncRepeatButton, 50));
+
+/* Friends' feedback, round 3 (25 October 2026): Jude's and Archer's families, and Haytham's.
+ *
+ * - Blending bubbles: the "listen and blend" question showed two blank bubbles and a plus sign,
+ *   which children read as "bubble + bubble". Each bubble is now a numbered speaker that lights
+ *   up and says its own part (shh… ip), one after the other, so the child hears the parts and
+ *   pushes them together. No letters, as in the class's Heggerty-style listening.
+ */
+function blendPartsPlay(strip, parts, first = 0) {
+  const bubbles = [...strip.querySelectorAll('.blend-bubble')];
+  let i = 0;
+  const next = () => {
+    bubbles.forEach(b => b.classList.remove('blend-speaking'));
+    if (i >= parts.length || !strip.isConnected) return;
+    const bubble = bubbles[first + i];
+    bubble?.classList.add('blend-speaking');
+    const part = parts[i++];
+    speak(part, {
+      speaker: 'willa',
+      end: () => setTimeout(next, 450),
+      unavailable: () => setTimeout(next, 700)
+    });
+  };
+  next();
+}
+function upgradeBlendQuestion() {
+  const old = app.querySelector('.school-blend:not([data-upgraded])');
+  if (!old || !game?.items) return;
+  const q = game.items[game.index];
+  if (!q?.parts) return;
+  // A fresh copy drops the old "replay the whole question" listener; the strip now plays the parts.
+  const strip = old.cloneNode(true);
+  strip.dataset.upgraded = '1';
+  old.replaceWith(strip);
+  strip.querySelectorAll('.blend-bubble').forEach((bubble, i) => {
+    bubble.innerHTML = `<span class="blend-ear" aria-hidden="true">🔊</span><b class="blend-number" aria-hidden="true">${i + 1}</b>`;
+    bubble.setAttribute('aria-label', 'Hear sound ' + (i + 1));
+    bubble.addEventListener('click', e => {
+      e.stopPropagation();
+      blendPartsPlay(strip, [q.parts[i]], i);
+    });
+  });
+  // The arrow between bubbles means "push them together", not "plus".
+  strip.querySelectorAll(':scope > b').forEach(b => (b.textContent = '➜'));
+  strip.addEventListener('click', () => blendPartsPlay(strip, q.parts, 0));
+}
+new MutationObserver(upgradeBlendQuestion).observe(app, { childList: true, subtree: true });
+
+/* Learning checks (25 October 2026): stop guessing, and real tracing.
+ *
+ * Two tries, then we show you: with three pictures to choose from, tapping at random gets one
+ * in three right. Now the first wrong tap gets the usual "try again"; on the second, the right
+ * picture glows, the friend says the answer, and that question comes back once at the end of
+ * the lesson, so he gets to answer it himself. Shown answers count as helped practice (they
+ * never count towards a skill being "ready"), and pearls are never taken away.
+ */
+function showRightChoice(button) {
+  if (!button) return;
+  document.querySelector('.kid-try-again')?.remove();
+  button.classList.add('kid-show-answer');
+  document
+    .querySelectorAll('#app button')
+    .forEach(b => b !== button && b.matches('[data-quest-choice],[data-science-choice],[data-choice],[data-group-choice]') && (b.disabled = true));
+}
+function revisitLater(q) {
+  if (!game?.items || q.revisit) return;
+  game.items.push({ ...q, revisit: true });
+}
+function twoTries(name, { question, buttonFor, call }) {
+  const original = window[name];
+  window[name] = function (value, ...rest) {
+    const q = question();
+    if (!game || game.answered || !q || q.kind === 'predict' || value === q.answer)
+      return original.call(this, value, ...rest);
+    const index = game.index;
+    game.wrongTaps = game.wrongTaps || {};
+    game.wrongTaps[index] = (game.wrongTaps[index] || 0) + 1;
+    if (game.wrongTaps[index] < 2) return original.call(this, value, ...rest);
+    // Second wrong tap: show the right answer, then carry on as if it were chosen (as helped).
+    if (game.showingAnswer) return;
+    game.showingAnswer = true;
+    game.assisted = true;
+    const button = buttonFor(q.answer);
+    showRightChoice(button);
+    revisitLater(q);
+    setTimeout(() => {
+      game && (game.showingAnswer = false);
+      if (!game || game.index !== index || game.answered) return;
+      game.revealing = true;
+      call(original, q.answer, button);
+      if (game) game.revealing = false;
+    }, 1100);
+  };
+}
+twoTries('readingMissionAnswer', {
+  question: () => game?.items?.[game.index],
+  buttonFor: answer =>
+    [...document.querySelectorAll('[data-quest-choice]')].find(
+      b => game.items[game.index].options[+b.dataset.questChoice] === answer
+    ),
+  call: (original, answer) => original(answer)
+});
+twoTries('scienceAnswer', {
+  question: () => (game?.science ? game.items[game.index] : null),
+  buttonFor: answer =>
+    [...document.querySelectorAll('[data-science-choice]')].find(
+      b => game.items[game.index].options[+b.dataset.scienceChoice] === answer
+    ),
+  call: (original, answer, button) => original(answer, button)
+});
+twoTries('answer', {
+  question: () => game?.items?.[game.index],
+  buttonFor: answer =>
+    document.querySelector(`[data-group-choice="${answer}"]`) ||
+    [...document.querySelectorAll('#app [data-choice], #app .choices button')].find(
+      b => b.textContent.trim() === String(answer) || b.dataset.choice === String(answer)
+    ),
+  call: (original, answer) => original(answer)
+});
+// A shown answer is said plainly ("A map!"), without "Yes!" or "Great job!".
+const preCheckEncourage = encourage;
+encourage = function (text, mood) {
+  if (game?.revealing) return preCheckEncourage(firstSentence(text), 'happy');
+  return preCheckEncourage(text, mood);
+};

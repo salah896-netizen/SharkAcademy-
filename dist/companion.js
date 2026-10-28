@@ -76,7 +76,7 @@ function stopSpeech() {
   if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
 // Everything said in the app goes through speak(). Later files can step in first by adding a layer
-// to the front of this list (kid-buttons.js remembers the question; calm-scenes.js holds narration
+// to the front of this list (answers.js remembers the question; calm-scenes.js holds narration
 // until the lesson journey arrives). Each layer gets (text, options, next) and calls next() to carry on.
 const speakLayers = [];
 function speak(t, options = {}) {

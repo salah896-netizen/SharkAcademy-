@@ -147,6 +147,16 @@ function expeditions() {
   document.querySelectorAll('[data-game]').forEach(b => (b.onclick = () => start(b.dataset.game)));
   bindPictureNames();
 }
+function bindPictureNames() {
+  document.querySelectorAll('[data-portal-name]').forEach(
+    b =>
+      (b.onclick = () => {
+        b.closest('article').classList.add('picture-pop');
+        setTimeout(() => b.closest('article')?.classList.remove('picture-pop'), 650);
+        speak(b.dataset.portalName);
+      })
+  );
+}
 function start(type) {
   if (type === 'reading') {
     startReadingMission();
@@ -542,7 +552,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v105');
+      const cache = await caches.open('haytham-sharks-v106');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',
@@ -591,7 +601,6 @@ if ('serviceWorker' in navigator) {
         './assets/world-learning.jpg',
         './assets/world-sharks.jpg',
         './assets/world-stories.jpg',
-        './reef-play.js',
         './visual-play.css',
         './assets/visual-sharks.jpg',
         './assets/visual-adventure.jpg',

@@ -312,6 +312,18 @@ function pathCurrentSkill(today = dayKey()) {
 let pendingPathPick = null;
 function launchPathActivity(pick) {
   if (!pick) return;
+  // Maths on medium/hard (set in the grown-ups' area): every other maths adventure from the path is
+  // a bigger-number one.
+  const mathsLevel = (state.levels || {}).maths;
+  if (pick.subject === 'maths' && (mathsLevel === 'medium' || mathsLevel === 'hard') && levelMathsCount++ % 2) {
+    requestedMathsLesson = null;
+    start('maths');
+    if (game) {
+      game.pathSkill = pick.skill;
+      game.pathReview = pick.review;
+    }
+    return;
+  }
   if (pick.subject === 'reading') {
     startReadingMission(pick.lesson);
   } else if (pick.subject === 'science') {
@@ -721,3 +733,63 @@ libraryPage = function () {
   );
   grid.querySelector('[data-library-route="path"]').onclick = () => (location.hash = 'path');
 };
+
+/* Easy / medium / hard for each subject (Haytham may be ahead in maths and not in reading).
+ * Set in the grown-ups' area. Each level:
+ *  - sets that subject's stage (1 / 2 / 3), which already controls question difficulty, the
+ *    number range (maths up to 10 / 20 / 50), writing with or without the trace, and science depth;
+ *  - starts the learning path further along that subject's skills (path.js);
+ *  - in maths, medium and hard mix in the bigger-number adventures every other time.
+ * "Automatic" (the default) keeps the app's own adaptive steps. */
+const levelNames = { easy: 'Easy', medium: 'Medium', hard: 'Hard' },
+  levelSubjects = [
+    ['reading', 'Reading', 'abc'],
+    ['maths', 'Maths', '123'],
+    ['writing', 'Writing', '✏️'],
+    ['science', 'Science', '🔬']
+  ];
+function setSubjectLevel(subject, level) {
+  state.levels = state.levels || {};
+  if (level === 'auto') delete state.levels[subject];
+  else {
+    state.levels[subject] = level;
+    const stage = { easy: 1, medium: 2, hard: 3 }[level];
+    learningState()[subject] = {
+      stage,
+      baseline:
+        subject === 'writing'
+          ? (state.writingHistory || []).length
+          : subject === 'science'
+            ? (state.scienceHistory || []).length
+            : state.history.filter(x => x.type === subject).length
+    };
+    if (subject === 'maths') state.range = [10, 20, 50][stage - 1];
+  }
+  save();
+}
+function levelControls() {
+  const levels = state.levels || {};
+  return `<section class="level-controls"><h3>How tricky? Set each subject on its own</h3><p class="muted">Easy is Foundation (Reception). Medium and Hard start further along the path and use bigger numbers and harder words. Automatic lets the app move up when he's ready.</p>${levelSubjects
+    .map(
+      ([key, name, icon]) =>
+        `<div class="level-row"><span class="level-name"><b>${icon}</b> ${name}</span><div class="segmented" role="group" aria-label="${name} level">${['auto', 'easy', 'medium', 'hard'].map(l => `<button data-level-subject="${key}" data-level="${l}" aria-pressed="${(levels[key] || 'auto') === l}">${l === 'auto' ? 'Automatic' : levelNames[l]}</button>`).join('')}</div></div>`
+    )
+    .join('')}</section>`;
+}
+parentsSteps.push(function addLevelControls() {
+  const host = $('#modalContent');
+  if (!host || host.querySelector('.level-controls')) return;
+  const firstHeading = host.querySelector('h3');
+  if (firstHeading) firstHeading.insertAdjacentHTML('beforebegin', levelControls());
+  else host.insertAdjacentHTML('beforeend', levelControls());
+  host.querySelectorAll('[data-level-subject]').forEach(
+    b =>
+      (b.onclick = () => {
+        setSubjectLevel(b.dataset.levelSubject, b.dataset.level);
+        host
+          .querySelectorAll(`[data-level-subject="${b.dataset.levelSubject}"]`)
+          .forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      })
+  );
+});
+let levelMathsCount = 0;

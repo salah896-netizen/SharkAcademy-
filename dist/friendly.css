@@ -1,0 +1,474 @@
+/* Styles for answers.js, friend-taps.js and writing-help.js, kept in their original cascade order. */
+
+/* ---- formerly kid-buttons.css */
+/* Picture buttons: one shape and colour per action, no reading needed. */
+.kid-btn {
+  display: inline-grid !important;
+  place-items: center;
+  min-width: 96px !important;
+  min-height: 76px !important;
+  padding: 0 22px !important;
+  border: 0 !important;
+  border-radius: 40px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 0 !important;
+  box-shadow: 0 6px 0 var(--kid-shade) !important;
+  transition: transform 0.12s;
+}
+.kid-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--kid-shade) !important;
+}
+.kid-icon {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 900;
+  font-family: ui-rounded, system-ui, sans-serif;
+}
+.kid-next,
+.kid-done {
+  background: #2fa36b !important;
+  --kid-shade: #1d7448;
+  min-width: 120px !important;
+}
+.kid-next {
+  animation: kid-next-pulse 1.8s ease-in-out 1.2s infinite;
+}
+.kid-again {
+  background: #f08a2c !important;
+  --kid-shade: #b9631a;
+}
+.kid-again .kid-icon {
+  font-size: 46px;
+}
+.kid-home {
+  background: #2f7fc0 !important;
+  --kid-shade: #1f5a8a;
+}
+.kid-path,
+.kid-tracks,
+.kid-listen {
+  background: #fffbea !important;
+  --kid-shade: #c9b98f;
+  color: #123c4c !important;
+}
+@keyframes kid-next-pulse {
+  50% {
+    transform: scale(1.07);
+  }
+}
+/* Try again: the tapped choice wobbles and fades; a big round arrow pops up. */
+.kid-wrong {
+  animation: kid-wobble 0.5s ease-in-out;
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+@keyframes kid-wobble {
+  20% {
+    transform: translateX(-10px) rotate(-3deg);
+  }
+  40% {
+    transform: translateX(10px) rotate(3deg);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+.kid-try-again {
+  position: fixed;
+  left: 50%;
+  top: 42%;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: #f08a2c;
+  color: #fff;
+  box-shadow: 0 0 0 10px #ffffff88, 0 18px 40px #0004;
+  pointer-events: none;
+  animation: kid-try 1.7s ease-in-out forwards;
+}
+.kid-try-again span {
+  font: 900 96px/1 ui-rounded, system-ui, sans-serif;
+  animation: kid-spin 1.1s ease-in-out 0.15s;
+}
+@keyframes kid-try {
+  0% {
+    scale: 0.3;
+    opacity: 0;
+  }
+  15% {
+    scale: 1.1;
+    opacity: 1;
+  }
+  25%,
+  80% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 0.8;
+    opacity: 0;
+  }
+}
+@keyframes kid-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kid-next,
+  .kid-try-again span,
+  .kid-wrong {
+    animation: none;
+  }
+}
+/* Hear the question again: one big speaker above the answers on every question screen. */
+.kid-repeat {
+  position: fixed;
+  left: 50%;
+  top: max(122px, calc(env(safe-area-inset-top) + 110px));
+  z-index: 30;
+  translate: -50% 0;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #1f8fc0;
+  font-size: 40px;
+  line-height: 1;
+  box-shadow: 0 6px 0 #156a90, 0 0 0 0 #1f8fc066;
+  animation: kid-repeat-ring 2.6s ease-out 3s 3;
+}
+.kid-repeat:active,
+.kid-repeat-pop {
+  transform: scale(0.92);
+}
+@keyframes kid-repeat-ring {
+  0% {
+    box-shadow: 0 6px 0 #156a90, 0 0 0 0 #1f8fc066;
+  }
+  70% {
+    box-shadow: 0 6px 0 #156a90, 0 0 0 22px #1f8fc000;
+  }
+}
+@media (max-height: 700px) {
+  .kid-repeat {
+    width: 64px;
+    height: 64px;
+    font-size: 30px;
+    top: 96px;
+  }
+}
+
+/* ---- formerly home-play.css */
+/* Tappable home reef: tricks for the swimming animals, bubbles everywhere else. */
+.home-fish .sea-animal {
+  transition: filter 0.3s;
+}
+.home-fish .sea-animal.reef-zoom {
+  animation: reef-zoom 1.4s ease-in-out !important;
+  opacity: 1 !important;
+}
+.home-fish .sea-animal.reef-peek {
+  animation: reef-peek 1.4s ease-in-out !important;
+  opacity: 1 !important;
+}
+.home-fish .sea-animal.reef-flip {
+  animation: reef-flip 1.4s ease-in-out !important;
+  opacity: 1 !important;
+}
+@keyframes reef-zoom {
+  40% {
+    transform: translateX(-140px) scale(1.25);
+    filter: drop-shadow(0 0 14px #fff8);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes reef-peek {
+  25% {
+    transform: scale(1.5) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(10deg);
+  }
+  75% {
+    transform: scale(1.5) rotate(-6deg);
+  }
+}
+@keyframes reef-flip {
+  20% {
+    transform: translateY(-30px) scale(1.4);
+  }
+  60% {
+    transform: translateY(-30px) scale(1.4) rotate(360deg);
+  }
+}
+#livingOcean .far-fish.reef-hello {
+  animation: reef-hello 3.2s ease-in-out !important;
+}
+@keyframes reef-hello {
+  30%,
+  70% {
+    transform: scale(1.35) translateY(6%) rotate(-4deg);
+    opacity: 0.75;
+  }
+}
+.reef-tap-burst {
+  position: fixed;
+  z-index: 40;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.reef-tap-burst i {
+  position: absolute;
+  left: calc((var(--b) - 4) * 9px);
+  top: 0;
+  width: calc(8px + (var(--b) * 3px) % 14px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #ffffffcc;
+  background: #ffffff33;
+  animation: reef-bubble 1.4s calc(var(--b) * 0.04s) ease-out forwards;
+}
+@keyframes reef-bubble {
+  to {
+    transform: translate(calc((var(--b) - 4) * 6px), -150px);
+    opacity: 0;
+  }
+}
+.reef-tap-burst b {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  color: #ffd37a;
+  animation: reef-dart 1.3s calc(var(--f) * 0.05s) ease-out forwards;
+}
+.reef-tap-burst b:nth-child(even) {
+  color: #8fd8ff;
+}
+@keyframes reef-dart {
+  from {
+    transform: translate(0, 0) rotate(calc(var(--f) * 72deg));
+    opacity: 1;
+  }
+  to {
+    transform: rotate(calc(var(--f) * 72deg)) translateX(130px);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reef-tap-burst b,
+  .reef-tap-burst i {
+    animation-duration: 0.6s;
+  }
+}
+
+/* ---- formerly feedback-round3.css */
+/* Blending bubbles: numbered speakers that light up as each part is said. */
+.school-blend .blend-bubble {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  cursor: pointer;
+}
+.blend-ear {
+  font-size: 36px;
+}
+.blend-number {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1f8fc0;
+  color: #fff;
+  font: 900 18px/1 ui-rounded, system-ui, sans-serif;
+  opacity: 1 !important;
+}
+.school-blend > b {
+  font-size: 40px;
+  opacity: 0.7;
+}
+.blend-bubble.blend-speaking {
+  animation: none !important;
+  transform: scale(1.25);
+  background: radial-gradient(circle at 35% 30%, #fff 0 18%, #ffe39a 19% 60%, #f2c84b 61%) !important;
+  box-shadow: 0 0 0 8px #f2c84b55 !important;
+  transition: transform 0.2s;
+}
+/* Writing: a model letter drawn from the trace strokes, picture tools, a pulsing ✓. */
+.writing-mission-prompt strong.model-drawn {
+  display: inline-flex;
+  align-items: center;
+}
+.letter-model {
+  height: clamp(70px, 11vh, 110px);
+  width: auto;
+  overflow: visible;
+}
+.letter-model path {
+  fill: none;
+  stroke: #6b4a2b;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.letter-model .model-lines {
+  stroke: #b89a74;
+  stroke-width: 3;
+  stroke-dasharray: 8 10;
+}
+.writing-tool {
+  min-width: 72px !important;
+  min-height: 64px !important;
+  font-size: 30px !important;
+  padding: 0 14px !important;
+}
+#finishWriting.writing-ready {
+  animation: kid-next-pulse 1.4s ease-in-out infinite;
+}
+.writing-mission-prompt .letter-model {
+  height: clamp(90px, 14vh, 140px);
+}
+.writing-page #finishWriting.kid-done,
+body .writing-page .writing-toolbar #finishWriting {
+  background: #2fa36b none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 6px 0 #1d7448 !important;
+}
+.writing-page #finishWriting.kid-done .kid-icon {
+  color: #fff;
+}
+/* Home reef: a picture badge under each friend shows what they teach. */
+.home-friends button {
+  position: relative;
+}
+.friend-badge {
+  position: absolute;
+  left: 50%;
+  top: calc(min(23vh, 220px) + 2px);
+  translate: -50% 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 4px 12px 4px 6px;
+  border-radius: 99px;
+  background: #fffbea;
+  box-shadow: 0 3px 0 #0003;
+  font-style: normal;
+}
+.friend-badge b {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 6px;
+  border-radius: 99px;
+  background: var(--badge);
+  color: #fff;
+  font: 900 18px/1 ui-rounded, system-ui, sans-serif;
+}
+.friend-badge small {
+  display: block !important;
+  color: #123c4c;
+  font: 800 14px ui-rounded, system-ui, sans-serif;
+}
+@media (max-width: 760px) {
+  .friend-badge small {
+    display: none !important;
+  }
+  .friend-badge {
+    padding: 3px;
+  }
+}
+/* Grown-ups' area: easy / medium / hard per subject. */
+.level-controls {
+  margin: 8px 0 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f3f8f2;
+}
+.level-controls h3 {
+  margin-top: 0;
+}
+.level-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+}
+.level-name {
+  font-weight: 800;
+}
+.level-name b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 30px;
+  border-radius: 99px;
+  background: #0a3445;
+  color: #fff;
+  font-size: 14px;
+}
+.level-row .segmented button {
+  min-height: 40px;
+  padding: 0 12px;
+}
+
+/* ---- formerly learning-checks.css */
+/* The right answer, shown after two tries: a gentle golden glow. */
+.kid-show-answer {
+  opacity: 1 !important;
+  filter: none !important;
+  box-shadow: 0 0 0 6px #f2c84b, 0 0 30px #f2c84baa !important;
+  animation: show-answer 0.9s ease-in-out 2;
+}
+@keyframes show-answer {
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* Calmer lesson screens: while a question is on screen, only what helps answer it stays.
+   The library submarine and grown-up settings (both lead away from the lesson), the cinema shell
+   and the race buoy step aside; Home/Back, music, pearls and the two friends stay, a bit smaller. */
+body.activity-screen .submarine-library,
+body.activity-screen #oceanSettings,
+body.activity-screen #cinemaShell,
+body.activity-screen #raceBuoy {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+body.activity-screen #subjectHelper {
+  scale: 0.82;
+  transform-origin: bottom left;
+}
+body.activity-screen #miloCompanion {
+  scale: 0.82;
+  transform-origin: bottom right;
+}
