@@ -21,6 +21,8 @@ const kidButtonKinds = [
   ['done', '✓', /i practised|i finished/i],
   ['listen', '🔊', /^♫\s*hear (our|the)/i]
 ];
+// Painted pictures for the emoji kinds (icons.js); ▶ ↻ ✓ stay as bold shapes.
+const kidButtonPictures = { home: 'home', path: 'map', tracks: 'flag', listen: 'speaker' };
 function kidButtonKind(text) {
   const clean = text.replace(/[→←✨✓]/g, '').trim();
   return kidButtonKinds.find(([, , pattern]) => pattern.test(clean));
@@ -41,7 +43,7 @@ function decorateKidButtons(root = document) {
       button.dataset.kidText = text;
       button.setAttribute('aria-label', button.getAttribute('aria-label') || text);
       button.classList.add('kid-btn', 'kid-' + kind[0]);
-      button.innerHTML = `<span class="kid-icon" aria-hidden="true">${kind[1]}</span>`;
+      button.innerHTML = `<span class="kid-icon" aria-hidden="true">${kidButtonPictures[kind[0]] ? paintedIcon(kidButtonPictures[kind[0]]) : kind[1]}</span>`;
     });
 }
 const kidButtonObserver = new MutationObserver(() => decorateKidButtons());
@@ -151,7 +153,7 @@ function syncRepeatButton() {
     button.id = 'repeatQuestion';
     button.className = 'kid-repeat';
     button.setAttribute('aria-label', 'Hear the question again');
-    button.innerHTML = '<span aria-hidden="true">🔊</span>';
+    button.innerHTML = `<span aria-hidden="true">${paintedIcon('speaker')}</span>`;
     document.body.append(button);
   }
   button.onclick = () => {

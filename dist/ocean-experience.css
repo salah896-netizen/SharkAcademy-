@@ -786,9 +786,6 @@ body[data-route='home'] .subject-helper {
 .sea-animal {
   overflow: visible;
 }
-.animal-barracuda {
-  transform: scaleY(0.7);
-}
 .game:has(.counting-school) .scene {
   font-size: initial;
 }

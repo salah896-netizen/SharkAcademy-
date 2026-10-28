@@ -1,0 +1,82 @@
+/* Painted icons (29 Oct 2026). See icons.js. */
+.p-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  overflow: visible;
+}
+/* Help me */
+#questHint .p-icon,
+.lesson-help .p-icon {
+  width: 1.35em;
+  height: 1.35em;
+  vertical-align: -0.32em;
+  margin-right: 2px;
+}
+/* Hear the question again */
+.kid-repeat .p-icon {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: middle;
+}
+/* Picture buttons (home, my path, race tracks, listen) */
+.kid-icon .p-icon {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 2px #0b2d3a33);
+}
+/* Progress trails: a painted shell for each one done, a soft dashed spot for each to go. */
+.quest-trail span,
+.quest-trail span:not(.found),
+body[data-calm-tone] .quest-trail span:not(.found) {
+  width: auto;
+  height: auto;
+  border: 0;
+  background: none;
+  border-radius: 0;
+  font-size: 30px;
+  line-height: 1;
+}
+.quest-trail span.found .p-icon {
+  animation: trail-shell-in 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.lesson-progress i,
+.writing-shell-steps i {
+  line-height: 1;
+}
+.lesson-progress i .p-icon {
+  width: 1.15em;
+  height: 1.15em;
+}
+.lesson-progress i.complete:last-of-type .p-icon,
+.writing-shell-steps i.complete:last-of-type .p-icon {
+  animation: trail-shell-in 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+@keyframes trail-shell-in {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Music and voices */
+#oceanVoice .p-icon {
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
+}
+#music .p-icon {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.3em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .quest-trail span.found .p-icon,
+  .lesson-progress i .p-icon,
+  .writing-shell-steps i .p-icon {
+    animation: none !important;
+  }
+}

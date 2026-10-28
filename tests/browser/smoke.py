@@ -175,6 +175,19 @@ async def main():
         tracks = await ev("[...document.querySelectorAll('.race-track-card')].map(c => !!c.querySelector('svg.painted-scene'))")
         check(len(tracks) == 4 and all(tracks), f'race: all 4 track cards painted ({tracks})')
 
+        # Lesson screens use painted icons and animals, not emoji (29 Oct)
+        animals = await ev("['salmon','tuna','squid','crab','barracuda','turtle','blue-tang','clownfish','hammerhead','dolphin','octopus'].filter(k => !/radialGradient/.test(seaAnimal(k)))")
+        check(not animals, f'sea animals: all 11 painted ({animals})')
+        await ev("start('maths')"); await page.wait_for_timeout(600)
+        bad = await ev("""(() => { const t = s => (document.querySelector(s)?.textContent || '');
+          return [['help', t('#hint')], ['repeat', t('#repeatQuestion')], ['trail', t('.lesson-progress')], ['voice', t('#oceanVoice')]]
+            .filter(([, x]) => /[💡🔊🐚♫○]/u.test(x)).map(([k]) => k) })()""")
+        check(not bad, f'maths lesson: painted help, speaker, trail and voice icons ({bad})')
+        await ev("location.hash = 'library/reading'"); await page.wait_for_timeout(300)
+        await ev("document.querySelector('.lesson-shelf-card')?.click()"); await page.wait_for_timeout(600)
+        bad = await ev("""(() => /[💡🐚◌]/u.test((document.querySelector('#questHint')?.textContent || '') + (document.querySelector('.quest-trail')?.textContent || '')) )()""")
+        check(not bad, 'reading lesson: painted help and trail')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

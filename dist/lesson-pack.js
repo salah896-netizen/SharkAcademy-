@@ -262,13 +262,13 @@ play = function () {
     progress.innerHTML = [0, 1, 2, 3, 4]
       .map(
         i =>
-          `<i class="${i < game.index ? 'complete' : ''}" aria-hidden="true">${i < game.index ? '🐚' : '○'}</i>`
+          `<i class="${i < game.index ? 'complete' : ''}" aria-hidden="true">${paintedIcon(i < game.index ? 'shell' : 'spot')}</i>`
       )
       .join('');
   }
   const hint = $('#hint');
   if (hint) {
-    hint.innerHTML = '<span aria-hidden="true">💡</span> Help me';
+    hint.innerHTML = `<span aria-hidden="true">${paintedIcon('bulb')}</span> Help me`;
     hint.classList.add('lesson-help');
   }
   requestAnimationFrame(fitScreen);
@@ -366,7 +366,7 @@ writing = function () {
   const board = $('.writing-board'),
     banner = document.createElement('div');
   banner.className = 'writing-mission-prompt';
-  banner.innerHTML = `<strong>${active.lesson.target}</strong><span>${['Trace in the sand', 'Copy in the sand', 'Your sandy letter'][step]}</span><div class="writing-shell-steps" aria-label="${step} of 3 writing steps completed">${[0, 1, 2].map(i => `<i class="${i < step ? 'complete' : ''}" aria-hidden="true">${i < step ? '🐚' : '○'}</i>`).join('')}</div>`;
+  banner.innerHTML = `<strong>${active.lesson.target}</strong><span>${['Trace in the sand', 'Copy in the sand', 'Your sandy letter'][step]}</span><div class="writing-shell-steps" aria-label="${step} of 3 writing steps completed">${[0, 1, 2].map(i => `<i class="${i < step ? 'complete' : ''}" aria-hidden="true">${paintedIcon(i < step ? 'shell' : 'spot')}</i>`).join('')}</div>`;
   board.before(banner);
   const instruction =
     active.lesson.goal +

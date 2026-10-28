@@ -1,64 +1,5 @@
 /* Screen-based ocean adventures. Existing curriculum and practice records remain authoritative. */
-const oceanSpecies = [
-  'salmon',
-  'tuna',
-  'squid',
-  'crab',
-  'barracuda',
-  'turtle',
-  'blue-tang',
-  'clownfish',
-  'hammerhead'
-];
-function seaAnimal(kind = 'tuna') {
-  const colours = {
-    salmon: ['#789e9b', '#f4d4bf'],
-    tuna: ['#244f8c', '#dbe8e9'],
-    barracuda: ['#6b8a99', '#e6ece9'],
-    'blue-tang': ['#167de0', '#ffdc45'],
-    clownfish: ['#fc8b32', '#fff7df'],
-    hammerhead: ['#6c9ba7', '#d2e4df']
-  };
-  let drawing = '';
-  if (kind === 'turtle')
-    drawing =
-      '<ellipse cx="98" cy="54" rx="48" ry="32" fill="#629569" stroke="#244f4b" stroke-width="3"/><path d="M72 34L98 24L121 39L119 66L94 84L72 65Z" fill="none" stroke="#b7d091" stroke-width="4"/><path d="M65 36Q22 11 39 53L60 59M69 75Q43 106 84 87M125 35Q155 12 145 46M127 77Q153 100 141 69" fill="#b0c887"/><ellipse cx="158" cy="55" rx="23" ry="17" fill="#b0c887"/><circle cx="167" cy="50" r="3" fill="#183b45"/>';
-  else if (kind === 'crab')
-    drawing =
-      '<g stroke="#bd523f" stroke-width="6" fill="none"><path d="M67 57L32 46L23 24M65 64L28 69L14 87M70 72L46 88L43 99M69 69L36 79L27 95M132 57L165 44L174 23M136 68L175 72L186 91M129 77L151 94L149 103M130 71L162 83L172 100"/></g><path d="M26 28Q-4 10 18 5L28 17L36 3Q55 13 26 28M174 28Q146 10 168 5L177 17L186 3Q202 16 174 28" fill="#ed8362"/><ellipse cx="100" cy="62" rx="44" ry="29" fill="#ea7659"/><path d="M82 38V22M117 38V22" stroke="#ed8362" stroke-width="8"/><circle cx="82" cy="20" r="6" fill="#153848"/><circle cx="117" cy="20" r="6" fill="#153848"/>';
-  else if (kind === 'squid')
-    drawing =
-      '<path d="M51 54L90 13L132 39L111 70Z" fill="#d58ead"/><path d="M61 44Q110 15 156 52Q111 86 61 65Z" fill="#e8b7cd"/><g fill="none" stroke="#c783a4" stroke-width="5" stroke-linecap="round"><path d="M65 45Q15 3 13 31M66 51Q8 31 8 52M65 57Q6 70 19 84M68 65Q38 111 18 97M72 68Q56 92 42 84M65 48Q31 15 22 22M65 53Q22 44 17 41M65 61Q24 83 30 69M71 69Q66 108 48 99M62 59Q9 93 5 78"/></g><circle cx="90" cy="52" r="7" fill="#163848"/>';
-  else if (kind === 'dolphin')
-    drawing =
-      '<path d="M15 73Q46 14 116 39L143 55L176 60L177 69L142 71Q123 91 66 78L39 94L44 72L18 93Z" fill="#91c7d2"/><path d="M83 39L101 10L108 43M106 70L126 98L89 78" fill="#6498b2"/><circle cx="139" cy="59" r="3" fill="#123744"/>';
-  else if (kind === 'octopus')
-    drawing =
-      '<g fill="none" stroke="#d6a0d9" stroke-width="12" stroke-linecap="round"><path d="M70 60Q12 108 13 55M83 68Q39 113 34 81M96 72Q86 114 68 96M107 72Q122 113 135 93M119 65Q166 112 166 72M127 56Q188 98 188 45M76 65Q28 89 21 72M122 63Q157 93 179 84"/></g><ellipse cx="100" cy="44" rx="35" ry="34" fill="#d6a0d9"/><circle cx="87" cy="44" r="5" fill="#23364d"/><circle cx="112" cy="44" r="5" fill="#23364d"/>';
-  else {
-    const c = colours[kind] || colours.tuna;
-    drawing = `<path d="M24 54Q72 13 153 48L185 20L175 57L186 91L152 67Q72 99 24 54Z" fill="${c[0]}"/><path d="M27 57Q84 64 156 57Q96 95 27 57Z" fill="${c[1]}"/><path d="M82 35L105 10L116 40M91 76L114 101L123 73" fill="${kind === 'blue-tang' ? '#15354e' : c[0]}"/><circle cx="47" cy="49" r="4" fill="#122c3b"/><path d="M63 42Q72 54 64 67" fill="none" stroke="#153d51" stroke-opacity=".5" stroke-width="2"/>`;
-    if (kind === 'tuna')
-      drawing +=
-        '<path d="M124 39L133 35L136 43M138 43L146 40L149 47M128 73L136 78L139 69M143 67L152 71L155 64" fill="#edcd54"/>';
-    if (kind === 'clownfish')
-      drawing +=
-        '<path d="M65 34L72 78M102 29L110 81M145 44L151 68" stroke="#fff9e8" stroke-width="13"/><path d="M57 34L65 78M94 29L102 81M138 44L144 68" stroke="#303b41" stroke-width="3"/>';
-    if (kind === 'blue-tang')
-      drawing +=
-        '<path d="M72 32Q136 22 151 51L128 64L98 45L75 54Z" fill="#14364f"/><path d="M156 49L184 25L174 57L184 86L155 67Z" fill="#ffdf48"/>';
-    if (kind === 'barracuda')
-      drawing +=
-        '<path d="M24 54L4 56L32 66M77 34L89 23L98 36M126 39L137 30L142 44" fill="#6b8a99"/><path d="M39 43L40 69M86 35L87 78M101 36L102 77M117 38L118 74" stroke="#344f64" stroke-width="3" opacity=".5"/>';
-    if (kind === 'salmon')
-      drawing +=
-        '<g fill="#345762"><circle cx="84" cy="40" r="2"/><circle cx="97" cy="45" r="2"/><circle cx="109" cy="38" r="2"/><circle cx="124" cy="45" r="2"/><circle cx="138" cy="51" r="2"/></g>';
-    if (kind === 'hammerhead')
-      drawing +=
-        '<path d="M29 39L12 30L7 40L18 57L8 74L16 82L37 69Z" fill="#7ba7af"/><circle cx="15" cy="36" r="3" fill="#172e3b"/>';
-  }
-  return `<svg class="sea-animal animal-${kind}" viewBox="0 0 200 112" role="img" aria-label="Cartoon ${kind === 'blue-tang' ? 'blue tang' : kind === 'tuna' ? 'bluefin tuna' : kind}">${drawing}</svg>`;
-}
+// oceanSpecies and seaAnimal() live in sea-animals.js (painted, 29 Oct 2026).
 function museumPictogram(title) {
   const type = /when|old|time|live\?/i.test(title)
     ? 'clock'
@@ -157,7 +98,11 @@ const previousUpdateSound = updateSound;
 updateSound = function () {
   previousUpdateSound();
   document.body.classList.toggle('voice-muted', !state.voice);
-  $('#oceanVoice')?.setAttribute('aria-pressed', String(state.voice));
+  const voice = $('#oceanVoice');
+  if (voice) {
+    voice.setAttribute('aria-pressed', String(state.voice));
+    voice.innerHTML = paintedIcon(state.voice ? 'note' : 'note-off');
+  }
 };
 save = function () {
   const gained = state.xp - lastPearls;
@@ -381,13 +326,13 @@ const treasureSVG =
 function installOceanChrome() {
   const chrome = document.createElement('div');
   chrome.id = 'oceanChrome';
-  chrome.innerHTML = `<a class="submarine-library" href="#library" aria-label="Open the submarine library">${subSVG}<span>Library</span></a><div id="screenNav"><button id="screenHome" aria-label="Home: back to the reef"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15L16 5L28 15M8 12V27H14V19H18V27H24V12"/></svg> <span>Home</span></button><button id="screenBack" aria-label="Back to previous page">↩ <span>Back</span></button></div><button id="treasureChest" aria-label="Open treasure collection"><span aria-hidden="true">${treasureSVG}</span><i class="chest-pearl"></i><strong id="treasureCount">${state.xp}</strong><small>pearls</small></button><button id="oceanSettings" aria-label="Open parent settings">⚙</button><button id="oceanVoice" aria-label="Toggle character voices">♫</button>`;
+  chrome.innerHTML = `<a class="submarine-library" href="#library" aria-label="Open the submarine library">${subSVG}<span>Library</span></a><div id="screenNav"><button id="screenHome" aria-label="Home: back to the reef"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15L16 5L28 15M8 12V27H14V19H18V27H24V12"/></svg> <span>Home</span></button><button id="screenBack" aria-label="Back to previous page">↩ <span>Back</span></button></div><button id="treasureChest" aria-label="Open treasure collection"><span aria-hidden="true">${treasureSVG}</span><i class="chest-pearl"></i><strong id="treasureCount">${state.xp}</strong><small>pearls</small></button><button id="oceanSettings" aria-label="Open parent settings">⚙</button><button id="oceanVoice" aria-label="Toggle character voices">${paintedIcon(state.voice ? 'note' : 'note-off')}</button>`;
   document.body.append(chrome);
   $('#treasureChest').onclick = () => (location.hash = 'collection');
   $('#oceanSettings').onclick = () => $('#parent').click();
   $('#oceanVoice').onclick = () => {
     $('#sound').click();
-    $('#oceanVoice').setAttribute('aria-pressed', String(state.voice));
+    updateSound();
   };
   $('#screenBack').onclick = () => {
     stopSpeech();

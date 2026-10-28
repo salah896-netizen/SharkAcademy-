@@ -92,7 +92,7 @@ async function loadMusic(track) {
 function updateMusicButton() {
   const button = $('#music');
   if (!button) return;
-  button.textContent = musicEnabled ? (musicUnlocked ? '♫' : '♫ Play') : '♫ Off';
+  button.innerHTML = `${paintedIcon(musicEnabled ? 'note' : 'note-off')}${musicEnabled ? (musicUnlocked ? '' : ' Play') : ' Off'}`;
   button.setAttribute('aria-pressed', String(musicEnabled));
   button.setAttribute(
     'aria-label',
