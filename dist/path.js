@@ -297,11 +297,14 @@ function pathNextActivity(subjectWanted = null, today = dayKey()) {
 }
 // Easy / medium / hard per subject (set in the grown-ups' area): medium starts a third of the
 // way along that subject's skills, hard two thirds; the earlier skills come after, not never.
+// Year 1 skills (year: 1) always come after the Foundation ones, whatever the level.
 function pathSkillsInLevelOrder(subject) {
-  const skills = pathSkills.filter(s => s.subject === subject),
+  const all = pathSkills.filter(s => s.subject === subject),
+    skills = all.filter(s => !s.year),
+    later = all.filter(s => s.year),
     level = (state.levels || {})[subject],
     skip = Math.floor((skills.length * { medium: 1, hard: 2 }[level] || 0) / 3);
-  return [...skills.slice(skip), ...skills.slice(0, skip)];
+  return [...skills.slice(skip), ...skills.slice(0, skip), ...later];
 }
 function pathCurrentSkill(today = dayKey()) {
   const next = pathNextActivity(null, today);

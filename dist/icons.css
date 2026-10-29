@@ -202,3 +202,11 @@ body .collect.locked p {
   width: 1.1em;
   height: 1.1em;
 }
+/* Voice off (29 Oct): the story line and prompt are shown as text, so keep them clear of the
+   progress trail, and hide the hear-again speaker, which has nothing to play. */
+body.voice-muted .kid-repeat {
+  display: none !important;
+}
+body.voice-muted .reading-quest .quest-story {
+  margin-top: 38px;
+}

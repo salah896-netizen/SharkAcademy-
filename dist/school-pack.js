@@ -501,6 +501,12 @@ function tileSoundId(tile, word) {
   if (['c', 'k', 'ck'].includes(tile)) return 'ck';
   if (tile === 'oo') return /book|look|cook|foot/.test(word) ? 'oo-short' : 'oo-long';
   if (tile === 'th') return /^(this|that|the|them|then)$/.test(word) ? 'th-voiced' : 'th';
+  // Year 1 alternative spellings (29 Oct) share a Jolly Phonics sound: ay says ai, ea says ee,
+  // igh says ie, and ow says ou (cow, owl) or oa (snow, bow).
+  if (tile === 'ay') return 'ai';
+  if (tile === 'ea') return 'ee';
+  if (tile === 'igh') return 'ie';
+  if (tile === 'ow') return /^(cow|owl|how|now|down|town|clown|brown)$/.test(word) ? 'ou' : 'oa';
   return tile;
 }
 function schoolLessonFor(currentGame) {
@@ -530,7 +536,7 @@ readingMission = function () {
     return;
   }
   const total = game.items.length;
-  const listening = ['rhyme', 'first', 'blend'].includes(q.kind);
+  const listening = ['rhyme', 'first', 'blend', 'swap'].includes(q.kind);
   app.innerHTML = `<section class="reading-quest school-quest kind-${q.kind}"><div class="game-top"><button id="questInstructions" class="quiet">♫ Hear instructions</button></div><span class="tag">WILLA’S ${listening ? 'LISTENING REEF' : q.kind === 'tricky' ? 'WORD SHELLS' : 'SOUND SHELLS'}</span><h1>${lesson.shelfName}</h1><p class="quest-story">${game.index === 0 ? 'Willa has a new sound adventure for us.' : game.items[game.index - 1].reveal}</p><div class="quest-trail" aria-label="${game.index} of ${total} clues solved">${game.items.map((_, i) => `<span class="${i < game.index ? 'found' : ''}" aria-hidden="true">${paintedIcon(i < game.index ? 'shell' : 'spot')}</span>`).join('<i>···</i>')}</div><div class="quest-scroll"><p>${q.prompt}</p>${schoolCluePanel(q)}<div class="quest-pictures ${q.kind === 'tricky' ? 'word-choices' : ''}">${q.options.map((key, i) => `<button data-quest-choice="${i}" aria-label="${pictureName(key)}">${readingArt(key)}</button>`).join('')}</div><p id="questFeedback" role="status">Take your time. Willa and Milo are with you.</p><div class="quest-actions"><button id="questHint"><span aria-hidden="true">${paintedIcon('bulb')}</span><span class="hint-label">Help me</span></button><button id="questNext" class="primary" hidden>${game.index === total - 1 ? 'Our shark discovery ✨' : 'Next clue →'}</button></div></div><details class="quest-parent"><summary>For grown-ups</summary><p>${listening ? 'Listening warm-up in the style of Heggerty: no letters on screen. Device speech is used until recordings are made, so the sounds may be imperfect.' : q.kind === 'tricky' ? 'Jolly Phonics tricky words: recognised by sight, not sounded out.' : 'Decodable words using Jolly Phonics digraphs. Joined tiles show two letters making one sound.'} Codes: ${q.codes.join(', ')}. Practice evidence only; help and retries are recorded as supported.</p></details></section>`;
   const say = () => helperSpeak(q.prompt);
   $('#questInstructions').onclick = say;
