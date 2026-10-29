@@ -36,6 +36,41 @@ parentsSteps.push(function addVoiceCheck() {
   });
 });
 
+/* Phonics sounds (29 Oct): every Jolly Phonics sound as a button to tap and hear, in the school's
+ * groups, so a grown-up can check them by ear. The family's own recordings (audio/voice/sounds/
+ * family/) are marked with a small house. */
+parentsSteps.push(function addPhonicsSoundCheck() {
+  const host = $('#modalContent');
+  if (!host || host.querySelector('.sound-check') || typeof voiceManifest === 'undefined') return;
+  const groups = [
+    ['s', 'a', 't', 'i', 'p', 'n'], ['ck', 'e', 'h', 'r', 'm', 'd'], ['g', 'o', 'u', 'l', 'f', 'b'],
+    ['ai', 'j', 'oa', 'ie', 'ee', 'or'], ['z', 'w', 'ng', 'v', 'oo-short', 'oo-long'],
+    ['y', 'x', 'ch', 'sh', 'th-voiced', 'th'], ['qu', 'ou', 'oi', 'ue', 'er', 'ar']
+  ];
+  const label = { 'oo-short': 'oo (book)', 'oo-long': 'oo (moon)', 'th-voiced': 'th (this)', th: 'th (thumb)' };
+  const family = id => /\/family\//.test(voiceManifest.sounds[id] || '');
+  const count = Object.keys(voiceManifest.sounds).filter(family).length;
+  host.insertAdjacentHTML(
+    'beforeend',
+    `<section class="sound-check"><h3>Phonics sounds</h3><p class="muted">Tap a sound to hear it. ${count} of ${Object.keys(voiceManifest.sounds).length} are your family’s recordings (marked ${paintedIcon('home')}); the rest are generated.</p>${groups
+      .map(
+        (g, i) =>
+          `<div class="sound-row"><small>Group ${i + 1}</small>${g
+            .filter(id => voiceManifest.sounds[id])
+            .map(id => `<button data-sound-check="${id}" class="${family(id) ? 'family' : ''}">${label[id] || id}${family(id) ? paintedIcon('home') : ''}</button>`)
+            .join('')}</div>`
+      )
+      .join('')}</section>`
+  );
+  const player = new Audio();
+  host.querySelectorAll('[data-sound-check]').forEach(b =>
+    b.addEventListener('click', () => {
+      player.src = voiceManifest.sounds[b.dataset.soundCheck];
+      player.play().catch(() => {});
+    })
+  );
+});
+
 /* Progress saved automatically (28 Oct). Everything Haytham earns is already kept on the iPad as
  * he plays; this makes it much harder to lose:
  *  - every save is also copied into a second, separate store on the iPad (IndexedDB), with one

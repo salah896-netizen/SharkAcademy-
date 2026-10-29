@@ -253,6 +253,11 @@ async def main():
         badges = await ev("!/[🔬✏️]/u.test([...document.querySelectorAll('.friend-badge')].map(b => b.textContent).join(''))")
         check(all(scenes.values()) and badges, f'reading, maths and stories backdrops; home badges painted ({scenes}, {badges})')
 
+        # Family phonics recordings (29 Oct, v118): 12 sounds from family/, all 42 load
+        fam = await ev("Object.values(voiceManifest.sounds).filter(u => /\\/family\\//.test(u)).length")
+        loads = await ev("Promise.all(Object.values(voiceManifest.sounds).map(u => fetch(u).then(r => r.ok))).then(a => a.every(Boolean))")
+        check(fam == 12 and loads, f'phonics: 12 family recordings, all 42 sounds load ({fam}, {loads})')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

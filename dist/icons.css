@@ -168,3 +168,37 @@ body .collect.locked p {
     animation: none !important;
   }
 }
+/* Grown-ups' phonics sound check (29 Oct) */
+.sound-check .sound-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+}
+.sound-check .sound-row small {
+  width: 64px;
+  color: #6a8a96;
+  font-weight: 700;
+}
+.sound-check button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 40px;
+  padding: 4px 14px;
+  border-radius: 99px;
+  border: 2px solid #c3dcc0;
+  background: #fff;
+  color: #173d4d;
+  font: 700 17px ui-rounded, system-ui, sans-serif;
+}
+.sound-check button.family {
+  background: #fff6e3;
+  border-color: #e9c27a;
+}
+.sound-check button .p-icon,
+.sound-check p .p-icon {
+  width: 1.1em;
+  height: 1.1em;
+}
