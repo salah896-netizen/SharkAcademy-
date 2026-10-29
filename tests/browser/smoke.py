@@ -290,6 +290,26 @@ async def main():
         await ev("state.xp += 1; save(); 0"); await page.wait_for_timeout(500)
         check(await ev("progressDB.get('latest').then(s => !!s && s.state.xp === state.xp)"), 'progress: saved to the spare copy')
 
+        # Reset pearls (v120): grown-ups' area sets pearls to 0, keeps learning, spare copy agrees
+        await ev("state.xp = 120; state.raceTracksOpen = 3; save(); parents(); document.querySelector('#modal').showModal(); 0"); await page.wait_for_timeout(200)
+        before = await ev("[(state.history || []).length, (state.completed || []).length]")
+        has = await ev("!!document.querySelector('.pearl-reset #resetPearls')")
+        await ev("document.querySelector('#resetPearls').click(); document.querySelector('#confirmResetPearls').click(); 0"); await page.wait_for_timeout(500)
+        after = await ev("[state.xp, state.raceTracksOpen, (state.history || []).length, (state.completed || []).length, document.querySelector('#treasureCount')?.textContent]")
+        spare = await ev("progressDB.get('latest').then(s => s && s.state.xp)")
+        check(has and after[0] == 0 and after[1] == 1 and after[2:4] == before and after[4] == '0' and spare == 0,
+              f'grown-ups: reset pearls to 0, learning kept, spare copy updated ({has}, {before}, {after}, {spare})')
+        await ev("document.querySelector('#modal').close(); 0")
+        # No emoji left on the writing, drawing and stories screens (v120)
+        for route in ['writing', 'draw', 'stories', 'stories/halloween', 'museum/tiger', 'library/reading']:
+            await ev(f"location.hash = '{route}'"); await page.wait_for_timeout(500)
+            left = await ev("""(() => { const out = []; const w = document.createTreeWalker(document.querySelector('#app'), NodeFilter.SHOW_TEXT); let n;
+              while ((n = w.nextNode())) { const el = n.parentElement; if (!el.getClientRects().length) continue;
+                if (/[\\u2600-\\u27BF\\u{1F300}-\\u{1FAFF}]/u.test(n.textContent.replace(/[✓✔▶↻↶↩←→✦✨⭐]/g, ''))) out.push(n.textContent.trim().slice(0, 30)); } return out })()""")
+            check(not left, f'{route}: no emoji left ({left[:4]})')
+        await ev("location.hash = 'home'"); await page.wait_for_timeout(300)
+        check(await ev("!!document.querySelector('#raceBuoy .p-icon-buoy') && !!document.querySelector('#miloHelp .p-icon-bulb')"), 'home: painted race buoy and Milo help bulb')
+
         check(not errors, f'no page errors ({errors[:2]})')
         await browser.close()
     if failures:

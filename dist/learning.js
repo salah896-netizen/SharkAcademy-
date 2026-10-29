@@ -187,7 +187,7 @@ Object.assign(scienceDepth, {
 function deeperScience(s) {
   if (stageFor('science') === 1) return '';
   const d = scienceDepth[s.id];
-  return `<section class="deep-science"><span class="tag">${stageFor('science') === 3 ? 'OCEAN INVESTIGATOR' : 'SHARK SCIENTIST'}</span><h2>${d[0]}</h2><p>${d[1]}</p>${stageFor('science') === 3 ? `<p><strong>Think like a scientist:</strong> ${scienceInvestigations[s.id]}</p>` : ''}<button id="deeperListen" class="listen">♫ Explore with Milo</button></section>`;
+  return `<section class="deep-science"><span class="tag">${stageFor('science') === 3 ? 'OCEAN INVESTIGATOR' : 'SHARK SCIENTIST'}</span><h2>${d[0]}</h2><p>${d[1]}</p>${stageFor('science') === 3 ? `<p><strong>Think like a scientist:</strong> ${scienceInvestigations[s.id]}</p>` : ''}<button id="deeperListen" class="listen">${paintedIcon('speaker-blue')} Explore with Milo</button></section>`;
 }
 const scienceInvestigations = {
   megalodon:

@@ -19,9 +19,9 @@ function letterModelSVG(target) {
   return `<svg class="letter-model" viewBox="0 30 ${width} 215" aria-hidden="true"><path class="model-lines" d="M0 110H${width} M0 225H${width}"/>${body}</svg>`;
 }
 const writingToolIcons = {
-  showStrokes: ['👀', 'Show me'],
-  undoInk: ['↶', 'Undo'],
-  clearInk: ['🧽', 'Wave away']
+  showStrokes: ['eye', 'Show me'],
+  undoInk: ['', 'Undo'],
+  clearInk: ['sponge', 'Wave away']
 };
 const preRound3Writing = writing;
 writing = function () {
@@ -40,7 +40,7 @@ writing = function () {
     if (!b) continue;
     b.setAttribute('aria-label', b.textContent.trim() || label);
     b.classList.add('writing-tool');
-    b.innerHTML = `<span aria-hidden="true">${icon}</span>`;
+    b.innerHTML = `<span aria-hidden="true">${icon ? paintedIcon(icon) : '↶'}</span>`;
   }
   const done = document.getElementById('finishWriting');
   if (done) {

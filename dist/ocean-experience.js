@@ -222,7 +222,7 @@ finishSteps.push(function sharkFactReward(finished) {
   if (panel) {
     const box = document.createElement('div');
     box.className = 'activity-fact-reward';
-    box.innerHTML = `<strong>A discovery with your friends</strong><p>${s.name}: ${fact}</p><button id="hearActivityFact">♫ Hear our shark fact</button>`;
+    box.innerHTML = `<strong>A discovery with your friends</strong><p>${s.name}: ${fact}</p><button id="hearActivityFact">${paintedIcon('speaker-blue')} Hear our shark fact</button>`;
     panel.querySelector('.choices')?.before(box);
     $('#hearActivityFact').onclick = () => speak(s.name + '. ' + fact, { speaker: 'gizmo' });
     helperSpeak(s.name + '. ' + fact);

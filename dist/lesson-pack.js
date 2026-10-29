@@ -304,7 +304,7 @@ finishSteps.push(function mathsDiscovery(active) {
   const discovery = nextLessonDiscovery('maths'),
     box = app.querySelector('.activity-fact-reward');
   if (box) {
-    box.innerHTML = `<img class="lesson-discovery-photo" src="${discovery.image}" alt="${discovery.name}"><strong>${discovery.name}</strong><button id="hearLessonDiscovery">♫ Hear our discovery</button>`;
+    box.innerHTML = `<img class="lesson-discovery-photo" src="${discovery.image}" alt="${discovery.name}"><strong>${discovery.name}</strong><button id="hearLessonDiscovery">${paintedIcon('speaker-blue')} Hear our discovery</button>`;
     $('#hearLessonDiscovery').onclick = () => helperSpeak(discovery.text);
     screenNarration = discovery.text;
     helperSpeak('We did it, Haytham! ' + discovery.text);
@@ -451,7 +451,7 @@ function finishWritingAdventure(active) {
   guidedWriting = null;
   const discovery = nextLessonDiscovery('writing');
   if (writingCleanup) writingCleanup();
-  app.innerHTML = `<section class="lesson-finish"><h1>Lovely practising!</h1><img class="lesson-discovery-photo" src="${discovery.image}" alt="${discovery.name}"><h2>${discovery.name}</h2><button id="writingDiscoveryListen">♫ Hear our discovery</button><a class="primary" href="#home">Back to My Reef</a></section>`;
+  app.innerHTML = `<section class="lesson-finish"><h1>Lovely practising!</h1><img class="lesson-discovery-photo" src="${discovery.image}" alt="${discovery.name}"><h2>${discovery.name}</h2><button id="writingDiscoveryListen">${paintedIcon('speaker-blue')} Hear our discovery</button><a class="primary" href="#home">Back to My Reef</a></section>`;
   $('#writingDiscoveryListen').onclick = () => helperSpeak(discovery.text);
   screenNarration = discovery.text;
   helperSpeak('Lovely practising, Haytham! ' + discovery.text);

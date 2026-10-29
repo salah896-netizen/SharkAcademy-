@@ -4,7 +4,8 @@
  *
  * paintedIcon(name) returns an inline <svg class="p-icon"> sized 1em, so it follows the font size of
  * the button it sits in. Names: bulb, speaker, speaker-blue (for pale buttons), shell, spot, note,
- * note-off, home, map, flag, star, trophy, tooth, coral, lock, medal-1, medal-2, medal-3. */
+ * note-off, home, map, flag, star, trophy, tooth, coral, lock, medal-1, medal-2, medal-3, pencil, shark,
+ * kangaroo, magnifier, chest, octopus, eye, sponge, palette, crayon, pumpkin, fish, buoy. */
 const paintedIcon = (function () {
   let uid = 0;
   const grad = (id, a, b, c) =>
@@ -158,6 +159,62 @@ const paintedIcon = (function () {
       `<circle cx="18.2" cy="19.2" r=".9" fill="#fff"/><circle cx="28.2" cy="19.2" r=".9" fill="#fff"/>` +
       `<path d="M21 26Q24 28.5 27 26" fill="none" stroke="#7a3f86" stroke-width="1.6" stroke-linecap="round"/>` +
       `<path d="M15 10Q18 7 23 7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>`
+  });
+
+  /* 30 Oct (v120): the last emoji on kid screens: writing and drawing tools, the stories cards. */
+  Object.assign(I, {
+    eye: g =>
+      `<defs>${grad(g + 'a', '#ffffff', '#f4f8fb', '#cfdde6')}${grad(g + 'b', '#8fd3ff', '#2e86c8', '#1b5b8c')}</defs>` +
+      `<ellipse cx="15" cy="25" rx="9" ry="12" fill="url(#${g}a)" stroke="#5b7180" stroke-width="2"/>` +
+      `<ellipse cx="33" cy="25" rx="9" ry="12" fill="url(#${g}a)" stroke="#5b7180" stroke-width="2"/>` +
+      `<circle cx="17" cy="28" r="5" fill="url(#${g}b)"/><circle cx="35" cy="28" r="5" fill="url(#${g}b)"/>` +
+      `<circle cx="17.5" cy="28.5" r="2.4" fill="#18232b"/><circle cx="35.5" cy="28.5" r="2.4" fill="#18232b"/>` +
+      `<circle cx="15.6" cy="26.4" r="1.3" fill="#fff"/><circle cx="33.6" cy="26.4" r="1.3" fill="#fff"/>` +
+      `<path d="M10 18Q12 15 15 14.5M28 18Q30 15 33 14.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>`,
+    sponge: g =>
+      `<defs>${grad(g + 'a', '#fff6b8', '#ffd84d', '#e0a823')}</defs>` +
+      `<ellipse cx="24" cy="42" rx="16" ry="2.6" fill="#0b2d3a" opacity=".14"/>` +
+      `<path d="M8 16Q8 11 13 11H35Q40 11 40 16V34Q40 39 35 39H13Q8 39 8 34Z" fill="url(#${g}a)" stroke="#b8861c" stroke-width="2"/>` +
+      `<path d="M8 19H40" stroke="#6fbf73" stroke-width="5"/><path d="M8 16.5Q8 11 13 11H35Q40 11 40 16.5" fill="#79c77d" stroke="#3f8f4a" stroke-width="2"/>` +
+      `<circle cx="15" cy="26" r="2.2" fill="#e0a823"/><circle cx="27" cy="29" r="2.8" fill="#e0a823"/><circle cx="34" cy="24" r="1.8" fill="#e0a823"/><circle cx="19" cy="33" r="1.6" fill="#e0a823"/>` +
+      `<circle cx="38" cy="8" r="3" fill="#fff" fill-opacity=".85" stroke="#9fd6e8"/><circle cx="43" cy="14" r="2" fill="#fff" fill-opacity=".85" stroke="#9fd6e8"/>`,
+    palette: g =>
+      `<defs>${grad(g + 'a', '#f6e2c4', '#ddb27c', '#b58451')}</defs>` +
+      `<path d="M24 6Q42 6 43 21Q44 30 35 29Q29 28 30 34Q31 41 24 42Q6 42 5 25Q5 6 24 6Z" fill="url(#${g}a)" stroke="#7d5530" stroke-width="2"/>` +
+      `<circle cx="15" cy="17" r="3.6" fill="#e2574c"/><circle cx="25" cy="13" r="3.6" fill="#f2c14e"/><circle cx="35" cy="17" r="3.6" fill="#4cb4d6"/><circle cx="13" cy="28" r="3.6" fill="#6cc070"/>` +
+      `<ellipse cx="21" cy="33" rx="3" ry="2.4" fill="#7d5530" opacity=".55"/>` +
+      `<path d="M12 10Q16 8 20 8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>`,
+    crayon: g =>
+      `<defs>${grad(g + 'a', '#ffb1a3', '#e85c4a', '#b83a2c')}</defs>` +
+      `<g transform="rotate(-38 24 24)"><path d="M10 19H34V29H10Z" fill="url(#${g}a)" stroke="#8f2b21" stroke-width="2"/>` +
+      `<path d="M34 19L43 24L34 29Z" fill="#f4d9b0" stroke="#8f2b21" stroke-width="2" stroke-linejoin="round"/><path d="M40 22.3L43 24L40 25.7Z" fill="#b83a2c"/>` +
+      `<path d="M15 19V29M29 19V29" stroke="#fff" stroke-opacity=".6" stroke-width="2"/><path d="M12 21H32" stroke="#fff" stroke-width="1.6" opacity=".6" stroke-linecap="round"/></g>`,
+    pumpkin: g =>
+      `<defs>${grad(g + 'a', '#ffd08a', '#f28a1e', '#c25d0c')}</defs>` +
+      `<ellipse cx="24" cy="44" rx="16" ry="2.5" fill="#0b2d3a" opacity=".14"/>` +
+      `<path d="M23 11Q22 6 26 4" fill="none" stroke="#3f7a3a" stroke-width="3.4" stroke-linecap="round"/>` +
+      `<path d="M24 12Q42 9 43 26Q43 42 24 42Q5 42 5 26Q6 9 24 12Z" fill="url(#${g}a)" stroke="#9a4708" stroke-width="2"/>` +
+      `<path d="M24 12Q16 26 24 42M24 12Q32 26 24 42M14 13Q8 27 15 41M34 13Q40 27 33 41" fill="none" stroke="#c4620f" stroke-width="1.6" opacity=".8"/>` +
+      `<path d="M15 24L19 20L22 25ZM26 25L29 20L33 24ZM15 31Q24 38 33 31Q28 33 24 32Q20 33 15 31Z" fill="#5a2a06"/>` +
+      `<path d="M12 18Q15 14 19 13.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>`,
+    fish: g =>
+      `<defs>${grad(g + 'a', '#bfeaff', '#3f9ee0', '#1e64a8')}</defs>` +
+      `<path d="M36 24L46 14Q44 24 46 34Z" fill="#f2c14e" stroke="#b9861b" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M4 24Q14 9 30 12Q38 15 38 24Q38 33 30 36Q14 39 4 24Z" fill="url(#${g}a)" stroke="#164f86" stroke-width="2"/>` +
+      `<path d="M20 12Q24 6 30 8L28 13Z" fill="#f2c14e" stroke="#b9861b" stroke-width="1.6"/>` +
+      `<path d="M24 14Q28 24 24 34" fill="none" stroke="#164f86" stroke-width="1.6" opacity=".55"/>` +
+      `<circle cx="12" cy="22" r="3" fill="#fff"/><circle cx="11.5" cy="22" r="1.7" fill="#18232b"/>` +
+      `<path d="M10 17Q14 13 20 13" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>`,
+    buoy: g =>
+      `<defs>${grad(g + 'a', '#ffc49a', '#f08a3c', '#bd5a1c')}${grad(g + 'b', '#ffffff', '#eef3f6', '#c5d3db')}</defs>` +
+      `<ellipse cx="24" cy="44" rx="18" ry="2.6" fill="#0b2d3a" opacity=".18"/>` +
+      `<path d="M23 4V27" stroke="#3b4b54" stroke-width="2.6" stroke-linecap="round"/>` +
+      `<path d="M24 5Q31 3 40 6V17Q31 14 24 16Z" fill="url(#${g}b)" stroke="#5b6f7a" stroke-width="1.4" stroke-linejoin="round"/>` +
+      `<path d="M24 5Q27.5 4.2 30 4.5V10Q27 9.6 24 10.5ZM30 10Q33 9.7 36 10.4V15.4Q33 14.6 30 15ZM36 5.4Q38 5.6 40 6V11.4Q38 10.8 36 10.4Z" fill="#26343c"/>` +
+      `<path d="M5 33Q24 21 43 33L39 41Q24 47 9 41Z" fill="url(#${g}a)" stroke="#9a4a17" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M8 36Q24 28 40 36" fill="none" stroke="#fff" stroke-width="3.4"/>` +
+      `<path d="M10 32Q16 28 22 27" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".75"/>` +
+      `<path d="M2 42Q8 39 14 42T26 42T38 42T48 42" fill="none" stroke="#bfe8f2" stroke-width="2" stroke-linecap="round" opacity=".8"/>`
   });
 
   return function paintedIcon(name) {

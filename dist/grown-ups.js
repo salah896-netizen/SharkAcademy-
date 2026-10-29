@@ -301,3 +301,39 @@ parentsSteps.push(function addProgressOverview() {
   if (!host || host.querySelector('.progress-view')) return;
   host.insertAdjacentHTML('afterbegin', progressOverview());
 });
+
+/* Reset pearls (30 Oct, parent's request): sets the pearl count back to 0 and keeps all
+ * learning (skills, stars, reviews, writing, races played). Pearls open the race tracks and
+ * treasures, so those close again and reopen (with their banner) as he earns pearls. The new
+ * count is mirrored to the spare copy straight away, so it isn't "restored" on the next open. */
+function resetPearls() {
+  state.xp = 0;
+  if (typeof unlockedTrackCount === 'function') {
+    state.raceTracksOpen = unlockedTrackCount();
+    if (state.openingTracks !== undefined) state.openingTracks = state.raceTracksOpen;
+  }
+  state.pearlsResetAt = new Date().toISOString();
+  save();
+}
+parentsSteps.push(function addPearlReset() {
+  const host = $('#modalContent');
+  if (!host || host.querySelector('.pearl-reset')) return;
+  const draw = note => {
+    const box = host.querySelector('.pearl-reset');
+    box.innerHTML = `<h3>Pearls</h3><p>Haytham has <b>${Number(state.xp) || 0}</b> pearls.${note ? ` <b>${note}</b>` : ''}</p><p class="muted">Resetting sets pearls back to 0. His learning (skills, stars, reviews, writing and races played) is kept. Race tracks after Sunny Lagoon and the treasures close again and reopen as he earns pearls.</p><div class="segmented"><button id="resetPearls">Reset pearls to 0…</button></div><p id="resetPearlsArea"></p>`;
+    $('#resetPearls').onclick = () => {
+      $('#resetPearlsArea').innerHTML = `Set ${Number(state.xp) || 0} pearls back to 0? <button id="confirmResetPearls">Yes, reset pearls</button> <button id="cancelResetPearls">Keep them</button>`;
+      $('#confirmResetPearls').onclick = () => {
+        resetPearls();
+        draw('Pearls reset to 0.');
+      };
+      $('#cancelResetPearls').onclick = () => ($('#resetPearlsArea').innerHTML = '');
+    };
+  };
+  const safe = host.querySelector('.progress-safe');
+  const section = document.createElement('section');
+  section.className = 'pearl-reset';
+  if (safe) safe.after(section);
+  else host.append(section);
+  draw('');
+});

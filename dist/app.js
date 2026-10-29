@@ -300,7 +300,7 @@ function play() {
     return;
   }
   const q = game.items[game.index];
-  app.innerHTML = `<section class="game"><div class="game-top"><button class="quiet" id="exit">← Back to ocean</button><small>DISCOVERY ${game.index + 1} OF 5</small><button class="listen" id="listen" aria-label="Listen to instructions">♫ Listen</button></div><div class="track"><div style="width:${game.index * 20}%"></div></div><div class="game-panel"><span class="tag">${game.type === 'fossil' ? paintedIcon('tooth') + ' ' + game.index + ' / 5 FOSSIL PIECES' : 'YOUR NEXT LITTLE CHALLENGE'}</span><h1 style="font-size:36px">${q.title}</h1><p id="prompt">${q.prompt}</p><div class="scene sentence">${q.scene}</div><div class="choices">${q.choices.map((c, i) => `<button class="choice shell-choice" data-choice="${i}"><svg viewBox="0 0 140 110" aria-hidden="true"><path d="M70 101L15 61Q-1 13 39 12Q65-3 70 16Q91-4 110 13Q145 11 130 60Z" fill="currentColor"/><path d="M70 100V23M70 100L33 26M70 100L111 27" stroke="white" stroke-opacity=".3" stroke-width="3"/></svg><span>${c}</span></button>`).join('')}</div><div class="feedback" aria-live="polite"></div><button class="quiet" id="hint">Help me, ${reefCrew[crewForRoute()].name}</button><button class="primary" id="next" hidden>Next discovery →</button></div></section>`;
+  app.innerHTML = `<section class="game"><div class="game-top"><button class="quiet" id="exit">← Back to ocean</button><small>DISCOVERY ${game.index + 1} OF 5</small><button class="listen" id="listen" aria-label="Listen to instructions">${paintedIcon('speaker-blue')} Listen</button></div><div class="track"><div style="width:${game.index * 20}%"></div></div><div class="game-panel"><span class="tag">${game.type === 'fossil' ? paintedIcon('tooth') + ' ' + game.index + ' / 5 FOSSIL PIECES' : 'YOUR NEXT LITTLE CHALLENGE'}</span><h1 style="font-size:36px">${q.title}</h1><p id="prompt">${q.prompt}</p><div class="scene sentence">${q.scene}</div><div class="choices">${q.choices.map((c, i) => `<button class="choice shell-choice" data-choice="${i}"><svg viewBox="0 0 140 110" aria-hidden="true"><path d="M70 101L15 61Q-1 13 39 12Q65-3 70 16Q91-4 110 13Q145 11 130 60Z" fill="currentColor"/><path d="M70 100V23M70 100L33 26M70 100L111 27" stroke="white" stroke-opacity=".3" stroke-width="3"/></svg><span>${c}</span></button>`).join('')}</div><div class="feedback" aria-live="polite"></div><button class="quiet" id="hint">Help me, ${reefCrew[crewForRoute()].name}</button><button class="primary" id="next" hidden>Next discovery →</button></div></section>`;
   $('#listen').onclick = () => helperSpeak(q.spoken);
   $('#exit').onclick = () => {
     game = null;
@@ -417,7 +417,7 @@ function parents() {
       characterGreetings
     )
       .map(
-        ([key, c]) => `<button data-preview-character="${key}">♫ Hear ${c.name}’s welcome</button>`
+        ([key, c]) => `<button data-preview-character="${key}">${paintedIcon('speaker-blue')} Hear ${c.name}’s welcome</button>`
       )
       .join(
         ' '
@@ -561,7 +561,7 @@ if ('serviceWorker' in navigator) {
     .then(async registration => {
       await registration.update().catch(() => {});
       await navigator.serviceWorker.ready;
-      const cache = await caches.open('haytham-sharks-v119');
+      const cache = await caches.open('haytham-sharks-v120');
       const files = [
         './assets/fossil-gateway-carved.webp',
         './assets/writing-sand.svg',

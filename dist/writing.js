@@ -162,7 +162,7 @@ function writing() {
           : null,
     name = !!phrase,
     guide = letterStrokes[writingChoice];
-  app.innerHTML = `<section class="writing-page"><div class="article-top"><a href="#home" class="back-link">← Back to reef</a><button id="writingListen" class="listen">♫ Listen</button></div><span class="tag">WRITING LAGOON</span><h1>Write with Milo</h1><p class="writing-intro">A finger or an Apple Pencil. A little practice. A big discovery.</p><div class="writing-controls"><label>Practise <select id="writingChoice"><optgroup label="Letters">${Object.keys(
+  app.innerHTML = `<section class="writing-page"><div class="article-top"><a href="#home" class="back-link">← Back to reef</a><button id="writingListen" class="listen">${paintedIcon('speaker-blue')} Listen</button></div><span class="tag">WRITING LAGOON</span><h1>Write with Milo</h1><p class="writing-intro">A finger or an Apple Pencil. A little practice. A big discovery.</p><div class="writing-controls"><label>Practise <select id="writingChoice"><optgroup label="Letters">${Object.keys(
     letterStrokes
   )
     .filter(c => isNaN(Number(c)))

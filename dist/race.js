@@ -609,7 +609,7 @@ function finishRace(run) {
   const finishLine = `${racers[run.racerId].name} came ${words}! You caught ${run.pearls} ${run.pearls === 1 ? 'pearl' : 'pearls'} and found ${right} speed ${right === 1 ? 'shell' : 'shells'}.`;
   const overlay = document.createElement('div');
   overlay.className = 'race-results';
-  overlay.innerHTML = `<div class="race-result-card"><div class="race-medal" aria-hidden="true">${medal}</div><h2>${racers[run.racerId].name} came ${words}!</h2><div class="race-tally"><span><i class="tally-pearl"></i>${run.pearls}</span><span><i class="tally-shell">${paintedIcon('shell')}</i>${right} / ${run.shells.length}</span></div><div class="race-fact"><img src="assets/${book.image || 'visual-megalodon.jpg'}" alt="${book.name}"><div><strong>${book.name}${book.group === 'prehistoric' ? ' · extinct' : ''}</strong><p>${fact[1]}</p><button id="raceFactListen">♫ Hear the fact</button></div></div><p class="race-track-fact"><b>${run.track.name}:</b> ${run.track.fact.text}</p><div class="race-actions"><button id="raceAgain" class="primary">Race again</button><button id="raceTracks">Race tracks</button></div></div>`;
+  overlay.innerHTML = `<div class="race-result-card"><div class="race-medal" aria-hidden="true">${medal}</div><h2>${racers[run.racerId].name} came ${words}!</h2><div class="race-tally"><span><i class="tally-pearl"></i>${run.pearls}</span><span><i class="tally-shell">${paintedIcon('shell')}</i>${right} / ${run.shells.length}</span></div><div class="race-fact"><img src="assets/${book.image || 'visual-megalodon.jpg'}" alt="${book.name}"><div><strong>${book.name}${book.group === 'prehistoric' ? ' · extinct' : ''}</strong><p>${fact[1]}</p><button id="raceFactListen">${paintedIcon('speaker-blue')} Hear the fact</button></div></div><p class="race-track-fact"><b>${run.track.name}:</b> ${run.track.fact.text}</p><div class="race-actions"><button id="raceAgain" class="primary">Race again</button><button id="raceTracks">Race tracks</button></div></div>`;
   app.querySelector('.race-screen').append(overlay);
   const factText = book.name + '. ' + fact[1];
   $('#raceFactListen').onclick = () => speak(factText, { speaker: 'gizmo' });
@@ -638,7 +638,7 @@ function installRaceEntry() {
   buoy.removeAttribute?.('title');
   buoy.setAttribute('aria-label', 'Shark race');
   buoy.innerHTML =
-    '<svg viewBox="0 0 90 90" aria-hidden="true"><path d="M45 8V46" stroke="#3b4b54" stroke-width="4"/><path d="M47 9H79V31H47Z" fill="#fff"/><path d="M47 9H55V16H47ZM63 9H71V16H63ZM55 16H63V23H55ZM71 16H79V23H71ZM47 23H55V31H47ZM63 23H71V31H63Z" fill="#26343c"/><path d="M14 58Q45 38 76 58L70 76Q45 86 20 76Z" fill="#f08a3c" stroke="#b5612b" stroke-width="3"/><path d="M18 64Q45 52 72 64" stroke="#fff" stroke-width="6" fill="none"/></svg><span>Race</span>';
+    paintedIcon('buoy') + '<span>Race</span>';
   if (!buoy.isConnected) document.body.append(buoy);
 }
 installRaceEntry();

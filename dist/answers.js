@@ -19,7 +19,7 @@ const kidButtonKinds = [
   ['path', '🗺️', /^my path$/i],
   ['tracks', '🏁', /^race tracks$/i],
   ['done', '✓', /i practised|i finished/i],
-  ['listen', '🔊', /^♫\s*hear (our|the)/i]
+  ['listen', '🔊', /^(♫\s*)?hear (our|the)/i]
 ];
 // Painted pictures for the emoji kinds (icons.js); ▶ ↻ ✓ stay as bold shapes.
 const kidButtonPictures = { home: 'home', path: 'map', tracks: 'flag', listen: 'speaker-blue' };

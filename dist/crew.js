@@ -145,7 +145,7 @@ function syncCrew() {
   band.dataset.crew = key;
   band.style.setProperty('--crew-colour', c.colour);
   band.setAttribute('aria-label', c.name + ', your ' + c.subject.toLowerCase() + ' helper');
-  band.innerHTML = `<button class="helper-character" data-crew-hello="${key}" aria-label="Say hello to ${c.name}"><span class="helper-facing">${crewActor(key)}</span></button><div class="helper-intro"><span class="helper-eyebrow">${crewSymbol(c.symbol)} ${c.subject}</span><h2>${c.name} <small>the ${c.species.toLowerCase()}</small></h2><p id="crewTip" aria-live="polite">${key === 'dash' ? 'Let’s write slowly, one stroke at a time.' : key === 'willa' ? 'Let’s read together, one word at a time.' : key === 'tiggy' ? 'Let’s count and work it out together.' : 'Let’s look for clues together.'} Milo’s here too!</p></div><button class="helper-help" data-crew-help="${key}" aria-label="Ask ${c.name} for help">♫ <span>Help me</span></button>`;
+  band.innerHTML = `<button class="helper-character" data-crew-hello="${key}" aria-label="Say hello to ${c.name}"><span class="helper-facing">${crewActor(key)}</span></button><div class="helper-intro"><span class="helper-eyebrow">${crewSymbol(c.symbol)} ${c.subject}</span><h2>${c.name} <small>the ${c.species.toLowerCase()}</small></h2><p id="crewTip" aria-live="polite">${key === 'dash' ? 'Let’s write slowly, one stroke at a time.' : key === 'willa' ? 'Let’s read together, one word at a time.' : key === 'tiggy' ? 'Let’s count and work it out together.' : 'Let’s look for clues together.'} Milo’s here too!</p></div><button class="helper-help" data-crew-help="${key}" aria-label="Ask ${c.name} for help">${paintedIcon('bulb')} <span>Help me</span></button>`;
   app.prepend(band);
 }
 function initReefCrew() {

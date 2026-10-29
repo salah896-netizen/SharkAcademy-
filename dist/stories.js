@@ -3,7 +3,7 @@ const stories = [
     id: 'halloween',
     title: 'Milo and the Pumpkin Glow',
     theme: 'A gentle Halloween adventure',
-    icon: '🎃',
+    icon: 'pumpkin',
     pages: [
       [
         'Milo sees a light.',
@@ -54,7 +54,7 @@ const stories = [
     id: 'rescue',
     title: 'Milo and the Little Fin',
     theme: 'A story about helping a friend',
-    icon: '🐟',
+    icon: 'fish',
     pages: [
       [
         'Milo sees a fish.',
@@ -101,7 +101,7 @@ function stopStory() {
   storyPlaying = false;
   stopSpeech();
   const b = $('#storyRead');
-  if (b) b.textContent = '♫ Read together';
+  if (b) b.innerHTML = paintedIcon('speaker-blue') + ' Read together';
   document.querySelectorAll('.story-word').forEach(w => w.classList.remove('spoken-word'));
 }
 function storyText(s, index) {
@@ -124,7 +124,7 @@ function storiesPage() {
     storyReader(s);
     return;
   }
-  app.innerHTML = `<section class="story-library"><span class="tag">READ WITH WILLA & MILO</span><h1>A sea of stories.</h1><p>Little adventures, one page at a time. Willa helps you read. Milo stays with you.</p><span class="book-progress">${stageDescription('reading')} · stories grow with your reading</span><div class="story-cards">${stories.map(s => `<a class="story-card ${s.id}" href="#stories/${s.id}"><div class="story-cover"><span>${s.icon}</span><span class="cover-shark">${miloActor()}</span></div><div class="species-copy"><span class="tag">${s.id === 'halloween' ? 'HALLOWEEN SPECIAL' : 'REEF READ-ALONG'}</span><h2>${s.title}</h2><p>${s.theme}</p><span class="explore-link">Read together <span>→</span></span></div></a>`).join('')}</div></section>`;
+  app.innerHTML = `<section class="story-library"><span class="tag">READ WITH WILLA & MILO</span><h1>A sea of stories.</h1><p>Little adventures, one page at a time. Willa helps you read. Milo stays with you.</p><span class="book-progress">${stageDescription('reading')} · stories grow with your reading</span><div class="story-cards">${stories.map(s => `<a class="story-card ${s.id}" href="#stories/${s.id}"><div class="story-cover"><span>${paintedIcon(s.icon)}</span><span class="cover-shark">${miloActor()}</span></div><div class="species-copy"><span class="tag">${s.id === 'halloween' ? 'HALLOWEEN SPECIAL' : 'REEF READ-ALONG'}</span><h2>${s.title}</h2><p>${s.theme}</p><span class="explore-link">Read together <span>→</span></span></div></a>`).join('')}</div></section>`;
   storyPage = 0;
   storyHelped = false;
 }
@@ -136,7 +136,7 @@ function storyReader(s) {
     return;
   }
   const text = storyText(s, storyPage);
-  app.innerHTML = `<section class="story-reader"><div class="article-top"><a class="back-link" href="#stories">← All stories</a><small>PAGE ${storyPage + 1} OF ${s.pages.length}</small></div><span class="tag">${s.title}</span><div class="story-stage ${s.id}"><span class="story-prop" aria-hidden="true">${s.id === 'halloween' ? (storyPage < 4 ? '🎃' : '🐚') : '🐟'}</span><div class="story-milo">${miloActor()}</div><span class="story-bubbles" aria-hidden="true">◦ · ◦</span></div><p class="story-text" id="storyText">${text
+  app.innerHTML = `<section class="story-reader"><div class="article-top"><a class="back-link" href="#stories">← All stories</a><small>PAGE ${storyPage + 1} OF ${s.pages.length}</small></div><span class="tag">${s.title}</span><div class="story-stage ${s.id}"><span class="story-prop" aria-hidden="true">${s.id === 'halloween' ? (storyPage < 4 ? paintedIcon('pumpkin') : paintedIcon('shell')) : paintedIcon('fish')}</span><div class="story-milo">${miloActor()}</div><span class="story-bubbles" aria-hidden="true">◦ · ◦</span></div><p class="story-text" id="storyText">${text
     .split(/(\s+)/)
     .map((word, i) =>
       /^\s+$/.test(word)
@@ -145,7 +145,7 @@ function storyReader(s) {
     )
     .join(
       ''
-    )}</p><div class="story-actions"><button class="quiet" id="storyPrevious" ${storyPage === 0 ? 'disabled' : ''}>← Back</button><button class="primary" id="storyRead">♫ Read together</button><button class="quiet" id="storyNext">${storyPage === s.pages.length - 1 ? 'Finish story' : 'Next page'} →</button></div><p class="muted" id="storyReadStatus" aria-live="polite">Tap any word to hear it. Listen once, then have a go yourself.</p><div class="track"><div style="width:${((storyPage + 1) / s.pages.length) * 100}%"></div></div></section>`;
+    )}</p><div class="story-actions"><button class="quiet" id="storyPrevious" ${storyPage === 0 ? 'disabled' : ''}>← Back</button><button class="primary" id="storyRead">${paintedIcon('speaker-blue')} Read together</button><button class="quiet" id="storyNext">${storyPage === s.pages.length - 1 ? 'Finish story' : 'Next page'} →</button></div><p class="muted" id="storyReadStatus" aria-live="polite">Tap any word to hear it. Listen once, then have a go yourself.</p><div class="track"><div style="width:${((storyPage + 1) / s.pages.length) * 100}%"></div></div></section>`;
   $('#storyPrevious').onclick = () => {
     stopStory();
     storyPage--;
@@ -190,7 +190,7 @@ function readStoryPassage(text) {
     if (run !== storyRun || !$('#storyText')) return;
     if (index >= sentences.length) {
       storyPlaying = false;
-      $('#storyRead').textContent = '♫ Read together';
+      $('#storyRead').innerHTML = paintedIcon('speaker-blue') + ' Read together';
       words.forEach(w => w.classList.remove('spoken-word'));
       $('#storyReadStatus').textContent = 'Your turn! Try reading the page aloud.';
       return;
@@ -217,7 +217,7 @@ function readStoryPassage(text) {
       },
       unavailable: () => {
         storyPlaying = false;
-        if ($('#storyRead')) $('#storyRead').textContent = '♫ Read together';
+        if ($('#storyRead')) $('#storyRead').innerHTML = paintedIcon('speaker-blue') + ' Read together';
         if ($('#storyReadStatus'))
           $('#storyReadStatus').textContent =
             'Turn Voice on, or try a different narrator in Parents. You can still read together.';
@@ -227,7 +227,7 @@ function readStoryPassage(text) {
   readNext();
 }
 function storyEnding(s) {
-  app.innerHTML = `<section class="story-ending game-panel"><span class="reward">${s.icon}</span><span class="tag">YOU REACHED THE END</span><h1>One little question.</h1><h2>${s.question}</h2><div class="choices">${s.answers.map((a, i) => `<button data-story-answer="${i}">${a}</button>`).join('')}</div><p id="storyFeedback" aria-live="polite">Think back to what happened.</p><a href="#stories" class="back-link">Choose another story →</a></section>`;
+  app.innerHTML = `<section class="story-ending game-panel"><span class="reward">${paintedIcon(s.icon)}</span><span class="tag">YOU REACHED THE END</span><h1>One little question.</h1><h2>${s.question}</h2><div class="choices">${s.answers.map((a, i) => `<button data-story-answer="${i}">${a}</button>`).join('')}</div><p id="storyFeedback" aria-live="polite">Think back to what happened.</p><a href="#stories" class="back-link">Choose another story →</a></section>`;
   updateMilo('You finished the story! Let’s think about what happened.');
   document.querySelectorAll('[data-story-answer]').forEach(
     b =>

@@ -317,18 +317,18 @@ function drawShark() {
   const crayons = `<div class="crayons" role="group" aria-label="Crayons">${sharkCrayons.map(([c, n]) => `<button data-crayon="${c}" aria-label="${n} crayon" aria-pressed="${d.tool === 'pen' && d.colour === c}" style="--c:${c}"></button>`).join('')}</div>`;
   app.innerHTML = `<section class="draw-page" data-mode="${d.mode}">
     <div class="draw-top">
-      <div class="segmented draw-modes" role="group" aria-label="Drawing mode"><button data-draw-mode="steps" aria-pressed="${d.mode === 'steps'}" aria-label="Step by step">🦈 1 2 3</button><button data-draw-mode="free" aria-pressed="${d.mode === 'free'}" aria-label="Draw on my own">✏️</button></div>
+      <div class="segmented draw-modes" role="group" aria-label="Drawing mode"><button data-draw-mode="steps" aria-pressed="${d.mode === 'steps'}" aria-label="Step by step">${paintedIcon('shark')} 1 2 3</button><button data-draw-mode="free" aria-pressed="${d.mode === 'free'}" aria-label="Draw on my own">${paintedIcon('pencil')}</button></div>
       ${stepping ? `<div class="draw-steps" aria-label="Part ${d.step + 1} of ${sharkDrawSteps.length}">${sharkDrawSteps.map((s, i) => `<i class="${i < d.step ? 'done' : i === d.step ? 'now' : ''}">${i < d.step ? '✓' : i + 1}</i>`).join('')}</div>` : ''}
       <div class="draw-picks" role="group" aria-label="Choose what to draw">${seaDrawings.map(x => `<button class="draw-pick${x.id === drawing.id ? ' chosen' : ''}${(state.drawings || []).some(r => r.subject === x.id) ? ' drawn' : ''}" data-draw-pick="${x.id}" aria-label="Draw a ${x.name.toLowerCase()}" aria-pressed="${x.id === drawing.id}">${drawingThumb(x)}</button>`).join('')}</div>
-      <button class="draw-say" id="drawSay" aria-label="Hear Dash again">${paintedIcon('speaker-blue')} <span>${stepping ? `<b>${step.name}</b>` : colouring ? '🖍️' : '✏️'}</span></button>
+      <button class="draw-say" id="drawSay" aria-label="Hear Dash again">${paintedIcon('speaker-blue')} <span>${stepping ? `<b>${step.name}</b>` : colouring ? paintedIcon('crayon') : paintedIcon('pencil')}</span></button>
     </div>
     <div class="draw-board"><svg viewBox="${view.x} ${view.y} ${view.w} ${view.h}" aria-hidden="true">${guide}</svg>${d.mode === 'free' ? `<svg class="draw-model" viewBox="${view.x - 8} ${view.y - 8} ${view.w + 16} ${view.h + 16}" aria-label="A ${drawing.name.toLowerCase()} to copy">${model}</svg>` : ''}<canvas id="drawCanvas" aria-label="Drawing page. Draw with your finger or Apple Pencil."></canvas></div>
     <div class="draw-tools">
-      ${stepping ? `<button id="drawWatch" class="draw-tool" aria-label="Watch how">👀</button>` : crayons}
-      <button id="drawPen" class="draw-tool" aria-label="Pencil" aria-pressed="${d.tool === 'pen'}">✏️</button>
+      ${stepping ? `<button id="drawWatch" class="draw-tool" aria-label="Watch how">${paintedIcon('eye')}</button>` : crayons}
+      <button id="drawPen" class="draw-tool" aria-label="Pencil" aria-pressed="${d.tool === 'pen'}">${paintedIcon('pencil')}</button>
       <button id="drawEraser" class="draw-tool" aria-label="Eraser" aria-pressed="${d.tool === 'erase'}"><span class="eraser-icon" aria-hidden="true"></span></button>
       <button id="drawUndo" class="draw-tool" aria-label="Undo">↶</button>
-      <button id="drawClear" class="draw-tool" aria-label="Start this part again">🧽</button>
+      <button id="drawClear" class="draw-tool" aria-label="Start this part again">${paintedIcon('sponge')}</button>
       ${stepping ? `<button id="drawNext" class="draw-go" aria-label="${d.step === sharkDrawSteps.length - 1 ? 'Finish drawing' : 'Next part'}">▶</button>` : `<button id="drawDone" class="draw-go" aria-label="I finished my drawing" ${d.saved ? 'disabled' : ''}>✓</button>`}
     </div></section>`;
 
@@ -553,7 +553,7 @@ writing = function () {
   if (!controls || controls.querySelector('#drawSharkLink')) return;
   controls.insertAdjacentHTML(
     'beforeend',
-    '<button id="drawSharkLink" class="draw-shark-link" aria-label="Drawing school: draw sea animals with Dash">🎨 Draw sea animals</button>'
+    '<button id="drawSharkLink" class="draw-shark-link" aria-label="Drawing school: draw sea animals with Dash">' + paintedIcon('palette') + ' Draw sea animals</button>'
   );
   $('#drawSharkLink').onclick = startSharkDrawing;
 };
