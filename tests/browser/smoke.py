@@ -237,6 +237,13 @@ async def main():
         shelf = await ev("document.body.dataset.calmScene === 'science' && /science-bg/.test(getComputedStyle(document.body).getPropertyValue('--calm-background'))")
         check(shelf, 'science: painted lab backdrop on Gizmo’s shelf and lessons')
 
+        # Encyclopaedia: painted museum backdrop, painted tab icons, no emoji (29 Oct, v116)
+        await ev("location.hash = 'museum/all'"); await page.wait_for_timeout(300)
+        enc = await ev("""(() => ({ scene: document.body.dataset.calmScene === 'museum' && /museum-bg/.test(getComputedStyle(document.body).getPropertyValue('--calm-background')),
+          tabs: [...document.querySelectorAll('.shelf-tabs button')].every(b => b.querySelector('svg.p-icon')),
+          emoji: /[🦈🦘🔎💎🐙🐚]/u.test(document.querySelector('.encyclopedia-shelf')?.textContent || '') }))()""")
+        check(enc['scene'] and enc['tabs'] and not enc['emoji'], f'encyclopaedia: painted museum backdrop and tab icons ({enc})')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

@@ -109,7 +109,47 @@ const paintedIcon = (function () {
       `<path d="M14 24Q16 22 20 22" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".85"/>`,
     'medal-1': g => medal(g, '#fff3b8', '#f2c14e', '#c98f22', '#8a5f10', 1),
     'medal-2': g => medal(g, '#ffffff', '#d5dde3', '#9fadb8', '#5c6a75', 2),
-    'medal-3': g => medal(g, '#ffd9b8', '#d98d52', '#a8612e', '#6e3c18', 3)
+    'medal-3': g => medal(g, '#ffd9b8', '#d98d52', '#a8612e', '#6e3c18', 3),
+    // ---------------------------------------------------------------- encyclopaedia tabs (29 Oct, v116)
+    shark: g =>
+      `<defs>${grad(g + 'a', '#cfe0ea', '#8aa9bb', '#5f7f92')}</defs>` +
+      `<path d="M38 24L46 14Q44 24 46 34Z" fill="#6f8fa2" stroke="#46616f" stroke-width="1.6" stroke-linejoin="round"/>` +
+      `<path d="M20 16L26 5Q30 12 30 17Z" fill="#6f8fa2" stroke="#46616f" stroke-width="1.6" stroke-linejoin="round"/>` +
+      `<path d="M2 26Q10 15 26 16Q36 17 41 24Q37 32 26 34Q10 36 2 26Z" fill="url(#${g}a)" stroke="#46616f" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M4 28Q20 35 37 28Q29 34 20 34Q10 34 4 28Z" fill="#f2efe6"/>` +
+      `<path d="M19 31L14 39Q20 37 24 32Z" fill="#6f8fa2" stroke="#46616f" stroke-width="1.4" stroke-linejoin="round"/>` +
+      `<circle cx="10" cy="23" r="1.8" fill="#22313b"/><circle cx="9.5" cy="22.4" r=".6" fill="#fff"/>` +
+      `<path d="M4 28Q8 30 13 28" fill="none" stroke="#22313b" stroke-width="1.4" stroke-linecap="round"/>` +
+      `<path d="M14 19Q20 17 26 17.5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>`,
+    kangaroo: g =>
+      `<defs>${grad(g + 'a', '#f2c597', '#d68f55', '#a8612e')}</defs>` +
+      `<ellipse cx="24" cy="44" rx="16" ry="2.4" fill="#0b2d3a" opacity=".14"/>` +
+      `<path d="M30 8L32 2L35 9Q40 10 41 14Q41 17 37 17L33 18Q34 24 32 29Q36 34 36 40L40 42Q42 44 38 44H28Q24 44 24 40Q18 40 14 36Q6 40 2 42Q8 34 14 30Q16 20 24 18Q26 12 30 8Z" fill="url(#${g}a)" stroke="#8a4f24" stroke-width="2" stroke-linejoin="round"/>` +
+      `<path d="M30 22L34 26" stroke="#8a4f24" stroke-width="2" stroke-linecap="round"/>` +
+      `<circle cx="36" cy="12.5" r="1.6" fill="#22313b"/>` +
+      `<path d="M22 22Q24 30 28 34" fill="none" stroke="#f6dcc0" stroke-width="3" stroke-linecap="round" opacity=".8"/>`,
+    magnifier: g =>
+      `<defs>${grad(g + 'a', '#ffffff', '#d8f1f6', '#9fd3e0')}${grad(g + 'w', '#d9a877', '#b9824e', '#8f5f34')}</defs>` +
+      `<path d="M29 29L42 42" stroke="#6b4426" stroke-width="8" stroke-linecap="round"/>` +
+      `<path d="M29 29L42 42" stroke="url(#${g}w)" stroke-width="5.4" stroke-linecap="round"/>` +
+      `<circle cx="19" cy="19" r="14" fill="url(#${g}a)" fill-opacity=".8" stroke="#5c6a78" stroke-width="4"/>` +
+      `<path d="M11 15Q13 10 18 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>`,
+    chest: g =>
+      `<defs>${grad(g + 'a', '#d9a877', '#a8733f', '#7a4f2a')}${grad(g + 'b', '#fff3b8', '#f2c14e', '#c98f22')}</defs>` +
+      `<path d="M6 20Q6 8 24 8Q42 8 42 20Z" fill="url(#${g}a)" stroke="#5e3c25" stroke-width="2" stroke-linejoin="round"/>` +
+      `<rect x="6" y="20" width="36" height="20" rx="3" fill="url(#${g}a)" stroke="#5e3c25" stroke-width="2"/>` +
+      `<path d="M6 21H42M14 9V40M34 9V40" stroke="#e6c574" stroke-width="3"/>` +
+      `<rect x="20" y="17" width="8" height="10" rx="2" fill="url(#${g}b)" stroke="#8a5f10" stroke-width="1.4"/>` +
+      `<circle cx="24" cy="21" r="1.4" fill="#5d4e37"/>` +
+      `<circle cx="39" cy="8" r="3.6" fill="#f6f2fb" stroke="#b7b4d6" stroke-width="1.2"/><circle cx="38" cy="7" r="1" fill="#fff"/>`,
+    octopus: g =>
+      `<defs>${grad(g + 'a', '#f1d2f6', '#d79ce0', '#a86ab4')}</defs>` +
+      `<path d="M12 28Q4 38 8 44M18 31Q14 40 18 46M24 32V46M30 31Q34 40 30 46M36 28Q44 38 40 44" fill="none" stroke="#b77bc4" stroke-width="4.4" stroke-linecap="round"/>` +
+      `<path d="M10 24Q10 4 24 4Q38 4 38 24Q38 33 24 33Q10 33 10 24Z" fill="url(#${g}a)" stroke="#7a3f86" stroke-width="2"/>` +
+      `<circle cx="19" cy="20" r="2.6" fill="#22313b"/><circle cx="29" cy="20" r="2.6" fill="#22313b"/>` +
+      `<circle cx="18.2" cy="19.2" r=".9" fill="#fff"/><circle cx="28.2" cy="19.2" r=".9" fill="#fff"/>` +
+      `<path d="M21 26Q24 28.5 27 26" fill="none" stroke="#7a3f86" stroke-width="1.6" stroke-linecap="round"/>` +
+      `<path d="M15 10Q18 7 23 7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".8"/>`
   });
 
   return function paintedIcon(name) {

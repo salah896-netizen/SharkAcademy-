@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" preserveAspectRatio="xMidYMax slice">
+  <!-- Gizmo's shark museum (29 Oct 2026): a sunlit open-water gallery in the soft painted style.
+       Brighter than the old flat navy but still deep enough for cream text; scenery sits at the
+       edges and the bottom so photos and words in the middle stay clear. -->
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a95c2"/>
+      <stop offset=".45" stop-color="#2479a6"/>
+      <stop offset="1" stop-color="#175a84"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy="0" r=".9">
+      <stop offset="0" stop-color="#cdeffc" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#cdeffc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2cf9c"/>
+      <stop offset="1" stop-color="#c6ad78"/>
+    </linearGradient>
+    <linearGradient id="sandBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d8097"/>
+      <stop offset="1" stop-color="#336f86"/>
+    </linearGradient>
+    <radialGradient id="kelp" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#7fc196"/><stop offset=".6" stop-color="#4f9a72"/><stop offset="1" stop-color="#3a7c5a"/>
+    </radialGradient>
+    <radialGradient id="coral" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#ffc0ad"/><stop offset=".6" stop-color="#ee8a76"/><stop offset="1" stop-color="#c96a57"/>
+    </radialGradient>
+    <radialGradient id="coral2" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#ffe6a6"/><stop offset=".6" stop-color="#f5c24c"/><stop offset="1" stop-color="#cf972a"/>
+    </radialGradient>
+    <radialGradient id="coral3" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#e7c4f2"/><stop offset=".6" stop-color="#c78be0"/><stop offset="1" stop-color="#9e62b8"/>
+    </radialGradient>
+    <radialGradient id="tooth" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#fbf4e4"/><stop offset=".6" stop-color="#e3cfa2"/><stop offset="1" stop-color="#b99a62"/>
+    </radialGradient>
+    <radialGradient id="rock" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#8fa9b4"/><stop offset=".6" stop-color="#5f7f8e"/><stop offset="1" stop-color="#43616f"/>
+    </radialGradient>
+    <radialGradient id="wshark" cx=".5" cy=".4" r=".7">
+      <stop offset="0" stop-color="#bfe3f2"/><stop offset="1" stop-color="#8cc3db"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="840" fill="url(#water)"/>
+  <ellipse cx="600" cy="0" rx="760" ry="380" fill="url(#glow)"/>
+  <path d="M150 0H250L90 840H-60Z M470 0H530L420 840H310Z M790 0H890L870 840H710Z M1050 0H1120L1200 620V0Z" fill="url(#ray)"/>
+
+  <!-- surface shimmer -->
+  <g fill="none" stroke="#e6f7ff" stroke-width="3" stroke-linecap="round" opacity=".4">
+    <path d="M80 50Q110 34 140 50T200 50"/><path d="M960 80Q990 64 1020 80T1080 80"/><path d="M620 30Q642 18 664 30"/>
+  </g>
+
+  <!-- a whale shark gliding past in the distance, softly -->
+  <g opacity=".3" transform="translate(860 300)">
+    <path d="M-170 0Q-120 -42 -10 -44Q90 -44 150 -16L200 -54Q192 -6 204 40L150 14Q90 40 -10 40Q-120 38 -170 0Z" fill="url(#wshark)"/>
+    <path d="M10 -44L36 -86Q46 -56 50 -42Z" fill="#a9d4e6"/>
+    <g fill="#ffffff" opacity=".8">
+      <circle cx="-110" cy="-10" r="4"/><circle cx="-80" cy="-22" r="4"/><circle cx="-60" cy="2" r="4"/><circle cx="-30" cy="-18" r="4"/>
+      <circle cx="0" cy="-30" r="4"/><circle cx="10" cy="4" r="4"/><circle cx="40" cy="-14" r="4"/><circle cx="70" cy="-26" r="4"/>
+      <circle cx="80" cy="6" r="4"/><circle cx="110" cy="-12" r="4"/>
+    </g>
+  </g>
+  <!-- a few distant fish -->
+  <g fill="#bfe1ee" opacity=".35">
+    <path d="M150 260q20-13 42-5l14-10-3 14 3 14-14-10q-22 8-42-3z"/>
+    <path d="M190 290q15-10 30-4l10-7-2 10 2 10-10-7q-15 6-30-2z"/>
+    <path d="M1060 520q-18-12-38-4l-12-9 3 13-3 13 12-9q20 7 38-4z"/>
+  </g>
+
+  <!-- far sand with soft rocks -->
+  <path d="M0 650Q200 620 420 640T840 630T1200 620V840H0Z" fill="url(#sandBack)"/>
+  <g fill="#2f6a80" opacity=".6">
+    <path d="M300 650Q286 600 306 566Q320 540 310 510Q332 540 328 574Q322 610 328 650Z"/>
+    <path d="M900 640Q888 590 906 558Q920 530 910 502Q932 530 928 564Q922 600 928 640Z"/>
+  </g>
+
+  <!-- near sand -->
+  <path d="M0 724Q240 694 520 716T1000 710T1200 702V840H0Z" fill="url(#sand)"/>
+  <g fill="#b39a64" opacity=".45"><ellipse cx="360" cy="790" rx="30" ry="4"/><ellipse cx="760" cy="800" rx="36" ry="4"/></g>
+
+  <!-- left: kelp, coral and a rock -->
+  <g stroke-linejoin="round" stroke-width="2.6">
+    <path d="M40 760Q10 640 48 556Q80 488 56 400Q106 470 94 556Q80 650 90 760Z" fill="url(#kelp)" stroke="#2f6a4c"/>
+    <path d="M100 770Q88 700 110 650Q130 610 118 566Q148 606 142 652Q134 710 138 770Z" fill="url(#kelp)" stroke="#2f6a4c"/>
+    <path d="M170 770Q160 726 190 712Q214 702 236 718Q250 744 244 770Z" fill="url(#rock)" stroke="#33505c"/>
+    <path d="M250 776Q244 724 270 708Q274 736 290 728Q288 696 308 682Q326 724 316 776Z" fill="url(#coral)" stroke="#a5523f"/>
+    <path d="M330 780Q330 752 346 744Q362 752 362 780Z" fill="url(#coral2)" stroke="#a87418"/>
+  </g>
+
+  <!-- fossil teeth half-buried in the sand: a nod to the megalodon -->
+  <g stroke="#8d7444" stroke-width="2.2" stroke-linejoin="round">
+    <path d="M520 778Q534 774 548 778L536 800Q534 803 532 800Z" fill="url(#tooth)" transform="rotate(-16 534 788)"/>
+    <path d="M660 792Q672 788 684 792L674 810Q672 812 670 810Z" fill="url(#tooth)" transform="rotate(12 672 800)"/>
+  </g>
+
+  <!-- right: branching coral, purple fan and kelp -->
+  <g stroke-linejoin="round" stroke-width="2.6">
+    <path d="M1010 776Q1004 724 1026 710Q1030 736 1044 728Q1042 698 1060 686Q1076 724 1068 776Z" fill="url(#coral3)" stroke="#7a3f86"/>
+    <path d="M940 780Q940 750 958 742Q976 750 976 780Z" fill="url(#coral2)" stroke="#a87418"/>
+    <path d="M1110 760Q1090 650 1122 580Q1148 520 1130 450Q1176 510 1166 586Q1156 670 1162 760Z" fill="url(#kelp)" stroke="#2f6a4c"/>
+    <path d="M860 778Q852 742 872 734Q890 728 900 744Q906 762 902 778Z" fill="url(#rock)" stroke="#33505c"/>
+  </g>
+
+  <!-- bubbles -->
+  <g fill="#fff" fill-opacity=".3" stroke="#fff" stroke-opacity=".75" stroke-width="1.5">
+    <circle cx="70" cy="360" r="8"/><circle cx="88" cy="320" r="5"/><circle cx="64" cy="290" r="4"/>
+    <circle cx="1150" cy="400" r="9"/><circle cx="1130" cy="352" r="5"/><circle cx="1162" cy="322" r="4"/>
+  </g>
+</svg>

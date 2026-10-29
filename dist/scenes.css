@@ -57,3 +57,94 @@ body[data-calm-scene='race-room'] .race-racer-card {
   background: #12405cdd;
   box-shadow: 0 10px 26px #0b2d3a55;
 }
+
+/* Gizmo's shark museum: the encyclopaedia, sea legends and shark pages (assets/museum-bg.svg,
+ * 29 Oct). Dark tone, so cream text stays readable; panels become frosted glass so the
+ * painted sea shows through around the photos. */
+body[data-calm-scene='museum'] {
+  --calm-background: url('assets/museum-bg.svg') center bottom / cover no-repeat, #2479a6;
+  --calm-ink: #f4efdb;
+  --calm-border: #9fd0e0;
+}
+body[data-calm-scene='museum'] .shark-article,
+body[data-calm-scene='museum'] .encyclopedia-shelf {
+  color: var(--calm-ink);
+}
+body[data-calm-scene='museum'] h1,
+body[data-calm-scene='museum'] h2 {
+  text-shadow: 0 2px 10px #0b2d3a66;
+}
+/* Frosted-glass panels and readable small labels on the museum backdrop. */
+body[data-calm-scene='museum'] .meet-feature,
+body[data-calm-scene='museum'] .shelf-card,
+body[data-calm-scene='museum'] .article-hero {
+  background: #0f4566b8 !important;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 2px solid #bfe6f455 !important;
+  box-shadow: 0 12px 30px #0b2d3a40;
+}
+body[data-calm-scene='museum'] .shark-gallery {
+  background: transparent !important;
+}
+body[data-calm-scene='museum'] .tag {
+  color: #fff6d8 !important;
+  opacity: 1;
+  text-shadow: 0 1px 6px #0b2d3a99;
+}
+body[data-calm-scene='museum'] .shelf-tabs button .p-icon,
+body[data-calm-scene='museum'] .book-section-links .p-icon,
+body[data-calm-scene='museum'] .all-sharks-link .p-icon,
+body[data-calm-scene='museum'] .legend-link .p-icon {
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: -0.5em;
+}
+/* Phones (29 Oct): one shark card per row, and the shark page stacks photos above the name.
+ * The two-column gallery rule in encyclopedia-more.css was squeezing both into thin strips. */
+@media (max-width: 600px) {
+  /* encyclopedia-more.css keeps 150px clear on both sides for wide screens; on a phone that left
+     a 90px column. */
+  body[data-route='museum'] #app {
+    left: 14px !important;
+    right: 14px !important;
+  }
+  .encyclopedia-shelf .shelf-cards {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+  .encyclopedia-shelf .shelf-card {
+    display: grid !important;
+    grid-template-columns: 112px 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 12px;
+    text-align: left;
+    min-height: 0 !important;
+  }
+  .encyclopedia-shelf .shelf-card img {
+    grid-row: span 2;
+    width: 112px !important;
+    height: 84px !important;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .encyclopedia-shelf .shelf-card h2,
+  .encyclopedia-shelf .shelf-card p {
+    margin: 0 !important;
+    align-self: end;
+  }
+  .encyclopedia-shelf .shelf-card p {
+    align-self: start;
+  }
+  .shark-article .article-hero.has-gallery,
+  .shark-article .article-hero {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .shark-article .article-hero.has-gallery .shark-gallery {
+    min-height: 46vh;
+  }
+}

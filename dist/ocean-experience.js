@@ -361,7 +361,7 @@ function sharkWelcome() {
   const s =
     sharkBook.find(x => !state.discoveries.includes('book-' + x.id)) ||
     sharkBook[new Date().getDate() % sharkBook.length];
-  app.innerHTML = `<section class="meet-one"><span class="tag">GIZMO’S NEXT DISCOVERY</span><h1>Who’s in our ocean?</h1><button class="meet-feature" id="meetNewShark"><img src="assets/${s.image || 'visual-megalodon.jpg'}" alt="${s.image ? 'Real shark photograph' : 'Megalodon reconstruction'}"><span><strong>${s.name}</strong><small>${s.intro}</small><b>Meet this shark →</b></span></button><a class="all-sharks-link" href="#museum/all">🦈 Explore the shark encyclopedia</a></section>`;
+  app.innerHTML = `<section class="meet-one"><span class="tag">GIZMO’S NEXT DISCOVERY</span><h1>Who’s in our ocean?</h1><button class="meet-feature" id="meetNewShark"><img src="assets/${s.image || 'visual-megalodon.jpg'}" alt="${s.image ? 'Real shark photograph' : 'Megalodon reconstruction'}"><span><strong>${s.name}</strong><small>${s.intro}</small><b>Meet this shark →</b></span></button><a class="all-sharks-link" href="#museum/all">${paintedIcon('shark')} Explore the shark encyclopedia</a></section>`;
   $('#meetNewShark').onclick = () => (location.hash = 'museum/' + s.id);
   helperSpeak('Let’s meet ' + s.name + '. ' + s.intro);
 }
@@ -380,14 +380,14 @@ function encyclopediaShelf() {
   const pageCount = Math.ceil(records.length / size);
   shelfPage = Math.min(shelfPage, pageCount - 1);
   app.innerHTML = `<section class="encyclopedia-shelf"><span class="tag">THE SHARK ENCYCLOPEDIA</span><h1>Explore with Gizmo</h1><div class="shelf-tabs" role="group" aria-label="Encyclopedia sections">${[
-    ['sharks', '🦈 Sharks'],
-    ['aussie', '🦘 Australian sharks'],
-    ['topics', '🔎 Shark school'],
-    ['words', '💎 Word chest']
+    ['sharks', 'shark', 'Sharks'],
+    ['aussie', 'kangaroo', 'Australian sharks'],
+    ['topics', 'magnifier', 'Shark school'],
+    ['words', 'chest', 'Word chest']
   ]
     .map(
-      ([key, label]) =>
-        `<button data-shelf-tab="${key}" aria-pressed="${shelfTab === key}">${label}</button>`
+      ([key, icon, label]) =>
+        `<button data-shelf-tab="${key}" aria-pressed="${shelfTab === key}">${paintedIcon(icon)} ${label}</button>`
     )
     .join('')}</div><div class="shelf-cards ${shelfTab === 'words' ? 'word-shelf' : ''}">${records
     .slice(shelfPage * size, (shelfPage + 1) * size)
@@ -400,7 +400,7 @@ function encyclopediaShelf() {
     )
     .join(
       ''
-    )}</div><p id="shelfMeaning" role="status"></p><div class="shelf-pagination"><button id="shelfPrevious" ${shelfPage === 0 ? 'disabled' : ''} aria-label="Previous discoveries">←</button><span>${shelfPage + 1} / ${pageCount}</span><button id="shelfNext" ${shelfPage === pageCount - 1 ? 'disabled' : ''} aria-label="Next discoveries">→</button></div><a class="legend-link" href="#legend">🐙 Sea legends: the imaginary Kraken</a></section>`;
+    )}</div><p id="shelfMeaning" role="status"></p><div class="shelf-pagination"><button id="shelfPrevious" ${shelfPage === 0 ? 'disabled' : ''} aria-label="Previous discoveries">←</button><span>${shelfPage + 1} / ${pageCount}</span><button id="shelfNext" ${shelfPage === pageCount - 1 ? 'disabled' : ''} aria-label="Next discoveries">→</button></div><a class="legend-link" href="#legend">${paintedIcon('octopus')} Sea legends: the imaginary Kraken</a></section>`;
   document.querySelectorAll('[data-shelf-tab]').forEach(
     b =>
       (b.onclick = () => {
