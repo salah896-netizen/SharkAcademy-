@@ -12,7 +12,7 @@ function calmSceneFor() {
         ? 'discovery'
         : 'maths';
   if (route === 'library')
-    return { reading: 'reading', maths: 'maths', writing: 'library-sand' }[subject] || (subject ? 'library' : 'library-room');
+    return { reading: 'reading', maths: 'maths', writing: 'library-sand', science: 'science' }[subject] || (subject ? 'library' : 'library-room');
   if (['museum', 'legend'].includes(route)) return 'discovery';
   if (route === 'stories') return 'stories';
   if (route === 'cinema') return 'cinema';

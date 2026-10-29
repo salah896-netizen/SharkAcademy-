@@ -232,6 +232,11 @@ async def main():
         home = await ev("!document.querySelector('#modal').open && location.hash === '#home'")
         check(seen and back and home, f'grown-ups area: Back and Home always visible and working ({seen}, {back}, {home})')
 
+        # Gizmo's science shelf and lessons use his painted lab backdrop (29 Oct, v115)
+        await ev("location.hash = 'library/science'"); await page.wait_for_timeout(300)
+        shelf = await ev("document.body.dataset.calmScene === 'science' && /science-bg/.test(getComputedStyle(document.body).getPropertyValue('--calm-background'))")
+        check(shelf, 'science: painted lab backdrop on Gizmo’s shelf and lessons')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

@@ -1,6 +1,7 @@
 /* Science with Gizmo: real photos, big icon choices, a little test tank. */
 body[data-calm-scene='science'] {
-  --calm-background: #ece0ea;
+  /* Gizmo's discovery lab: painted lavender sea floor (assets/science-bg.svg, 29 Oct). */
+  --calm-background: url('assets/science-bg.svg') center bottom / cover no-repeat, #ece0ea;
   --calm-ink: #4f3550;
   --calm-border: #c8a8c6;
 }
