@@ -1,11 +1,13 @@
 /* Calm canvases give the pictures, target words and friends room to lead. */
 body[data-calm-scene='reading'] {
-  --calm-background: #cce4ef;
+  /* Willa's reading cove (assets/reading-bg.svg, 29 Oct) */
+  --calm-background: url('assets/reading-bg.svg') center bottom / cover no-repeat, #cce4ef;
   --calm-ink: #234a62;
   --calm-border: #91b6c6;
 }
 body[data-calm-scene='maths'] {
-  --calm-background: #d0e9de;
+  /* Tiggy's counting reef (assets/maths-bg.svg, 29 Oct) */
+  --calm-background: url('assets/maths-bg.svg') center bottom / cover no-repeat, #d0e9de;
   --calm-ink: #254e4a;
   --calm-border: #91bbaa;
 }
@@ -20,7 +22,8 @@ body[data-calm-scene='library-sand'] {
   --calm-border: #c1ab7d;
 }
 body[data-calm-scene='stories'] {
-  --calm-background: #dedbed;
+  /* The story cove (assets/stories-bg.svg, 29 Oct) */
+  --calm-background: url('assets/stories-bg.svg') center bottom / cover no-repeat, #dedbed;
   --calm-ink: #494866;
   --calm-border: #b5afce;
 }

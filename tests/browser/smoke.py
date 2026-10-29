@@ -244,6 +244,15 @@ async def main():
           emoji: /[🦈🦘🔎💎🐙🐚]/u.test(document.querySelector('.encyclopedia-shelf')?.textContent || '') }))()""")
         check(enc['scene'] and enc['tabs'] and not enc['emoji'], f'encyclopaedia: painted museum backdrop and tab icons ({enc})')
 
+        # Willa, Tiggy and the stories have painted backdrops; home badges are painted (29 Oct, v117)
+        scenes = {}
+        for route, art in [('library/reading', 'reading-bg'), ('library/maths', 'maths-bg'), ('stories', 'stories-bg')]:
+            await ev(f"location.hash = '{route}'"); await page.wait_for_timeout(250)
+            scenes[route] = await ev(f"/{art}/.test(getComputedStyle(document.body).getPropertyValue('--calm-background'))")
+        await ev("location.hash = 'home'"); await page.wait_for_timeout(300)
+        badges = await ev("!/[🔬✏️]/u.test([...document.querySelectorAll('.friend-badge')].map(b => b.textContent).join(''))")
+        check(all(scenes.values()) and badges, f'reading, maths and stories backdrops; home badges painted ({scenes}, {badges})')
+
         # Going home from writing clears the sandy backdrop; progress has a spare copy
         await ev("location.hash = 'writing'"); await page.wait_for_timeout(200)
         await ev("goHomeNow()"); await page.wait_for_timeout(400)

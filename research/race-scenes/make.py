@@ -222,5 +222,6 @@ def trench():
         glow(fl, x, y, 3, col)
     fl.save('trench-floor.svg')
 
-for f in (lagoon, reef, ocean, trench): f()
-print('wrote', sorted(os.listdir(OUT)))
+if __name__ == "__main__":
+    for f in (lagoon, reef, ocean, trench): f()
+    print('wrote', sorted(os.listdir(OUT)))

@@ -272,13 +272,13 @@ document.addEventListener(
 
 /* What each friend is for, at a glance ("clear distinction at the bottom with each shark").
  * A picture badge sits under every friend on the home reef: abc reading, 123 maths, ▶ today's
- * adventure, 🔬 science and sharks, ✏️ writing. The word underneath is for grown-ups. */
+ * adventure, a painted magnifier for science and sharks, a painted pencil for writing. The word underneath is for grown-ups. */
 const friendBadges = {
   willa: ['abc', 'Reading', '#e7a24b'],
   tiggy: ['123', 'Maths', '#e26d5c'],
   milo: ['▶', 'Play', '#2fa36b'],
-  gizmo: ['🔬', 'Science', '#9b6bc4'],
-  dash: ['✏️', 'Writing', '#2f7fc0']
+  gizmo: ['magnifier', 'Science', '#9b6bc4'],
+  dash: ['pencil', 'Writing', '#2f7fc0']
 };
 homeSteps.push(function addFriendBadges() {
   document.querySelectorAll('.home-friends [data-friend-route]').forEach(button => {
@@ -286,7 +286,7 @@ homeSteps.push(function addFriendBadges() {
     if (!badge || button.querySelector('.friend-badge')) return;
     button.insertAdjacentHTML(
       'beforeend',
-      `<i class="friend-badge" style="--badge:${badge[2]}" aria-hidden="true"><b>${badge[0]}</b><small>${badge[1]}</small></i>`
+      `<i class="friend-badge" style="--badge:${badge[2]}" aria-hidden="true"><b>${/^[a-z]{4,}$/.test(badge[0]) ? paintedIcon(badge[0]) : badge[0]}</b><small>${badge[1]}</small></i>`
     );
   });
 });

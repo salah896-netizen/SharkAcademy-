@@ -110,6 +110,14 @@ const paintedIcon = (function () {
     'medal-1': g => medal(g, '#fff3b8', '#f2c14e', '#c98f22', '#8a5f10', 1),
     'medal-2': g => medal(g, '#ffffff', '#d5dde3', '#9fadb8', '#5c6a75', 2),
     'medal-3': g => medal(g, '#ffd9b8', '#d98d52', '#a8612e', '#6e3c18', 3),
+    pencil: g =>
+      `<defs>${grad(g + 'a', '#ffd2a6', '#f39039', '#c4641f')}</defs>` +
+      `<g transform="rotate(40 24 24)"><rect x="18" y="2" width="12" height="30" rx="2" fill="url(#${g}a)" stroke="#9a4e16" stroke-width="1.8"/>` +
+      `<rect x="18" y="2" width="12" height="7" rx="2" fill="#ee9a9a" stroke="#a85a5a" stroke-width="1.6"/>` +
+      `<rect x="18" y="8" width="12" height="3" fill="#c6d0d7"/>` +
+      `<path d="M18 32L24 45L30 32Z" fill="#f3dcb0" stroke="#9a7444" stroke-width="1.6" stroke-linejoin="round"/>` +
+      `<path d="M22 40L24 45L26 40Z" fill="#22313b"/>` +
+      `<path d="M21 13V29" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"/></g>`,
     // ---------------------------------------------------------------- encyclopaedia tabs (29 Oct, v116)
     shark: g =>
       `<defs>${grad(g + 'a', '#cfe0ea', '#8aa9bb', '#5f7f92')}</defs>` +
